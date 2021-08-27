@@ -1,0 +1,29 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik&display=swap');
+
+// $primary-font: '';
+
+body {
+  // font-family: $primary-font;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.fab-title {
+  font-size: 50px;
+
+  @include media-upto(md) {
+    font-size: 40px;
+  }
+}
+
+.fab-heading {
+  font-size: 30px;
+  font-weight: bold;
+}
+
+.fab-content {
+  font-size: 18px;
+
+  @include media-upto(md) {
+    // font-size: 16px;
+  }
+}

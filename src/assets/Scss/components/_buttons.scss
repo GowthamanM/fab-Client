@@ -1,0 +1,42 @@
+
+.fab-btn {
+  display: inline-block;
+  padding: 10px 20px;
+  text-align: center;
+  border: 1px solid $primary-color;
+  border-radius: 5px;
+  color: $primary-color;
+
+  &:hover {
+    background-color: $gradient-color-two;
+    border: 1px solid $gradient-color-two;
+    color: white;
+  }
+}
+
+.fab-btn-filled {
+  background-color: $primary-color;
+  border: 1px solid $primary-color;
+  color: white;
+}
+
+.fab-btn-gradientfilled {
+  background: linear-gradient(92.32deg, #0F5860 4.11%, #15B793 80.06%);
+  color: white;
+  border: none;
+  height: 40px;
+  width: 250px;
+  border: none;
+  line-height: 20px;
+
+  &:hover {
+    border: none;
+    box-shadow: 2px 2px 5px rgba(0,0,0,0.5);
+  }
+}
+
+.fab-navbar-lg {
+  .fab-btn {
+    color: white;
+  }
+}
