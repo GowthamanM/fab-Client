@@ -1,0 +1,172 @@
+@import
+  '/src/assets/Scss/abstracts/variables',
+  '/src/assets/Scss/abstracts/mixins';
+
+.fab-header {
+  position: fixed;
+  width: 100%;
+  font-size: 14px;
+  z-index: 10;
+
+  .fab-btn {
+    border-radius: 5px;
+    padding: 8px 20px;
+  }
+}
+
+.fab-nav-logo {
+  display: inline-block;
+  height: 35px;
+  width: 50px;
+
+  img {
+    width: 100%;
+    object-fit: contain;
+  }
+}
+
+.fab-nav-color-logo {
+  display: none;
+}
+
+.fab-nav-white-logo {
+  display: block;
+}
+
+.fab-nav-link {
+  color: black;
+
+  &:hover {
+    color: $primary-color;
+    border-bottom: 2px solid #7AC7BE;
+  }
+}
+
+.fab-client-action {
+  display: flex;
+  align-items: center;
+}
+
+.fab-navbar-lg {
+  // background-color: white;
+  height: 50px;
+  padding: 0px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  // box-shadow: 0px 0px 5px rgb(0, 0, 0, 0.2);
+
+  @include media-upto(imd) {
+    display: none;
+  }
+
+  .fab-header-nav {
+    ul {
+      display: flex;
+      align-items: center;
+    }
+
+    li {
+      margin-left: 20px;
+
+      &:first-child {
+        margin-left: 0px;
+      }
+    }
+  }
+
+  .fab-nav-link {
+    color: white;
+
+    &:hover {
+      color: white;
+      border-bottom: 2px solid #7AC7BE;
+    }
+  }
+}
+
+.fab-navbar-md {
+  background-color: white;
+  padding: 0px 10px;
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+
+  @include media(imd) {
+    display: none;
+  }
+
+  .fab-nav-wrapper {
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .fab-header-nav {
+    padding-bottom: 20px;
+    display: none;
+
+    li {
+      margin-top: 15px;
+    }
+  }
+}
+
+.fab-nav-active {
+  border-radius: 0px 0px 10px 10px;
+
+  .fab-header-nav {
+    display: block;
+  }
+}
+
+.fab-nav-colored {
+  .fab-nav-color-logo {
+    display: block;
+  }
+
+  .fab-nav-white-logo {
+    display: none;
+  }
+
+  .fab-navbar-lg {
+    background-color: white;
+    box-shadow: 0px 0px 5px rgb(0, 0, 0, 0.2);
+    transition: all 0.2s ease;
+  }
+
+  .fab-nav-link {
+    color: black;
+
+    &:hover {
+      color: $primary-color;
+      border-bottom: 2px solid #7AC7BE;
+    }
+  }
+
+  .fab-btn {
+    color: $primary-color;
+
+    &:hover {
+      color: white;
+    }
+  }
+
+  .fab-btn-filled {
+    color: white;
+  }
+}
+
+
+
+
+
+// Nav Overlay
+
+.fab-nav-overlay {
+  height: 100vh;
+  width: 100vw;
+  background-color: rgba(0, 0, 0, 0.7);
+  position: fixed;
+  z-index: 9;
+  transition: all 0.3s ease-out;
+}

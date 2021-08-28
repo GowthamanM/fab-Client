@@ -1,0 +1,50 @@
+@import
+  '/src/assets/Scss/abstracts/variables',
+  '/src/assets/Scss/abstracts/mixins';
+
+.fab-header {
+  position: fixed;
+  width: 100%;
+  font-size: 14px;
+  z-index: 10;
+
+  .fab-btn {
+    border-radius: 5px;
+    padding: 8px 20px;
+  }
+}
+
+.fab-nav-logo {
+  display: inline-block;
+  height: 35px;
+  width: 50px;
+
+  img {
+    width: 100%;
+    object-fit: contain;
+  }
+}
+
+.fab-nav-link {
+  color: black;
+
+  &:hover {
+    color: $primary-color;
+    border-bottom: 2px solid #7AC7BE;
+  }
+}
+
+.fab-client-action {
+  display: flex;
+  align-items: center;
+}
+
+.fab-navbar-lg {
+  background-color: white;
+  height: 50px;
+  padding: 0px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0px 0px 5px rgb(0, 0, 0, 0.2);
+}

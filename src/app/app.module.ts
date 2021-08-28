@@ -22,6 +22,7 @@ import { ChoiceComponent } from './quiz/choice/choice.component';
 import { MaleComponent } from './quiz/male/male.component';
 import { FemaleComponent } from './quiz/female/female.component';
 import { KidsComponent } from './quiz/kids/kids.component';
+import { SecondaryNavbarComponent } from './secondary-navbar/secondary-navbar.component';
 
 @NgModule({
   declarations: [
@@ -44,7 +45,8 @@ import { KidsComponent } from './quiz/kids/kids.component';
     ChoiceComponent,
     MaleComponent,
     FemaleComponent,
-    KidsComponent
+    KidsComponent,
+    SecondaryNavbarComponent
   ],
   imports: [
     BrowserModule,

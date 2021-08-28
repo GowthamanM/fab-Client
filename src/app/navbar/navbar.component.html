@@ -1,1 +1,71 @@
-<p>navbar works!</p>
+<header class="fab-header">
+  <div class="fab-navbar-lg">
+    <a routerLink="/" class="fab-nav-logo">
+      <img src="assets/images/brand-logo.png" alt="Fabrae Brand Logo" class="fab-nav-color-logo">
+      <img src="assets/images/Fabrae-t3.png" alt="Fabrae Brand Logo" class="fab-nav-white-logo">
+    </a>
+    <nav class="fab-header-nav">
+      <ul>
+        <li>
+          <a href="#services" class="fab-nav-link">Services</a>
+        </li>
+        <li>
+          <a href="#wardrobe" class="fab-nav-link">Wardrobe</a>
+        </li>
+        <li>
+          <a href="#testimonials" class="fab-nav-link">Testimonials</a>
+        </li>
+        <li>
+          <a href="#faqs" class="fab-nav-link">FAQs</a>
+        </li>
+        <li>
+          <a href="#aboutus" class="fab-nav-link">About Us</a>
+        </li>
+      </ul>
+    </nav>
+    <div class="fab-client-action">
+      <a href="" class="fab-btn fab-btn-filled">Take Quiz</a>
+      <a href="" class="fab-btn fab-ml-10">Sign In</a>
+    </div>
+  </div>
+
+  <div class="fab-navbar-md" [ngClass]="{'fab-nav-active': navActive}">
+    <div class="fab-nav-wrapper">
+      <a routerLink="/" class="fab-nav-logo">
+        <img src="assets/images/brand-logo.png" alt="Fabrae Brand Logo">
+      </a>
+      <div class="fab-client-action">
+        <a href="" class="fab-btn fab-btn-filled">Take Quiz</a>
+        <a href="" class="fab-btn fab-btn-filled fab-ml-10">profile</a>
+        <div class="hamburger-icon fab-ml-10" (click) = "showhideNavbar()">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </div>
+    </div>
+    <nav class="fab-header-nav">
+      <ul>
+        <li>
+          <a href="#services" class="fab-nav-link" (click) = "showhideNavbar()">Services</a>
+        </li>
+        <li>
+          <a href="#wardrobe" class="fab-nav-link" (click) = "showhideNavbar()">Wardrobe</a>
+        </li>
+        <li>
+          <a href="#testimonials" class="fab-nav-link" (click) = "showhideNavbar()">Testimonials</a>
+        </li>
+        <li>
+          <a href="#faqs" class="fab-nav-link" (click) = "showhideNavbar()">FAQs</a>
+        </li>
+        <li>
+          <a href="#aboutus" class="fab-nav-link" (click) = "showhideNavbar()">About Us</a>
+        </li>
+        <li>
+          <a href="" class="fab-btn fab-mt-10">Sign In</a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</header>
+<div class="fab-nav-overlay" (click)="showhideNavbar()" *ngIf="navActive"></div>

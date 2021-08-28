@@ -1,1 +1,12 @@
-/* You can add global styles to this file, and also import other style files */
+@import
+'assets/Scss/abstracts/variables',
+'assets/Scss/abstracts/mixins';
+
+@import
+'assets/Scss/base/reset',
+'assets/Scss/base/typography',
+'assets/Scss/base/utility';
+
+@import
+'assets/Scss/components/buttons',
+'assets/Scss/components/hamburger-icon';
