@@ -11,26 +11,24 @@ export class MaleComponent implements OnInit {
   id: number = 1;
   backBtnActive: boolean = false;
   nextBtnActive: boolean = true;
-  count: number = 7;
   arrIndex: number = 0;
 
-  question = ['Question 1','Question 2', 'Question 3', 'Question 4', 'Question 5', 'Question 6', 'Question 7'];
+  question = ['Size(Chest)','Size(S M L)', 'Fit', 'Price', 'Pattern', 'Body Type', 'Your preference'];
 
   options = [
-    ['q1-option1', 'q1-option2', 'q1-option3', 'q1-option4'],
-    ['q2-option1', 'q2-option2', 'q1-option3', 'q1-option4'],
-    ['q3-option1', 'q3-option2', 'q1-option3', 'q1-option4', 'q1-option5', 'q3-option6'],
-    ['q4-option1', 'q4-option2', 'q1-option3', 'q1-option4'],
-    ['q5-option1', 'q5-option2', 'q1-option3', 'q1-option4'],
-    ['q6-option1', 'q6-option2', 'q1-option3', 'q1-option4'],
-    ['q7-option1', 'q7-option2', 'q1-option3', 'q1-option4'],
+    ['30 - 35', '35 - 40', '40 - 45'],
+    ['s', 'M', 'L', 'XL','XXL','XXXL'],
+    ['slim fit', 'xxa', 'sdvs'],
+    ['Below 500', '1000 - 2000', '2000 - 3000', '3000 - 4000', '4000 - 5000', 'Not Specified'],
+    ['Solid', 'Printed', 'Checked', 'Stripes'],
+    ['Slim', 'Average', 'Athletic', 'Husky'],
+    ['Slim', 'Regular', 'Large']
   ];
 
   selectedAnswer!: string;
+  count: number = this.question.length;
 
   answers = ['','','','','','',''];
-
-  quizOptions: string[] = ['option 1', 'option 2', 'option 3', 'option 4'];
 
   constructor(private activeRoute: ActivatedRoute, private route: Router) {
   }
@@ -74,9 +72,15 @@ export class MaleComponent implements OnInit {
     let nextRoute = currentRoute + 1;
     this.route.navigate(['quiz/male/' + nextRoute]);
     this.answers[this.id - 1] = this.selectedAnswer;
+  }
 
+  onSubmit() {
+    let currentRoute = this.id;
+    this.answers[this.id - 1] = this.selectedAnswer;
     console.log("Answers Array");
     console.log(this.answers);
+    alert(this.answers);
+    this.route.navigate(['/wardrobe']);
   }
 
   markAnswers(data:any) {
