@@ -23,6 +23,7 @@ import { MaleComponent } from './quiz/male/male.component';
 import { FemaleComponent } from './quiz/female/female.component';
 import { KidsComponent } from './quiz/kids/kids.component';
 import { SecondaryNavbarComponent } from './secondary-navbar/secondary-navbar.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -50,7 +51,8 @@ import { SecondaryNavbarComponent } from './secondary-navbar/secondary-navbar.co
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

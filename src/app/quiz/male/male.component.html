@@ -1,3 +1,78 @@
-<p> {{question[arrIndex]}}</p>
+<!-- <p> {{question[arrIndex]}}</p>
 <button (click)="goBack()" *ngIf= "backBtnActive">Back</button>
-<button (click)="goNext()" *ngIf= "nextBtnActive">Next</button>
+<button (click)="goNext()" *ngIf= "nextBtnActive">Next</button> -->
+
+<app-secondary-navbar></app-secondary-navbar>
+
+<main>
+  <section class="quiz container">
+    <h2 class="fab-heading">
+      {{question[arrIndex]}}
+    </h2>
+
+    <div>
+      <form class="quiz-options">
+        <div class="options" *ngFor="let options of options[arrIndex]">
+          <div class="form-check" (click)="markAnswers(options)">
+            <input class="form-check-input" type="radio" name="flexRadioDefault" [id]="options" [value]="options">
+            <label class="form-check-label" [for]="options">
+              {{options}}
+            </label>
+          </div>
+        </div>
+        <!-- <div class="options">
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2">
+            <label class="form-check-label" for="flexRadioDefault2">
+              Default checked radio 2
+            </label>
+          </div>
+        </div>
+        <div class="options">
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2">
+            <label class="form-check-label" for="flexRadioDefault2">
+              Default checked radio 3
+            </label>
+          </div>
+        </div>
+        <div class="options">
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2">
+            <label class="form-check-label" for="flexRadioDefault2">
+              Default checked radio 4
+            </label>
+          </div>
+        </div>
+        <div class="options">
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2">
+            <label class="form-check-label" for="flexRadioDefault2">
+              Default checked radio 5
+            </label>
+          </div>
+        </div>
+        <div class="options">
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2">
+            <label class="form-check-label" for="flexRadioDefault2">
+              Default checked radio 6
+            </label>
+          </div>
+        </div> -->
+      </form>
+      <!-- <a routerLink="/quiz/male/1" class="fab-btn">option 1</a>
+      <a routerLink="/quiz/female/1" class="fab-btn">option 2</a>
+      <a routerLink="/quiz/kids/1" class="fab-btn">option 3</a>
+      <a routerLink="/quiz/kids/1" class="fab-btn">option 4</a> -->
+    </div>
+
+    <div class="prev-next">
+      <a class="fab-btn" (click)="goBack()" *ngIf= "backBtnActive">Back</a>
+      <a class="fab-btn fab-ml-20" (click)="goNext()" *ngIf= "nextBtnActive">Next</a>
+    </div>
+  </section>
+
+  <img src="assets/images/wave-one.svg" alt="Wave 1 Design" class="wave">
+</main>
+

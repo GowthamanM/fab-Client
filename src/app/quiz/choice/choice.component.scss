@@ -1,0 +1,48 @@
+@import
+  '/src/assets/Scss/abstracts/variables',
+  '/src/assets/Scss/abstracts/mixins';
+
+.quiz {
+  height: 80vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  position: relative;
+}
+
+.quiz-options {
+  display: flex;
+
+  @include media-upto(sm) {
+    flex-direction: column;
+  }
+  .fab-btn {
+    width: 150px;
+    margin-top: 20px;
+
+    &:first-child {
+      margin-top: 0px;
+    }
+
+    @include media(sm) {
+      margin-left: 20px;
+      margin-top: 0px;
+
+      &:first-child {
+        margin-left: 0px;
+      }
+    }
+  }
+}
+
+.prev-next {
+  position: absolute;
+  bottom: 30px;
+}
+
+.wave {
+  position: absolute;
+  bottom: 0;
+  margin-bottom: -4px;
+}

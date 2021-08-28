@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-choice',
@@ -8,20 +7,9 @@ import { Router } from '@angular/router';
 })
 export class ChoiceComponent implements OnInit {
 
-  constructor(private route: Router) { }
+  constructor() { }
 
   ngOnInit(): void {
   }
-
-  male() {
-    this.route.navigate(['quiz/male/1']);
-  }
-
-  female() {
-    this.route.navigate(['quiz/female/1']);
-  }
-
-  kids() {
-    this.route.navigate(['quiz/kids/1']);
-  }
+  
 }
