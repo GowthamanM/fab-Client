@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { CredentialService } from '../services/credential.service';
 
 @Component({
   selector: 'app-secondary-navbar',
@@ -7,9 +8,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SecondaryNavbarComponent implements OnInit {
 
-  constructor() { }
+  userName = '';
+  userNameInitial = '';
+
+  constructor(private credentialService: CredentialService) {
+  }
 
   ngOnInit(): void {
+    this.successUser();
+  }
+
+  successUser() {
+    this.userName = this.credentialService.userName;
+    this.userNameInitial = this.credentialService.userNameInitial;
   }
 
 }

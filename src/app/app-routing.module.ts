@@ -9,6 +9,8 @@ import { ProfileComponent } from './profile/profile.component';
 import { ChoiceComponent } from './quiz/choice/choice.component';
 import { FemaleComponent } from './quiz/female/female.component';
 import { KidsComponent } from './quiz/kids/kids.component';
+import { MaleChoiceComponent } from './quiz/male/male-choice/male-choice.component';
+import { MaleResultComponent } from './quiz/male/male-result/male-result.component';
 import { MaleComponent } from './quiz/male/male.component';
 import { QuizComponent } from './quiz/quiz.component';
 import { RefundPolicyComponent } from './refund-policy/refund-policy.component';
@@ -26,7 +28,10 @@ const routes: Routes = [
   { path: 'profile', component: ProfileComponent },
   { path: 'quiz', component: QuizComponent, children: [
     { path: '', component: ChoiceComponent},
-    { path: 'male/:id', component: MaleComponent},
+    { path: 'male', component: MaleComponent, children: [
+      { path: '', component: MaleChoiceComponent},
+      { path: 'selection/:id', component: MaleResultComponent}
+    ]},
     { path: 'female/:id', component: FemaleComponent},
     { path: 'kids/:id', component: KidsComponent}
   ]},
@@ -37,11 +42,13 @@ const routes: Routes = [
   { path: 'privacy-policy', component: PrivacyPolicyComponent },
   { path: 'terms-of-service', component: TermsOfServiceComponent },
   { path: 'refund-policy', component: RefundPolicyComponent },
-  { path: '**', component: PageNotFoundComponent }
+  // { path: '**', component: PageNotFoundComponent }
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes, {
+    initialNavigation: 'enabled'
+})],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }

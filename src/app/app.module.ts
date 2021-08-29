@@ -24,6 +24,8 @@ import { FemaleComponent } from './quiz/female/female.component';
 import { KidsComponent } from './quiz/kids/kids.component';
 import { SecondaryNavbarComponent } from './secondary-navbar/secondary-navbar.component';
 import { FormsModule } from '@angular/forms';
+import { MaleChoiceComponent } from './quiz/male/male-choice/male-choice.component';
+import { MaleResultComponent } from './quiz/male/male-result/male-result.component';
 
 @NgModule({
   declarations: [
@@ -47,10 +49,12 @@ import { FormsModule } from '@angular/forms';
     MaleComponent,
     FemaleComponent,
     KidsComponent,
-    SecondaryNavbarComponent
+    SecondaryNavbarComponent,
+    MaleChoiceComponent,
+    MaleResultComponent
   ],
   imports: [
-    BrowserModule,
+    BrowserModule.withServerTransition({ appId: 'serverApp' }),
     AppRoutingModule,
     FormsModule
   ],
