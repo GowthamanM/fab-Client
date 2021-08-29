@@ -10,9 +10,7 @@ import { ChoiceComponent } from './quiz/choice/choice.component';
 import { FemaleComponent } from './quiz/female/female.component';
 import { KidsComponent } from './quiz/kids/kids.component';
 import { MaleChoiceComponent } from './quiz/male/male-choice/male-choice.component';
-import { MalePantComponent } from './quiz/male/male-pant/male-pant.component';
 import { MaleResultComponent } from './quiz/male/male-result/male-result.component';
-import { MaleShirtComponent } from './quiz/male/male-shirt/male-shirt.component';
 import { MaleComponent } from './quiz/male/male.component';
 import { QuizComponent } from './quiz/quiz.component';
 import { RefundPolicyComponent } from './refund-policy/refund-policy.component';
@@ -32,9 +30,7 @@ const routes: Routes = [
     { path: '', component: ChoiceComponent},
     { path: 'male', component: MaleComponent, children: [
       { path: '', component: MaleChoiceComponent},
-      { path: 'selection/:id', component: MaleResultComponent},
-      { path: 'shirt/:id', component: MaleShirtComponent},
-      { path: 'pant', component: MalePantComponent}
+      { path: 'selection/:id', component: MaleResultComponent}
     ]},
     { path: 'female/:id', component: FemaleComponent},
     { path: 'kids/:id', component: KidsComponent}
