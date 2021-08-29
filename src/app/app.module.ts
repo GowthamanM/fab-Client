@@ -24,6 +24,10 @@ import { FemaleComponent } from './quiz/female/female.component';
 import { KidsComponent } from './quiz/kids/kids.component';
 import { SecondaryNavbarComponent } from './secondary-navbar/secondary-navbar.component';
 import { FormsModule } from '@angular/forms';
+import { MaleChoiceComponent } from './quiz/male/male-choice/male-choice.component';
+import { MaleShirtComponent } from './quiz/male/male-shirt/male-shirt.component';
+import { MalePantComponent } from './quiz/male/male-pant/male-pant.component';
+import { MaleResultComponent } from './quiz/male/male-result/male-result.component';
 
 @NgModule({
   declarations: [
@@ -47,7 +51,11 @@ import { FormsModule } from '@angular/forms';
     MaleComponent,
     FemaleComponent,
     KidsComponent,
-    SecondaryNavbarComponent
+    SecondaryNavbarComponent,
+    MaleChoiceComponent,
+    MaleShirtComponent,
+    MalePantComponent,
+    MaleResultComponent
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,23 @@
+<app-secondary-navbar></app-secondary-navbar>
+
+<main>
+  <section class="quiz">
+    <h2 class="fab-heading fab-pb-50">
+      Choose your Category
+    </h2>
+
+    <div class="quiz-options">
+      <a class="fab-btn" [ngClass]="{'fab-btn-filled': activeSelection.Shirt}" (click)="shirt()">Shirt</a>
+      <a class="fab-btn" [ngClass]="{'fab-btn-filled': activeSelection.Pant}" (click)="pant()">Pant</a>
+      <a class="fab-btn" [ngClass]="{'fab-btn-filled': activeSelection.Trouser}" (click)="trouser()">Trousers</a>
+    </div>
+
+    <div class="prev-next">
+      <a routerLink="/quiz" class="fab-btn">Back</a>
+      <a class="fab-btn fab-ml-20" (click)="goNext()" style="cursor: pointer;">Next</a>
+    </div>
+  </section>
+
+  <img src="assets/images/wave-one.svg" alt="Wave 1 Design" class="wave">
+</main>
+

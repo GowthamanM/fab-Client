@@ -1,0 +1,62 @@
+<app-secondary-navbar></app-secondary-navbar>
+
+<main>
+  <section class="quiz container">
+    <h2 class="fab-heading fab-mt-100">
+      {{types[arrIndex]}}
+    </h2>
+
+    <form class="quiz-questions">
+      <div class="form-group" *ngFor="let item of selection[arrIndex]">
+        <p class="quiz-ques">
+          {{item[1]}}
+        </p>
+        <div class="quiz-options">
+          <div class="options" *ngFor="let options of item[2]">
+            <div class="form-check">
+              <input class="form-check-input" type="radio" [name]="'inputfield'+arrIndex" [id]="options" [value]="options">
+              <label class="form-check-label" [for]="options">
+                {{options}}
+              </label>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- <div class="form-group">
+        <p class="quiz-ques">Hi</p>
+        <div class="quiz-options">
+          <div class="options" *ngFor="let options of maleShirtAns[arrIndex]">
+            <div class="form-check">
+              <input class="form-check-input" type="radio" [name]="'inputfield'+arrIndex" [id]="options" [value]="options">
+              <label class="form-check-label" [for]="options">
+                {{options}}
+              </label>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="form-group">
+        <p class="quiz-ques">Hi</p>
+        <div class="quiz-options">
+          <div class="options" *ngFor="let options of maleShirtAns[arrIndex]">
+            <div class="form-check">
+              <input class="form-check-input" type="radio" [name]="'inputfield'+arrIndex" [id]="options" [value]="options">
+              <label class="form-check-label" [for]="options">
+                {{options}}
+              </label>
+            </div>
+          </div>
+        </div>
+      </div> -->
+    </form>
+
+    <div class="prev-next fab-mt-70">
+      <!-- <a class="fab-btn" (click)="goBack()" *ngIf= "backBtnActive">Back</a> -->
+      <a class="fab-btn" (click)="goNext()" *ngIf= "nextBtnActive" style="cursor: pointer;">Next</a>
+      <a class="fab-btn fab-btn-gradientfilled" (click)="onSubmit()" *ngIf= "!nextBtnActive" style="cursor: pointer;">Submit</a>
+    </div>
+  </section>
+
+  <img src="assets/images/wave-one.svg" alt="Wave 1 Design" class="wave">
+</main>
+
