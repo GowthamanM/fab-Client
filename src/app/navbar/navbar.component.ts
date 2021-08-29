@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { CredentialService } from '../services/credential.service';
 
 @Component({
   selector: 'app-navbar',
@@ -10,10 +11,17 @@ export class NavbarComponent implements OnInit {
   navActive: boolean = false;
   bodyContent = document.querySelector('body');
 
-  constructor() {
+  isLoggedIn = false;
+
+  userName = '';
+  userNameInitial = '';
+
+  constructor(private credentialService: CredentialService) {
   }
 
   ngOnInit(): void {
+    this.checkLogin();
+    this.successUser();
   }
 
   ngAfterViewInit() {
@@ -39,5 +47,18 @@ export class NavbarComponent implements OnInit {
     else {
       header!.classList.add('fab-nav-colored');
     }
+  }
+
+  checkLogin() {
+    this.isLoggedIn = this.credentialService.userLoggedIn;
+  }
+
+  successUser() {
+    this.userName = this.credentialService.userName;
+    this.userNameInitial = this.credentialService.userNameInitial;
+  }
+
+  logout() {
+    this.credentialService.logOut();
   }
 }

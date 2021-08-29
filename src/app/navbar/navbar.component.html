@@ -24,8 +24,10 @@
       </ul>
     </nav>
     <div class="fab-client-action">
-      <a href="" class="fab-btn fab-btn-filled">Take Quiz</a>
-      <a href="" class="fab-btn fab-ml-10">Sign In</a>
+      <a routerLink="/quiz" class="fab-btn fab-btn-filled" *ngIf="isLoggedIn">Take Quiz</a>
+      <a routerLink="/login" class="fab-btn fab-ml-10" *ngIf="!isLoggedIn">Sign In</a>
+      <a routerLink="/login" class="fab-btn fab-ml-10" *ngIf="isLoggedIn" (click)="logout()">Log Out</a>
+      <a class="profile-batch fab-ml-10" [title]="userName" *ngIf="isLoggedIn">{{userNameInitial}}</a>
     </div>
   </div>
 
@@ -35,8 +37,8 @@
         <img src="assets/images/brand-logo.png" alt="Fabrae Brand Logo">
       </a>
       <div class="fab-client-action">
-        <a href="" class="fab-btn fab-btn-filled">Take Quiz</a>
-        <a href="" class="fab-btn fab-btn-filled fab-ml-10">profile</a>
+        <a routerLink="/quiz" class="fab-btn fab-btn-filled" *ngIf="isLoggedIn">Take Quiz</a>
+        <a class="profile-batch fab-ml-10" [title]="userName" *ngIf="isLoggedIn">{{userNameInitial}}</a>
         <div class="hamburger-icon fab-ml-10" (click) = "showhideNavbar()">
           <span></span>
           <span></span>
@@ -62,7 +64,10 @@
           <a href="#aboutus" class="fab-nav-link" (click) = "showhideNavbar()">About Us</a>
         </li>
         <li>
-          <a href="" class="fab-btn fab-mt-10">Sign In</a>
+          <a routerLink="/login" class="fab-btn fab-mt-10" *ngIf="!isLoggedIn">Sign In</a>
+        </li>
+        <li>
+          <a routerLink="/login" class="fab-btn fab-mt-10" *ngIf="isLoggedIn" (click)="logout()">Log out</a>
         </li>
       </ul>
     </nav>
