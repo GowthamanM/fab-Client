@@ -14,40 +14,14 @@
         <div class="quiz-options">
           <div class="options" *ngFor="let options of item[2]">
             <div class="form-check" (click)="saveAnswers(i, options)">
-              <input class="form-check-input" type="radio" [name]="types[arrIndex]+arrIndex+i" [id]="options" [value]="options">
-              <label class="form-check-label" [for]="options">
+              <input class="form-check-input" type="radio" [name]="types[arrIndex]+arrIndex+i" [id]="options" [value]="options" style="cursor: pointer;">
+              <label class="form-check-label" [for]="options" style="cursor: pointer;">
                 {{options}}
               </label>
             </div>
           </div>
         </div>
       </div>
-      <!-- <div class="form-group">
-        <p class="quiz-ques">Hi</p>
-        <div class="quiz-options">
-          <div class="options" *ngFor="let options of maleShirtAns[arrIndex]">
-            <div class="form-check">
-              <input class="form-check-input" type="radio" [name]="'inputfield'+arrIndex" [id]="options" [value]="options">
-              <label class="form-check-label" [for]="options">
-                {{options}}
-              </label>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="form-group">
-        <p class="quiz-ques">Hi</p>
-        <div class="quiz-options">
-          <div class="options" *ngFor="let options of maleShirtAns[arrIndex]">
-            <div class="form-check">
-              <input class="form-check-input" type="radio" [name]="'inputfield'+arrIndex" [id]="options" [value]="options">
-              <label class="form-check-label" [for]="options">
-                {{options}}
-              </label>
-            </div>
-          </div>
-        </div>
-      </div> -->
     </form>
 
     <div class="prev-next fab-mt-70">

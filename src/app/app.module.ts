@@ -54,7 +54,7 @@ import { MaleResultComponent } from './quiz/male/male-result/male-result.compone
     MaleResultComponent
   ],
   imports: [
-    BrowserModule,
+    BrowserModule.withServerTransition({ appId: 'serverApp' }),
     AppRoutingModule,
     FormsModule
   ],
