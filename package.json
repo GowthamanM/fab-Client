@@ -7,7 +7,7 @@
     "build": "npm run build:ssr",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "dev:ssr": "ng run fabrae-client:serve-ssr",
+    "dev:ssr": "ng run fab-client:serve-ssr",
     "serve:ssr": "node dist/fabrae-client/server/main.js",
     "build:ssr": "ng build && ng run fabrae-client:server",
     "prerender": "ng run fabrae-client:prerender"
