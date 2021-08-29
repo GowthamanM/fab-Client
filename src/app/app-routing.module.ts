@@ -46,7 +46,7 @@ const routes: Routes = [
   { path: 'privacy-policy', component: PrivacyPolicyComponent },
   { path: 'terms-of-service', component: TermsOfServiceComponent },
   { path: 'refund-policy', component: RefundPolicyComponent },
-  { path: '**', component: PageNotFoundComponent }
+  // { path: '**', component: PageNotFoundComponent }
 ];
 
 @NgModule({

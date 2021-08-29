@@ -14,7 +14,7 @@
 
     <div class="prev-next">
       <a routerLink="/quiz" class="fab-btn">Back</a>
-      <a class="fab-btn fab-ml-20" (click)="goNext()" style="cursor: pointer;">Next</a>
+      <a class="fab-btn fab-ml-20" (click)="goNext()" style="cursor: pointer;" *ngIf="activeSelection.Shirt || activeSelection.Pant || activeSelection.Trouser">Next</a>
     </div>
   </section>
 

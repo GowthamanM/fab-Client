@@ -18,6 +18,10 @@ export class MaleResultComponent implements OnInit {
 
   types:any = [];
 
+  shirtAns:any = ['','','','',''];
+  pantAns:any = ['','',''];
+  trouserAns:any = ['','','',''];
+
   constructor(private activeRoute: ActivatedRoute, private route: Router, private maleQuizService: MaleQuizService) { }
 
   ngOnInit(): void {
@@ -52,8 +56,33 @@ export class MaleResultComponent implements OnInit {
   }
 
   onSubmit() {
-    alert("Done");
+    this.maleQuizService.setAnswers(this.shirtAns, this.pantAns, this.trouserAns);
+    this.maleQuizService.viewAnswerAlert();
     this.route.navigate(['wardrobe']);
+  }
+
+  saveAnswers(ind:any, option:any) {
+    if(this.types[this.arrIndex] == "Shirt") {
+      this.shirtAns.forEach( (items:any, index:any) => {
+        if(index == ind) {
+          this.shirtAns[index] = option;
+        }
+      });
+    }
+    else if(this.types[this.arrIndex] == "Pant") {
+      this.pantAns.forEach( (items:any, index:any) => {
+        if(index == ind) {
+          this.pantAns[index] = option;
+        }
+      });
+    }
+    else if(this.types[this.arrIndex] == "Trouser") {
+      this.trouserAns.forEach( (items:any, index:any) => {
+        if(index == ind) {
+          this.trouserAns[index] = option;
+        }
+      });
+    }
   }
 
 }

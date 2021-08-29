@@ -8,6 +8,10 @@ export class MaleQuizService {
   selectionArray:any = [];
   selectedQuiz:any = [];
 
+  shirtAns:any = ['','','','',''];
+  pantAns:any = ['','',''];
+  trouserAns:any = ['','','',''];
+
   constructor() { }
 
   Shirt:any = [
@@ -60,15 +64,13 @@ export class MaleQuizService {
   setSelectionArray(data:any) {
     this.selectionArray = [];
     this.selectedQuiz = [];
-    
+
     this.selectionArray = data;
     // console.log(this.selectionArray);
     this.setQuiz(this.selectionArray);
   }
 
   setQuiz(selectionData:any) {
-    console.log("Selection Array in Service");
-
     selectionData.forEach( (quiz:any) => {
       this.allQuiz.forEach( (item:any) => {
         if(item[0][0] == quiz) {
@@ -81,6 +83,29 @@ export class MaleQuizService {
     // console.log(this.allQuiz);
     // console.log("Selected Quiz");
     // console.log(this.selectedQuiz);
+  }
 
+  setAnswers(shirtData:any, pantData:any, trouserData:any) {
+    this.shirtAns = shirtData;
+    this.pantAns = pantData;
+    this.trouserAns = trouserData;
+  }
+
+  viewAllAnswers() {
+    console.log("Shirt Answers");
+    console.log(this.shirtAns);
+    console.log("Pant Answers");
+    console.log(this.pantAns);
+    console.log("Trouser Answers");
+    console.log(this.trouserAns);
+  }
+
+  viewAnswerAlert() {
+    let message = ` All Data
+    Shirt Answers : ${this.shirtAns},
+    Pant Answers : ${this.pantAns},
+    Trouser Answers : ${this.trouserAns}.
+    `;
+    alert(message);
   }
 }

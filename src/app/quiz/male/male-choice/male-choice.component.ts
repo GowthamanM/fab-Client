@@ -47,7 +47,7 @@ export class MaleChoiceComponent implements OnInit {
 
   goNext() {
     this.getSelection();
-    console.log(this.selectionArray);
+    // console.log(this.selectionArray);
     this.maleQuizService.setSelectionArray(this.selectionArray);
     this.route.navigate(['quiz/male/selection/1']);
   }
