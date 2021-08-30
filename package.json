@@ -3,14 +3,11 @@
   "version": "1.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "npm run serve:ssr",
-    "build": "npm run build:ssr",
-    "watch": "ng build --watch --configuration development",
+    "start": "ng serve",
+    "build": "ng build",
     "test": "ng test",
-    "dev:ssr": "ng run fabrae-client:serve-ssr",
-    "serve:ssr": "node dist/fabrae-client/server/main.js",
-    "build:ssr": "ng build --prod && ng run fabrae-client:server:production",
-    "prerender": "ng run fabrae-client:prerender"
+    "lint": "ng lint",
+    "e2e": "ng e2e"
   },
   "private": true,
   "dependencies": {
