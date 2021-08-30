@@ -26,6 +26,8 @@ import { SecondaryNavbarComponent } from './secondary-navbar/secondary-navbar.co
 import { FormsModule } from '@angular/forms';
 import { MaleChoiceComponent } from './quiz/male/male-choice/male-choice.component';
 import { MaleResultComponent } from './quiz/male/male-result/male-result.component';
+import { TestimonialComponent } from './home/testimonial/testimonial.component';
+import { BrandPartnersComponent } from './home/brand-partners/brand-partners.component';
 
 @NgModule({
   declarations: [
@@ -51,7 +53,9 @@ import { MaleResultComponent } from './quiz/male/male-result/male-result.compone
     KidsComponent,
     SecondaryNavbarComponent,
     MaleChoiceComponent,
-    MaleResultComponent
+    MaleResultComponent,
+    TestimonialComponent,
+    BrandPartnersComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'serverApp' }),
