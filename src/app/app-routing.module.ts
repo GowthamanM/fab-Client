@@ -7,7 +7,9 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
 import { PrivacyPolicyComponent } from './privacy-policy/privacy-policy.component';
 import { ProfileComponent } from './profile/profile.component';
 import { ChoiceComponent } from './quiz/choice/choice.component';
+import { FemaleChoiceComponent } from './quiz/female/female-choice/female-choice.component';
 import { FemaleComponent } from './quiz/female/female.component';
+import { KidsChoiceComponent } from './quiz/kids/kids-choice/kids-choice.component';
 import { KidsComponent } from './quiz/kids/kids.component';
 import { MaleChoiceComponent } from './quiz/male/male-choice/male-choice.component';
 import { MaleResultComponent } from './quiz/male/male-result/male-result.component';
@@ -32,8 +34,12 @@ const routes: Routes = [
       { path: '', component: MaleChoiceComponent},
       { path: 'selection/:id', component: MaleResultComponent}
     ]},
-    { path: 'female/:id', component: FemaleComponent},
-    { path: 'kids/:id', component: KidsComponent}
+    { path: 'female/:id', component: FemaleComponent, children: [
+      { path: '', component: FemaleChoiceComponent}
+    ]},
+    { path: 'kids/:id', component: KidsComponent, children: [
+      { path: '', component: KidsChoiceComponent}
+    ]}
   ]},
   { path: 'wardrobe', component: WardrobeComponent, children: [
     { path: '', component: ProductsComponent},

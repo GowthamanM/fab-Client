@@ -16,47 +16,53 @@ export class MaleQuizService {
 
   Shirt:any = [
     [
-      'Shirt','Shirt Question 1', ['q1','q1-option2','q1-option3','q1-option4','q1-option5']
+      'Shirt','Size (Chest)', ['39','40','41','42','43']
     ],
     [
-      'Shirt','Shirt 2', ['q2-optfadsion1','q2-option2 ddasd fdafafda fda','q2-option3','q2-option4','q2-option5']
+      'Shirt','Size (S | M | L)', ['S','M','L','XL','XXL']
     ],
     [
-      'Shirt','Shirt Question 3', ['q3','q3-option2','q3-option3']
+      'Shirt','Fit', ['Slim Fit','xxa','sdvs']
     ],
     [
-      'Shirt','Shirt Question', ['q4-option1','q4-optiofdsfafn2','q4-option3','q4-option4','q4-option5']
+      'Shirt','Price', ['Below 500','1000 - 2000','2000 - 3000','3000 - 4000','4000 - 5000', 'More than 5000']
     ],
     [
-      'Shirt','Shirt Question 5 extra', ['q5-option1','q5-option2','q5-option3','q5-option4']
+      'Shirt','Pattern', ['Solid','Printed','Checked','Stripes']
+    ],
+    [
+      'Shirt','Body Type', ['Slim','Average','Athletic','Husky']
+    ],
+    [
+      'Shirt','Your Preference', ['Slim','Regular']
     ],
   ];
 
   Pant:any = [
     [
-      'Pant','Pant Question 1', ['q1','q1-option2','q1-option3','q1-option4','q1-option5']
+      'Pant','Size', ['28 - 30','30 - 32','32 - 34','34 - 36','36 - 38']
     ],
     [
-      'Pant','Pant 2', ['q2-optfadsion1','q2-option2 ddasd fdafafda fda','q2-option3','q2-option4','q2-option5']
+      'Pant','Pattern', ['Torn','Regular']
     ],
     [
-      'Pant','Pant Question 3', ['q3','q3-option2','q3-option3']
+      'Pant','Fit', ['Skinny','Slim','Regular','Boot cut','Flared','Jogger','Relaxed fit','Straight','Super skinny fit','Tappered fit']
+    ],
+    [
+      'Pant','Cotton', ['Regular','Slim','Tappered','Relaxed fit','Straight','Super skinny fit']
     ]
   ];
 
   Trouser:any = [
     [
-      'Trouser','Trouser Question 1', ['q1','q1-option2','q1-option3','q1-option4','q1-option5']
+      'Trouser','Type', ['Briefs','Trunks','Boxer briefs','Inner boxers']
     ],
     [
-      'Trouser','Trouser 2', ['q2-optfadsion1','q2-option2 ddasd fdafafda fda','q2-option3','q2-option4','q2-option5']
+      'Trouser','Vest', ['Sleeve less','Sleeved vests','Gym Vests']
     ],
     [
-      'Trouser','Trouser Question 3', ['q3','q3-option2','q3-option3']
-    ],
-    [
-      'Trouser','Trouser q4', ['q4-optfadsion1','q4-option2 fda','q4-option3','q4-option4']
-    ],
+      'Trouser','Colors', ['grey','red','blue']
+    ]
   ];
 
   allQuiz:any = [this.Shirt, this.Pant, this.Trouser];
@@ -96,7 +102,7 @@ export class MaleQuizService {
     console.log(this.shirtAns);
     console.log("Pant Answers");
     console.log(this.pantAns);
-    console.log("Trouser Answers");
+    console.log("InnerWear Answers");
     console.log(this.trouserAns);
   }
 
@@ -104,7 +110,7 @@ export class MaleQuizService {
     let message = ` All Data
     Shirt Answers : ${this.shirtAns},
     Pant Answers : ${this.pantAns},
-    Trouser Answers : ${this.trouserAns}.
+    InnerWear Answers : ${this.trouserAns}.
     `;
     alert(message);
   }

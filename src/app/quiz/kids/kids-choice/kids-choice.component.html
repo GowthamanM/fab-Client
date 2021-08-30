@@ -2,19 +2,22 @@
 
 <main>
   <section class="quiz">
-    <h2 class="fab-heading fab-pb-50">
+    <p>
+      Kids Quiz Questions need to be added.
+    </p>
+    <!-- <h2 class="fab-heading fab-pb-50">
       Choose your Category
-    </h2>
+    </h2> -->
 
-    <div class="quiz-options">
+    <!-- <div class="quiz-options">
       <a class="fab-btn" [ngClass]="{'fab-btn-filled': activeSelection.Shirt}" (click)="shirt()">Shirt</a>
       <a class="fab-btn" [ngClass]="{'fab-btn-filled': activeSelection.Pant}" (click)="pant()">Pant</a>
-      <a class="fab-btn" [ngClass]="{'fab-btn-filled': activeSelection.Trouser}" (click)="trouser()">Inner Wears</a>
-    </div>
+      <a class="fab-btn" [ngClass]="{'fab-btn-filled': activeSelection.Trouser}" (click)="trouser()">Trousers</a>
+    </div> -->
 
     <div class="prev-next">
       <a routerLink="/quiz" class="fab-btn">Back</a>
-      <a class="fab-btn fab-ml-20" (click)="goNext()" style="cursor: pointer;" *ngIf="activeSelection.Shirt || activeSelection.Pant || activeSelection.Trouser">Next</a>
+      <!-- <a class="fab-btn fab-ml-20" (click)="goNext()" style="cursor: pointer;" *ngIf="activeSelection.Shirt || activeSelection.Pant || activeSelection.Trouser">Next</a> -->
     </div>
   </section>
 

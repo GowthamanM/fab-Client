@@ -28,6 +28,8 @@ import { MaleChoiceComponent } from './quiz/male/male-choice/male-choice.compone
 import { MaleResultComponent } from './quiz/male/male-result/male-result.component';
 import { TestimonialComponent } from './home/testimonial/testimonial.component';
 import { BrandPartnersComponent } from './home/brand-partners/brand-partners.component';
+import { FemaleChoiceComponent } from './quiz/female/female-choice/female-choice.component';
+import { KidsChoiceComponent } from './quiz/kids/kids-choice/kids-choice.component';
 
 @NgModule({
   declarations: [
@@ -55,7 +57,9 @@ import { BrandPartnersComponent } from './home/brand-partners/brand-partners.com
     MaleChoiceComponent,
     MaleResultComponent,
     TestimonialComponent,
-    BrandPartnersComponent
+    BrandPartnersComponent,
+    FemaleChoiceComponent,
+    KidsChoiceComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'serverApp' }),
