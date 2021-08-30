@@ -1,5 +1,10 @@
+@import
+  '/src/assets/Scss/abstracts/variables',
+  '/src/assets/Scss/abstracts/mixins';
+
 .wardrobe-products {
   height: 90vh;
+  display: none;
 }
 
 .msg-container {
@@ -10,4 +15,49 @@
   flex-direction: column;
   padding: 0px 20px;
   text-align: center;
+}
+
+.card {
+  width: 300px;
+  margin-top: 30px;
+}
+
+.card-img-top {
+  height: 300px;
+  object-fit: cover;
+}
+
+.prod-list {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.war-title {
+  font-size: 25px;
+  font-weight: bold;
+  text-align: center;
+  padding-bottom: 20px;
+
+  @include media-upto(sm) {
+    font-size: 30px;
+  }
+}
+
+.card-title {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+b {
+  font-weight: bold;
+}
+
+.prod-name {
+
+}
+
+.war-det {
+  display: flex;
+  justify-content: space-between;
 }

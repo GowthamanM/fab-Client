@@ -23,13 +23,14 @@ import { MaleComponent } from './quiz/male/male.component';
 import { FemaleComponent } from './quiz/female/female.component';
 import { KidsComponent } from './quiz/kids/kids.component';
 import { SecondaryNavbarComponent } from './secondary-navbar/secondary-navbar.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MaleChoiceComponent } from './quiz/male/male-choice/male-choice.component';
 import { MaleResultComponent } from './quiz/male/male-result/male-result.component';
 import { TestimonialComponent } from './home/testimonial/testimonial.component';
 import { BrandPartnersComponent } from './home/brand-partners/brand-partners.component';
 import { FemaleChoiceComponent } from './quiz/female/female-choice/female-choice.component';
 import { KidsChoiceComponent } from './quiz/kids/kids-choice/kids-choice.component';
+import { ProductListComponent } from './wardrobe/product-list/product-list.component';
 
 @NgModule({
   declarations: [
@@ -59,12 +60,14 @@ import { KidsChoiceComponent } from './quiz/kids/kids-choice/kids-choice.compone
     TestimonialComponent,
     BrandPartnersComponent,
     FemaleChoiceComponent,
-    KidsChoiceComponent
+    KidsChoiceComponent,
+    ProductListComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'serverApp' }),
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

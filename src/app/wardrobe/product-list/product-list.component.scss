@@ -1,0 +1,72 @@
+@import
+  '/src/assets/Scss/abstracts/variables',
+  '/src/assets/Scss/abstracts/mixins';
+
+.wardrobe-product-detail {
+  height: 90vh;
+  // border: 1px solid red;
+
+  @include media-upto(md) {
+    height: 110vh;
+  }
+}
+
+.prod-det-img-cont {
+  height: 95vh;
+  // border: 1px solid green;
+
+  @include media-upto(md) {
+    height: 50vh;
+  }
+}
+
+.prod-det-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.prod-det-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  @include media-upto(md) {
+    margin-top: 50px;
+  }
+}
+
+.details {
+  width: 300px;
+}
+
+.prd-brand {
+  font-size: 40px;
+}
+
+.prd-name {
+  font-size: 25px;
+}
+
+.prd-det {
+  font-size: 20px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.prc {
+  font-size: 18px;
+}
+
+.buy-now {
+  width: 200px;
+  padding: 5px 20px;
+  background-color: green;
+  border: none;
+  height: 40px;
+  border-radius: 5px;
+  color: white;
+  // display: block;
+  // margin: 60px auto 0px;
+}

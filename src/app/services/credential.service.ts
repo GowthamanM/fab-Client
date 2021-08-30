@@ -5,7 +5,7 @@ import { Injectable } from '@angular/core';
 })
 export class CredentialService {
 
-  userLoggedIn = true;
+  userLoggedIn = false;
 
   userName = "Gowthaman";
   userNameInitial = '';

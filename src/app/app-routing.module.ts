@@ -19,6 +19,7 @@ import { RefundPolicyComponent } from './refund-policy/refund-policy.component';
 import { SignupComponent } from './signup/signup.component';
 import { TermsOfServiceComponent } from './terms-of-service/terms-of-service.component';
 import { LikedComponent } from './wardrobe/liked/liked.component';
+import { ProductListComponent } from './wardrobe/product-list/product-list.component';
 import { ProductsComponent } from './wardrobe/products/products.component';
 import { WardrobeComponent } from './wardrobe/wardrobe.component';
 
@@ -43,7 +44,8 @@ const routes: Routes = [
   ]},
   { path: 'wardrobe', component: WardrobeComponent, children: [
     { path: '', component: ProductsComponent},
-    { path: 'liked', component: LikedComponent}
+    { path: 'liked', component: LikedComponent},
+    { path: 'product/:id', component: ProductListComponent}
   ]},
   { path: 'privacy-policy', component: PrivacyPolicyComponent },
   { path: 'terms-of-service', component: TermsOfServiceComponent },

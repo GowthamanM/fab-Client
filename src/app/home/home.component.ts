@@ -22,4 +22,13 @@ export class HomeComponent implements OnInit {
       this.route.navigate(['login']);
     }
   }
+
+  takeToWardrobe() {
+    if(this.credentialService.userLoggedIn) {
+      this.route.navigate(['wardrobe']);
+    }
+    else {
+      this.route.navigate(['login']);
+    }
+  }
 }
