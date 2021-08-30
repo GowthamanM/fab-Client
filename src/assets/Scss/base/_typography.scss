@@ -23,7 +23,7 @@ body {
 .fab-content {
   font-size: 18px;
 
-  @include media-upto(md) {
-    // font-size: 16px;
+  @include media-upto(sm) {
+    font-size: 16px;
   }
 }

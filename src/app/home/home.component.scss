@@ -173,8 +173,10 @@
 .wardrobe-content {
   .fab-title {
     font-weight: bold;
+    font-size: 45px;
 
     @include media-upto(sm) {
+      font-size: 40px;
       br {
         display: none;
       }
@@ -250,5 +252,17 @@
   img {
     width: 100%;
     object-fit: contain;
+  }
+}
+
+
+
+
+
+// Extras
+
+.fab-avail-mt-50 {
+  @include media-upto(sm) {
+    margin-top: 70px;
   }
 }
