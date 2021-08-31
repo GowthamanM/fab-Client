@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { AbstractControl, FormBuilder, ValidationErrors, ValidatorFn, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { InternalService } from '../services/internal.service';
+import { SignupService } from '../services/signup.service';
 
 @Component({
   selector: 'app-signup',
@@ -9,7 +11,12 @@ import { Router } from '@angular/router';
 })
 export class SignupComponent implements OnInit {
 
-  constructor(private fb: FormBuilder, private route: Router) { }
+  responseData:any={};
+
+  constructor(private fb: FormBuilder, 
+    private route: Router,
+    private internalService:InternalService,
+    private signupService:SignupService) { }
 
   ngOnInit(): void {
   }
@@ -41,6 +48,29 @@ export class SignupComponent implements OnInit {
     confirmPassword: ['', [
       Validators.required,
       this.checkSimilarity
+    ]],
+    doorNo: ['', [
+      Validators.required
+    ]],
+    streetName: ['', [
+      Validators.required
+    ]],
+    city: ['', [
+      Validators.required
+    ]],
+    state: ['', [
+      Validators.required
+    ]],
+    pincode: ['', [
+      Validators.required,
+      Validators.minLength(6),
+      Validators.pattern('^[1-9]{1}[0-9]{2}\\s{0,1}[0-9]{3}$')
+    ]],
+    gender: ['', [
+      Validators.required
+    ]],
+    dob: ['', [
+      Validators.required
     ]]
   });
 
@@ -49,7 +79,16 @@ export class SignupComponent implements OnInit {
   }
 
   onSubmit() {
-    console.log(this.signupForm.value);
+    // console.log(JSON.parse(JSON.stringify(this.signupForm.value)));
+    
+    this.signupService.addUser(this.internalService.changeToSignUpModel(JSON.parse(JSON.stringify(this.signupForm.value)))).subscribe((data)=>{
+      this.responseData = JSON.parse(JSON.stringify(data));
+      if((this.responseData.message === "Successfully Created User")){
+        this.route.navigateByUrl('login');
+      }
+      
+    });
+    // console.log(this.internalService.changeToSignUpModel(JSON.parse(JSON.stringify(this.signupForm.value))));
   }
 
 }

@@ -47,7 +47,7 @@
               Password should be at least<br>6 characters long.
             </div>
             <div *ngIf="!fab.password.errors?.required && !fab.password.errors?.minlength && fab.password.errors?.pattern">
-              Atleast 1 Uppercase,lowercase,<br>number andspecial character.
+              Atleast 1 Uppercase,lowercase,<br>number and Special character.
             </div>
           </div>
         </div>
@@ -62,9 +62,81 @@
             </div>
           </div>
         </div>
+
+
+        <div class="fab-form-group fab-mt-20" style="margin-top: 5px;">
+          <input type="text" placeholder="Door No" class="inputfield" formControlName="doorNo">
+          <div class="error-msg" *ngIf="fab.userName.invalid && (fab.doorNo.dirty || fab.doorNo.touched)">
+            <div *ngIf="fab.doorNo.errors?.required">
+              Door No is required.
+            </div>
+          </div>
+        </div>
+
+        <div class="fab-form-group fab-mt-20" style="margin-top: 5px;">
+          <input type="text" placeholder="Street Name" class="inputfield" formControlName="streetName">
+          <div class="error-msg" *ngIf="fab.streetName.invalid && (fab.streetName.dirty || fab.streetName.touched)">
+            <div *ngIf="fab.streetName.errors?.required">
+              Street Name is required.
+            </div>
+          </div>
+        </div>
+
+        <div class="fab-form-group fab-mt-20" style="margin-top: 5px;">
+          <input type="text" placeholder="City" class="inputfield" formControlName="city">
+          <div class="error-msg" *ngIf="fab.city.invalid && (fab.city.dirty || fab.city.touched)">
+            <div *ngIf="fab.city.errors?.required">
+              City is required.
+            </div>
+          </div>
+        </div>
+
+        <div class="fab-form-group fab-mt-20" style="margin-top: 5px;">
+          <input type="text" placeholder="State" class="inputfield" formControlName="state">
+          <div class="error-msg" *ngIf="fab.state.invalid && (fab.state.dirty || fab.state.touched)">
+            <div *ngIf="fab.state.errors?.required">
+              State is required.
+            </div>
+          </div>
+        </div>
+
+        <div class="fab-form-group fab-mt-20" style="margin-top: 5px;">
+          <input type="text" placeholder="Pincode" class="inputfield" formControlName="pincode">
+          <div class="error-msg" *ngIf="fab.pincode.invalid && (fab.pincode.dirty || fab.pincode.touched)">
+            <div *ngIf="fab.pincode.errors?.required">
+              Pincode is required.
+            </div>
+            <div *ngIf="fab.pincode.errors?.pattern">
+              Enter Valid pincode.
+            </div>
+          </div>
+        </div>
+
+        <div class="fab-form-group fab-mt-20" style="margin-top: 5px;">
+          <select class="inputfield" formControlName="gender">
+            <option value="" disabled>Select Gender</option>
+            <option Value='Male'>Male</option>
+            <option Value="Female">Female</option>
+         </select>
+          <div class="error-msg" *ngIf="fab.gender.invalid && (fab.gender.dirty || fab.gender.touched)">
+            <div *ngIf="fab.gender.errors?.required">
+              Gender is required.
+            </div>
+          </div>
+        </div>
+
+        <div class="fab-form-group fab-mt-20" style="margin-top: 5px;">
+          <input type="date" placeholder="Pincode" class="inputfield" formControlName="dob">
+          <div class="error-msg" *ngIf="fab.dob.invalid && (fab.dob.dirty || fab.dob.touched)">
+            <div *ngIf="fab.dob.errors?.required">
+              DOB is required.
+            </div>
+          </div>
+        </div>
+
         <input type="submit" name="singup" value="Sign Up" class="fab-signup-btn fab-mt-30" [disabled]="!signupForm.valid">
 
-        <p class="fab-mt-30">Allready a user? <a routerLink="/login" class="sign-up">Login</a></p>
+        <p class="fab-mt-20">Already a user? <a routerLink="/login" class="sign-up">Login</a></p>
       </form>
     </div>
   </div>

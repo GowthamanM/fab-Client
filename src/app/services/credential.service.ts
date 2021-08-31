@@ -5,6 +5,9 @@ import { Injectable } from '@angular/core';
 })
 export class CredentialService {
 
+
+  apiUrl:string;
+
   userLoggedIn = false;
 
   userName = "Gowthaman";
@@ -12,6 +15,7 @@ export class CredentialService {
 
   constructor() {
     this.setUserNameInitial();
+    this.apiUrl = "http://localhost:8000/";
   }
 
   setUserNameInitial() {

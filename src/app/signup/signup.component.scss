@@ -39,7 +39,7 @@
 
 .signup-form {
   width: 300px;
-  height: 400px;
+  height:550px;
   background-color: white;
   padding: 20px;
   border-radius: 5px;
@@ -50,7 +50,7 @@
   justify-content: center;
 
   @include media-upto(md) {
-    height: 480px;
+    height: 600px;
     padding: 0px 20px 30px;
     border-radius: 10px;
   }
@@ -61,7 +61,7 @@
 }
 
 .inputfield {
-  height: 30px;
+  height: 25px;
   text-indent: 5px;
   border: 1px solid grey;
   border-radius: 3px;
