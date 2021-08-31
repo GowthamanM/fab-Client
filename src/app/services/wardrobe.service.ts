@@ -1,4 +1,7 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
+import { CredentialService } from './credential.service';
 
 @Injectable({
   providedIn: 'root'
@@ -6,8 +9,14 @@ import { Injectable } from '@angular/core';
 export class WardrobeService {
 
   wardrobeData:any = [];
+  apiUrl:string;
 
-  constructor() { }
+  constructor(
+    private http:HttpClient,
+    private credentials:CredentialService
+  ) {
+    this.apiUrl = this.credentials.apiUrl;
+  }
 
   data = {
     "preference": {
@@ -37,6 +46,11 @@ export class WardrobeService {
       ],
       "__v": 0
     }
+  }
+
+
+  getPreferenceByUid():Observable<any>{
+    return this.http.get(this.apiUrl+"preference/user/");
   }
 
   setData() {

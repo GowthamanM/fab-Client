@@ -9,12 +9,15 @@
     <div class="quiz-options">
       <a class="fab-btn" [ngClass]="{'fab-btn-filled': activeSelection.Shirt}" (click)="shirt()">Shirt</a>
       <a class="fab-btn" [ngClass]="{'fab-btn-filled': activeSelection.Pant}" (click)="pant()">Pant</a>
-      <a class="fab-btn" [ngClass]="{'fab-btn-filled': activeSelection.Trouser}" (click)="trouser()">Inner Wears</a>
+      <a class="fab-btn" [ngClass]="{'fab-btn-filled': activeSelection.Innerwear}" (click)="innerwear()">Inner Wears</a>
+      <a class="fab-btn" [ngClass]="{'fab-btn-filled': activeSelection.Shorts}" (click)="shorts()">Shorts</a>
+      <a class="fab-btn" [ngClass]="{'fab-btn-filled': activeSelection.Blazer}" (click)="blazer()">Blazer</a>
+      <a class="fab-btn" [ngClass]="{'fab-btn-filled': activeSelection.Footwear}" (click)="footwear()">Footwear</a>
     </div>
 
     <div class="prev-next">
       <a routerLink="/quiz" class="fab-btn">Back</a>
-      <a class="fab-btn fab-ml-20" (click)="goNext()" style="cursor: pointer;" *ngIf="activeSelection.Shirt || activeSelection.Pant || activeSelection.Trouser">Next</a>
+      <a class="fab-btn fab-ml-20" (click)="goNext()" style="cursor: pointer;" *ngIf="activeSelection.Shirt || activeSelection.Pant || activeSelection.Innerwear || activeSelection.Shorts || activeSelection.Blazer || activeSelection.Footwear">Next</a>
     </div>
   </section>
 

@@ -12,7 +12,10 @@ export class MaleChoiceComponent implements OnInit {
   activeSelection = {
     'Shirt' : false,
     'Pant' : false,
-    'Trouser' : false
+    'Innerwear' : false,
+    'Shorts'  : false,
+    'Blazer' : false,
+    'Footwear':false
   }
 
   flagArray:any = [];
@@ -31,8 +34,20 @@ export class MaleChoiceComponent implements OnInit {
     this.activeSelection.Pant = !this.activeSelection.Pant;
   }
 
-  trouser() {
-    this.activeSelection.Trouser = !this.activeSelection.Trouser;
+  innerwear() {
+    this.activeSelection.Innerwear = !this.activeSelection.Innerwear;
+  }
+
+  footwear() {
+    this.activeSelection.Footwear = !this.activeSelection.Footwear;
+  }
+
+  shorts(){
+    this.activeSelection.Shorts = !this.activeSelection.Shorts;
+  }
+
+  blazer(){
+    this.activeSelection.Blazer = !this.activeSelection.Blazer;
   }
 
   getSelection() {

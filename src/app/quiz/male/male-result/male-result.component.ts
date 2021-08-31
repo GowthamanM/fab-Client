@@ -18,9 +18,12 @@ export class MaleResultComponent implements OnInit {
 
   types:any = [];
 
-  shirtAns:any = ['','','','',''];
-  pantAns:any = ['','',''];
-  trouserAns:any = ['','','',''];
+  shirtAns:any = ['','','','','','','',''];
+  pantAns:any = ['','','','',''];
+  innerwearAns:any = ['','','',''];
+  shortsAns:any = ['','','','',''];
+  blazerAns:any = ['','','','',''];
+  footwearAns:any = [''];
 
   constructor(private activeRoute: ActivatedRoute, private route: Router, private maleQuizService: MaleQuizService) { }
 
@@ -58,8 +61,11 @@ export class MaleResultComponent implements OnInit {
   }
 
   onSubmit() {
-    this.maleQuizService.setAnswers(this.shirtAns, this.pantAns, this.trouserAns);
+    this.maleQuizService.setAnswers(this.shirtAns, this.pantAns, this.innerwearAns ,this.shortsAns,this.blazerAns,this.footwearAns);
     this.maleQuizService.viewAnswerAlert();
+    this.maleQuizService.saveMaleData().subscribe(data=>{
+      console.log(data);
+    })
     this.route.navigate(['wardrobe']);
   }
 
@@ -78,13 +84,32 @@ export class MaleResultComponent implements OnInit {
         }
       });
     }
-    else if(this.types[this.arrIndex] == "Trouser") {
-      this.trouserAns.forEach( (items:any, index:any) => {
+    else if(this.types[this.arrIndex] == "Innerwear") {
+      this.innerwearAns.forEach( (items:any, index:any) => {
         if(index == ind) {
-          this.trouserAns[index] = option;
+          this.innerwearAns[index] = option;
+        }
+      });
+    }else if(this.types[this.arrIndex] == "Shorts") {
+      this.shortsAns.forEach( (items:any, index:any) => {
+        if(index == ind) {
+          this.shortsAns[index] = option;
+        }
+      });
+    }else if(this.types[this.arrIndex] == "Blazer") {
+      this.blazerAns.forEach( (items:any, index:any) => {
+        if(index == ind) {
+          this.blazerAns[index] = option;
+        }
+      });
+    }else if(this.types[this.arrIndex] == "Footwear") {
+      this.footwearAns.forEach( (items:any, index:any) => {
+        if(index == ind) {
+          this.footwearAns[index] = option;
         }
       });
     }
+
   }
 
 }
