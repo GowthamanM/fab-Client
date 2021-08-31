@@ -9,10 +9,17 @@
   align-items: center;
   flex-direction: column;
   position: relative;
+
+  @include media-upto(sm) {
+    height: 190vh;
+  }
 }
 
 .quiz-options {
   display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
 
   @include media-upto(sm) {
     flex-direction: column;
@@ -22,17 +29,9 @@
     margin-top: 20px;
     cursor: pointer;
 
-    &:first-child {
-      margin-top: 0px;
-    }
-
     @include media(sm) {
       margin-left: 20px;
-      margin-top: 0px;
-
-      &:first-child {
-        margin-left: 0px;
-      }
+      margin-top: 10px;
     }
   }
 }
@@ -43,7 +42,7 @@
 }
 
 .wave {
-  position: absolute;
+  // position: absolute;
   bottom: 0;
   margin-bottom: -4px;
 }

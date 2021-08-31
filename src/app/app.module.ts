@@ -32,6 +32,8 @@ import { BrandPartnersComponent } from './home/brand-partners/brand-partners.com
 import { FemaleChoiceComponent } from './quiz/female/female-choice/female-choice.component';
 import { KidsChoiceComponent } from './quiz/kids/kids-choice/kids-choice.component';
 import { ProductListComponent } from './wardrobe/product-list/product-list.component';
+import { FemaleResultComponent } from './quiz/female/female-result/female-result.component';
+import { KidsResultComponent } from './quiz/kids/kids-result/kids-result.component';
 
 @NgModule({
   declarations: [
@@ -62,7 +64,9 @@ import { ProductListComponent } from './wardrobe/product-list/product-list.compo
     BrandPartnersComponent,
     FemaleChoiceComponent,
     KidsChoiceComponent,
-    ProductListComponent
+    ProductListComponent,
+    FemaleResultComponent,
+    KidsResultComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'serverApp' }),
