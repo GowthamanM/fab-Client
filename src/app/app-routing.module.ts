@@ -43,7 +43,7 @@ const routes: Routes = [
     ]},
     { path: 'kids', component: KidsComponent, children: [
       { path: '', component: KidsChoiceComponent},
-      { path: '', component: KidsResultComponent}
+      { path: 'selection/:id', component: KidsResultComponent}
     ]}
   ]},
   { path: 'wardrobe', component: WardrobeComponent, children: [

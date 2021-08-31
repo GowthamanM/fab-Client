@@ -33,6 +33,7 @@ export class MaleResultComponent implements OnInit {
       this.id = +routeParams.id;
       this.checkRouteChanges();
     });
+    window.scrollTo(0, 0);
   }
 
   checkRouteChanges() {
@@ -53,6 +54,7 @@ export class MaleResultComponent implements OnInit {
     let currentRoute = this.id;
     let nextRoute = currentRoute + 1;
     this.route.navigate(['quiz/male/selection/' + nextRoute]);
+    window.scrollTo(0, 0);
   }
 
   onSubmit() {
