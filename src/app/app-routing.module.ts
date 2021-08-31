@@ -9,8 +9,10 @@ import { PrivacyPolicyComponent } from './privacy-policy/privacy-policy.componen
 import { ProfileComponent } from './profile/profile.component';
 import { ChoiceComponent } from './quiz/choice/choice.component';
 import { FemaleChoiceComponent } from './quiz/female/female-choice/female-choice.component';
+import { FemaleResultComponent } from './quiz/female/female-result/female-result.component';
 import { FemaleComponent } from './quiz/female/female.component';
 import { KidsChoiceComponent } from './quiz/kids/kids-choice/kids-choice.component';
+import { KidsResultComponent } from './quiz/kids/kids-result/kids-result.component';
 import { KidsComponent } from './quiz/kids/kids.component';
 import { MaleChoiceComponent } from './quiz/male/male-choice/male-choice.component';
 import { MaleResultComponent } from './quiz/male/male-result/male-result.component';
@@ -36,11 +38,13 @@ const routes: Routes = [
       { path: '', component: MaleChoiceComponent},
       { path: 'selection/:id', component: MaleResultComponent}
     ]},
-    { path: 'female/:id', component: FemaleComponent, children: [
-      { path: '', component: FemaleChoiceComponent}
+    { path: 'female', component: FemaleComponent, children: [
+      { path: '', component: FemaleChoiceComponent},
+      { path: 'selection/:id', component: FemaleResultComponent}
     ]},
-    { path: 'kids/:id', component: KidsComponent, children: [
-      { path: '', component: KidsChoiceComponent}
+    { path: 'kids', component: KidsComponent, children: [
+      { path: '', component: KidsChoiceComponent},
+      { path: 'selection/:id', component: KidsResultComponent}
     ]}
   ],canActivate:[AuthGuard]},
   { path: 'wardrobe', component: WardrobeComponent, children: [

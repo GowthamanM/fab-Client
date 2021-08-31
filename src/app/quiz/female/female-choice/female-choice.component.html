@@ -1,23 +1,35 @@
 <app-secondary-navbar></app-secondary-navbar>
 
-<main>
+<main class="main-c">
   <section class="quiz">
-    <p>
-      Female Quiz Questions need to be added.
-    </p>
-    <!-- <h2 class="fab-heading fab-pb-50">
+    <h2 class="fab-heading fab-pb-50">
       Choose your Category
-    </h2> -->
+    </h2>
 
-    <!-- <div class="quiz-options">
-      <a class="fab-btn" [ngClass]="{'fab-btn-filled': activeSelection.Shirt}" (click)="shirt()">Shirt</a>
-      <a class="fab-btn" [ngClass]="{'fab-btn-filled': activeSelection.Pant}" (click)="pant()">Pant</a>
-      <a class="fab-btn" [ngClass]="{'fab-btn-filled': activeSelection.Trouser}" (click)="trouser()">Trousers</a>
-    </div> -->
+    <div class="quiz-options container">
+      <a class="fab-btn" [ngClass]="{'fab-btn-filled': activeSelection.Tops}" (click)="m1()">Tops</a>
+      <a class="fab-btn" [ngClass]="{'fab-btn-filled': activeSelection.Kurthis}" (click)="m2()">Kurthis</a>
+      <a class="fab-btn" [ngClass]="{'fab-btn-filled': activeSelection.Saree}" (click)="m3()">Saree</a>
+      <a class="fab-btn" [ngClass]="{'fab-btn-filled': activeSelection.Jackets}" (click)="m4()">Jackets</a>
+      <a class="fab-btn" [ngClass]="{'fab-btn-filled': activeSelection.Blazers}" (click)="m5()">Blazzers</a>
+      <a class="fab-btn" [ngClass]="{'fab-btn-filled': activeSelection.Lehanga}" (click)="m6()">Lehanga</a>
+      <a class="fab-btn" [ngClass]="{'fab-btn-filled': activeSelection.Sweatshirts}" (click)="m7()">Sweatshirts</a>
+      <a class="fab-btn" [ngClass]="{'fab-btn-filled': activeSelection.Sweaters}" (click)="m8()">Sweaters</a>
+      <a class="fab-btn" [ngClass]="{'fab-btn-filled': activeSelection.Leggings}" (click)="m9()">Leggings</a>
+      <a class="fab-btn" [ngClass]="{'fab-btn-filled': activeSelection.Jeans}" (click)="m10()">Jeans</a>
+      <a class="fab-btn" [ngClass]="{'fab-btn-filled': activeSelection.Jeggings}" (click)="m11()">Jeggings</a>
+      <a class="fab-btn" [ngClass]="{'fab-btn-filled': activeSelection.Skirts}" (click)="m12()">Skirts</a>
+      <a class="fab-btn" [ngClass]="{'fab-btn-filled': activeSelection.Trousers}" (click)="m13()">Trousers</a>
+      <a class="fab-btn" [ngClass]="{'fab-btn-filled': activeSelection.FlatsFoot}" (click)="m14()">Flats</a>
+      <a class="fab-btn" [ngClass]="{'fab-btn-filled': activeSelection.CasualFoot}" (click)="m15()">Casual Shoes</a>
+      <a class="fab-btn" [ngClass]="{'fab-btn-filled': activeSelection.HeelsFoot}" (click)="m16()">Heels</a>
+      <a class="fab-btn" [ngClass]="{'fab-btn-filled': activeSelection.Sportswear}" (click)="m17()">Sportswear</a>
+      <a class="fab-btn" [ngClass]="{'fab-btn-filled': activeSelection.InnerWear}" (click)="m18()">InnerWear</a>
+    </div>
 
     <div class="prev-next">
       <a routerLink="/quiz" class="fab-btn">Back</a>
-      <!-- <a class="fab-btn fab-ml-20" (click)="goNext()" style="cursor: pointer;" *ngIf="activeSelection.Shirt || activeSelection.Pant || activeSelection.Trouser">Next</a> -->
+      <a class="fab-btn fab-ml-20" (click)="goNext()" style="cursor: pointer;" *ngIf="activeSelection.Tops || activeSelection.Kurthis || activeSelection.Saree || activeSelection.Jackets || activeSelection.Blazers || activeSelection.Lehanga || activeSelection.Sweatshirts || activeSelection.Sweaters || activeSelection.Leggings || activeSelection.Jeans || activeSelection.Jeggings || activeSelection.Skirts || activeSelection.Trousers || activeSelection.FlatsFoot || activeSelection.CasualFoot || activeSelection.HeelsFoot || activeSelection.Sportswear || activeSelection.InnerWear">Next</a>
     </div>
   </section>
 

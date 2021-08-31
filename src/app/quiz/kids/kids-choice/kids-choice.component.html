@@ -2,22 +2,23 @@
 
 <main>
   <section class="quiz">
-    <p>
-      Kids Quiz Questions need to be added.
-    </p>
-    <!-- <h2 class="fab-heading fab-pb-50">
+    <h2 class="fab-heading fab-pb-50">
       Choose your Category
-    </h2> -->
+    </h2>
 
-    <!-- <div class="quiz-options">
-      <a class="fab-btn" [ngClass]="{'fab-btn-filled': activeSelection.Shirt}" (click)="shirt()">Shirt</a>
-      <a class="fab-btn" [ngClass]="{'fab-btn-filled': activeSelection.Pant}" (click)="pant()">Pant</a>
-      <a class="fab-btn" [ngClass]="{'fab-btn-filled': activeSelection.Trouser}" (click)="trouser()">Trousers</a>
-    </div> -->
+    <div class="quiz-options container">
+      <a class="fab-btn" [ngClass]="{'fab-btn-filled': activeSelection.BodySuit}" (click)="m1()">Body Suit</a>
+      <a class="fab-btn" [ngClass]="{'fab-btn-filled': activeSelection.TShirt}" (click)="m2()">T shirt</a>
+      <a class="fab-btn" [ngClass]="{'fab-btn-filled': activeSelection.Dress}" (click)="m3()">Dress</a>
+      <a class="fab-btn" [ngClass]="{'fab-btn-filled': activeSelection.ClothingSet}" (click)="m4()">Clothing Set</a>
+      <a class="fab-btn" [ngClass]="{'fab-btn-filled': activeSelection.Shirt}" (click)="m5()">Shirt</a>
+      <a class="fab-btn" [ngClass]="{'fab-btn-filled': activeSelection.Shorts}" (click)="m6()">Shorts</a>
+      <a class="fab-btn" [ngClass]="{'fab-btn-filled': activeSelection.Kurthis}" (click)="m7()">Kurthis</a>
+    </div>
 
     <div class="prev-next">
       <a routerLink="/quiz" class="fab-btn">Back</a>
-      <!-- <a class="fab-btn fab-ml-20" (click)="goNext()" style="cursor: pointer;" *ngIf="activeSelection.Shirt || activeSelection.Pant || activeSelection.Trouser">Next</a> -->
+      <a class="fab-btn fab-ml-20" (click)="goNext()" style="cursor: pointer;" *ngIf="activeSelection.BodySuit || activeSelection.TShirt || activeSelection.Dress || activeSelection.ClothingSet || activeSelection.Shirt || activeSelection.Shorts || activeSelection.Kurthis">Next</a>
     </div>
   </section>
 

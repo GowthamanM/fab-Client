@@ -1,0 +1,68 @@
+@import
+  '/src/assets/Scss/abstracts/variables',
+  '/src/assets/Scss/abstracts/mixins';
+
+.quiz {
+  // height: 80vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  position: relative;
+}
+
+.quiz-options {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+
+  @include media-upto(md) {
+    flex-direction: column;
+  }
+
+  @include media(md) {
+    width: 600px;
+  }
+}
+
+.quiz-ques {
+  margin-top: 60px;
+  margin-bottom: 20px;
+  font-size: 22px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.options {
+  @include media-upto(md) {
+    width: 150px;
+    margin: 20px auto 0px;
+
+    &:first-child {
+      margin: 0px auto;
+    }
+  }
+
+  @include media(md) {
+    width: 300px;
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+  }
+}
+
+.wave {
+  margin-top: 50px;
+  margin-bottom: -4px;
+}
+
+.form-check-label {
+  vertical-align: sub;
+  line-height: 1.5;
+}
+
+.form-check {
+  @include media(md) {
+    width: 150px;
+  }
+}
