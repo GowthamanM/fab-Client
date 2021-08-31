@@ -20,6 +20,7 @@ import { MaleComponent } from './quiz/male/male.component';
 import { QuizComponent } from './quiz/quiz.component';
 import { RefundPolicyComponent } from './refund-policy/refund-policy.component';
 import { SignupComponent } from './signup/signup.component';
+import { SubscriptionComponent } from './subscription/subscription.component';
 import { TermsOfServiceComponent } from './terms-of-service/terms-of-service.component';
 import { LikedComponent } from './wardrobe/liked/liked.component';
 import { ProductListComponent } from './wardrobe/product-list/product-list.component';
@@ -52,6 +53,7 @@ const routes: Routes = [
     { path: 'liked', component: LikedComponent},
     { path: 'product/:id', component: ProductListComponent}
   ],canActivate:[AuthGuard]},
+  { path: 'subscription', component: SubscriptionComponent},
   { path: 'privacy-policy', component: PrivacyPolicyComponent },
   { path: 'terms-of-service', component: TermsOfServiceComponent },
   { path: 'refund-policy', component: RefundPolicyComponent },

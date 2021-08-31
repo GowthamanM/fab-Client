@@ -1,0 +1,61 @@
+@import
+  '/src/assets/Scss/abstracts/variables',
+  '/src/assets/Scss/abstracts/mixins';
+
+.subs-content {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+
+  @include media-upto(md) {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  @include media(md) {
+    height: 90vh;
+  }
+}
+
+.card {
+  width: 300px;
+  height: 360px;
+  border-radius: 10px;
+  cursor: pointer;
+
+  @include media(md) {
+    margin-top: 60px;
+  }
+
+  &:hover {
+    background-color: $gradient-color-two;
+
+    .card-title, .fab-card-price, .fab-card-item {
+      color: white;
+    }
+
+    .fab-btn {
+      background-color: white;
+      color: $primary-color;
+      border: none;
+    }
+  }
+}
+
+.card-title {
+  font-size: 22px;
+  font-weight: bold;
+}
+
+.fab-card-price {
+  font-size: 50px;
+  color: $gradient-color-two;
+}
+
+.fab-content-cont {
+  min-height: 110px;
+}
+
+.fab-btn {
+  width: 200px;
+}

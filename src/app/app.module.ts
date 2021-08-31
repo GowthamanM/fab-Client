@@ -37,6 +37,7 @@ import { AuthGuard } from './auth/auth.guard';
 
 import { FemaleResultComponent } from './quiz/female/female-result/female-result.component';
 import { KidsResultComponent } from './quiz/kids/kids-result/kids-result.component';
+import { SubscriptionComponent } from './subscription/subscription.component';
 
 @NgModule({
   declarations: [
@@ -69,7 +70,8 @@ import { KidsResultComponent } from './quiz/kids/kids-result/kids-result.compone
     KidsChoiceComponent,
     ProductListComponent,
     FemaleResultComponent,
-    KidsResultComponent
+    KidsResultComponent,
+    SubscriptionComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'serverApp' }),
