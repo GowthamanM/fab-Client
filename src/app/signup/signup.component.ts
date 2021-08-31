@@ -49,23 +49,23 @@ export class SignupComponent implements OnInit {
       Validators.required,
       this.checkSimilarity
     ]],
-    doorNo: ['', [
-      Validators.required
-    ]],
-    streetName: ['', [
-      Validators.required
-    ]],
-    city: ['', [
-      Validators.required
-    ]],
-    state: ['', [
-      Validators.required
-    ]],
-    pincode: ['', [
-      Validators.required,
-      Validators.minLength(6),
-      Validators.pattern('^[1-9]{1}[0-9]{2}\\s{0,1}[0-9]{3}$')
-    ]],
+    // doorNo: ['', [
+    //   Validators.required
+    // ]],
+    // streetName: ['', [
+    //   Validators.required
+    // ]],
+    // city: ['', [
+    //   Validators.required
+    // ]],
+    // state: ['', [
+    //   Validators.required
+    // ]],
+    // pincode: ['', [
+    //   Validators.required,
+    //   Validators.minLength(6),
+    //   Validators.pattern('^[1-9]{1}[0-9]{2}\\s{0,1}[0-9]{3}$')
+    // ]],
     gender: ['', [
       Validators.required
     ]],

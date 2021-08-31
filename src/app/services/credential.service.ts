@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
 @Injectable({
@@ -9,13 +10,15 @@ export class CredentialService {
 
   apiUrl:string;
   headerDict:any;
+  uid:any;
 
   userLoggedIn = false;
 
   userName = "Gowthaman";
   userNameInitial = '';
 
-  constructor() {
+  constructor(private http:HttpClient) {
+
     this.headerDict = {
       'Content-Type': 'application/json',
       'Accept': 'application/json',
@@ -23,11 +26,11 @@ export class CredentialService {
       'Authorization': 'null'
     }
     this.setUserNameInitial();
-    this.apiUrl = "http://localhost:8000/";
+    this.apiUrl = "http://backend.fabrae.com/";
   }
 
   setUserNameInitial() {
-    this.userNameInitial = this.userName[0];
+    // this.http.get(this.apiUrl+"users"+)
   }
 
 
