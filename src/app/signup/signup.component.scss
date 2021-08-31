@@ -65,10 +65,15 @@
   text-indent: 5px;
   border: 1px solid grey;
   border-radius: 3px;
+  width: 200px;
 }
 
 .inputfield:focus {
   outline-color: $gradient-color-two;
+}
+
+option {
+  color: black;
 }
 
 .error-msg {
