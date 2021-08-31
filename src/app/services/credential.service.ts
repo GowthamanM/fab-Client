@@ -23,7 +23,7 @@ export class CredentialService {
       'Authorization': 'null'
     }
     this.setUserNameInitial();
-    this.apiUrl = "http://localhost:8000/";
+    this.apiUrl = "http://backend.fabrae.com/";
   }
 
   setUserNameInitial() {
