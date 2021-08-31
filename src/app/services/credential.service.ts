@@ -10,6 +10,7 @@ export class CredentialService {
 
   apiUrl:string;
   headerDict:any;
+  uid:any;
 
   userLoggedIn = false;
 
@@ -17,7 +18,7 @@ export class CredentialService {
   userNameInitial = '';
 
   constructor(private http:HttpClient) {
-    
+
     this.headerDict = {
       'Content-Type': 'application/json',
       'Accept': 'application/json',
@@ -25,11 +26,11 @@ export class CredentialService {
       'Authorization': 'null'
     }
     this.setUserNameInitial();
-    this.apiUrl = "http://localhost:8000/";
+    this.apiUrl = "http://backend.fabrae.com/";
   }
 
   setUserNameInitial() {
-    
+    // this.http.get(this.apiUrl+"users"+)
   }
 
 
