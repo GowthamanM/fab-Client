@@ -38,7 +38,8 @@ export class MaleQuizService {
       'Shirt','Size (S | M | L)', ['S','M','L','XL','XXL']
     ],
     [
-      'Shirt','Fit', ['Slim Fit','xxa','sdvs']
+      
+      'Shirt','Fit', ['Skinny'	,'Slim'	,'Regular'	,'Boot cut'	,'Flared'	,'Jogger'	,'Relaxecd fit'	,'Straight' 	,'Super skinny fit'	,'Tappered fit']
     ],
     [
       'Shirt','Price', ['Below 500','1000 - 2000','2000 - 3000','3000 - 4000','4000 - 5000', 'More than 5000']
@@ -116,7 +117,7 @@ export class MaleQuizService {
       'Blazer','Size (S | M | L)', ['S','M','L','XL','XXL']
     ],
     [
-      'Blazer','Fit', ['Slim Fit','xxa','sdvs']
+      'Blazer','Fit', ['Skinny'	,'Slim'	,'Regular'	,'Boot cut'	,'Flared'	,'Jogger'	,'Relaxecd fit'	,'Straight' 	,'Super skinny fit'	,'Tappered fit']
     ],
     [
       'Blazer','Price', ['Below 500','1000 - 2000','2000 - 3000','3000 - 4000','4000 - 5000', 'More than 5000']

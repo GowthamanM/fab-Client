@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
 @Injectable({
@@ -15,7 +16,8 @@ export class CredentialService {
   userName = "Gowthaman";
   userNameInitial = '';
 
-  constructor() {
+  constructor(private http:HttpClient) {
+    
     this.headerDict = {
       'Content-Type': 'application/json',
       'Accept': 'application/json',
@@ -27,7 +29,7 @@ export class CredentialService {
   }
 
   setUserNameInitial() {
-    this.userNameInitial = this.userName[0];
+    
   }
 
 
