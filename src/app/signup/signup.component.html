@@ -126,7 +126,7 @@
         </div>
 
         <div class="fab-form-group fab-mt-20" style="margin-top: 5px;">
-          <input type="date" placeholder="Pincode" class="inputfield" formControlName="dob">
+          <input type="date" placeholder="Pincode" class="inputfield fab-date" formControlName="dob">
           <div class="error-msg" *ngIf="fab.dob.invalid && (fab.dob.dirty || fab.dob.touched)">
             <div *ngIf="fab.dob.errors?.required">
               DOB is required.

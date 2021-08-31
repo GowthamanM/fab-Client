@@ -60,8 +60,12 @@
   font-size: 30px;
 }
 
-.select{
+select, .fab-date{
+  color: grey;
 
+  &:focus {
+    color: black;
+  }
 }
 
 .inputfield {
