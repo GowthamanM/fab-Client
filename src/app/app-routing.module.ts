@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { AuthGuard } from './auth/auth.guard';
 import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
 import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
@@ -41,12 +42,12 @@ const routes: Routes = [
     { path: 'kids/:id', component: KidsComponent, children: [
       { path: '', component: KidsChoiceComponent}
     ]}
-  ]},
+  ],canActivate:[AuthGuard]},
   { path: 'wardrobe', component: WardrobeComponent, children: [
     { path: '', component: ProductsComponent},
     { path: 'liked', component: LikedComponent},
     { path: 'product/:id', component: ProductListComponent}
-  ]},
+  ],canActivate:[AuthGuard]},
   { path: 'privacy-policy', component: PrivacyPolicyComponent },
   { path: 'terms-of-service', component: TermsOfServiceComponent },
   { path: 'refund-policy', component: RefundPolicyComponent },

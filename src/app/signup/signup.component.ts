@@ -83,8 +83,12 @@ export class SignupComponent implements OnInit {
     
     this.signupService.addUser(this.internalService.changeToSignUpModel(JSON.parse(JSON.stringify(this.signupForm.value)))).subscribe((data)=>{
       this.responseData = JSON.parse(JSON.stringify(data));
-      if((this.responseData.message === "Successfully Created User")){
+      console.log(this.responseData);
+      
+      if((this.responseData.message === "User Successfully created")){
         this.route.navigateByUrl('login');
+      }else if(this.responseData.message === "Email Address Already Exists"){
+        alert(this.responseData.message);
       }
       
     });

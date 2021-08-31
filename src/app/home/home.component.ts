@@ -15,20 +15,10 @@ export class HomeComponent implements OnInit {
   }
 
   takeToQuiz() {
-    if(this.credentialService.userLoggedIn) {
-      this.route.navigate(['quiz']);
-    }
-    else {
-      this.route.navigate(['login']);
-    }
+    this.route.navigateByUrl('/quiz');
   }
 
   takeToWardrobe() {
-    if(this.credentialService.userLoggedIn) {
-      this.route.navigate(['wardrobe']);
-    }
-    else {
-      this.route.navigate(['login']);
-    }
+    this.route.navigateByUrl('/wardrobe')
   }
 }

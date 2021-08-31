@@ -1,9 +1,22 @@
+import { HttpClient ,HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { CredentialService } from './credential.service';
 
 @Injectable({
   providedIn: 'root'
 })
 export class LoginService {
 
-  constructor() { }
+  apiUrl:string;
+
+  constructor(
+    private credential:CredentialService,
+    private http:HttpClient
+  ) {
+    this.apiUrl = this.credential.apiUrl;
+  }
+
+  userLogin(data:any){
+    return this.http.post(this.apiUrl+"auth/login",data,{observe: 'response'});
+  }
 }

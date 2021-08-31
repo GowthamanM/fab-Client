@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { CredentialService } from '../services/credential.service';
+import { LoginService } from '../services/login.service';
 
 @Component({
   selector: 'app-login',
@@ -10,14 +11,16 @@ import { CredentialService } from '../services/credential.service';
 })
 export class LoginComponent implements OnInit {
 
-  constructor(private fb: FormBuilder, private route: Router, private credentialService: CredentialService) { }
+  constructor(private fb: FormBuilder, private route: Router, private credentialService: CredentialService,
+    private loginService:LoginService) { }
 
   ngOnInit(): void {
   }
 
   loginForm = this.fb.group({
-    userName: ['', [
-      Validators.required
+    email: ['', [
+      Validators.required,
+      Validators.email
     ]],
     password: ['', [
       Validators.required
@@ -29,15 +32,17 @@ export class LoginComponent implements OnInit {
   }
 
   onSubmit() {
-    if(this.loginForm.value.userName && this.loginForm.value.password === 'admin-fab') {
-      this.credentialService.userLoggedIn = true;
-      this.route.navigate(['/']);
-    }
-    else {
-      alert("Incorrect Credentials");
-    }
-    console.log(this.loginForm.value);
-    console.log(this.loginForm.value.userName);
+   this.loginService.userLogin(this.loginForm.value).subscribe(resp=>{
+    let temp = JSON.parse(JSON.stringify(resp.body));  
+    if(temp.message === "Authentication Successful"){
+      localStorage.setItem('userToken',resp.headers.get('token')+"");
+      localStorage.setItem('authStatus','true');
+      this.route.navigateByUrl('');
+    }else{
+      alert("login Failed")
+    } 
+   })
+   
   }
 
 }

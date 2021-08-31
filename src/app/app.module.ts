@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import {HttpClientModule} from '@angular/common/http';
+import {HttpClientModule, HTTP_INTERCEPTORS} from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -32,6 +32,9 @@ import { BrandPartnersComponent } from './home/brand-partners/brand-partners.com
 import { FemaleChoiceComponent } from './quiz/female/female-choice/female-choice.component';
 import { KidsChoiceComponent } from './quiz/kids/kids-choice/kids-choice.component';
 import { ProductListComponent } from './wardrobe/product-list/product-list.component';
+import { TokenInterceptorService } from './services/token-interceptor.service';
+import { AuthGuard } from './auth/auth.guard';
+
 
 @NgModule({
   declarations: [
@@ -71,7 +74,14 @@ import { ProductListComponent } from './wardrobe/product-list/product-list.compo
     ReactiveFormsModule,
     HttpClientModule
   ],
-  providers: [],
+  providers: [
+    {
+      provide:HTTP_INTERCEPTORS,
+      useClass: TokenInterceptorService,
+      multi:true
+    },
+    AuthGuard
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

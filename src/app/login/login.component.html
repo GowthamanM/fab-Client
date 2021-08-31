@@ -7,11 +7,14 @@
       <form class="login-form" [formGroup]="loginForm" (ngSubmit)="onSubmit()">
         <img src="assets/images/fabrae-logo.svg" alt="" class="login-logo-inner">
         <h2 class="login-title">Login</h2>
-        <div class="fab-form-group fab-mt-20">
-          <input type="text" placeholder="Username" class="inputfield" formControlName="userName">
-          <div class="error-msg" *ngIf="fab.userName.invalid && (fab.userName.dirty || fab.userName.touched)">
-            <div *ngIf="fab.userName.errors?.required">
-              User Name is required.
+        <div class="fab-form-group" style="margin-top: 5px;">
+          <input type="email" placeholder="Email" class="inputfield" formControlName="email">
+          <div class="error-msg" *ngIf="fab.email.invalid && (fab.email.dirty || fab.email.touched)">
+            <div *ngIf="fab.email.errors?.required">
+              Email is required.
+            </div>
+            <div *ngIf="fab.email.errors?.email">
+              Email Should be Valid.
             </div>
           </div>
         </div>

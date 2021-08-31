@@ -5,8 +5,10 @@ import { Injectable } from '@angular/core';
 })
 export class CredentialService {
 
+  
 
   apiUrl:string;
+  headerDict:any;
 
   userLoggedIn = false;
 
@@ -14,6 +16,12 @@ export class CredentialService {
   userNameInitial = '';
 
   constructor() {
+    this.headerDict = {
+      'Content-Type': 'application/json',
+      'Accept': 'application/json',
+      'Access-Control-Allow-Headers': 'Content-Type',
+      'Authorization': 'null'
+    }
     this.setUserNameInitial();
     this.apiUrl = "http://localhost:8000/";
   }

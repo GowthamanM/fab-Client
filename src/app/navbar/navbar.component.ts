@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { AuthService } from '../auth/auth.service';
 import { CredentialService } from '../services/credential.service';
 
 @Component({
@@ -16,7 +18,9 @@ export class NavbarComponent implements OnInit {
   userName = '';
   userNameInitial = '';
 
-  constructor(private credentialService: CredentialService) {
+  constructor(private credentialService: CredentialService,
+    private authService:AuthService,
+    private router:Router) {
   }
 
   ngOnInit(): void {
@@ -50,7 +54,7 @@ export class NavbarComponent implements OnInit {
   }
 
   checkLogin() {
-    this.isLoggedIn = this.credentialService.userLoggedIn;
+    this.isLoggedIn = this.authService.getAuthStatus();
   }
 
   successUser() {
@@ -59,6 +63,9 @@ export class NavbarComponent implements OnInit {
   }
 
   logout() {
-    this.credentialService.logOut();
+    localStorage.setItem('authStatus','false');
+    localStorage.setItem('userToken','null');
+    this.isLoggedIn = this.authService.getAuthStatus();
+    this.router.navigateByUrl('');
   }
 }
