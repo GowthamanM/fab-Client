@@ -42,7 +42,7 @@ export class FemaleQuizService {
       this.authService.decodeToken().subscribe(data=>{
         this.uid = JSON.parse(JSON.stringify(data)).payload.id;
         console.log(this.uid);
-      }) 
+      })
   }
 
   Tops:any = [
@@ -407,7 +407,7 @@ export class FemaleQuizService {
     this.femaleData.tops.size = this.topsAns[0] === ''?'null':this.topsAns[0];
     this.femaleData.tops.price = this.topsAns[1] === ''?'null':this.topsAns[1];
     this.femaleData.tops.pattern = this.topsAns[2] === ''?'null':this.topsAns[2];
-    
+
 
     this.femaleData.kurthis = {};
     this.femaleData.kurthis.size = this.kurthisAns[0] === ''?'null':this.kurthisAns[0];
@@ -428,21 +428,73 @@ export class FemaleQuizService {
     this.femaleData.blazersAndWhiteCoats.size = this.blazzersAns[0] === ''?'null':this.blazzersAns[0];
     this.femaleData.blazersAndWhiteCoats.price = this.blazzersAns[1] === ''?'null':this.blazzersAns[1];
     this.femaleData.blazersAndWhiteCoats.pattern = this.blazzersAns[2] === ''?'null':this.blazzersAns[2];
-  
+
     this.femaleData.lehanga = {};
     this.femaleData.lehanga.type = this.lehangaAns[0] === ''?'null':this.lehangaAns[0];
     this.femaleData.lehanga.size = this.lehangaAns[1] === ''?'null':this.lehangaAns[1];
     this.femaleData.lehanga.price = this.lehangaAns[2] === ''?'null':this.lehangaAns[2];
     this.femaleData.lehanga.pattern = this.lehangaAns[3] === ''?'null':this.lehangaAns[3];
-  
+
+    this.femaleData.sweatShirts = {};
+    this.femaleData.sweatShirts.size = this.sweatshirtsAns[0] === ''?'null':this.sweatshirtsAns[0];
+    this.femaleData.sweatShirts.price = this.sweatshirtsAns[1] === ''?'null':this.sweatshirtsAns[1];
+    this.femaleData.sweatShirts.pattern = this.sweatshirtsAns[2] === ''?'null':this.sweatshirtsAns[2];
+
+    this.femaleData.sweaters = {};
+    this.femaleData.sweaters.size = this.sweatersAns[0] === ''?'null':this.sweatersAns[0];
+    this.femaleData.sweaters.price = this.sweatersAns[1] === ''?'null':this.sweatersAns[1];
+    this.femaleData.sweaters.pattern = this.sweatersAns[2] === ''?'null':this.sweatersAns[2];
+
+    this.femaleData.leggings = {};
+    this.femaleData.leggings.size = this.leggingsAns[0] === ''?'null':this.leggingsAns[0];
+    this.femaleData.leggings.price = this.leggingsAns[1] === ''?'null':this.leggingsAns[1];
+    this.femaleData.leggings.pattern = this.leggingsAns[2] === ''?'null':this.leggingsAns[2];
+    this.femaleData.leggings.fabricType = this.leggingsAns[3] === ''?'null':this.leggingsAns[3];
+
+    this.femaleData.jeans = {};
+    this.femaleData.jeans.size = this.jeansAns[0] === ''?'null':this.jeansAns[0];
+    this.femaleData.jeans.price = this.jeansAns[1] === ''?'null':this.jeansAns[1];
+    this.femaleData.jeans.pattern = this.jeansAns[2] === ''?'null':this.jeansAns[2];
+    this.femaleData.jeans.waistRaise = this.jeansAns[3] === ''?'null':this.jeansAns[3];
+
+    this.femaleData.jeggings = {};
+    this.femaleData.jeggings.size = this.jeggingsAns[0] === ''?'null':this.jeggingsAns[0];
+    this.femaleData.jeggings.price = this.jeggingsAns[1] === ''?'null':this.jeggingsAns[1];
+    this.femaleData.jeggings.pattern = this.jeggingsAns[2] === ''?'null':this.jeggingsAns[2];
+    this.femaleData.jeggings.fabricType = this.jeggingsAns[3] === ''?'null':this.jeggingsAns[3];
+
+    this.femaleData.skirts = {};
+    this.femaleData.skirts.size = this.skirtAns[0] === ''?'null':this.skirtAns[0];
+    this.femaleData.skirts.price = this.skirtAns[1] === ''?'null':this.skirtAns[1];
+    this.femaleData.skirts.pattern = this.skirtAns[2] === ''?'null':this.skirtAns[2];
+    this.femaleData.skirts.fabric = this.skirtAns[3] === ''?'null':this.skirtAns[3];
+    this.femaleData.skirts.fabricType = this.skirtAns[4] === ''?'null':this.skirtAns[4];
+    this.femaleData.skirts.skirtType = this.skirtAns[5] === ''?'null':this.skirtAns[5];
+
+    this.femaleData.trousers = {};
+    this.femaleData.trousers.size = this.trousersAns[0] === ''?'null':this.trousersAns[0];
+    this.femaleData.trousers.price = this.trousersAns[1] === ''?'null':this.trousersAns[1];
+    this.femaleData.trousers.pattern = this.trousersAns[2] === ''?'null':this.trousersAns[2];
+    this.femaleData.trousers.fit = this.trousersAns[3] === ''?'null':this.trousersAns[3];
+    this.femaleData.trousers.fabric = this.trousersAns[4] === ''?'null':this.trousersAns[4];
+    this.femaleData.trousers.trouserType = this.trousersAns[5] === ''?'null':this.trousersAns[5];
+    this.femaleData.trousers.typeOfPleat = this.trousersAns[6] === ''?'null':this.trousersAns[6];
+    this.femaleData.trousers.waistRaise = this.trousersAns[7] === ''?'null':this.trousersAns[7];
+
+    this.femaleData.sportswear = {};
+    this.femaleData.sportswear.type = this.sportswearAns[0] === ''?'null':this.sportswearAns[0];
+
+    this.femaleData.innerwear = {};
+    this.femaleData.innerwear.type = this.innerwearAns[0] === ''?'null':this.innerwearAns[0];
+    this.femaleData.innerwear.size = this.innerwearAns[1] === ''?'null':this.innerwearAns[1];
   }
 
   saveFemaleData(){
-    
+
     var header = {
       headers: new HttpHeaders()
       .set('Authorization',  `bearer ${(this.authService.getToken())}`)
-    } 
+    }
     this.femaleData.userId = this.uid;
     console.log(JSON.parse(JSON.stringify(this.femaleData)));
     return this.http.post(this.apiUrl+"fq",JSON.parse(JSON.stringify(this.femaleData)));
