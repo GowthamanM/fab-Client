@@ -27,7 +27,7 @@
       <a routerLink="/quiz" class="fab-btn fab-btn-filled" *ngIf="isLoggedIn">Take Quiz</a>
       <a routerLink="/login" class="fab-btn fab-ml-10" *ngIf="!isLoggedIn">Sign In</a>
       <a routerLink="/login" class="fab-btn fab-ml-10" *ngIf="isLoggedIn" (click)="logout()">Log Out</a>
-      <a class="profile-batch fab-ml-10" [title]="userName" *ngIf="isLoggedIn">{{userNameInitial}}</a>
+      <!-- <a class="profile-batch fab-ml-10" [title]="userName" *ngIf="isLoggedIn">{{userNameInitial}}</a> -->
     </div>
   </div>
 
@@ -38,7 +38,7 @@
       </a>
       <div class="fab-client-action">
         <a routerLink="/quiz" class="fab-btn fab-btn-filled" *ngIf="isLoggedIn">Take Quiz</a>
-        <!-- <a class="profile-batch fab-ml-10" [title]="userName" *ngIf="isLoggedIn">{{userNameInitial}}</a> -->
+        <a class="profile-batch fab-ml-10" [title]="userName" *ngIf="isLoggedIn">{{userNameInitial}}</a>
         <div class="hamburger-icon fab-ml-10" (click) = "showhideNavbar()">
           <span></span>
           <span></span>
