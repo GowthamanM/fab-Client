@@ -1,4 +1,7 @@
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { AuthService } from '../auth/auth.service';
+import { CredentialService } from './credential.service';
 
 @Injectable({
   providedIn: 'root'
@@ -8,6 +11,10 @@ export class KidsQuizService {
   selectionArray:any = [];
   selectedQuiz:any = [];
 
+  uid:any;
+  apiUrl:string;
+  kidsData:any = {};
+
   bodysuitAns:any = ['','',''];
   tshirtAns:any = ['','',''];
   dressAns:any = ['','',''];
@@ -16,7 +23,15 @@ export class KidsQuizService {
   shortsAns:any = ['','',''];
   kurthisAns:any = ['','',''];
 
-  constructor() { }
+  constructor(private credentials:CredentialService,
+    private authService:AuthService,
+    private http:HttpClient) {
+    this.apiUrl = this.credentials.apiUrl;
+      this.authService.decodeToken().subscribe(data=>{
+        this.uid = JSON.parse(JSON.stringify(data)).payload.id;
+        console.log(this.uid);
+      }) 
+  }
 
   BodySuit:any = [
     [
@@ -146,6 +161,33 @@ export class KidsQuizService {
     Kurthi Answers : ${this.kurthisAns}.
     `;
     alert(message);
+  }
+
+  setKidsData(){
+    
+    this.kidsData.bodysuit = {};
+    this.kidsData.bodysuit.size = this.bodysuitAns[0] === ''?'null':this.bodysuitAns[0];
+    this.kidsData.bodysuit.price = this.bodysuitAns[1] === ''?'null':this.bodysuitAns[1];
+    this.kidsData.bodysuit.pattern = this.bodysuitAns[2] === ''?'null':this.bodysuitAns[2];
+
+  }
+  getUid(){
+
+    
+  }
+
+
+
+
+  saveKidsData(){
+    
+    var header = {
+      headers: new HttpHeaders()
+      .set('Authorization',  `bearer ${(this.authService.getToken())}`)
+    } 
+    this.kidsData.userId = this.uid;
+    console.log(JSON.parse(JSON.stringify(this.kidsData)));
+    return this.http.post(this.apiUrl+"mq",JSON.parse(JSON.stringify(this.kidsData)));
   }
 
 }
