@@ -35,7 +35,7 @@ export class MaleQuizService {
       'Shirt','Size (Chest)', ['39','40','41','42','43']
     ],
     [
-      'Shirt','Size (S | M | L)', ['S','M','L','XL','XXL']
+      'Shirt','Size', ['S','M','L','XL','XXL']
     ],
     [
       
@@ -114,7 +114,7 @@ export class MaleQuizService {
       'Blazer','Size (Chest)', ['39','40','41','42','43']
     ],
     [
-      'Blazer','Size (S | M | L)', ['S','M','L','XL','XXL']
+      'Blazer','Size', ['S','M','L','XL','XXL']
     ],
     [
       'Blazer','Fit', ['Skinny'	,'Slim'	,'Regular'	,'Boot cut'	,'Flared'	,'Jogger'	,'Relaxecd fit'	,'Straight' 	,'Super skinny fit'	,'Tappered fit']
