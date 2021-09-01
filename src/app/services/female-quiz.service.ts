@@ -1,9 +1,17 @@
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { AuthService } from '../auth/auth.service';
+import { CredentialService } from './credential.service';
 
 @Injectable({
   providedIn: 'root'
 })
 export class FemaleQuizService {
+
+
+  femaleData:any = {};
+  apiUrl:string;
+  uid:any;
 
   selectionArray:any = [];
   selectedQuiz:any = [];
@@ -27,7 +35,15 @@ export class FemaleQuizService {
   sportswearAns:any = [''];
   innerwearAns:any = ['',''];
 
-  constructor() { }
+  constructor(private credentials:CredentialService,
+    private authService:AuthService,
+    private http:HttpClient) {
+    this.apiUrl = this.credentials.apiUrl;
+      this.authService.decodeToken().subscribe(data=>{
+        this.uid = JSON.parse(JSON.stringify(data)).payload.id;
+        console.log(this.uid);
+      }) 
+  }
 
   Tops:any = [
     [
@@ -384,6 +400,52 @@ export class FemaleQuizService {
     Inner Answers : ${this.innerwearAns}.
     `;
     alert(message);
+  }
+
+  setFemaleData(){
+    this.femaleData.tops = {};
+    this.femaleData.tops.size = this.topsAns[0] === ''?'null':this.topsAns[0];
+    this.femaleData.tops.price = this.topsAns[1] === ''?'null':this.topsAns[1];
+    this.femaleData.tops.pattern = this.topsAns[2] === ''?'null':this.topsAns[2];
+    
+
+    this.femaleData.kurthis = {};
+    this.femaleData.kurthis.size = this.kurthisAns[0] === ''?'null':this.kurthisAns[0];
+    this.femaleData.kurthis.price = this.kurthisAns[1] === ''?'null':this.kurthisAns[1];
+    this.femaleData.kurthis.pattern = this.kurthisAns[2] === ''?'null':this.kurthisAns[2];
+
+    this.femaleData.saree = {};
+    this.femaleData.saree.price = this.topsAns[0] === ''?'null':this.topsAns[0];
+    this.femaleData.saree.pattern = this.topsAns[1] === ''?'null':this.topsAns[1];
+
+
+    this.femaleData.jackets = {};
+    this.femaleData.jackets.size = this.jacketsAns[0] === ''?'null':this.jacketsAns[0];
+    this.femaleData.jackets.price = this.jacketsAns[1] === ''?'null':this.jacketsAns[1];
+    this.femaleData.jackets.pattern = this.jacketsAns[2] === ''?'null':this.jacketsAns[2];
+
+    this.femaleData.blazersAndWhiteCoats = {};
+    this.femaleData.blazersAndWhiteCoats.size = this.blazzersAns[0] === ''?'null':this.blazzersAns[0];
+    this.femaleData.blazersAndWhiteCoats.price = this.blazzersAns[1] === ''?'null':this.blazzersAns[1];
+    this.femaleData.blazersAndWhiteCoats.pattern = this.blazzersAns[2] === ''?'null':this.blazzersAns[2];
+  
+    this.femaleData.lehanga = {};
+    this.femaleData.lehanga.type = this.lehangaAns[0] === ''?'null':this.lehangaAns[0];
+    this.femaleData.lehanga.size = this.lehangaAns[1] === ''?'null':this.lehangaAns[1];
+    this.femaleData.lehanga.price = this.lehangaAns[2] === ''?'null':this.lehangaAns[2];
+    this.femaleData.lehanga.pattern = this.lehangaAns[3] === ''?'null':this.lehangaAns[3];
+  
+  }
+
+  saveFemaleData(){
+    
+    var header = {
+      headers: new HttpHeaders()
+      .set('Authorization',  `bearer ${(this.authService.getToken())}`)
+    } 
+    this.femaleData.userId = this.uid;
+    console.log(JSON.parse(JSON.stringify(this.femaleData)));
+    return this.http.post(this.apiUrl+"fq",JSON.parse(JSON.stringify(this.femaleData)));
   }
 
 }
