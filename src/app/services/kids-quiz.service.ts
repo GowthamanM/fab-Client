@@ -30,7 +30,7 @@ export class KidsQuizService {
       this.authService.decodeToken().subscribe(data=>{
         this.uid = JSON.parse(JSON.stringify(data)).payload.id;
         console.log(this.uid);
-      }) 
+      })
   }
 
   BodySuit:any = [
@@ -164,27 +164,57 @@ export class KidsQuizService {
   }
 
   setKidsData(){
-    
-    this.kidsData.bodysuit = {};
-    this.kidsData.bodysuit.size = this.bodysuitAns[0] === ''?'null':this.bodysuitAns[0];
-    this.kidsData.bodysuit.price = this.bodysuitAns[1] === ''?'null':this.bodysuitAns[1];
-    this.kidsData.bodysuit.pattern = this.bodysuitAns[2] === ''?'null':this.bodysuitAns[2];
+
+    this.kidsData.bodySuit = {};
+    this.kidsData.bodySuit.size = this.bodysuitAns[0] === ''?'null':this.bodysuitAns[0];
+    this.kidsData.bodySuit.price = this.bodysuitAns[1] === ''?'null':this.bodysuitAns[1];
+    this.kidsData.bodySuit.pattern = this.bodysuitAns[2] === ''?'null':this.bodysuitAns[2];
+
+    this.kidsData.tshirts = {};
+    this.kidsData.tshirts.size = this.tshirtAns[0] === ''?'null':this.tshirtAns[0];
+    this.kidsData.tshirts.price = this.tshirtAns[1] === ''?'null':this.tshirtAns[1];
+    this.kidsData.tshirts.pattern = this.tshirtAns[2] === ''?'null':this.tshirtAns[2];
+
+    this.kidsData.dress = {};
+    this.kidsData.dress.size = this.dressAns[0] === ''?'null':this.dressAns[0];
+    this.kidsData.dress.price = this.dressAns[1] === ''?'null':this.dressAns[1];
+    this.kidsData.dress.pattern = this.dressAns[2] === ''?'null':this.dressAns[2];
+
+    this.kidsData.clothingSet = {};
+    this.kidsData.clothingSet.size = this.clothingsetAns[0] === ''?'null':this.clothingsetAns[0];
+    this.kidsData.clothingSet.price = this.clothingsetAns[1] === ''?'null':this.clothingsetAns[1];
+    this.kidsData.clothingSet.pattern = this.clothingsetAns[2] === ''?'null':this.clothingsetAns[2];
+
+    this.kidsData.shirts = {};
+    this.kidsData.shirts.size = this.shirtAns === ''?'null':this.shirtAns[0];
+    this.kidsData.shirts.price = this.shirtAns[1] === ''?'null':this.shirtAns[1];
+    this.kidsData.shirts.pattern = this.shirtAns[2] === ''?'null':this.shirtAns[2];
+
+    this.kidsData.shorts = {};
+    this.kidsData.shorts.size = this.shortsAns[0] === ''?'null':this.shortsAns[0];
+    this.kidsData.shorts.price = this.shortsAns[1] === ''?'null':this.shortsAns[1];
+    this.kidsData.shorts.pattern = this.shortsAns[2] === ''?'null':this.shortsAns[2];
+
+    this.kidsData.kurthis = {};
+    this.kidsData.kurthis.size = this.kurthisAns[0] === ''?'null':this.kurthisAns[0];
+    this.kidsData.kurthis.price = this.kurthisAns[1] === ''?'null':this.kurthisAns[1];
+    this.kidsData.kurthis.pattern = this.kurthisAns[2] === ''?'null':this.kurthisAns[2];
 
   }
   getUid(){
 
-    
+
   }
 
 
 
 
   saveKidsData(){
-    
+
     var header = {
       headers: new HttpHeaders()
       .set('Authorization',  `bearer ${(this.authService.getToken())}`)
-    } 
+    }
     this.kidsData.userId = this.uid;
     console.log(JSON.parse(JSON.stringify(this.kidsData)));
     return this.http.post(this.apiUrl+"mq",JSON.parse(JSON.stringify(this.kidsData)));
