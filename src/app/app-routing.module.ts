@@ -50,6 +50,7 @@ const routes: Routes = [
       { path: 'selection/:id', component: KidsResultComponent}
     ]}
   ],canActivate:[AuthGuard]},
+  
   { path: 'wardrobe', component: WardrobeComponent, children: [
     { path: '', component: ProductsComponent},
     { path: 'liked', component: LikedComponent},
