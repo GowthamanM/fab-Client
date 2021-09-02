@@ -1,4 +1,4 @@
-<main class="login-container">
+<!-- <main class="login-container">
   <div class="row">
     <div class="col-md-7 logo-container">
       <img src="assets/images/fabrae-logo.svg" alt="" class="login-logo">
@@ -19,7 +19,7 @@
           </div>
         </div>
         <div class="fab-form-group" style="margin-top: 5px;">
-          <input type="password" placeholder="Password" class="inputfield" formControlName="password">
+          <input type="password" placeholder="Password"  formControlName="password">
           <div class="error-msg" *ngIf="fab.password.invalid && (fab.password.dirty || fab.password.touched)">
             <div *ngIf="fab.password.errors?.required">
               Password is required.
@@ -27,10 +27,60 @@
           </div>
         </div>
         <input type="submit" name="login" value="Login" class="fab-login-btn fab-mt-30" [disabled]="!loginForm.valid">
-        <!-- <a routerLink="/change-password" class="forgot-ps fab-mt-10">Forgot Password!</a> -->
+        <a routerLink="/change-password" class="forgot-ps fab-mt-10">Forgot Password!</a>
 
         <p class="fab-mt-30">New User? <a routerLink="/sign-up" class="sign-up">Sign Up</a></p>
       </form>
     </div>
   </div>
-</main>
+</main> -->
+
+<div class="login-page">
+
+  <img class="wave" src="../../assets/images/login/wave.png">
+	<div class="container">
+    <div class="img">
+      <img src="../../assets/images/login/login.svg">
+		</div>
+		<div class="login-content">
+      <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+        <img src="../../assets/images/login/avatar.svg">
+				<h2 class="title">Welcome to Fabrae</h2>
+        <div class="input-div one">
+          <div class="i">
+            <i class="fas fa-user"></i>
+          </div>
+          <div class="div">
+            <!-- <h5>Username</h5> -->
+            <input type="email" placeholder="Email" class="inputfield" formControlName="email">
+          </div>
+        </div>
+        <div class="error-msg" *ngIf="fab.email.invalid && (fab.email.dirty || fab.email.touched)">
+          <div *ngIf="fab.email.errors?.required">
+            Email is required.
+          </div>
+          <div *ngIf="fab.email.errors?.email">
+            Email Should be Valid.
+          </div>
+        </div>
+        <div class="input-div pass">
+          <div class="i"> 
+            <i class="fas fa-lock"></i>
+          </div>
+          <div class="div">
+            <!-- <h5>Password</h5> -->
+            <input type="password" placeholder="Password"  formControlName="password">
+          </div>
+        </div>
+        <div class="error-msg" *ngIf="fab.password.invalid && (fab.password.dirty || fab.password.touched)">
+          <div *ngIf="fab.password.errors?.required">
+            Password is required.
+          </div>
+        </div>
+        <!-- <a href="#">Forgot Password?</a> -->
+        <input type="submit" name="login" value="Login" class="btn" [disabled]="!loginForm.valid">
+        <!-- <input type="submit" class="btn" (click)="onSubmit()" value="Login"> -->
+      </form>
+    </div>
+  </div>
+</div>

@@ -16,6 +16,10 @@ export class LoginComponent implements OnInit {
   isQuizTaken:boolean=false;
   payload:any={};
 
+  userData:any={};
+  uid:any;
+  pass:any;
+
   constructor(private fb: FormBuilder, private route: Router, private credentialService: CredentialService,
     private loginService:LoginService,
     private quizService:QuizService,
@@ -70,5 +74,7 @@ export class LoginComponent implements OnInit {
       }
     })
   }
+
+  authenticate(){}
 
 }
