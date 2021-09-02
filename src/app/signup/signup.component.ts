@@ -48,29 +48,6 @@ export class SignupComponent implements OnInit {
     confirmPassword: ['', [
       Validators.required,
       this.checkSimilarity
-    ]],
-    // doorNo: ['', [
-    //   Validators.required
-    // ]],
-    // streetName: ['', [
-    //   Validators.required
-    // ]],
-    // city: ['', [
-    //   Validators.required
-    // ]],
-    // state: ['', [
-    //   Validators.required
-    // ]],
-    // pincode: ['', [
-    //   Validators.required,
-    //   Validators.minLength(6),
-    //   Validators.pattern('^[1-9]{1}[0-9]{2}\\s{0,1}[0-9]{3}$')
-    // ]],
-    gender: ['', [
-      Validators.required
-    ]],
-    dob: ['', [
-      Validators.required
     ]]
   });
 
@@ -79,20 +56,20 @@ export class SignupComponent implements OnInit {
   }
 
   onSubmit() {
-    // console.log(JSON.parse(JSON.stringify(this.signupForm.value)));
     
-    this.signupService.addUser(this.internalService.changeToSignUpModel(JSON.parse(JSON.stringify(this.signupForm.value)))).subscribe((data)=>{
-      this.responseData = JSON.parse(JSON.stringify(data));
-      console.log(this.responseData);
+    this.signupService.addUser(this.internalService.changeToSignUpModel(JSON.parse(JSON.stringify(this.signupForm.value)))).subscribe((resp)=>{
+      this.responseData = JSON.parse(JSON.stringify(resp.body));
       
-      if((this.responseData.message === "User Successfully created")){
-        this.route.navigateByUrl('login');
+      if((this.responseData.message.message === "User Successfully created")){
+        localStorage.setItem('userToken',resp.headers.get('token')+"");
+        localStorage.setItem('authStatus','true');
+        localStorage.setItem('uid',this.responseData.message.userId+"");
+        this.route.navigateByUrl('/sign-up-quiz');
       }else if(this.responseData.message === "Email Address Already Exists"){
         alert(this.responseData.message);
       }
       
     });
-    // console.log(this.internalService.changeToSignUpModel(JSON.parse(JSON.stringify(this.signupForm.value))));
   }
 
 }

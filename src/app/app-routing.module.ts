@@ -19,6 +19,7 @@ import { MaleResultComponent } from './quiz/male/male-result/male-result.compone
 import { MaleComponent } from './quiz/male/male.component';
 import { QuizComponent } from './quiz/quiz.component';
 import { RefundPolicyComponent } from './refund-policy/refund-policy.component';
+import { SignUpQuizComponent } from './sign-up-quiz/sign-up-quiz.component';
 import { SignupComponent } from './signup/signup.component';
 import { SubscriptionComponent } from './subscription/subscription.component';
 import { TermsOfServiceComponent } from './terms-of-service/terms-of-service.component';
@@ -31,6 +32,7 @@ const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'login', component: LoginComponent },
   { path: 'sign-up', component: SignupComponent },
+  {path:'sign-up-quiz',component:SignUpQuizComponent},
   { path: 'change-password', component: ForgotPasswordComponent},
   { path: 'profile', component: ProfileComponent },
   { path: 'quiz', component: QuizComponent, children: [

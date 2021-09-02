@@ -39,6 +39,7 @@ import { FemaleResultComponent } from './quiz/female/female-result/female-result
 import { KidsResultComponent } from './quiz/kids/kids-result/kids-result.component';
 import { SubscriptionComponent } from './subscription/subscription.component';
 import { RazorpayComponent } from './razorpay/razorpay.component';
+import { SignUpQuizComponent } from './sign-up-quiz/sign-up-quiz.component';
 
 @NgModule({
   declarations: [
@@ -73,7 +74,8 @@ import { RazorpayComponent } from './razorpay/razorpay.component';
     FemaleResultComponent,
     KidsResultComponent,
     SubscriptionComponent,
-    RazorpayComponent
+    RazorpayComponent,
+    SignUpQuizComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'serverApp' }),

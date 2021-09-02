@@ -16,7 +16,7 @@ export class SignupService {
     }
   
     addUser(data:any){
-      return this.http.post(this.apiurl+"auth/signup",data);
+      return this.http.post(this.apiurl+"auth/signup",data,{observe: 'response'});
     }
 
 }
