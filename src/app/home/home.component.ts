@@ -16,11 +16,7 @@ export class HomeComponent implements OnInit {
   constructor(private credentialService: CredentialService, private route: Router,
     private authService:AuthService) { }
 
-  ngOnInit(): void {
-   this.authService.decodeToken().subscribe(data=>{
-     this.payload = JSON.parse(JSON.stringify(data));
-     localStorage.setItem('uid',this.payload.payload.id+"");
-   }) 
+  ngOnInit(): void { 
   }
 
   takeToQuiz() {

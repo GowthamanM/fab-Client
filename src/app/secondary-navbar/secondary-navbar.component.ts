@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CredentialService } from '../services/credential.service';
+import { UserService } from '../services/user.service';
 
 @Component({
   selector: 'app-secondary-navbar',
@@ -11,7 +12,8 @@ export class SecondaryNavbarComponent implements OnInit {
   userName = '';
   userNameInitial = '';
 
-  constructor(private credentialService: CredentialService) {
+  constructor(private credentialService: CredentialService,
+    private userService:UserService) {
   }
 
   ngOnInit(): void {
@@ -19,8 +21,10 @@ export class SecondaryNavbarComponent implements OnInit {
   }
 
   successUser() {
-    this.userName = this.credentialService.userName;
-    this.userNameInitial = this.credentialService.userNameInitial;
+    this.userService.getUserData().subscribe((data)=>{
+      this.userName = data.User.fullName;
+      this.userNameInitial =  data.User.fullName.charAt(0);
+    });
   }
 
 }

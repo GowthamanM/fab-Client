@@ -1,25 +1,27 @@
-import { HttpClient ,HttpHeaders } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
 import { AuthService } from '../auth/auth.service';
 import { CredentialService } from './credential.service';
 
 @Injectable({
   providedIn: 'root'
 })
-export class LoginService {
+export class QuizService {
 
   apiUrl:string;
-  payload:any;
 
   constructor(
-    private credential:CredentialService,
     private http:HttpClient,
+    private credentials:CredentialService,
     private authService:AuthService
   ) {
-    this.apiUrl = this.credential.apiUrl;
+    this.apiUrl = this.credentials.apiUrl;
   }
 
-  userLogin(data:any){
-    return this.http.post(this.apiUrl+"auth/login",data,{observe: 'response'});
+  isQuizTaken(){
+    
+    return this.http.get(this.apiUrl+"check/touchquiz/"+this.authService.getUid());
   }
+
 }

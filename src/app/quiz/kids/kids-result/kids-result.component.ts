@@ -63,7 +63,9 @@ export class KidsResultComponent implements OnInit {
 
   onSubmit() {
     this.kidsQuizService.setAnswers(this.bodysuitAns, this.tshirtAns, this.dressAns, this.clothingsetAns, this.shirtAns, this.shortsAns, this.kurthisAns);
-    this.kidsQuizService.viewAnswerAlert();
+    // this.kidsQuizService.viewAnswerAlert();
+
+    this.kidsQuizService.saveKidsData().subscribe();
     this.route.navigate(['wardrobe']);
   }
 

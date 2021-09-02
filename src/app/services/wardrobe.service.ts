@@ -24,11 +24,11 @@ export class WardrobeService {
     this.authService.decodeToken().subscribe(data=>{
       this.uid = JSON.parse(JSON.stringify(data)).payload.id+"";
       console.log(this.uid);
-      this.getPreferenceByUid().subscribe(data=>{
-        this.data = data;
-        console.log(this.data);
+      // this.getPreferenceByUid().subscribe(data=>{
+      //   this.data = data;
+      //   console.log(this.data);
         
-      });
+      // });
     })
   }
 
@@ -63,14 +63,13 @@ export class WardrobeService {
   // }
 
 
-  getPreferenceByUid():Observable<any>{
-    let id = this.uid;
-    console.log('user ID:'+id);
+  getPreferenceByUid(id:any):Observable<any>{
+    
     return this.http.get(this.apiUrl+"preference/user/"+id);
   }
 
   setData() {
-    this.wardrobeData = this.data.preference.data;
+    // this.wardrobeData = this.data.preference.data;
   }
 
   getData():any {

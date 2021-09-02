@@ -75,7 +75,7 @@ export class FemaleResultComponent implements OnInit {
   onSubmit() {
     this.femaleQuizService.setAnswers(this.topsAns, this.kurthisAns, this.sareeAns, this.jacketsAns, this.blazzersAns, this.lehangaAns, this.sweatshirtsAns, this.sweatersAns, this.leggingsAns, this.jeansAns, this.jeggingsAns, this.skirtAns, this.trousersAns, this.flatsFootAns, this.casualFootAns, this.heelsFootAns, this.sportswearAns, this.innerwearAns);
     this.femaleQuizService.setFemaleData();
-    this.femaleQuizService.saveFemaleData();
+    this.femaleQuizService.saveFemaleData().subscribe();
     this.route.navigate(['wardrobe']);
   }
 

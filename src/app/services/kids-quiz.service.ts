@@ -151,6 +151,7 @@ export class KidsQuizService {
     this.shirtAns = shirtData;
     this.shortsAns = shortData;
     this.kurthisAns = kurthiData;
+    this.setKidsData();
   }
 
   viewAnswerAlert() {
@@ -210,14 +211,14 @@ export class KidsQuizService {
 
 
   saveKidsData(){
-
+    this.setKidsData();
     var header = {
       headers: new HttpHeaders()
       .set('Authorization',  `bearer ${(this.authService.getToken())}`)
     }
     this.kidsData.userId = this.uid;
     console.log(JSON.parse(JSON.stringify(this.kidsData)));
-    return this.http.post(this.apiUrl+"mq",JSON.parse(JSON.stringify(this.kidsData)));
+    return this.http.post(this.apiUrl+"kq",JSON.parse(JSON.stringify(this.kidsData)));
   }
 
 }

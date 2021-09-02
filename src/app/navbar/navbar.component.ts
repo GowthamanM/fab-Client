@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthService } from '../auth/auth.service';
 import { CredentialService } from '../services/credential.service';
+import { UserService } from '../services/user.service';
 
 @Component({
   selector: 'app-navbar',
@@ -12,6 +13,7 @@ export class NavbarComponent implements OnInit {
 
   navActive: boolean = false;
   bodyContent = document.querySelector('body');
+  userData:any;
 
   isLoggedIn = false;
 
@@ -20,7 +22,9 @@ export class NavbarComponent implements OnInit {
 
   constructor(private credentialService: CredentialService,
     private authService:AuthService,
-    private router:Router) {
+    private router:Router,
+    private userService:UserService
+    ) {
   }
 
   ngOnInit(): void {
@@ -58,13 +62,18 @@ export class NavbarComponent implements OnInit {
   }
 
   successUser() {
-    this.userName = this.credentialService.userName;
-    this.userNameInitial = this.credentialService.userNameInitial;
+    this.userService.getUserData().subscribe((data)=>{
+      
+      
+      this.userName = data.User.fullName;
+      this.userNameInitial =  data.User.fullName.charAt(0);
+    });
   }
 
   logout() {
     localStorage.setItem('authStatus','false');
     localStorage.setItem('userToken','null');
+    localStorage.setItem('uid','null');
     this.isLoggedIn = this.authService.getAuthStatus();
     this.router.navigateByUrl('');
   }

@@ -493,11 +493,12 @@ export class FemaleQuizService {
 
     var header = {
       headers: new HttpHeaders()
-      .set('Authorization',  `bearer ${(this.authService.getToken())}`)
+      // .set('Authorization',  `bearer ${(this.authService.getToken())}`)
+      .set('Content-Type','application/json')
     }
     this.femaleData.userId = this.uid;
     console.log(JSON.parse(JSON.stringify(this.femaleData)));
-    return this.http.post(this.apiUrl+"fq",JSON.parse(JSON.stringify(this.femaleData)));
+    return this.http.post(this.apiUrl+"fq",JSON.parse(JSON.stringify(this.femaleData)),header);
   }
 
 }

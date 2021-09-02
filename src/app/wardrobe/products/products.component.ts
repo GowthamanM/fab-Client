@@ -13,14 +13,21 @@ export class ProductsComponent implements OnInit {
 
   data:any = [];
   userTrue: boolean = false;
+  uid:any;
 
   constructor(private wardrobeService: WardrobeService, private credentialService: CredentialService,
     private authService:AuthService) { }
 
   ngOnInit(): void {
     this.wardrobeService.showData();
-    this.data = this.wardrobeService.getData();
-    console.log(this.data);
+    this.uid = this.authService.getUid();
+    this.wardrobeService.getPreferenceByUid(this.uid).subscribe(data=>{
+      let temp = data;
+      this.data = temp.preference.data;
+      
+    })
+    // this.data = this.wardrobeService.getData();
+    // console.log(this.data);
     this.userTrue = this.authService.getAuthStatus();
     window.scrollTo(0, 0);
   }
