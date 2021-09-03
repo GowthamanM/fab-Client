@@ -24,10 +24,28 @@
       </ul>
     </nav>
     <div class="fab-client-action">
-      <a routerLink="/quiz" class="fab-btn fab-btn-filled" *ngIf="isLoggedIn">Take Quiz</a>
+      <!-- <a routerLink="/quiz" class="fab-btn fab-btn-filled" *ngIf="isLoggedIn">Take Quiz</a> -->
       <a routerLink="/login" class="fab-btn fab-ml-10" *ngIf="!isLoggedIn">Sign In</a>
-      <a routerLink="/login" class="fab-btn fab-ml-10" *ngIf="isLoggedIn" (click)="logout()">Log Out</a>
-      <a class="profile-batch fab-ml-10" *ngIf="isLoggedIn">{{userNameInitial}}</a>
+      <!-- <a routerLink="/login" class="fab-btn fab-ml-10" *ngIf="isLoggedIn" (click)="logout()">Log Out</a> -->
+      <div class="profile">
+        <a class="profile-batch fab-ml-10" *ngIf="isLoggedIn" (click)="profilePopup()">{{userNameInitial}}</a>
+        <div class="menu-popup">
+          <ul>
+            <li>
+              Men Quiz
+            </li>
+            <li class="fab-mt-10">
+              Female Quiz
+            </li>
+            <li class="fab-mt-10">
+              Kids Quiz
+            </li>
+            <li class="fab-mt-10" (click)="logout()" style="color: #0F5860; font-weight: bold; border-top: 1px solid #15B793;padding-top: 10  px;">
+              Logout
+            </li>
+          </ul>
+        </div>
+      </div>
     </div>
   </div>
 
@@ -37,12 +55,31 @@
         <img src="assets/images/brand-logo.png" alt="Fabrae Brand Logo">
       </a>
       <div class="fab-client-action">
-        <a routerLink="/quiz" class="fab-btn fab-btn-filled" *ngIf="isLoggedIn">Take Quiz</a>
-        <a class="profile-batch fab-ml-10" [title]="userName" *ngIf="isLoggedIn">{{userNameInitial}}</a>
+        <!-- <a routerLink="/quiz" class="fab-btn fab-btn-filled" *ngIf="isLoggedIn">Take Quiz</a> -->
+        <!-- <a class="profile-batch fab-ml-10" [title]="userName" *ngIf="isLoggedIn">{{userNameInitial}}</a> -->
         <div class="hamburger-icon fab-ml-10" (click) = "showhideNavbar()">
           <span></span>
           <span></span>
           <span></span>
+        </div>
+        <div class="profile">
+          <a class="profile-batch fab-ml-10" *ngIf="isLoggedIn" (click)="profilePopupMD()">{{userNameInitial}}</a>
+          <div class="menu-popup-md">
+            <ul>
+              <li>
+                Men Quiz
+              </li>
+              <li class="fab-mt-10">
+                Female Quiz
+              </li>
+              <li class="fab-mt-10">
+                Kids Quiz
+              </li>
+              <li class="fab-mt-10" (click)="logout()" style="color: #0F5860; font-weight: bold; border-top: 1px solid #15B793; padding-top: 10px;">
+                Logout
+              </li>
+            </ul>
+          </div>
         </div>
       </div>
     </div>

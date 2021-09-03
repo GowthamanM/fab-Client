@@ -6,7 +6,7 @@ import { Injectable } from '@angular/core';
 })
 export class CredentialService {
 
-  
+
 
   apiUrl:string;
   headerDict:any;
@@ -26,7 +26,7 @@ export class CredentialService {
       'Authorization': 'null'
     }
     this.setUserNameInitial();
-    this.apiUrl = "http://localhost:8000/";
+    this.apiUrl = "https://backend.fabrae.com/";
   }
 
   setUserNameInitial() {
