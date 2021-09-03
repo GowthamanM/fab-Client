@@ -1,6 +1,15 @@
 <app-secondary-navbar></app-secondary-navbar>
 <main>
-    <section class="header">
+    <section class="header container">
         <h1 class="questions">How do you Love Shopping?</h1>
+
+        <div class="quiz-options fab-mt-30">
+          <a class="fab-btn" [ngClass]="{'fab-btn-filled': activeSelection.option1}" (click)="activeSelection.option1 = !activeSelection.option1">Option 1</a>
+          <a class="fab-btn" [ngClass]="{'fab-btn-filled': activeSelection.option1}" (click)="activeSelection.option1 = !activeSelection.option1">Option 2</a>
+          <a class="fab-btn" [ngClass]="{'fab-btn-filled': activeSelection.option1}" (click)="activeSelection.option1 = !activeSelection.option1">Option 3</a>
+          <a class="fab-btn" [ngClass]="{'fab-btn-filled': activeSelection.option1}" (click)="activeSelection.option1 = !activeSelection.option1">Option 4</a>
+          <a class="fab-btn" [ngClass]="{'fab-btn-filled': activeSelection.option1}" (click)="activeSelection.option1 = !activeSelection.option1">Option 5</a>
+
+        </div>
     </section>
 </main>

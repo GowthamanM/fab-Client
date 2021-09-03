@@ -51,6 +51,10 @@
 
 // Profile Batch
 
+.profile {
+  position: relative;
+}
+
 .profile-batch {
   display: inline-block;
   height: 32px;
@@ -62,4 +66,27 @@
   border-radius: 50%;
   opacity: 0.9;
   cursor: pointer;
+}
+
+
+.menu-popup {
+  position: absolute;
+  background-color: white;
+  color: black;
+  right: 0;
+  top: 35px;
+  min-width: 120px;
+  padding: 15px;
+  border-radius: 5px;
+  display: none;
+  font-size: 14px;
+  box-shadow: 0px 0px 5px rgba(0,0,0,0.2);
+}
+
+.menu-popup li {
+  cursor: pointer;
+}
+
+.fab-pro-active {
+  display: block;
 }

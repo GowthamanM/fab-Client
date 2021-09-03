@@ -5,7 +5,26 @@
     </a>
 
     <div class="fab-client-action">
-      <a class="profile-batch fab-ml-10" [title]="userName">{{userNameInitial}}</a>
+      <!-- <a class="profile-batch fab-ml-10" [title]="userName">{{userNameInitial}}</a> -->
+      <div class="profile">
+        <a class="profile-batch fab-ml-10" (click)="profilePopup()">{{userNameInitial}}</a>
+        <div class="menu-popup">
+          <ul>
+            <li>
+              Men Quiz
+            </li>
+            <li class="fab-mt-10">
+              Female Quiz
+            </li>
+            <li class="fab-mt-10">
+              Kids Quiz
+            </li>
+            <li class="fab-mt-10" (click)="logout()" style="color: #0F5860; font-weight: bold; border-top: 1px solid #15B793;padding-top: 7px;">
+              Logout
+            </li>
+          </ul>
+        </div>
+      </div>
     </div>
   </div>
 </header>

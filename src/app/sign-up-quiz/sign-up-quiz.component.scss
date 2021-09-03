@@ -1,7 +1,44 @@
+@import
+  '/src/assets/Scss/abstracts/variables',
+  '/src/assets/Scss/abstracts/mixins';
+
 .header{
     margin-top: 115px;
 }
 .questions{
     text-align: center;
     // font-weight: 400;
+}
+
+.quiz-options {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+
+  @include media-upto(sm) {
+    flex-direction: column;
+    align-items: center;
+  }
+  .fab-btn {
+    width: 150px;
+    margin-top: 20px;
+    cursor: pointer;
+
+    &:first-child {
+      margin-top: 0px;
+    }
+
+    @include media(sm) {
+      margin-left: 20px;
+      margin-top: 0px;
+
+      &:first-child {
+        margin-left: 0px;
+      }
+    }
+  }
+}
+
+input[type="checkbox"] {
+  // width: 200px!important;
 }
