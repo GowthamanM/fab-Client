@@ -4,25 +4,25 @@
   <section class="wardrobe-product-detail fab-mt-50 fab-mb-50">
     <div class="row">
       <div class="col-md-5 prod-det-img-cont">
-        <img [src]="product[0].photoLink" alt="" class="prod-det-img">
+        <img [src]="product[0]?.photoLink" alt="" class="prod-det-img">
         <!-- <p>hi</p> -->
       </div>
       <div class="col-md-7 prod-det-content">
         <div class="details">
           <h1 class="prd-brand">
-            {{product[0].brand}}
+            {{product[0]?.brand}}
           </h1>
           <p class="prd-name fab-mt-50">
-            {{product[0].productName}}
+            {{product[0]?.productName}}
           </p>
           <p class="prd-desc fab-mt-20">
-            {{product[0].description}}
+            {{product[0]?.description}}
           </p>
           <div class="prd-det fab-mt-30">
-            <p>Size : <span class="prc">{{product[0].size}}</span></p>
-            <p>Price : <span class="prc">&#x20B9;{{product[0].price}}</span></p>
+            <p>Size : <span class="prc">{{product[0]?.size}}</span></p>
+            <p>Price : <span class="prc">&#x20B9;{{product[0]?.price}}</span></p>
           </div>
-          <button class="buy-now fab-mt-60"><a href="{{product[0].productLink}}" target="blank">Buy Now</a></button>
+          <button class="buy-now fab-mt-60"><a href="{{product[0]?.productLink}}" target="blank">Buy Now</a></button>
         </div>
       </div>
     </div>

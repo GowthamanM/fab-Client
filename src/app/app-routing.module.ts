@@ -26,6 +26,7 @@ import { TermsOfServiceComponent } from './terms-of-service/terms-of-service.com
 import { LikedComponent } from './wardrobe/liked/liked.component';
 import { ProductListComponent } from './wardrobe/product-list/product-list.component';
 import { ProductsComponent } from './wardrobe/products/products.component';
+import { WarChoiceComponent } from './wardrobe/war-choice/war-choice.component';
 import { WardrobeComponent } from './wardrobe/wardrobe.component';
 
 const routes: Routes = [
@@ -50,9 +51,10 @@ const routes: Routes = [
       { path: 'selection/:id', component: KidsResultComponent}
     ]}
   ],canActivate:[AuthGuard]},
-  
+
   { path: 'wardrobe', component: WardrobeComponent, children: [
-    { path: '', component: ProductsComponent},
+    { path: '', component: WarChoiceComponent},
+    { path: 'product', component: ProductsComponent},
     { path: 'liked', component: LikedComponent},
     { path: 'product/:id', component: ProductListComponent}
   ],canActivate:[AuthGuard]},
