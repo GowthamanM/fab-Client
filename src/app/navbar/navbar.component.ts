@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { AuthService } from '../auth/auth.service';
 import { CredentialService } from '../services/credential.service';
 import { UserService } from '../services/user.service';
+import { SocialAuthService, GoogleLoginProvider, SocialUser } from 'angularx-social-login';
 
 @Component({
   selector: 'app-navbar',
@@ -14,6 +15,7 @@ export class NavbarComponent implements OnInit {
   navActive: boolean = false;
   bodyContent = document.querySelector('body');
   userData:any;
+  socialUser:any = {};
 
   isLoggedIn = false;
 
@@ -23,7 +25,8 @@ export class NavbarComponent implements OnInit {
   constructor(private credentialService: CredentialService,
     private authService:AuthService,
     private router:Router,
-    private userService:UserService
+    private userService:UserService,
+    private socialAuthService: SocialAuthService
     ) {
   }
 
@@ -74,7 +77,17 @@ export class NavbarComponent implements OnInit {
     localStorage.setItem('authStatus','false');
     localStorage.setItem('userToken','null');
     localStorage.setItem('uid','null');
+    this.socialAuthService.signOut();
     this.isLoggedIn = this.authService.getAuthStatus();
+    this.socialAuthService.authState.subscribe((user) => {
+      this.socialUser = user;
+      if(this.socialUser != null){
+        console.log(this.socialUser);
+      }else{
+        console.log('null');
+        
+      }
+    });
     this.router.navigateByUrl('');
   }
 }

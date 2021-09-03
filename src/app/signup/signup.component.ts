@@ -3,6 +3,7 @@ import { AbstractControl, FormBuilder, ValidationErrors, ValidatorFn, Validators
 import { Router } from '@angular/router';
 import { InternalService } from '../services/internal.service';
 import { SignupService } from '../services/signup.service';
+import { SocialAuthService, GoogleLoginProvider, SocialUser } from 'angularx-social-login';
 
 @Component({
   selector: 'app-signup',
@@ -12,13 +13,20 @@ import { SignupService } from '../services/signup.service';
 export class SignupComponent implements OnInit {
 
   responseData:any={};
+  socialUser:any={};
 
   constructor(private fb: FormBuilder, 
     private route: Router,
     private internalService:InternalService,
-    private signupService:SignupService) { }
+    private signupService:SignupService,
+    private socialAuthService: SocialAuthService) { }
 
   ngOnInit(): void {
+    // this.socialAuthService.authState.subscribe((user) => {
+    //   this.socialUser = user;
+    //   this.isLoggedin = (user != null);
+    //   console.log(this.socialUser);
+    // });
   }
 
   checkSimilarity: ValidatorFn = (control: AbstractControl):ValidationErrors | null => {
@@ -70,6 +78,19 @@ export class SignupComponent implements OnInit {
       }
       
     });
+  }
+
+  loginWithGoogle(): void {
+    this.socialAuthService.signIn(GoogleLoginProvider.PROVIDER_ID);
+    this.socialAuthService.authState.subscribe((user) => {
+      this.socialUser = user;
+      if(this.socialUser != null){
+        console.log(this.socialUser);
+        localStorage.setItem('authStatus','true');
+        this.route.navigateByUrl('');
+      }
+    });
+    
   }
 
 }

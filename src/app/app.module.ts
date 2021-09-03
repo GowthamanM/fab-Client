@@ -40,6 +40,8 @@ import { KidsResultComponent } from './quiz/kids/kids-result/kids-result.compone
 import { SubscriptionComponent } from './subscription/subscription.component';
 import { RazorpayComponent } from './razorpay/razorpay.component';
 import { SignUpQuizComponent } from './sign-up-quiz/sign-up-quiz.component';
+import { SocialLoginModule, SocialAuthServiceConfig } from 'angularx-social-login';
+import { GoogleLoginProvider } from 'angularx-social-login';
 
 @NgModule({
   declarations: [
@@ -82,7 +84,9 @@ import { SignUpQuizComponent } from './sign-up-quiz/sign-up-quiz.component';
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    ReactiveFormsModule,
+    SocialLoginModule
   ],
   providers: [
     {
@@ -90,7 +94,21 @@ import { SignUpQuizComponent } from './sign-up-quiz/sign-up-quiz.component';
       useClass: TokenInterceptorService,
       multi:true
     },
-    AuthGuard
+    AuthGuard,
+    {
+      provide: 'SocialAuthServiceConfig',
+      useValue: {
+        autoLogin: false,
+        providers: [
+          {
+            id: GoogleLoginProvider.PROVIDER_ID,
+            provider: new GoogleLoginProvider(
+              '57391012367-n1n7h2haj775uu9150j0v5meha3v9nvf.apps.googleusercontent.com'
+            )
+          }
+        ]
+      } as SocialAuthServiceConfig,
+    }    
   ],
   bootstrap: [AppComponent]
 })
