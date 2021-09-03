@@ -196,6 +196,7 @@
 
         <input type="submit" name="login" value="Sign Up" class="btn" [disabled]="!signupForm.valid">
         <a routerLink="/login" style="text-align: center;">Already User?</a>
+        <button class="btn" (click)="loginWithGoogle()">Sign Up With Google</button>
       </form>
     </div>
   </div>

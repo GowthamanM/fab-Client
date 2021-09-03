@@ -24,6 +24,7 @@
     "@angular/platform-server": "~12.2.0",
     "@angular/router": "~12.2.0",
     "@nguniversal/express-engine": "^12.1.0",
+    "angularx-social-login": "^3.5.7",
     "express": "^4.15.2",
     "jsonwebtoken": "^8.5.1",
     "localstorage-polyfill": "^1.0.1",

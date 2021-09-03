@@ -12,4 +12,8 @@ export class SubscriptionComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  basicPlan(){
+    
+  }
+
 }
