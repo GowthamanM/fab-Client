@@ -115,7 +115,7 @@ import { CommonQuizComponent } from './quiz/common-quiz/common-quiz.component';
           }
         ]
       } as SocialAuthServiceConfig,
-    }    
+    }
   ],
   bootstrap: [AppComponent],
   schemas:[CUSTOM_ELEMENTS_SCHEMA]
