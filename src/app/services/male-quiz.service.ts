@@ -213,8 +213,15 @@ export class MaleQuizService {
     this.maleData.blazers.pattern = this.blazerAns[4] === ''?'null':this.blazerAns[4];
 
     this.maleData.footwear={};
-    this.maleData.footwear.size = this.footwearAns[0] === ''?'null':this.footwearAns[0];;
+    this.maleData.footwear.size = this.footwearAns[0] === ''?'null':this.footwearAns[0];
+
   }
+  
+  setMaleCommonQuestions(data:any){
+    this.maleData.commonQuestions = data; 
+
+  }
+
   getUid(){
 
     

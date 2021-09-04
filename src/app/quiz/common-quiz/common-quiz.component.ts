@@ -2,6 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder } from '@angular/forms';
 import { Router } from '@angular/router';
 import { CommonQuizService } from 'src/app/services/common-quiz.service';
+import { FemaleQuizService } from 'src/app/services/female-quiz.service';
+import { KidsQuizService } from 'src/app/services/kids-quiz.service';
+import { MaleQuizService } from 'src/app/services/male-quiz.service';
 
 @Component({
   selector: 'app-common-quiz',
@@ -10,7 +13,8 @@ import { CommonQuizService } from 'src/app/services/common-quiz.service';
 })
 export class CommonQuizComponent implements OnInit {
 
-  constructor(private fb: FormBuilder, private route: Router, private commonQuizService: CommonQuizService) { }
+  constructor(private fb: FormBuilder, private route: Router, private commonQuizService: CommonQuizService,
+    private maleQuiz:MaleQuizService,private femaleQuiz:FemaleQuizService,private kidsQuiz:KidsQuizService) { }
 
   selectedOption: any;
 
@@ -51,12 +55,15 @@ export class CommonQuizComponent implements OnInit {
   goNext() {
     this.makeArray();
     if(this.selectedOption == "men") {
+      this.maleQuiz.setMaleCommonQuestions(this.commonQuizAns);
       this.route.navigate(['/quiz/male']);
     }
     else if(this.selectedOption == "women") {
+      this.femaleQuiz.setFemaleCommonQuestions(this.commonQuizAns);
       this.route.navigate(['/quiz/female']);
     }
     else if(this.selectedOption == "kids") {
+      this.kidsQuiz.setKidsCommonQuestions(this.commonQuizAns);
       this.route.navigate(['/quiz/kids']);
     }
   }

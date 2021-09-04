@@ -202,6 +202,12 @@ export class KidsQuizService {
     this.kidsData.kurthis.pattern = this.kurthisAns[2] === ''?'null':this.kurthisAns[2];
 
   }
+
+  setKidsCommonQuestions(data:any){
+    this.kidsData.commonQuestions = data; 
+
+  }
+
   getUid(){
 
 
