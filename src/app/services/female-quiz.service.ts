@@ -487,6 +487,12 @@ export class FemaleQuizService {
     this.femaleData.innerwear = {};
     this.femaleData.innerwear.type = this.innerwearAns[0] === ''?'null':this.innerwearAns[0];
     this.femaleData.innerwear.size = this.innerwearAns[1] === ''?'null':this.innerwearAns[1];
+
+  }
+
+  setFemaleCommonQuestions(data:any){
+    this.femaleData.commonQuestions = data; 
+
   }
 
   saveFemaleData(){
