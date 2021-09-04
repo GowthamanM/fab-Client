@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { UserService } from '../services/user.service';
 
 @Component({
   selector: 'app-wardrobe',
@@ -7,9 +9,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class WardrobeComponent implements OnInit {
 
-  constructor() { }
+  constructor(private userService:UserService,private router:Router) { }
 
   ngOnInit(): void {
+    
   }
 
 }

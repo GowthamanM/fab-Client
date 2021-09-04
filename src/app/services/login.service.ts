@@ -22,4 +22,8 @@ export class LoginService {
   userLogin(data:any){
     return this.http.post(this.apiUrl+"auth/login",data,{observe: 'response'});
   }
+
+  googleUserLogin(data:any){
+    return this.http.post(this.apiUrl+"auth/google/login",data,{observe:'response'});
+  }
 }

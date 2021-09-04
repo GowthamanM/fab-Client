@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { FemaleQuizService } from 'src/app/services/female-quiz.service';
+import { UserService } from 'src/app/services/user.service';
 
 @Component({
   selector: 'app-female-result',
@@ -37,7 +38,8 @@ export class FemaleResultComponent implements OnInit {
   sportswearAns:any = [''];
   innerwearAns:any = ['',''];
 
-  constructor(private activeRoute: ActivatedRoute, private route: Router, private femaleQuizService: FemaleQuizService) { }
+  constructor(private activeRoute: ActivatedRoute, private route: Router, private femaleQuizService: FemaleQuizService,
+    private userService:UserService) { }
 
   ngOnInit(): void {
     this.selection = this.femaleQuizService.selectedQuiz;
@@ -77,7 +79,18 @@ export class FemaleResultComponent implements OnInit {
     this.femaleQuizService.setFemaleData();
     this.femaleQuizService.saveFemaleData().subscribe();
     this.route.navigate(['wardrobe']);
+    this.checkNavigate();
   }
+
+  checkNavigate(){
+    this.userService.getUserData().subscribe(data=>{
+      if(data.User.isSubscribed === true){
+        this.route.navigate(['wardrobe']);
+      }else{
+        this.route.navigate(['subscription']);
+      }
+    })
+}
 
   saveAnswers(ind:any, option:any) {
     if(this.types[this.arrIndex] == "Tops") {

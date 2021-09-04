@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { UserService } from '../services/user.service';
 
 @Component({
   selector: 'app-sign-up-quiz',
@@ -8,6 +9,7 @@ import { Router } from '@angular/router';
 })
 export class SignUpQuizComponent implements OnInit {
 
+  sendData:any={};
   activeSelection = {
     'q1' : {
       'option1': false,
@@ -34,7 +36,9 @@ export class SignUpQuizComponent implements OnInit {
 
   signUpQuizAns:any = ['','',''];
 
-  constructor(private route: Router) { }
+  constructor(private route: Router,
+    private userService:UserService
+    ) { }
 
   ngOnInit(): void {
   }
@@ -173,6 +177,13 @@ export class SignUpQuizComponent implements OnInit {
 
   goNext() {
     console.log(this.signUpQuizAns);
+    this.sendData.commonQuestions = {};
+      this.sendData.commonQuestions.q1 = this.signUpQuizAns[0].charAt(10);
+      this.sendData.commonQuestions.q2 = this.signUpQuizAns[1].charAt(10);
+      this.sendData.commonQuestions.q3 = this.signUpQuizAns[2].charAt(10);
+      this.userService.commonQuizUpdate(this.sendData).subscribe(data=>{
+        console.log(data);
+      })
     // console.log(this.selectionArray);
     this.route.navigate(['quiz']);
   }

@@ -44,8 +44,9 @@
         </div>
         <!-- <a href="#">Forgot Password?</a> -->
         <input type="submit" name="login" value="Login" class="btn" [disabled]="!loginForm.valid">
-        <a routerLink="/sign-up" style="text-align: center;">Click Here for Signup!</a>
-        
+        <button class="btn" (click)="loginWithGoogle()">Sign in with Google</button>
+        <a routerLink="/sign-up" style="text-align: center;">Click here to <span style="color:#38d39f">Signup!</span></a>
+        <div class="error-msg">{{googleErrorResponse}}</div>
       </form>
     </div>
   </div>

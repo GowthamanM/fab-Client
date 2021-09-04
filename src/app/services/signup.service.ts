@@ -19,4 +19,8 @@ export class SignupService {
       return this.http.post(this.apiurl+"auth/signup",data,{observe: 'response'});
     }
 
+    addGoogleUser(data:any){
+      return this.http.post(this.apiurl+"auth/google/signup",data,{observe:'response'});
+    }
+
 }

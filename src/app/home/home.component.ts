@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthService } from '../auth/auth.service';
 import { CredentialService } from '../services/credential.service';
+import { UserService } from '../services/user.service';
 
 @Component({
   selector: 'app-home',
@@ -14,7 +15,7 @@ export class HomeComponent implements OnInit {
   payload:any={};
 
   constructor(private credentialService: CredentialService, private route: Router,
-    private authService:AuthService) { }
+    private authService:AuthService,private userService:UserService) { }
 
   ngOnInit(): void { 
   }
@@ -24,6 +25,14 @@ export class HomeComponent implements OnInit {
   }
 
   takeToWardrobe() {
-    this.route.navigateByUrl('/wardrobe')
+
+    this.userService.getUserData().subscribe(data=>{
+      if(data.isSubscribed == true){
+        this.route.navigateByUrl('/wardrobe');
+      }else{
+        this.route.navigateByUrl('/subscription')
+      }
+    })
+
   }
 }

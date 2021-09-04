@@ -3,21 +3,23 @@
     <a routerLink="/" class="fab-nav-logo">
       <img src="assets/images/brand-logo.png" alt="Fabrae Brand Logo">
     </a>
-
+    
     <div class="fab-client-action">
+      <p class="wallet" (click)=goToWardrobe()>Wardrobe</p>
+      <p class="wallet">wallet <i class="zmdi zmdi-balance-wallet"> : {{walletAmount}}</i></p>
       <!-- <a class="profile-batch fab-ml-10" [title]="userName">{{userNameInitial}}</a> -->
       <div class="profile">
         <a class="profile-batch fab-ml-10" (click)="profilePopup()">{{userNameInitial}}</a>
         <div class="menu-popup">
           <ul>
-            <li>
-              Men Quiz
+            <li (click)="goToQuiz(1)">
+              Men
             </li>
-            <li class="fab-mt-10">
-              Female Quiz
+            <li class="fab-mt-10" (click)="goToQuiz(2)">
+              Women
             </li>
-            <li class="fab-mt-10">
-              Kids Quiz
+            <li class="fab-mt-10" (click)="goToQuiz(3)">
+              <a routerLink="quiz">Kids</a>
             </li>
             <li class="fab-mt-10" (click)="logout()" style="color: #0F5860; font-weight: bold; border-top: 1px solid #15B793;padding-top: 7px;">
               Logout

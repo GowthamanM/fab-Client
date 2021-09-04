@@ -33,7 +33,7 @@ const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'login', component: LoginComponent },
   { path: 'sign-up', component: SignupComponent },
-  {path:'sign-up-quiz',component:SignUpQuizComponent},
+  {path:'sign-up-quiz',component:SignUpQuizComponent,canActivate:[AuthGuard]},
   { path: 'change-password', component: ForgotPasswordComponent},
   { path: 'profile', component: ProfileComponent },
   { path: 'quiz', component: QuizComponent, children: [

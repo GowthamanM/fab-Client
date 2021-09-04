@@ -23,4 +23,12 @@ export class UserService {
     return this.http.get(this.apiUrl+"users/"+this.authService.getUid());
     
   }
+
+  public commonQuizUpdate(data:any):Observable<any>{
+    return this.http.put(this.apiUrl+"users/"+this.authService.getUid(),data);
+  }
+
+  public userUpdate(data:any):Observable<any>{
+    return this.http.put(this.apiUrl+"users/"+this.authService.getUid(),data);
+  }
 }

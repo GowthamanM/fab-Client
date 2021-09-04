@@ -4,31 +4,32 @@
 
         <h2 class="questions fab-heading">How do you Love Shopping?</h2>
         <div class="quiz-options fab-mt-30">
-          <a class="fab-btn" [ngClass]="{'fab-btn-filled': activeSelection.q1.option1}" (click)="q1o1()">Q1 Option 1</a>
-          <a class="fab-btn" [ngClass]="{'fab-btn-filled': activeSelection.q1.option2}" (click)="q1o2()">Q1 Option 2</a>
-          <a class="fab-btn" [ngClass]="{'fab-btn-filled': activeSelection.q1.option3}" (click)="q1o3()">Q1 Option 3</a>
-          <a class="fab-btn" [ngClass]="{'fab-btn-filled': activeSelection.q1.option4}" (click)="q1o4()">Q1 Option 4</a>
+          <a class="fab-btn" [ngClass]="{'fab-btn-filled': activeSelection.q1.option1}" (click)="q1o1()">Hate it.</a>
+          <a class="fab-btn" [ngClass]="{'fab-btn-filled': activeSelection.q1.option2}" (click)="q1o2()">Some times.</a>
+          <a class="fab-btn" [ngClass]="{'fab-btn-filled': activeSelection.q1.option3}" (click)="q1o3()">I love it.</a>
+          <!-- <a class="fab-btn" [ngClass]="{'fab-btn-filled': activeSelection.q1.option4}" (click)="q1o4()">Q1 Option 4</a> -->
         </div>
 
-        <h2 class="questions fab-heading fab-mt-70">How do you Love Shopping?</h2>
+        <h2 class="questions fab-heading fab-mt-70">How much time & effort you put in getting your best
+          look?</h2>
         <div class="quiz-options fab-mt-30">
-          <a class="fab-btn" [ngClass]="{'fab-btn-filled': activeSelection.q2.option1}" (click)="q2o1()">Q2 Option 1</a>
-          <a class="fab-btn" [ngClass]="{'fab-btn-filled': activeSelection.q2.option2}" (click)="q2o2()">Q2 Option 2</a>
-          <a class="fab-btn" [ngClass]="{'fab-btn-filled': activeSelection.q2.option3}" (click)="q2o3()">Q2 Option 3</a>
-          <a class="fab-btn" [ngClass]="{'fab-btn-filled': activeSelection.q2.option4}" (click)="q2o4()">Q2 Option 4</a>
-          <a class="fab-btn" [ngClass]="{'fab-btn-filled': activeSelection.q2.option5}" (click)="q2o5()">Q2 Option 5</a>
+          <a class="fab-btn" [ngClass]="{'fab-btn-filled': activeSelection.q2.option1}" (click)="q2o1()"> Not a lot.</a>
+          <a class="fab-btn" [ngClass]="{'fab-btn-filled': activeSelection.q2.option2}" (click)="q2o2()">Some</a>
+          <a class="fab-btn" [ngClass]="{'fab-btn-filled': activeSelection.q2.option3}" (click)="q2o3()">Tons</a>
+          <!-- <a class="fab-btn" [ngClass]="{'fab-btn-filled': activeSelection.q2.option4}" (click)="q2o4()">Q2 Option 4</a>
+          <a class="fab-btn" [ngClass]="{'fab-btn-filled': activeSelection.q2.option5}" (click)="q2o5()">Q2 Option 5</a> -->
         </div>
 
-        <h2 class="questions fab-heading fab-mt-70">How do you Love Shopping?</h2>
+        <h2 class="questions fab-heading fab-mt-70">How Often do you try the latest styles and trends?</h2>
         <div class="quiz-options fab-mt-30">
-          <a class="fab-btn" [ngClass]="{'fab-btn-filled': activeSelection.q3.option1}" (click)="q3o1()">Q3 Option 1</a>
-          <a class="fab-btn" [ngClass]="{'fab-btn-filled': activeSelection.q3.option2}" (click)="q3o2()">Q3 Option 2</a>
-          <a class="fab-btn" [ngClass]="{'fab-btn-filled': activeSelection.q3.option3}" (click)="q3o3()">Q3 Option 3</a>
+          <a class="fab-btn" [ngClass]="{'fab-btn-filled': activeSelection.q3.option1}" (click)="q3o1()">Very rare</a>
+          <a class="fab-btn" [ngClass]="{'fab-btn-filled': activeSelection.q3.option2}" (click)="q3o2()">Sometimes</a>
+          <a class="fab-btn" [ngClass]="{'fab-btn-filled': activeSelection.q3.option3}" (click)="q3o3()">All the time</a>
         </div>
 
         <div class="prev-next fab-mt-80">
-          <a routerLink="/quiz" class="fab-btn">Back</a>
-          <a class="fab-btn fab-ml-20" (click)="goNext()" style="cursor: pointer;" *ngIf="activeSelection.q1.selected || activeSelection.q2.selected || activeSelection.q3.selected">Next</a>
+          <!-- <a routerLink="/quiz" class="fab-btn">Back</a> -->
+          <a class="fab-btn fab-ml-20" (click)="goNext()" style="cursor: pointer;" *ngIf="activeSelection.q1.selected && activeSelection.q2.selected && activeSelection.q3.selected">Next</a>
         </div>
     </section>
 </main>

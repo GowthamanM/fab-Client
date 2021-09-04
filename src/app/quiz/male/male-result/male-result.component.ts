@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { MaleQuizService } from 'src/app/services/male-quiz.service';
+import { UserService } from 'src/app/services/user.service';
 
 @Component({
   selector: 'app-male-result',
@@ -25,7 +26,8 @@ export class MaleResultComponent implements OnInit {
   blazerAns:any = ['','','','',''];
   footwearAns:any = [''];
 
-  constructor(private activeRoute: ActivatedRoute, private route: Router, private maleQuizService: MaleQuizService) { }
+  constructor(private activeRoute: ActivatedRoute, private route: Router, private maleQuizService: MaleQuizService,
+    private userService:UserService) { }
 
   ngOnInit(): void {
     this.selection = this.maleQuizService.selectedQuiz;
@@ -66,7 +68,18 @@ export class MaleResultComponent implements OnInit {
     this.maleQuizService.saveMaleData().subscribe(data=>{
       console.log(data);
     })
-    this.route.navigate(['wardrobe']);
+    this.checkNavigate();
+    
+  }
+
+  checkNavigate(){
+      this.userService.getUserData().subscribe(data=>{
+        if(data.User.isSubscribed === true){
+          this.route.navigate(['wardrobe']);
+        }else{
+          this.route.navigate(['subscription']);
+        }
+      })
   }
 
   saveAnswers(ind:any, option:any) {

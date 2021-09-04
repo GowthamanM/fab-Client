@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule ,CUSTOM_ELEMENTS_SCHEMA} from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import {HttpClientModule, HTTP_INTERCEPTORS} from '@angular/common/http';
 
@@ -43,6 +43,7 @@ import { SignUpQuizComponent } from './sign-up-quiz/sign-up-quiz.component';
 import { SocialLoginModule, SocialAuthServiceConfig } from 'angularx-social-login';
 import { GoogleLoginProvider } from 'angularx-social-login';
 import { WarChoiceComponent } from './wardrobe/war-choice/war-choice.component';
+import { NgxSpinnerModule } from "ngx-spinner";
 
 @NgModule({
   declarations: [
@@ -88,7 +89,8 @@ import { WarChoiceComponent } from './wardrobe/war-choice/war-choice.component';
     ReactiveFormsModule,
     HttpClientModule,
     ReactiveFormsModule,
-    SocialLoginModule
+    SocialLoginModule,
+    NgxSpinnerModule
   ],
   providers: [
     {
@@ -112,6 +114,7 @@ import { WarChoiceComponent } from './wardrobe/war-choice/war-choice.component';
       } as SocialAuthServiceConfig,
     }    
   ],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  schemas:[CUSTOM_ELEMENTS_SCHEMA]
 })
 export class AppModule { }

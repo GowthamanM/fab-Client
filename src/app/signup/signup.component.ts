@@ -14,6 +14,9 @@ export class SignupComponent implements OnInit {
 
   responseData:any={};
   socialUser:any={};
+  googleUserChange:any={};
+  googleErrorResponse:any;
+  counter:any = 1;
 
   constructor(private fb: FormBuilder, 
     private route: Router,
@@ -85,12 +88,36 @@ export class SignupComponent implements OnInit {
     this.socialAuthService.authState.subscribe((user) => {
       this.socialUser = user;
       if(this.socialUser != null){
-        console.log(this.socialUser);
-        localStorage.setItem('authStatus','true');
-        this.route.navigateByUrl('');
+      this.googleUserChange.idToken = this.socialUser.idToken;
+       this.signUpWithGoogle();
+       
+       
+      }else{
+        alert('Login Failed');
       }
     });
     
+  }
+
+  signUpWithGoogle(){
+    
+    this.signupService.addGoogleUser(JSON.parse(JSON.stringify(this.googleUserChange))).subscribe(resp=>{
+
+      this.responseData = JSON.parse(JSON.stringify(resp.body));
+      if(localStorage.getItem('authStatus') == 'false'){
+
+        if((this.responseData.message.message === "User Successfully created")){
+          localStorage.setItem('userToken',resp.headers.get('token')+"");
+          localStorage.setItem('authStatus','true');
+          localStorage.setItem('uid',this.responseData.message.userId+"");
+          this.route.navigateByUrl('/sign-up-quiz');
+        }else if(this.responseData.message === "Email Address Already Exists"){
+          this.googleErrorResponse = this.responseData.message;
+          
+        }
+      }
+
+    });
   }
 
 }

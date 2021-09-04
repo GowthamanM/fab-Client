@@ -16,6 +16,7 @@ export class SecondaryNavbarComponent implements OnInit {
 
   userName = '';
   userNameInitial = '';
+  walletAmount = '';
 
   constructor(
     private credentialService: CredentialService,
@@ -33,6 +34,7 @@ export class SecondaryNavbarComponent implements OnInit {
     this.userService.getUserData().subscribe((data)=>{
       this.userName = data.User.fullName;
       this.userNameInitial =  data.User.fullName.charAt(0);
+      this.walletAmount = data.User.wallet;
     });
   }
 
@@ -58,5 +60,29 @@ export class SecondaryNavbarComponent implements OnInit {
     localStorage.setItem('userToken','null');
     localStorage.setItem('uid','null');
     this.router.navigateByUrl('');
+  }
+
+  goToQuiz(data:any){
+    if(data == 1)
+      this.router.navigateByUrl('quiz/male');
+    else if(data == 2)
+      this.router.navigateByUrl('quiz/female');
+    else
+      this.router.navigateByUrl('quiz/kids');
+  }
+
+  goToWardrobe(){
+    console.log('enter');
+    
+    this.userService.getUserData().subscribe(data=>{
+      
+      let temp = data;
+      
+      if(temp.User.isSubscribed === true){
+        this.router.navigateByUrl('/wardrobe');
+      }else{
+        this.router.navigateByUrl('/subscription');
+      }
+    })
   }
 }

@@ -13,7 +13,7 @@
     <h2 class="war-title fab-mt-100">Curated Selections for You!</h2>
 
     <div class="prod-list">
-      <div class="card" *ngFor="let dt of data" [routerLink]="['product/'+dt._id]" style="cursor: pointer;">
+      <div class="card" *ngFor="let dt of data" (click)="openProduct(dt._id,dt)" style="cursor: pointer;">
         <img class="card-img-top" [src]="dt.photoLink" alt="Card image cap">
         <div class="card-body">
           <h5 class="card-title fab-mt-10">{{dt.brand}}</h5>
