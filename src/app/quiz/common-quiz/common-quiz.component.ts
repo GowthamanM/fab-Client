@@ -14,6 +14,21 @@ export class CommonQuizComponent implements OnInit {
 
   selectedOption: any;
 
+  activeSelection = {
+    'tryNewItems' : false,
+    'discoverNewTrends' : false,
+    'saveTime' : false,
+    'expertAdvice'  : false,
+    'accessToDiffBrands' : false
+  }
+
+  bodyType = {
+    'slim' : false,
+    'average' : false,
+    'athletic' : false,
+    'husky' : false
+  }
+
   ngOnInit(): void {
     this.getSelectedOption();
     window.scrollTo(0, 0);
@@ -23,29 +38,92 @@ export class CommonQuizComponent implements OnInit {
     this.selectedOption = this.commonQuizService.userSelected;
   }
 
+  // The User Answers are stored here
   commonQuizAns = ['','','','','',''];
 
   commonQuiz = this.fb.group({
-    reasons: [''],
     height: [''],
     weight: [''],
-    bodyType: [''],
     brands: [''],
     birthday: ['']
   });
 
+  slim() {
+    this.bodyType.slim = true;
+    this.bodyType.average = false;
+    this.bodyType.athletic = false;
+    this.bodyType.husky = false;
+  }
+
+  average() {
+    this.bodyType.slim = false;
+    this.bodyType.average = true;
+    this.bodyType.athletic = false;
+    this.bodyType.husky = false;
+  }
+
+  athletic() {
+    this.bodyType.slim = false;
+    this.bodyType.average = false;
+    this.bodyType.athletic = true;
+    this.bodyType.husky = false;
+  }
+
+  husky() {
+    this.bodyType.slim = false;
+    this.bodyType.average = false;
+    this.bodyType.athletic = false;
+    this.bodyType.husky = true;
+  }
+
+  getReasonAns() {
+    let ans = [];
+    let ansString;
+    if(this.activeSelection.tryNewItems == true) {
+      ans.push('Try New Items');
+    }
+    if(this.activeSelection.discoverNewTrends == true) {
+      ans.push('Discover New Trends');
+    }
+    if(this.activeSelection.saveTime == true) {
+      ans.push('Save Time');
+    }
+    if(this.activeSelection.expertAdvice == true) {
+      ans.push('Expert Advice');
+    }
+    if(this.activeSelection.accessToDiffBrands == true) {
+      ans.push('Access to Different Brands');
+    }
+    ansString = ans.join(',');
+    // console.log(ans);
+    // console.log(ansString);
+    return ansString;
+  }
+
+  getBodyTypeAns() {
+    if(this.bodyType.slim == true) {
+      return "Slim";
+    }
+    if(this.bodyType.average == true) {
+      return "Average";
+    }
+    if(this.bodyType.athletic == true) {
+      return "Athletic";
+    }
+    if(this.bodyType.husky == true) {
+      return "Husky";
+    }
+    return '';
+  }
+
   makeArray() {
-    this.commonQuizAns[0] = this.commonQuiz.value.reasons;
+    this.commonQuizAns[0] = this.getReasonAns();
     this.commonQuizAns[1] = this.commonQuiz.value.height;
     this.commonQuizAns[2] = this.commonQuiz.value.weight;
-    this.commonQuizAns[3] = this.commonQuiz.value.bodyType;
+    this.commonQuizAns[3] = this.getBodyTypeAns();
     this.commonQuizAns[4] = this.commonQuiz.value.brands;
     this.commonQuizAns[5] = this.commonQuiz.value.birthday;
     console.log(this.commonQuizAns);
-  }
-
-  onSubmit() {
-    this.makeArray();
   }
 
   goNext() {

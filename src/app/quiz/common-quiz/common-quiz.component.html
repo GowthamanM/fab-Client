@@ -1,15 +1,47 @@
 <app-secondary-navbar></app-secondary-navbar>
-<main class="fab-mb-50 fab-mt-80">
+<main class="fab-mb-50 fab-mt-100">
     <section class="header container common-quiz">
+        <form [formGroup]="commonQuiz" class="common-quiz-form">
+          <h2 class="fab-heading">What are the Reasons you are excited to try Fabrae?</h2>
+          <div class="quiz-options">
+            <a class="fab-btn" [ngClass]="{'fab-btn-filled': activeSelection.tryNewItems}" (click)="activeSelection.tryNewItems = !activeSelection.tryNewItems">Try New Items</a>
+            <a class="fab-btn" [ngClass]="{'fab-btn-filled': activeSelection.discoverNewTrends}" (click)="activeSelection.discoverNewTrends = !activeSelection.discoverNewTrends">Discover New Trends</a>
+            <a class="fab-btn" [ngClass]="{'fab-btn-filled': activeSelection.saveTime}" (click)="activeSelection.saveTime = !activeSelection.saveTime">Save Time</a>
+            <a class="fab-btn" [ngClass]="{'fab-btn-filled': activeSelection.expertAdvice}" (click)="activeSelection.expertAdvice = !activeSelection.expertAdvice">Expert Advice</a>
+            <a class="fab-btn" [ngClass]="{'fab-btn-filled': activeSelection.accessToDiffBrands}" (click)="activeSelection.accessToDiffBrands = !activeSelection.accessToDiffBrands">Access To Different Brands</a>
+          </div>
 
-        <h2 class="questions fab-heading">Common Quiz</h2>
-        <form [formGroup]="commonQuiz" (ngSubmit)="onSubmit()">
-          <input type="text" placeholder="Height" formControlName="height">
-          <input type="text" placeholder="Weight" formControlName="weight">
-          <input type="text" placeholder="Brands" formControlName="brands">
-          <input type="date" formControlName="birthday">
+          <h2 class="fab-heading fab-mt-50">How Tall are you?</h2>
+          <input type="text" placeholder="Height" formControlName="height" class="fab-mt-20 inputfield">
 
-          <input type="submit" value="submit">
+          <h2 class="fab-heading fab-mt-50">Weight in kg</h2>
+          <input type="text" placeholder="Weight" formControlName="weight" class="fab-mt-20 inputfield">
+
+          <h2 class="fab-heading fab-mt-50">How would you describe your Body Type?</h2>
+          <div class="body-type-options">
+            <div class="group">
+              <img src="assets/images/illustrations/slim_body.jpg" alt="Slim Body" class="body-img">
+              <a class="fab-btn fab-mt-10" [ngClass]="{'fab-btn-filled': bodyType.slim}" (click)="slim()" style="cursor: pointer;">Slim</a>
+            </div>
+            <div class="group">
+              <img src="assets/images/illustrations/average_body.jpg" alt="Average Body" class="body-img">
+              <a class="fab-btn fab-mt-10" [ngClass]="{'fab-btn-filled': bodyType.average}" (click)="average()" style="cursor: pointer;">Average</a>
+            </div>
+            <div class="group">
+              <img src="assets/images/illustrations/athletic_body.jpg" alt="Athletic Body" class="body-img">
+              <a class="fab-btn fab-mt-10" [ngClass]="{'fab-btn-filled': bodyType.athletic}" (click)="athletic()" style="cursor: pointer;">Athletic</a>
+            </div>
+            <div class="group">
+              <img src="assets/images/illustrations/husky_body.jpg" alt="Husky Body" class="body-img">
+              <a class="fab-btn fab-mt-10" [ngClass]="{'fab-btn-filled': bodyType.husky}" (click)="husky()" style="cursor: pointer;">Husky</a>
+            </div>
+          </div>
+
+          <h2 class="fab-heading fab-mt-50">What Brands do you shop?</h2>
+          <input type="text" placeholder="Brand Names" formControlName="brands" class="fab-mt-20 inputfield">
+
+          <h2 class="fab-heading fab-mt-50">When is your Birthday?</h2>
+          <input type="date" formControlName="birthday" class="fab-mt-20 inputfield datefield">
         </form>
 
         <div class="prev-next fab-mt-80">

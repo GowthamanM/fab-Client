@@ -1,3 +1,87 @@
+@import
+  '/src/assets/Scss/abstracts/variables',
+  '/src/assets/Scss/abstracts/mixins';
+
 .common-quiz {
-  height: 70vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.common-quiz-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.quiz-options {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+
+  @include media-upto(sm) {
+    flex-direction: column;
+  }
+  .fab-btn {
+    min-width: 150px;
+    margin-top: 20px;
+    cursor: pointer;
+
+    @include media(sm) {
+      margin-left: 20px;
+      // margin-top: 0px;
+    }
+  }
+}
+
+.inputfield {
+  height: 30px;
+  text-indent: 5px;
+  border: 1px solid grey;
+  border-radius: 3px;
+  width: 200px;
+}
+
+.inputfield:focus {
+  outline-color: $gradient-color-two;
+}
+
+.datefield {
+  background-color: transparent;
+}
+
+
+.body-img {
+  height: 150px;
+  width: 150px;
+
+  @include media-upto(sm) {
+    height: 200px;
+  width: 200px;
+  }
+}
+
+.group {
+  display: flex;
+  flex-direction: column;
+  margin-top: 20px;
+  margin-left: 20px;
+
+  &:first-child {
+    margin-left: 0px;
+  }
+
+  @include media-upto(sm) {
+    margin-top: 25px;
+    margin-left: 0px;
+  }
+}
+
+.body-type-options {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
 }
