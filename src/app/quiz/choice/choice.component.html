@@ -7,13 +7,13 @@
     </h2>
 
     <div class="quiz-options">
-      <a routerLink="/quiz/male" class="fab-btn">Men</a>
-      <a routerLink="/quiz/female" class="fab-btn">Women</a>
-      <a routerLink="/quiz/kids" class="fab-btn">Kids</a>
+      <a class="fab-btn" (click)="men()">Men</a>
+      <a class="fab-btn" (click)="women()">Women</a>
+      <a class="fab-btn" (click)="kids()">Kids</a>
     </div>
 
     <div class="prev-next">
-      <a routerLink="/sign-up-quiz" class="fab-btn">Back</a>
+      <a routerLink="/" class="fab-btn">Back</a>
     </div>
   </section>
 

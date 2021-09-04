@@ -59,6 +59,7 @@ export class SecondaryNavbarComponent implements OnInit {
     localStorage.setItem('authStatus','false');
     localStorage.setItem('userToken','null');
     localStorage.setItem('uid','null');
+    this.profileClose();
     this.router.navigateByUrl('');
   }
 

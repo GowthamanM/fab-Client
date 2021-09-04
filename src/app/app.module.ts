@@ -43,7 +43,11 @@ import { SignUpQuizComponent } from './sign-up-quiz/sign-up-quiz.component';
 import { SocialLoginModule, SocialAuthServiceConfig } from 'angularx-social-login';
 import { GoogleLoginProvider } from 'angularx-social-login';
 import { WarChoiceComponent } from './wardrobe/war-choice/war-choice.component';
+<<<<<<< HEAD
 import { NgxSpinnerModule } from "ngx-spinner";
+=======
+import { CommonQuizComponent } from './quiz/common-quiz/common-quiz.component';
+>>>>>>> 0bc4f0d5dc6d0ac7d829541b3f726bdc46f92f3c
 
 @NgModule({
   declarations: [
@@ -80,7 +84,8 @@ import { NgxSpinnerModule } from "ngx-spinner";
     SubscriptionComponent,
     RazorpayComponent,
     SignUpQuizComponent,
-    WarChoiceComponent
+    WarChoiceComponent,
+    CommonQuizComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'serverApp' }),
