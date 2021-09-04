@@ -43,6 +43,7 @@ import { SignUpQuizComponent } from './sign-up-quiz/sign-up-quiz.component';
 import { SocialLoginModule, SocialAuthServiceConfig } from 'angularx-social-login';
 import { GoogleLoginProvider } from 'angularx-social-login';
 import { WarChoiceComponent } from './wardrobe/war-choice/war-choice.component';
+import { CommonQuizComponent } from './quiz/common-quiz/common-quiz.component';
 
 @NgModule({
   declarations: [
@@ -79,7 +80,8 @@ import { WarChoiceComponent } from './wardrobe/war-choice/war-choice.component';
     SubscriptionComponent,
     RazorpayComponent,
     SignUpQuizComponent,
-    WarChoiceComponent
+    WarChoiceComponent,
+    CommonQuizComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'serverApp' }),

@@ -8,6 +8,7 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
 import { PrivacyPolicyComponent } from './privacy-policy/privacy-policy.component';
 import { ProfileComponent } from './profile/profile.component';
 import { ChoiceComponent } from './quiz/choice/choice.component';
+import { CommonQuizComponent } from './quiz/common-quiz/common-quiz.component';
 import { FemaleChoiceComponent } from './quiz/female/female-choice/female-choice.component';
 import { FemaleResultComponent } from './quiz/female/female-result/female-result.component';
 import { FemaleComponent } from './quiz/female/female.component';
@@ -49,7 +50,8 @@ const routes: Routes = [
     { path: 'kids', component: KidsComponent, children: [
       { path: '', component: KidsChoiceComponent},
       { path: 'selection/:id', component: KidsResultComponent}
-    ]}
+    ]},
+    { path: 'common-quiz', component: CommonQuizComponent}
   ],canActivate:[AuthGuard]},
 
   { path: 'wardrobe', component: WardrobeComponent, children: [

@@ -1,0 +1,23 @@
+<app-secondary-navbar></app-secondary-navbar>
+<main class="fab-mb-50 fab-mt-80">
+    <section class="header container common-quiz">
+
+        <h2 class="questions fab-heading">Common Quiz</h2>
+        <form [formGroup]="commonQuiz" (ngSubmit)="onSubmit()">
+          <input type="text" placeholder="Height" formControlName="height">
+          <input type="text" placeholder="Weight" formControlName="weight">
+          <input type="text" placeholder="Brands" formControlName="brands">
+          <input type="date" formControlName="birthday">
+
+          <input type="submit" value="submit">
+        </form>
+
+        <div class="prev-next fab-mt-80">
+          <a routerLink="/quiz" class="fab-btn">Back</a>
+          <a class="fab-btn fab-ml-20" (click)="goNext()" style="cursor: pointer;" >Next</a>
+        </div>
+    </section>
+</main>
+
+<app-footer></app-footer>
+

@@ -92,6 +92,7 @@ export class NavbarComponent implements OnInit {
 
       }
     });
+    this.profileClose();
     this.router.navigateByUrl('');
   }
 
