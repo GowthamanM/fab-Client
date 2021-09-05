@@ -16,6 +16,7 @@ export class SubscriptionComponent implements OnInit {
   userData:any={};
   logData:any={};
   afterSubscription:boolean = false;
+  wallet:any;
 
   basicPlanData :any = {
     "amount" : "449",
@@ -42,7 +43,7 @@ premiumPlanData :any = {
 }
 
 options = { 
-  key: 'rzp_live_S9n4NwIEsUD5Pv', 
+  key: 'rzp_test_COSZxgtxNusnuj', 
   order_id: '', 
   name: 'Fabrae', 
   description: 'Monthly Test Plan', 
@@ -75,7 +76,7 @@ options = {
   ) { }
 
   ngOnInit(): void {
-    // this.getUserDetails();
+    this.getUserDetails();
     window.scrollTo(0, 0);
     
   }
@@ -140,32 +141,32 @@ options = {
   }
 
   printLog(response:any){
+    this.spinner.show();
     this.afterSubscription = true;
     let discount = Math.floor(Math.random() * (25 - 10 + 1) + 10);
     let editData = {
       "wallet":0
     };
-    editData.wallet = discount;
-    this.userService.userUpdate(editData).subscribe();
-    setInterval(()=>{
-      console.log('entering');
-      
-      this.userService.getUserData().subscribe(data=>{
-        console.log(data);
-        if(data.isSubscribed == true){
-          this.router.navigateByUrl('/wardrobe');
-        }
+    this.userService.getUserData().subscribe(data=>{
+      discount = discount+data.User.wallet;
+      editData.wallet = discount;
+      this.userService.userUpdate(editData).subscribe();
+    })
+    
+    setTimeout(() => {
+      this.spinner.hide().then(()=>{
+        this.router.navigateByUrl('/wardrobe');
       });
-    },5000);
+      
+    }, 5000);
+    
 
 
 
   }
 
   getUserDetails(){
-    this.userService.getUserData().subscribe(data=>{
-      console.log(data);
-    })
+    
   }
 
 }
