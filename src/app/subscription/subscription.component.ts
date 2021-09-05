@@ -19,7 +19,7 @@ export class SubscriptionComponent implements OnInit {
   wallet:any;
 
   basicPlanData :any = {
-    "amount" : "449",
+    "amount" : "1347",
     "currency" : "INR",
     "notes" : {
         "subscriptionType" : "monthly"
@@ -108,7 +108,7 @@ options = {
        this.options.prefill.name = temp.result.prefill.name;
        this.options.prefill.email = temp.result.prefill.email;
        this.options.prefill.contact = temp.result.prefill.contact;
-       this.options.notes.subscriptionType = this.basicPlanData.notes.subscriptionType;
+       this.options.notes.subscriptionType = this.starterPlanData.notes.subscriptionType;
      }
      this.checkout();
      
@@ -116,7 +116,7 @@ options = {
  }
 
  premiumPlan(){
-  this.razorpayService.basicPlanOrder(this.premiumPlan).subscribe(data=>{
+  this.razorpayService.basicPlanOrder(this.premiumPlanData).subscribe(data=>{
    console.log(data);
    
    let temp = data;
