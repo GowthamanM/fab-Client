@@ -104,7 +104,7 @@ export class SignupComponent implements OnInit {
     this.signupService.addGoogleUser(JSON.parse(JSON.stringify(this.googleUserChange))).subscribe(resp=>{
 
       this.responseData = JSON.parse(JSON.stringify(resp.body));
-      if(localStorage.getItem('authStatus') == 'false'){
+      // if(localStorage.getItem('authStatus') == 'false'){
 
         if((this.responseData.message.message === "User Successfully created")){
           localStorage.setItem('userToken',resp.headers.get('token')+"");
@@ -115,7 +115,7 @@ export class SignupComponent implements OnInit {
           this.googleErrorResponse = this.responseData.message;
           
         }
-      }
+      // }
 
     });
   }
