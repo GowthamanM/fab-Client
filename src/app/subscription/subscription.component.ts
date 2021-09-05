@@ -42,7 +42,7 @@ premiumPlanData :any = {
 }
 
 options = { 
-  key: 'rzp_test_COSZxgtxNusnuj', 
+  key: 'rzp_live_S9n4NwIEsUD5Pv', 
   order_id: '', 
   name: 'Fabrae', 
   description: 'Monthly Test Plan', 
