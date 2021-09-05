@@ -99,7 +99,7 @@ options = {
   }
 
   starterPlan(){
-    this.razorpayService.basicPlanOrder(this.basicPlanData).subscribe(data=>{
+    this.razorpayService.basicPlanOrder(this.starterPlan).subscribe(data=>{
      console.log(data);
      
      let temp = data;
@@ -116,7 +116,7 @@ options = {
  }
 
  premiumPlan(){
-  this.razorpayService.basicPlanOrder(this.basicPlanData).subscribe(data=>{
+  this.razorpayService.basicPlanOrder(this.premiumPlan).subscribe(data=>{
    console.log(data);
    
    let temp = data;
