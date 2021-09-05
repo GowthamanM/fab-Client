@@ -46,7 +46,7 @@ options = {
   key: 'rzp_live_S9n4NwIEsUD5Pv', 
   order_id: '', 
   name: 'Fabrae', 
-  description: 'Monthly Test Plan', 
+  description: 'Monthly Plan', 
   image: 'https://fabrae.com/assets/images/Fabrae-t3.png', 
   handler:(response:any)=>{
     this.printLog(response);
@@ -99,7 +99,7 @@ options = {
   }
 
   starterPlan(){
-    this.razorpayService.basicPlanOrder(this.starterPlan).subscribe(data=>{
+    this.razorpayService.basicPlanOrder(this.starterPlanData).subscribe(data=>{
      console.log(data);
      
      let temp = data;
@@ -108,6 +108,7 @@ options = {
        this.options.prefill.name = temp.result.prefill.name;
        this.options.prefill.email = temp.result.prefill.email;
        this.options.prefill.contact = temp.result.prefill.contact;
+       this.options.description = '6 Months Plan';
        this.options.notes.subscriptionType = this.starterPlanData.notes.subscriptionType;
      }
      this.checkout();
@@ -124,8 +125,9 @@ options = {
      this.options.order_id = temp.result.orderId;
      this.options.prefill.name = temp.result.prefill.name;
      this.options.prefill.email = temp.result.prefill.email;
+     this.options.description = 'One Year Plan';
      this.options.prefill.contact = temp.result.prefill.contact;
-     this.options.notes.subscriptionType = this.basicPlanData.notes.subscriptionType;
+     this.options.notes.subscriptionType = this.premiumPlanData.notes.subscriptionType;
    }
    this.checkout();
    
