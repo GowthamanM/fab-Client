@@ -108,7 +108,7 @@ export class LoginComponent implements OnInit {
        
        
       }else{
-        alert('Login Failed');
+        this.googleErrorResponse = "Login Failed";
       }
     });
     

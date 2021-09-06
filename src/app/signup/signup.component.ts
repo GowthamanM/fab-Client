@@ -93,7 +93,7 @@ export class SignupComponent implements OnInit {
        
        
       }else{
-        alert('Login Failed');
+        this.googleErrorResponse = 'Login Failed'
       }
     });
     
