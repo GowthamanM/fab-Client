@@ -54,7 +54,7 @@ export class SignupComponent implements OnInit {
     password: ['', [
       Validators.required,
       Validators.minLength(6),
-      Validators.pattern('^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*()_-]).*$')
+      Validators.pattern('^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9]).*$')
     ]],
     confirmPassword: ['', [
       Validators.required,
