@@ -65,11 +65,11 @@ export class SecondaryNavbarComponent implements OnInit {
 
   goToQuiz(data:any){
     if(data == 1)
-      this.router.navigateByUrl('quiz/male');
+      this.router.navigateByUrl('/quiz');
     else if(data == 2)
-      this.router.navigateByUrl('quiz/female');
+      this.router.navigateByUrl('/quiz');
     else
-      this.router.navigateByUrl('quiz/kids');
+      this.router.navigateByUrl('/quiz');
   }
 
   goToWardrobe(){

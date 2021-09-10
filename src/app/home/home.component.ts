@@ -27,7 +27,7 @@ export class HomeComponent implements OnInit {
   takeToWardrobe() {
 
     this.userService.getUserData().subscribe(data=>{
-      if(data.isSubscribed == true){
+      if(data.User.isSubscribed === true){
         this.route.navigateByUrl('/wardrobe');
       }else{
         this.route.navigateByUrl('/subscription')

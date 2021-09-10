@@ -16,9 +16,10 @@ export class SubscriptionComponent implements OnInit {
   userData:any={};
   logData:any={};
   afterSubscription:boolean = false;
+  wallet:any;
 
   basicPlanData :any = {
-    "amount" : "449",
+    "amount" : "1347",
     "currency" : "INR",
     "notes" : {
         "subscriptionType" : "monthly"
@@ -42,10 +43,10 @@ premiumPlanData :any = {
 }
 
 options = { 
-  key: 'rzp_test_COSZxgtxNusnuj', 
+  key: 'rzp_live_S9n4NwIEsUD5Pv', 
   order_id: '', 
   name: 'Fabrae', 
-  description: 'Monthly Test Plan', 
+  description: 'Monthly Plan', 
   image: 'https://fabrae.com/assets/images/Fabrae-t3.png', 
   handler:(response:any)=>{
     this.printLog(response);
@@ -75,7 +76,7 @@ options = {
   ) { }
 
   ngOnInit(): void {
-    // this.getUserDetails();
+    this.getUserDetails();
     window.scrollTo(0, 0);
     
   }
@@ -98,7 +99,7 @@ options = {
   }
 
   starterPlan(){
-    this.razorpayService.basicPlanOrder(this.basicPlanData).subscribe(data=>{
+    this.razorpayService.basicPlanOrder(this.starterPlanData).subscribe(data=>{
      console.log(data);
      
      let temp = data;
@@ -107,7 +108,8 @@ options = {
        this.options.prefill.name = temp.result.prefill.name;
        this.options.prefill.email = temp.result.prefill.email;
        this.options.prefill.contact = temp.result.prefill.contact;
-       this.options.notes.subscriptionType = this.basicPlanData.notes.subscriptionType;
+       this.options.description = '6 Months Plan';
+       this.options.notes.subscriptionType = this.starterPlanData.notes.subscriptionType;
      }
      this.checkout();
      
@@ -115,7 +117,7 @@ options = {
  }
 
  premiumPlan(){
-  this.razorpayService.basicPlanOrder(this.basicPlanData).subscribe(data=>{
+  this.razorpayService.basicPlanOrder(this.premiumPlanData).subscribe(data=>{
    console.log(data);
    
    let temp = data;
@@ -123,8 +125,9 @@ options = {
      this.options.order_id = temp.result.orderId;
      this.options.prefill.name = temp.result.prefill.name;
      this.options.prefill.email = temp.result.prefill.email;
+     this.options.description = 'One Year Plan';
      this.options.prefill.contact = temp.result.prefill.contact;
-     this.options.notes.subscriptionType = this.basicPlanData.notes.subscriptionType;
+     this.options.notes.subscriptionType = this.premiumPlanData.notes.subscriptionType;
    }
    this.checkout();
    
@@ -140,32 +143,32 @@ options = {
   }
 
   printLog(response:any){
+    this.spinner.show();
     this.afterSubscription = true;
     let discount = Math.floor(Math.random() * (25 - 10 + 1) + 10);
     let editData = {
       "wallet":0
     };
-    editData.wallet = discount;
-    this.userService.userUpdate(editData).subscribe();
-    setInterval(()=>{
-      console.log('entering');
-      
-      this.userService.getUserData().subscribe(data=>{
-        console.log(data);
-        if(data.isSubscribed == true){
-          this.router.navigateByUrl('/wardrobe');
-        }
+    this.userService.getUserData().subscribe(data=>{
+      discount = discount+data.User.wallet;
+      editData.wallet = discount;
+      this.userService.userUpdate(editData).subscribe();
+    })
+    
+    setTimeout(() => {
+      this.spinner.hide().then(()=>{
+        this.router.navigateByUrl('/wardrobe');
       });
-    },5000);
+      
+    }, 5000);
+    
 
 
 
   }
 
   getUserDetails(){
-    this.userService.getUserData().subscribe(data=>{
-      console.log(data);
-    })
+    
   }
 
 }
