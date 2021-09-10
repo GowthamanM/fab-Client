@@ -1,3 +1,7 @@
+@import
+  '/src/assets/Scss/abstracts/variables',
+  '/src/assets/Scss/abstracts/mixins';
+
 .fab-footer {
   img {
     width: 100%;
@@ -8,4 +12,28 @@
   background-color: #0F5860;
   margin-top: -4px;
   padding-bottom: 20px;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+.fab-foot-links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.whatsapp-icon {
+  height: 48px;
+  width: 48px!important;
+  position: fixed;
+  z-index: 200;
+  top: 90vh;
+  right: 10px;
+  border-radius: 50%;
+  cursor: pointer;
+
+  @include media-upto(sm) {
+    height: 60px;
+    width: 60px!important;
+    top: 83vh;
+  }
 }

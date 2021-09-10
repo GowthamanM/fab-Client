@@ -1,14 +1,20 @@
 <footer class="fab-footer">
   <img src="assets/images/wave-one.svg" alt="footer wave">
+  <div class="whatspp-container" (click)="whatsapp()">
+    <img src="assets/images/whatsapp.gif" class="whatsapp-icon"/>
+  </div>
   <div class="footer-content-wrapper text-white fab-pt-50 text-center">
     <div class="footer-content">
-      <!-- <p>any contents</p> -->
+      Made with	&#10084; for Styles.
     </div>
-    <div class="copyright fab-mt-30">
-      <a routerLink="/terms-and-conditions" class="text-white">Terms & conditions</a>
-      <a routerLink="/privacy-policy" class="text-white fab-ml-20">Privacy policy</a>
-      <p class="fab-mt-20">
-        Copyright &copy; 2021 Fabrae
+    <div class="fab-mt-20">
+      <div class="fab-foot-links">
+        <a href="mailto:support@fabrae.com" class="fab-link fab-mt-10" target="_blank" style="color: white;">Contact Us</a>
+        <a routerLink="/terms-and-conditions" class="text-white fab-ml-20 fab-mt-10">Terms & conditions</a>
+        <a routerLink="/privacy-policy" class="text-white fab-ml-20 fab-mt-10">Privacy policy</a>
+      </div>
+      <p class="fab-mt-30">
+        Copyright &copy; {{presentYear}} Fabrae
       </p>
     </div>
   </div>
