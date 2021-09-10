@@ -7,3 +7,20 @@
   padding-left: 30px;
   padding-right: 30px;
 }
+
+strong {
+  font-weight: bold;
+}
+
+.fab-link {
+  border-bottom: 1px solid #15B793;
+  &:hover {
+    color: #0F5860;
+  }
+}
+
+.fab-fl {
+  font-size: 25px;
+  color: #0F5860;
+  font-weight: bold;
+}
