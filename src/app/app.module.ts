@@ -46,6 +46,7 @@ import { GoogleLoginProvider } from 'angularx-social-login';
 import { WarChoiceComponent } from './wardrobe/war-choice/war-choice.component';
 import { NgxSpinnerModule } from "ngx-spinner";
 import { CommonQuizComponent } from './quiz/common-quiz/common-quiz.component';
+import { NotSubscribedComponent } from './subscription/not-subscribed/not-subscribed.component';
 
 @NgModule({
   declarations: [
@@ -83,7 +84,8 @@ import { CommonQuizComponent } from './quiz/common-quiz/common-quiz.component';
     RazorpayComponent,
     SignUpQuizComponent,
     WarChoiceComponent,
-    CommonQuizComponent
+    CommonQuizComponent,
+    NotSubscribedComponent
   ],
   imports: [
     

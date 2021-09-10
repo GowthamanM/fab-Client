@@ -22,6 +22,7 @@ import { QuizComponent } from './quiz/quiz.component';
 import { RefundPolicyComponent } from './refund-policy/refund-policy.component';
 import { SignUpQuizComponent } from './sign-up-quiz/sign-up-quiz.component';
 import { SignupComponent } from './signup/signup.component';
+import { NotSubscribedComponent } from './subscription/not-subscribed/not-subscribed.component';
 import { SubscriptionComponent } from './subscription/subscription.component';
 import { TermsOfServiceComponent } from './terms-of-service/terms-of-service.component';
 import { LikedComponent } from './wardrobe/liked/liked.component';
@@ -61,6 +62,7 @@ const routes: Routes = [
     { path: 'product/:id', component: ProductListComponent}
   ],canActivate:[AuthGuard]},
   { path: 'subscription', component: SubscriptionComponent},
+  { path: 'not-subscribed', component: NotSubscribedComponent},
   { path: 'privacy-policy', component: PrivacyPolicyComponent },
   { path: 'terms-and-conditions', component: TermsOfServiceComponent },
   { path: 'refund-policy', component: RefundPolicyComponent },

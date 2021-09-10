@@ -32,8 +32,6 @@
   cursor: pointer;
 
   @include media-upto(sm) {
-    height: 60px;
-    width: 60px!important;
-    top: 83vh;
+    top: 84vh;
   }
 }
