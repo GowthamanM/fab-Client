@@ -62,7 +62,7 @@ const routes: Routes = [
   ],canActivate:[AuthGuard]},
   { path: 'subscription', component: SubscriptionComponent},
   { path: 'privacy-policy', component: PrivacyPolicyComponent },
-  { path: 'terms-of-service', component: TermsOfServiceComponent },
+  { path: 'terms-and-conditions', component: TermsOfServiceComponent },
   { path: 'refund-policy', component: RefundPolicyComponent },
   // { path: '**', component: PageNotFoundComponent }
 ];
