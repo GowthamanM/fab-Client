@@ -31,14 +31,23 @@
         <a class="profile-batch fab-ml-10" *ngIf="isLoggedIn" (click)="profilePopup()">{{userNameInitial}}</a>
         <div class="menu-popup">
           <ul>
-            <li>
-              Men Quiz
+            <li *ngIf = isSubscribed>
+              <a style="color: #0F5860; font-size: 0.6rem;">Subscription Period</a> <br>
+              <a class="text-center">{{subscriptionDays}} Days</a>
+            </li>
+            <li *ngIf = !isSubscribed>
+              <a style="color: #0F5860; font-size: 0.6rem;">Subscription Period</a> <br>
+              <a class="text-center" style="color: red;font-size: 0.6rem;">Not Subscribed</a>
+            </li>
+            <li class="fab-mt-10" style="border-top: 1px solid #15B793;padding-top: 7px;">
+              <a routerLink="quiz">Men Quiz</a>
+              
             </li>
             <li class="fab-mt-10">
-              Female Quiz
+              <a routerLink="quiz">Women Quiz</a>
             </li>
             <li class="fab-mt-10">
-              Kids Quiz
+              <a routerLink="quiz">Kids Quiz</a>
             </li>
             <li class="fab-mt-10" (click)="logout()" style="color: #0F5860; font-weight: bold; border-top: 1px solid #15B793;padding-top: 7px;">
               Logout
@@ -66,16 +75,25 @@
           <a class="profile-batch fab-ml-10" *ngIf="isLoggedIn" (click)="profilePopupMD()">{{userNameInitial}}</a>
           <div class="menu-popup-md">
             <ul>
-              <li>
-                Men Quiz
+              <li *ngIf = isSubscribed>
+                <a style="color: #0F5860; font-size: 0.6rem;">Subscription Period</a> <br>
+                <a class="text-center">{{subscriptionDays}} Days</a>
+              </li>
+              <li *ngIf = !isSubscribed>
+                <a style="color: #0F5860; font-size: 0.6rem;">Subscription Period</a> <br>
+                <a class="text-center" style="color: red;font-size: 0.6rem;">Not Subscribed</a>
+              </li>
+              <li class="fab-mt-10" style="border-top: 1px solid #15B793;padding-top: 7px;">
+                <a routerLink="quiz">Men Quiz</a>
+                
               </li>
               <li class="fab-mt-10">
-                Female Quiz
+                <a routerLink="quiz">Women Quiz</a>
               </li>
               <li class="fab-mt-10">
-                Kids Quiz
+                <a routerLink="quiz">Kids Quiz</a>
               </li>
-              <li class="fab-mt-10" (click)="logout()" style="color: #0F5860; font-weight: bold; border-top: 1px solid #15B793; padding-top: 10px;">
+              <li class="fab-mt-10" (click)="logout()" style="color: #0F5860; font-weight: bold; border-top: 1px solid #15B793;padding-top: 7px;">
                 Logout
               </li>
             </ul>
@@ -104,7 +122,7 @@
           <a routerLink="/login" class="fab-btn fab-mt-10" *ngIf="!isLoggedIn">Sign In</a>
         </li>
         <li>
-          <a routerLink="/login" class="fab-btn fab-mt-10" *ngIf="isLoggedIn" (click)="logout()">Log out</a>
+          <!-- <a routerLink="/login" class="fab-btn fab-mt-10" *ngIf="isLoggedIn" (click)="logout()">Log out</a> -->
         </li>
       </ul>
     </nav>
