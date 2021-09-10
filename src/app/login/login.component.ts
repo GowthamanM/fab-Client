@@ -89,7 +89,7 @@ export class LoginComponent implements OnInit {
       if(data.User.isSubscribed == true){
         this.route.navigateByUrl('/wardrobe');
       }else{
-        this.route.navigateByUrl('/subscription');
+        this.route.navigateByUrl('/not-subscribed');
       }
     })
   }

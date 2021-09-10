@@ -97,7 +97,7 @@ export class SecondaryNavbarComponent implements OnInit {
       if(temp.User.isSubscribed === true){
         this.router.navigateByUrl('/wardrobe');
       }else{
-        this.router.navigateByUrl('/subscription');
+        this.router.navigateByUrl('/not-subscribed');
       }
     })
   }

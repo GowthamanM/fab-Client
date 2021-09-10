@@ -26,13 +26,10 @@ export class HomeComponent implements OnInit {
 
   takeToWardrobe() {
 
-    this.userService.getUserData().subscribe(data=>{
-      if(data.User.isSubscribed === true){
-        this.route.navigateByUrl('/wardrobe');
-      }else{
-        this.route.navigateByUrl('/subscription')
-      }
-    })
+
+    this.route.navigateByUrl('/wardrobe');
+
+
 
   }
 }

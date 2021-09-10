@@ -14,9 +14,10 @@ export class WarChoiceComponent implements OnInit {
 
   ngOnInit(): void {
     this.userService.getUserData().subscribe(data=>{
-      if(data.isSubscribed == false){
-        this.route.navigateByUrl('/subscription');
+      if(!(data.User.isSubscribed)){
+        this.route.navigateByUrl('/not-subscribed');
       }
+
     });
     window.scrollTo(0, 0);
   }
