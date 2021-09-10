@@ -24,6 +24,8 @@ export class NavbarComponent implements OnInit {
 
   userName = '';
   userNameInitial = '';
+  isSubscribed:boolean = false;
+  subscriptionDays:any;
 
   constructor(private credentialService: CredentialService,
     private authService:AuthService,
@@ -74,7 +76,20 @@ export class NavbarComponent implements OnInit {
 
       this.userName = data.User.fullName;
       this.userNameInitial =  data.User.fullName.charAt(0);
+      this.isSubscribed = data.User.isSubscribed;
+      if(this.isSubscribed)
+        this.setSubscriptionDays(data.User.subscriptionEndDate);
     });
+  }
+
+  setSubscriptionDays(date:any){
+    let subscribeDate = new Date ((date+"").split('T')[0]); 
+    let today = new Date();
+    var currentDate = new Date(today.getFullYear()+'-'+(today.getMonth()+1)+'-' +today.getDate());
+    var diffTime = Math.abs(subscribeDate.getTime() - currentDate.getTime());
+    let diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
+    this.subscriptionDays = diffDays;
+    
   }
 
   logout() {
