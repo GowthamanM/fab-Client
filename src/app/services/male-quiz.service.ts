@@ -27,7 +27,7 @@ export class MaleQuizService {
       this.authService.decodeToken().subscribe(data=>{
         this.uid = JSON.parse(JSON.stringify(data)).payload.id;
         console.log(this.uid);
-      }) 
+      })
     }
 
   Shirt:any = [
@@ -38,20 +38,20 @@ export class MaleQuizService {
       'Shirt','Size', ['S','M','L','XL','XXL']
     ],
     [
-      
-      'Shirt','Fit', ['Skinny'	,'Slim'	,'Regular'	,'Boot cut'	,'Flared'	,'Jogger'	,'Relaxecd fit'	,'Straight' 	,'Super skinny fit'	,'Tappered fit']
+
+      'Shirt','Fit', [['Skinny','skinny']	,['Slim','slim']	,['Regular','regular']	,['Boot cut','bootCut']	,['Flared','flared']	,['Jogger','jogger']	,['Relaxed fit','relaxedFit']	,['Straight','straight'] 	,['Super skinny fit','superSkinnyFit']	,['Tappered fit','tapperedFit']]
     ],
     [
       'Shirt','Price', ['Below 500','1000 - 2000','2000 - 3000','3000 - 4000','4000 - 5000', 'More than 5000']
     ],
     [
-      'Shirt','Pattern', ['Solid','Printed','Checked','Stripes']
+      'Shirt','Pattern', [['Solid','solid'],['Printed','printed'],['Checked','checked'],['Stripes','stripes']]
     ],
     [
-      'Shirt','Your Preference', ['Slim','Regular']
+      'Shirt','Your Preference', [['Slim','slim'],['Regular','regular']]
     ],
     [
-      'Shirt','Color', ['Red','Blue','Green','Black']
+      'Shirt','Color', [['Red','red'],['Blue','blue'],['Green','green'],['Black','black']]
     ],
   ];
 
@@ -60,17 +60,20 @@ export class MaleQuizService {
       'Pant','Size', ['28 - 30','30 - 32','32 - 34','34 - 36','36 - 38']
     ],
     [
-      'Pant','Pattern', ['Torn','Regular']
+      'Pant','Pattern', [['Torn','torn'],['Regular','regular']]
     ],
     [
-      'Pant','Fit', ['Skinny','Slim','Regular','Boot cut','Flared','Jogger','Relaxed fit','Straight','Super skinny fit','Tappered fit']
+      'Pant','Fit', [['Skinny','skinny'],['Slim','slim'],['Regular','regular'],['Boot cut','bootCut'],['Flared','flared'],['Jogger','jogger'],['Relaxed fit','relaxedFit'],['Straight','straight'],['Super skinny fit','superSkinnyFit'],['Tappered fit','tapperedFit']]
     ],
     [
-      'Pant','Cotton', ['Regular','Slim','Tappered','Relaxed fit','Straight','Super skinny fit']
+      'Pant','Cotton', [['Regular','regular'],['Slim','slim'],['Tappered','tappered'],['Relaxed fit','relaxedFit'],['Straight','straight'],['Super skinny fit','superSkinnyFit']]
     ],
     [
       'Shirt','Price', ['Below 500','1000 - 2000','2000 - 3000','3000 - 4000','4000 - 5000', 'More than 5000']
-    ]
+    ],
+    [
+      'Shirt','Color', [['Red','red'],['Blue','blue'],['Green','green'],['Black','black']]
+    ],
   ];
 
   Innerwear:any = [
@@ -169,7 +172,7 @@ export class MaleQuizService {
   }
 
   viewAnswerAlert() {
-    this.setMaleData(); 
+    this.setMaleData();
     console.log(JSON.parse(JSON.stringify(this.maleData)));
   }
 
@@ -189,18 +192,18 @@ export class MaleQuizService {
     this.maleData.innerwear.vest = this.innerwearAns[1] === ''?'null':this.innerwearAns[1];
 
     this.maleData.pants = {};
-    this.maleData.pants.size = this.pantAns[0] === ''?'null':this.pantAns[0]; 
-    this.maleData.pants.pattern = this.pantAns[1] === ''?'null':this.pantAns[1]; 
-    this.maleData.pants.fit = this.pantAns[2] === ''?'null':this.pantAns[2]; 
-    this.maleData.pants.cotton = this.pantAns[3] === ''?'null':this.pantAns[3]; 
+    this.maleData.pants.size = this.pantAns[0] === ''?'null':this.pantAns[0];
+    this.maleData.pants.pattern = this.pantAns[1] === ''?'null':this.pantAns[1];
+    this.maleData.pants.fit = this.pantAns[2] === ''?'null':this.pantAns[2];
+    this.maleData.pants.cotton = this.pantAns[3] === ''?'null':this.pantAns[3];
     this.maleData.pants.price = this.pantAns[4] === ''?'null':this.pantAns[4];
 
     this.maleData.shorts = {};
-    this.maleData.shorts.size = this.shortsAns[0] === ''?'null':this.shortsAns[0]; 
-    this.maleData.shorts.pattern = this.shortsAns[1] === ''?'null':this.shortsAns[1]; 
-    this.maleData.shorts.fit = this.shortsAns[2] === ''?'null':this.shortsAns[2]; 
-    this.maleData.shorts.cotton = this.shortsAns[3] === ''?'null':this.shortsAns[3]; 
-    this.maleData.shorts.price = this.shortsAns[4] === ''?'null':this.shortsAns[4]; 
+    this.maleData.shorts.size = this.shortsAns[0] === ''?'null':this.shortsAns[0];
+    this.maleData.shorts.pattern = this.shortsAns[1] === ''?'null':this.shortsAns[1];
+    this.maleData.shorts.fit = this.shortsAns[2] === ''?'null':this.shortsAns[2];
+    this.maleData.shorts.cotton = this.shortsAns[3] === ''?'null':this.shortsAns[3];
+    this.maleData.shorts.price = this.shortsAns[4] === ''?'null':this.shortsAns[4];
 
     this.maleData.blazers = {};
     this.maleData.blazers.chestSize = this.blazerAns[0] === ''?'null':this.blazerAns[0];
@@ -213,15 +216,15 @@ export class MaleQuizService {
     this.maleData.footwear.size = this.footwearAns[0] === ''?'null':this.footwearAns[0];
 
   }
-  
+
   setMaleCommonQuestions(data:any){
-    this.maleData.commonQuestions = data; 
+    this.maleData.commonQuestions = data;
 
   }
 
   getUid(){
 
-    
+
   }
 
 
@@ -229,11 +232,11 @@ export class MaleQuizService {
 
   saveMaleData(){
     this.getUid();
-    
+
     var header = {
       headers: new HttpHeaders()
       .set('Authorization',  `bearer ${(this.authService.getToken())}`)
-    } 
+    }
     this.maleData.userId = this.uid;
     console.log(JSON.parse(JSON.stringify(this.maleData)));
     return this.http.post(this.apiUrl+"mq",JSON.parse(JSON.stringify(this.maleData)));
