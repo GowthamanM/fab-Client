@@ -18,11 +18,20 @@ export class SubscriptionComponent implements OnInit {
   afterSubscription:boolean = false;
   wallet:any;
 
+
+  monthPlanData :any = {
+    "amount" : "499",
+    "currency" : "INR",
+    "notes" : {
+        "subscriptionType" : "monthly"
+    }
+}
+
   basicPlanData :any = {
     "amount" : "1347",
     "currency" : "INR",
     "notes" : {
-        "subscriptionType" : "monthly"
+        "subscriptionType" : "three-months"
     }
 }
 
@@ -79,6 +88,24 @@ options = {
     this.getUserDetails();
     window.scrollTo(0, 0);
     
+  }
+
+
+  monthPlan(){
+    this.razorpayService.basicPlanOrder(this.monthPlanData).subscribe(data=>{
+      // console.log(data);
+      
+      let temp = data;
+      if(temp.message === "payment order created"){
+        this.options.order_id = temp.result.orderId;
+        this.options.prefill.name = temp.result.prefill.name;
+        this.options.prefill.email = temp.result.prefill.email;
+        this.options.prefill.contact = temp.result.prefill.contact;
+        this.options.notes.subscriptionType = this.monthPlanData.notes.subscriptionType;
+      }
+      this.checkout();
+      
+    });
   }
 
   basicPlan(){
