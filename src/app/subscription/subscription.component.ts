@@ -20,7 +20,7 @@ export class SubscriptionComponent implements OnInit {
 
 
   monthPlanData :any = {
-    "amount" : "499",
+    "amount" : "449",
     "currency" : "INR",
     "notes" : {
         "subscriptionType" : "monthly"
