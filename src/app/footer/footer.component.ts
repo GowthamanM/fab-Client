@@ -21,13 +21,13 @@ export class FooterComponent implements OnInit {
 
     // If media query matches
     if (media.matches) {
-      var url = 'https://wa.me/+919566615244/?text=';
+      var url = 'https://wa.me/+919944613555/?text=';
     } else {
-      var url = 'https://web.whatsapp.com/send?phone=+919566615244&text=';
+      var url = 'https://web.whatsapp.com/send?phone=+919944613555&text=';
     }
 
     //define the message text
-    var text = 'Hey Specialist!, I need your help \n';
+    var text = 'Hey Stylist!, I need your help \n';
 
     //encode the text
     var encodedText = encodeURIComponent(text);
