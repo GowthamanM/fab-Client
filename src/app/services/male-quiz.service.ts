@@ -78,17 +78,23 @@ export class MaleQuizService {
 
   Innerwear:any = [
     [
-      'Innerwear','Type', ['Briefs','Trunks','Boxer briefs','Inner boxers']
+      'Innerwear','Type', [['Briefs','briefs'],['Trunks','trunks'],['Boxer briefs','boxerBriefs'],['Inner boxers','innerBoxers']]
     ],
     [
-      'Innerwear','Vest', ['Sleeve less','Sleeved vests','Gym Vests']
-    ]
+      'Innerwear','Vest', [['Sleeve less','sleeveLess'],['Sleeved vests','sleevedVests'],['Gym Vests','gymVests']]
+    ],
+    [
+      'Innerwear','Color', [['Red','red'],['Blue','blue'],['Green','green'],['Black','black']]
+    ],
   ];
 
   Footwear:any = [
     [
       'Footwear','Size', ['6','7','8','9','10','11']
-    ]
+    ],
+    [
+      'Footwear','Color', [['Red','red'],['Blue','blue'],['Green','green'],['Black','black']]
+    ],
   ];
 
   Shorts:any = [
@@ -96,17 +102,20 @@ export class MaleQuizService {
       'Shorts','Size', ['28 - 30','30 - 32','32 - 34','34 - 36','36 - 38']
     ],
     [
-      'Shorts','Pattern', ['Torn','Regular']
+      'Shorts','Pattern', [['Torn','torn'],['Regular','regular']]
     ],
     [
-      'Shorts','Fit', ['Skinny','Slim','Regular','Boot cut','Flared','Jogger','Relaxed fit','Straight','Super skinny fit','Tappered fit']
+      'Shorts','Fit', [['Skinny','skinny'],['Slim','slim'],['Regular','regular'],['Boot cut','bootCut'],['Flared','flared'],['Jogger','jogger'],['Relaxed fit','relaxedFit'],['Straight','straight'],['Super skinny fit','superSkinnyFit'],['Tappered fit','tapperedFit']]
     ],
     [
-      'Shorts','Cotton', ['Regular','Slim','Tappered','Relaxed fit','Straight','Super skinny fit']
+      'Shorts','Cotton', [['Regular','regular'],['Slim','slim'],['Tappered','tappered'],['Relaxed fit','relaxedFit'],['Straight','straight'],['Super skinny fit','superSkinnyFit']]
     ],
     [
       'Shorts','Price', ['Below 500','1000 - 2000','2000 - 3000','3000 - 4000','4000 - 5000', 'More than 5000']
-    ]
+    ],
+    [
+      'Shorts','Color', [['Red','red'],['Blue','blue'],['Green','green'],['Black','black']]
+    ],
   ];
 
   Blazer:any = [
@@ -117,14 +126,18 @@ export class MaleQuizService {
       'Blazer','Size', ['S','M','L','XL','XXL']
     ],
     [
-      'Blazer','Fit', ['Skinny'	,'Slim'	,'Regular'	,'Boot cut'	,'Flared'	,'Jogger'	,'Relaxecd fit'	,'Straight' 	,'Super skinny fit'	,'Tappered fit']
+
+      'Blazer','Fit', [['Skinny','skinny']	,['Slim','slim']	,['Regular','regular']	,['Boot cut','bootCut']	,['Flared','flared']	,['Jogger','jogger']	,['Relaxed fit','relaxedFit']	,['Straight','straight'] 	,['Super skinny fit','superSkinnyFit']	,['Tappered fit','tapperedFit']]
     ],
     [
       'Blazer','Price', ['Below 500','1000 - 2000','2000 - 3000','3000 - 4000','4000 - 5000', 'More than 5000']
     ],
     [
-      'Blazer','Pattern', ['Solid','Printed','Checked','Stripes']
-    ]
+      'Blazer','Pattern', [['Solid','solid'],['Printed','printed'],['Checked','checked'],['Stripes','stripes']]
+    ],
+    [
+      'Blazer','Color', [['Red','red'],['Blue','blue'],['Green','green'],['Black','black']]
+    ],
   ];
 
   allQuiz:any = [this.Shirt, this.Pant, this.Innerwear, this.Shorts, this.Blazer, this.Footwear];
