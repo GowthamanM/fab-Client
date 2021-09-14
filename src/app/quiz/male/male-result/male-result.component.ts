@@ -65,11 +65,11 @@ export class MaleResultComponent implements OnInit {
   onSubmit() {
     this.maleQuizService.setAnswers(this.shirtAns, this.pantAns, this.innerwearAns ,this.shortsAns,this.blazerAns,this.footwearAns);
     this.maleQuizService.viewAnswerAlert();
-    this.maleQuizService.saveMaleData().subscribe(data=>{
+    this.maleQuizService.saveMaleData().subscribe((data: any)=>{
       console.log(data);
     })
     this.checkNavigate();
-    
+
   }
 
   checkNavigate(){
