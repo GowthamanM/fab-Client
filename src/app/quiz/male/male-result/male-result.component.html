@@ -6,32 +6,488 @@
       {{types[arrIndex]}}
     </h2>
 
-    <form class="quiz-questions">
-      <div class="form-group" *ngFor="let item of selection[arrIndex]; let i = index">
+    <!-- Shirt Quiz -->
+    <form class="quiz-questions" [formGroup]="shirtForm" *ngIf = "types[arrIndex] == 'Shirt'">
+      <div class="form-group">
         <p class="quiz-ques">
-          {{item[1]}}
+          {{Shirt[0][1]}}
         </p>
         <div class="quiz-options">
-          <div class="options" *ngFor="let options of item[2]">
-            <div class="form-check" (click)="saveAnswers(i, options)">
+          <div class="options" *ngFor="let options of Shirt[0][2]">
+            <div class="form-check">
               <div class="radio-custom">
-                <input class="form-check-input fab-radio-btn" type="radio" [name]="types[arrIndex]+arrIndex+i" [id]="options" [value]="options" style="cursor: pointer;">
-                <label class="fab-btn" [for]="options">{{options}} </label>
+                <input class="form-check-input fab-radio-btn" type="radio" formControlName="chestSize" [id]="options" [value]="options" style="cursor: pointer;">
+                <label class="fab-rad-btn" [for]="options">{{options}} </label>
               </div>
-              <!-- <input class="form-check-input fab-radio" type="radio" [name]="types[arrIndex]+arrIndex+i" [id]="options" [value]="options" style="cursor: pointer;">
-              <label class="form-check-label" [for]="options" style="cursor: pointer;">
-                {{options}}
-              </label> -->
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="form-group">
+        <p class="quiz-ques">
+          {{Shirt[1][1]}}
+        </p>
+        <div class="quiz-options">
+          <div class="options" *ngFor="let options of Shirt[1][2]">
+            <div class="form-check">
+              <div class="radio-custom">
+                <input class="form-check-input fab-radio-btn" type="radio" formControlName="size" [id]="options" [value]="options" style="cursor: pointer;">
+                <label class="fab-rad-btn" [for]="options">{{options}} </label>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="form-group">
+        <p class="quiz-ques">
+          {{Shirt[2][1]}}
+        </p>
+        <div class="quiz-options" formGroupName="fit">
+          <div class="options" *ngFor="let options of Shirt[2][2]">
+            <div class="form-check">
+              <div class="radio-custom">
+                <input class="form-check-input fab-radio-btn" type="checkbox" [formControlName]="options[1]" [id]="options[0]" [value]="options[0]" style="cursor: pointer;">
+                <label class="fab-rad-btn" [for]="options[0]">{{options[0]}} </label>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="form-group">
+        <p class="quiz-ques">
+          {{Shirt[3][1]}}
+        </p>
+        <div class="quiz-options">
+          <div class="options" *ngFor="let options of Shirt[3][2]">
+            <div class="form-check">
+              <div class="radio-custom">
+                <input class="form-check-input fab-radio-btn" type="radio" formControlName="price" [id]="options" [value]="options" style="cursor: pointer;">
+                <label class="fab-rad-btn" [for]="options">{{options}} </label>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="form-group">
+        <p class="quiz-ques">
+          {{Shirt[4][1]}}
+        </p>
+        <div class="quiz-options" formGroupName="pattern">
+          <div class="options" *ngFor="let options of Shirt[4][2]">
+            <div class="form-check">
+              <div class="radio-custom">
+                <input class="form-check-input fab-radio-btn" type="checkbox" [formControlName]="options[1]" [id]="options[0]" [value]="options[0]" style="cursor: pointer;">
+                <label class="fab-rad-btn" [for]="options[0]">{{options[0]}} </label>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="form-group">
+        <p class="quiz-ques">
+          {{Shirt[5][1]}}
+        </p>
+        <div class="quiz-options" formGroupName="preference">
+          <div class="options" *ngFor="let options of Shirt[5][2]">
+            <div class="form-check">
+              <div class="radio-custom">
+                <input class="form-check-input fab-radio-btn" type="checkbox" [formControlName]="options[1]" [id]="options[0]" [value]="options[0]" style="cursor: pointer;">
+                <label class="fab-rad-btn" [for]="options[0]">{{options[0]}} </label>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="form-group">
+        <p class="quiz-ques">
+          {{Shirt[6][1]}}
+        </p>
+        <div class="quiz-options" formGroupName="color">
+          <div class="options" *ngFor="let options of Shirt[6][2]">
+            <div class="form-check">
+              <div class="radio-custom">
+                <input class="form-check-input fab-radio-btn" type="checkbox" [formControlName]="options[1]" [id]="options[0]" [value]="options[0]" style="cursor: pointer;">
+                <label class="fab-rad-btn" [for]="options[0]">{{options[0]}} </label>
+              </div>
             </div>
           </div>
         </div>
       </div>
     </form>
 
+    <!-- Pant Quiz -->
+    <form class="quiz-questions" [formGroup]="pantForm" *ngIf = "types[arrIndex] == 'Pant'">
+      <div class="form-group">
+        <p class="quiz-ques">
+          {{Pant[0][1]}}
+        </p>
+        <div class="quiz-options">
+          <div class="options" *ngFor="let options of Pant[0][2]">
+            <div class="form-check">
+              <div class="radio-custom">
+                <input class="form-check-input fab-radio-btn" type="radio" formControlName="size" [id]="options" [value]="options" style="cursor: pointer;">
+                <label class="fab-rad-btn" [for]="options">{{options}} </label>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="form-group">
+        <p class="quiz-ques">
+          {{Pant[1][1]}}
+        </p>
+        <div class="quiz-options" formGroupName="pattern">
+          <div class="options" *ngFor="let options of Pant[1][2]">
+            <div class="form-check">
+              <div class="radio-custom">
+                <input class="form-check-input fab-radio-btn" type="checkbox" [formControlName]="options[1]" [id]="options[0]" [value]="options[0]" style="cursor: pointer;">
+                <label class="fab-rad-btn" [for]="options[0]">{{options[0]}} </label>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="form-group">
+        <p class="quiz-ques">
+          {{Pant[2][1]}}
+        </p>
+        <div class="quiz-options">
+          <div class="quiz-options" formGroupName="fit">
+            <div class="options" *ngFor="let options of Pant[2][2]">
+              <div class="form-check">
+                <div class="radio-custom">
+                  <input class="form-check-input fab-radio-btn" type="checkbox" [formControlName]="options[1]" [id]="options[0]" [value]="options[0]" style="cursor: pointer;">
+                  <label class="fab-rad-btn" [for]="options[0]">{{options[0]}} </label>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="form-group">
+        <p class="quiz-ques">
+          {{Pant[3][1]}}
+        </p>
+        <div class="quiz-options" formGroupName="cotton">
+          <div class="options" *ngFor="let options of Pant[3][2]">
+            <div class="form-check">
+              <div class="radio-custom">
+                <input class="form-check-input fab-radio-btn" type="checkbox" [formControlName]="options[1]" [id]="options[0]" [value]="options[0]" style="cursor: pointer;">
+                <label class="fab-rad-btn" [for]="options[0]">{{options[0]}} </label>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="form-group">
+        <p class="quiz-ques">
+          {{Pant[4][1]}}
+        </p>
+        <div class="quiz-options">
+          <div class="options" *ngFor="let options of Pant[4][2]">
+            <div class="form-check">
+              <div class="radio-custom">
+                <input class="form-check-input fab-radio-btn" type="radio" formControlName="price" [id]="options" [value]="options" style="cursor: pointer;">
+                <label class="fab-rad-btn" [for]="options">{{options}} </label>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="form-group">
+        <p class="quiz-ques">
+          {{Pant[5][1]}}
+        </p>
+        <div class="quiz-options" formGroupName="color">
+          <div class="options" *ngFor="let options of Pant[5][2]">
+            <div class="form-check">
+              <div class="radio-custom">
+                <input class="form-check-input fab-radio-btn" type="checkbox" [formControlName]="options[1]" [id]="options[0]" [value]="options[0]" style="cursor: pointer;">
+                <label class="fab-rad-btn" [for]="options[0]">{{options[0]}} </label>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </form>
+
+    <!-- Shorts Quiz -->
+    <form class="quiz-questions" [formGroup]="shortsForm" *ngIf = "types[arrIndex] == 'Shorts'">
+      <div class="form-group">
+        <p class="quiz-ques">
+          {{Shorts[0][1]}}
+        </p>
+        <div class="quiz-options">
+          <div class="options" *ngFor="let options of Shorts[0][2]">
+            <div class="form-check">
+              <div class="radio-custom">
+                <input class="form-check-input fab-radio-btn" type="radio" formControlName="size" [id]="options" [value]="options" style="cursor: pointer;">
+                <label class="fab-rad-btn" [for]="options">{{options}} </label>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="form-group">
+        <p class="quiz-ques">
+          {{Shorts[1][1]}}
+        </p>
+        <div class="quiz-options" formGroupName="pattern">
+          <div class="options" *ngFor="let options of Shorts[1][2]">
+            <div class="form-check">
+              <div class="radio-custom">
+                <input class="form-check-input fab-radio-btn" type="checkbox" [formControlName]="options[1]" [id]="options[0]" [value]="options[0]" style="cursor: pointer;">
+                <label class="fab-rad-btn" [for]="options[0]">{{options[0]}} </label>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="form-group">
+        <p class="quiz-ques">
+          {{Shorts[2][1]}}
+        </p>
+        <div class="quiz-options">
+          <div class="quiz-options" formGroupName="fit">
+            <div class="options" *ngFor="let options of Shorts[2][2]">
+              <div class="form-check">
+                <div class="radio-custom">
+                  <input class="form-check-input fab-radio-btn" type="checkbox" [formControlName]="options[1]" [id]="options[0]" [value]="options[0]" style="cursor: pointer;">
+                  <label class="fab-rad-btn" [for]="options[0]">{{options[0]}} </label>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="form-group">
+        <p class="quiz-ques">
+          {{Shorts[3][1]}}
+        </p>
+        <div class="quiz-options" formGroupName="cotton">
+          <div class="options" *ngFor="let options of Shorts[3][2]">
+            <div class="form-check">
+              <div class="radio-custom">
+                <input class="form-check-input fab-radio-btn" type="checkbox" [formControlName]="options[1]" [id]="options[0]" [value]="options[0]" style="cursor: pointer;">
+                <label class="fab-rad-btn" [for]="options[0]">{{options[0]}} </label>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="form-group">
+        <p class="quiz-ques">
+          {{Shorts[4][1]}}
+        </p>
+        <div class="quiz-options">
+          <div class="options" *ngFor="let options of Shorts[4][2]">
+            <div class="form-check">
+              <div class="radio-custom">
+                <input class="form-check-input fab-radio-btn" type="radio" formControlName="price" [id]="options" [value]="options" style="cursor: pointer;">
+                <label class="fab-rad-btn" [for]="options">{{options}} </label>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="form-group">
+        <p class="quiz-ques">
+          {{Shorts[5][1]}}
+        </p>
+        <div class="quiz-options" formGroupName="color">
+          <div class="options" *ngFor="let options of Shorts[5][2]">
+            <div class="form-check">
+              <div class="radio-custom">
+                <input class="form-check-input fab-radio-btn" type="checkbox" [formControlName]="options[1]" [id]="options[0]" [value]="options[0]" style="cursor: pointer;">
+                <label class="fab-rad-btn" [for]="options[0]">{{options[0]}} </label>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </form>
+
+    <!-- Blazer Quiz -->
+    <form class="quiz-questions" [formGroup]="blazerForm" *ngIf = "types[arrIndex] == 'Blazer'">
+      <div class="form-group">
+        <p class="quiz-ques">
+          {{Blazer[0][1]}}
+        </p>
+        <div class="quiz-options">
+          <div class="options" *ngFor="let options of Blazer[0][2]">
+            <div class="form-check">
+              <div class="radio-custom">
+                <input class="form-check-input fab-radio-btn" type="radio" formControlName="chestSize" [id]="options" [value]="options" style="cursor: pointer;">
+                <label class="fab-rad-btn" [for]="options">{{options}} </label>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="form-group">
+        <p class="quiz-ques">
+          {{Blazer[1][1]}}
+        </p>
+        <div class="quiz-options">
+          <div class="options" *ngFor="let options of Blazer[1][2]">
+            <div class="form-check">
+              <div class="radio-custom">
+                <input class="form-check-input fab-radio-btn" type="radio" formControlName="size" [id]="options" [value]="options" style="cursor: pointer;">
+                <label class="fab-rad-btn" [for]="options">{{options}} </label>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="form-group">
+        <p class="quiz-ques">
+          {{Blazer[2][1]}}
+        </p>
+        <div class="quiz-options" formGroupName="fit">
+          <div class="options" *ngFor="let options of Blazer[2][2]">
+            <div class="form-check">
+              <div class="radio-custom">
+                <input class="form-check-input fab-radio-btn" type="checkbox" [formControlName]="options[1]" [id]="options[0]" [value]="options[0]" style="cursor: pointer;">
+                <label class="fab-rad-btn" [for]="options[0]">{{options[0]}} </label>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="form-group">
+        <p class="quiz-ques">
+          {{Blazer[3][1]}}
+        </p>
+        <div class="quiz-options">
+          <div class="options" *ngFor="let options of Blazer[3][2]">
+            <div class="form-check">
+              <div class="radio-custom">
+                <input class="form-check-input fab-radio-btn" type="radio" formControlName="price" [id]="options" [value]="options" style="cursor: pointer;">
+                <label class="fab-rad-btn" [for]="options">{{options}} </label>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="form-group">
+        <p class="quiz-ques">
+          {{Blazer[4][1]}}
+        </p>
+        <div class="quiz-options" formGroupName="pattern">
+          <div class="options" *ngFor="let options of Blazer[4][2]">
+            <div class="form-check">
+              <div class="radio-custom">
+                <input class="form-check-input fab-radio-btn" type="checkbox" [formControlName]="options[1]" [id]="options[0]" [value]="options[0]" style="cursor: pointer;">
+                <label class="fab-rad-btn" [for]="options[0]">{{options[0]}} </label>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="form-group">
+        <p class="quiz-ques">
+          {{Blazer[5][1]}}
+        </p>
+        <div class="quiz-options" formGroupName="color">
+          <div class="options" *ngFor="let options of Blazer[5][2]">
+            <div class="form-check">
+              <div class="radio-custom">
+                <input class="form-check-input fab-radio-btn" type="checkbox" [formControlName]="options[1]" [id]="options[0]" [value]="options[0]" style="cursor: pointer;">
+                <label class="fab-rad-btn" [for]="options[0]">{{options[0]}} </label>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </form>
+
+    <!-- Innerwear Quiz -->
+    <form class="quiz-questions" [formGroup]="innerwearForm" *ngIf = "types[arrIndex] == 'Innerwear'">
+      <div class="form-group">
+        <p class="quiz-ques">
+          {{Innerwear[0][1]}}
+        </p>
+        <div class="quiz-options" formGroupName="type">
+          <div class="options" *ngFor="let options of Innerwear[0][2]">
+            <div class="form-check">
+              <div class="radio-custom">
+                <input class="form-check-input fab-radio-btn" type="checkbox" [formControlName]="options[1]" [id]="options[0]" [value]="options[0]" style="cursor: pointer;">
+                <label class="fab-rad-btn" [for]="options[0]">{{options[0]}} </label>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="form-group">
+        <p class="quiz-ques">
+          {{Innerwear[1][1]}}
+        </p>
+        <div class="quiz-options" formGroupName="vest">
+          <div class="options" *ngFor="let options of Innerwear[1][2]">
+            <div class="form-check">
+              <div class="radio-custom">
+                <input class="form-check-input fab-radio-btn" type="checkbox" [formControlName]="options[1]" [id]="options[0]" [value]="options[0]" style="cursor: pointer;">
+                <label class="fab-rad-btn" [for]="options[0]">{{options[0]}} </label>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="form-group">
+        <p class="quiz-ques">
+          {{Innerwear[2][1]}}
+        </p>
+        <div class="quiz-options" formGroupName="color">
+          <div class="options" *ngFor="let options of Innerwear[2][2]">
+            <div class="form-check">
+              <div class="radio-custom">
+                <input class="form-check-input fab-radio-btn" type="checkbox" [formControlName]="options[1]" [id]="options[0]" [value]="options[0]" style="cursor: pointer;">
+                <label class="fab-rad-btn" [for]="options[0]">{{options[0]}} </label>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </form>
+
+    <!-- Footwear Quiz -->
+    <form class="quiz-questions" [formGroup]="footwearForm" *ngIf = "types[arrIndex] == 'Footwear'">
+      <div class="form-group">
+        <p class="quiz-ques">
+          {{Footwear[0][1]}}
+        </p>
+        <div class="quiz-options">
+          <div class="options" *ngFor="let options of Footwear[0][2]">
+            <div class="form-check">
+              <div class="radio-custom">
+                <input class="form-check-input fab-radio-btn" type="radio" formControlName="size" [id]="options" [value]="options" style="cursor: pointer;">
+                <label class="fab-rad-btn" [for]="options">{{options}} </label>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="form-group">
+        <p class="quiz-ques">
+          {{Footwear[1][1]}}
+        </p>
+        <div class="quiz-options" formGroupName="color">
+          <div class="options" *ngFor="let options of Footwear[1][2]">
+            <div class="form-check">
+              <div class="radio-custom">
+                <input class="form-check-input fab-radio-btn" type="checkbox" [formControlName]="options[1]" [id]="options[0]" [value]="options[0]" style="cursor: pointer;">
+                <label class="fab-rad-btn" [for]="options[0]">{{options[0]}} </label>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </form>
+
+
     <div class="prev-next fab-mt-70">
-      <!-- <a class="fab-btn" (click)="goBack()" *ngIf= "backBtnActive">Back</a> -->
       <a class="fab-btn" (click)="goNext()" *ngIf= "nextBtnActive" style="cursor: pointer;">Next</a>
-      <a class="fab-btn fab-btn-gradientfilled" (click)="onSubmit()" *ngIf= "!nextBtnActive" style="cursor: pointer;">Submit</a>
+      <a class="fab-btn fab-btn-gradientfilled" (click)="setAllData()" *ngIf= "!nextBtnActive" style="cursor: pointer;">Submit</a>
     </div>
   </section>
 
