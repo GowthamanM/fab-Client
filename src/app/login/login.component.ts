@@ -20,6 +20,7 @@ export class LoginComponent implements OnInit {
   userData:any={};
   uid:any;
   pass:any;
+  loginErrorResponse:any;
 
   socialUser:any={}
   googleErrorResponse:any;
@@ -54,7 +55,7 @@ export class LoginComponent implements OnInit {
    this.loginService.userLogin(this.loginForm.value).subscribe(resp=>{
     let temp = JSON.parse(JSON.stringify(resp.body));  
     
-    if(temp.message.message === "Authentication Successful"){
+    if(temp.message.message != undefined && temp.message.message === "Authentication Successful"){
 
       localStorage.setItem('userToken',resp.headers.get('token')+"");
       localStorage.setItem('authStatus','true');
@@ -65,7 +66,13 @@ export class LoginComponent implements OnInit {
       
 
     }else{
-      alert("login Failed")
+      if(temp.message != undefined)
+        this.loginErrorResponse = temp.message;
+      else{
+        console.log(temp);
+        
+        this.loginErrorResponse = temp;
+      }
     } 
    })
    

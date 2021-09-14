@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { KidsQuizService } from 'src/app/services/kids-quiz.service';
+import { UserService } from 'src/app/services/user.service';
 
 @Component({
   selector: 'app-kids-result',
@@ -26,7 +27,8 @@ export class KidsResultComponent implements OnInit {
   shortsAns:any = ['','',''];
   kurthisAns:any = ['','',''];
 
-  constructor(private activeRoute: ActivatedRoute, private route: Router, private kidsQuizService: KidsQuizService) { }
+  constructor(private activeRoute: ActivatedRoute, private route: Router, private kidsQuizService: KidsQuizService
+    ,private userService:UserService) { }
 
   ngOnInit(): void {
     this.selection = this.kidsQuizService.selectedQuiz;
@@ -66,8 +68,18 @@ export class KidsResultComponent implements OnInit {
     // this.kidsQuizService.viewAnswerAlert();
 
     this.kidsQuizService.saveKidsData().subscribe();
-    this.route.navigate(['wardrobe']);
+    this.checkNavigate();
   }
+
+  checkNavigate(){
+    this.userService.getUserData().subscribe(data=>{
+      if(data.User.isSubscribed === true){
+        this.route.navigate(['wardrobe']);
+      }else{
+        this.route.navigate(['not-subscribed']);
+      }
+    })
+}
 
   saveAnswers(ind:any, option:any) {
     if(this.types[this.arrIndex] == "BodySuit") {

@@ -46,7 +46,8 @@
         <input type="submit" name="login" value="Login" class="btn" [disabled]="!loginForm.valid">
         <!-- <button class="btn" (click)="loginWithGoogle()">Sign in with Google</button> -->
         <a routerLink="/sign-up" style="text-align: center;">Click here to <span style="color:#38d39f">Signup!</span></a>
-        <div class="error-msg">{{googleErrorResponse}}</div>
+        <div class="error-msg" style="margin-top: 10px;">{{googleErrorResponse}}</div>
+        <div class="error-msg" style="margin-top: 10px;">{{loginErrorResponse}}</div>
       </form>
     </div>
   </div>

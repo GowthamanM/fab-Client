@@ -16,6 +16,7 @@ export class SignupComponent implements OnInit {
   socialUser:any={};
   googleUserChange:any={};
   googleErrorResponse:any;
+  signUpErrorResponse:any;
   counter:any = 1;
 
   constructor(private fb: FormBuilder, 
@@ -77,7 +78,7 @@ export class SignupComponent implements OnInit {
         localStorage.setItem('uid',this.responseData.message.userId+"");
         this.route.navigateByUrl('/sign-up-quiz');
       }else if(this.responseData.message === "Email Address Already Exists"){
-        alert(this.responseData.message);
+        this.signUpErrorResponse = this.responseData.message
       }
       
     });
