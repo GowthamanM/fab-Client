@@ -11,12 +11,12 @@ export class MaleQuizService {
   selectionArray:any = [];
   selectedQuiz:any = [];
   maleData:any = {};
-  shirtAns:any = ['','','','',''];
-  pantAns:any = ['','','','',''];
-  innerwearAns:any = ['','','',''];
-  shortsAns:any = ['','','','',''];
-  blazerAns:any = [];
-  footwearAns:any = [];
+  shirtAns:any = ['','','','','','',''];
+  pantAns:any = ['','','','','',''];
+  innerwearAns:any = ['','',''];
+  shortsAns:any = ['','','','','',''];
+  blazerAns:any = ['','','','','',''];
+  footwearAns:any = ['',''];
   uid:any;
 
   apiUrl:string;
@@ -203,6 +203,7 @@ export class MaleQuizService {
     this.maleData.innerwear={};
     this.maleData.innerwear.itype = this.innerwearAns[0] === ''?'null':this.innerwearAns[0];
     this.maleData.innerwear.vest = this.innerwearAns[1] === ''?'null':this.innerwearAns[1];
+    this.maleData.innerwear.color = this.innerwearAns[2] === ''?'null':this.innerwearAns[2];
 
     this.maleData.pants = {};
     this.maleData.pants.size = this.pantAns[0] === ''?'null':this.pantAns[0];
@@ -210,6 +211,7 @@ export class MaleQuizService {
     this.maleData.pants.fit = this.pantAns[2] === ''?'null':this.pantAns[2];
     this.maleData.pants.cotton = this.pantAns[3] === ''?'null':this.pantAns[3];
     this.maleData.pants.price = this.pantAns[4] === ''?'null':this.pantAns[4];
+    this.maleData.pants.color = this.pantAns[5] === ''?'null':this.pantAns[5];
 
     this.maleData.shorts = {};
     this.maleData.shorts.size = this.shortsAns[0] === ''?'null':this.shortsAns[0];
@@ -217,6 +219,7 @@ export class MaleQuizService {
     this.maleData.shorts.fit = this.shortsAns[2] === ''?'null':this.shortsAns[2];
     this.maleData.shorts.cotton = this.shortsAns[3] === ''?'null':this.shortsAns[3];
     this.maleData.shorts.price = this.shortsAns[4] === ''?'null':this.shortsAns[4];
+    this.maleData.shorts.color = this.shortsAns[5] === ''?'null':this.shortsAns[5];
 
     this.maleData.blazers = {};
     this.maleData.blazers.chestSize = this.blazerAns[0] === ''?'null':this.blazerAns[0];
@@ -224,10 +227,11 @@ export class MaleQuizService {
     this.maleData.blazers.fit = this.blazerAns[2] === ''?'null':this.blazerAns[2];
     this.maleData.blazers.price = this.blazerAns[3] === ''?'null':this.blazerAns[3];
     this.maleData.blazers.pattern = this.blazerAns[4] === ''?'null':this.blazerAns[4];
+    this.maleData.blazers.color = this.blazerAns[5] === ''?'null':this.blazerAns[5];
 
     this.maleData.footwear={};
     this.maleData.footwear.size = this.footwearAns[0] === ''?'null':this.footwearAns[0];
-
+    this.maleData.footwear.color = this.footwearAns[1] === ''?'null':this.footwearAns[1];
   }
 
   setMaleCommonQuestions(data:any){
