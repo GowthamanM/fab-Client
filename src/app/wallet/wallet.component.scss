@@ -1,0 +1,43 @@
+.wallet-form{
+    margin-top: 80px;
+}
+.row{
+    display: flex;
+    height: 400px;
+}
+.card{
+    width: 250px;
+    height: 150px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    margin: auto;
+}
+.title{
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    font-weight:bold;
+    text-align: center;
+    padding-top: 20px;
+    color: #276970;
+}
+.money{
+    font-size: 1.5rem;
+    font-weight:bold;
+    text-align: center;
+    padding-top: 20px;
+}
+.form-group{
+    margin: auto;
+    padding: 10px;
+}
+.form-title{
+    font-size: 1.5rem;
+    font-weight:700;
+    text-transform: uppercase;
+}
+.form-control{
+    margin-top: 10px;
+}
+.btn-primary{
+    background-color: #276970;
+    border: none;
+}
