@@ -25,6 +25,7 @@ import { SignupComponent } from './signup/signup.component';
 import { NotSubscribedComponent } from './subscription/not-subscribed/not-subscribed.component';
 import { SubscriptionComponent } from './subscription/subscription.component';
 import { TermsOfServiceComponent } from './terms-of-service/terms-of-service.component';
+import { WalletComponent } from './wallet/wallet.component';
 import { LikedComponent } from './wardrobe/liked/liked.component';
 import { ProductListComponent } from './wardrobe/product-list/product-list.component';
 import { ProductsComponent } from './wardrobe/products/products.component';
@@ -66,6 +67,7 @@ const routes: Routes = [
   { path: 'privacy-policy', component: PrivacyPolicyComponent },
   { path: 'terms-and-conditions', component: TermsOfServiceComponent },
   { path: 'refund-policy', component: RefundPolicyComponent },
+  { path: 'wallet',component:WalletComponent}
   // { path: '**', component: PageNotFoundComponent }
 ];
 

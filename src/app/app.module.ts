@@ -47,6 +47,7 @@ import { WarChoiceComponent } from './wardrobe/war-choice/war-choice.component';
 import { NgxSpinnerModule } from "ngx-spinner";
 import { CommonQuizComponent } from './quiz/common-quiz/common-quiz.component';
 import { NotSubscribedComponent } from './subscription/not-subscribed/not-subscribed.component';
+import { WalletComponent } from './wallet/wallet.component';
 
 @NgModule({
   declarations: [
@@ -85,7 +86,8 @@ import { NotSubscribedComponent } from './subscription/not-subscribed/not-subscr
     SignUpQuizComponent,
     WarChoiceComponent,
     CommonQuizComponent,
-    NotSubscribedComponent
+    NotSubscribedComponent,
+    WalletComponent
   ],
   imports: [
     
