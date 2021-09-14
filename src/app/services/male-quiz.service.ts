@@ -198,7 +198,7 @@ export class MaleQuizService {
     this.maleData.shirts.pattern = this.shirtAns[4] === ''?'null':this.shirtAns[4];
     // this.maleData.shirts.bodyType = this.shirtAns[5] === ''?'null':this.shirtAns[5];
     this.maleData.shirts.yourShirtPreference = this.shirtAns[5] === ''?'null':this.shirtAns[5];
-    this.maleData.colors = this.shirtAns[6] === ''?'null':this.shirtAns[6];
+    this.maleData.shirts.color = this.shirtAns[6] === ''?'null':this.shirtAns[6];
 
     this.maleData.innerwear={};
     this.maleData.innerwear.itype = this.innerwearAns[0] === ''?'null':this.innerwearAns[0];
