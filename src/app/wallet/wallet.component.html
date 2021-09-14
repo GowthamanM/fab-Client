@@ -1,0 +1,40 @@
+<app-secondary-navbar></app-secondary-navbar>
+<div class="wallet-form">
+    <div class="row">
+        <div class="col-md-4 col-sm-12">
+            <div class="card">
+                <p class="title">Wallet Balance</p>
+                <p class="money">&#8377; 15</p>
+            </div>
+        </div>
+        <div class="col-md-8 col-sm-12" style="text-align: center;margin-bottom: 15px;">
+            <p class="form-title">Payment</p>
+            <form>
+                <div class="form-group col-sm-8">
+                    <select id="inputState" class="form-control" (change)="onChange($event)">
+                        <option selected disabled>Choose Payment Methed</option>
+                        <option *ngFor="let state of itemState" value="{{state}}">{{state}}</option>
+                    </select>
+                  </div>
+            </form>
+
+            <form *ngIf="selectedOption == 'GPay'">
+                <p class="form-title">Enter Details</p>
+                <div class="form-group col-sm-8">
+                    <input type="text" class="form-control" name="gpayNumber" placeholder="Enter Mobile Number" [(ngModel)]="gpayNumber">
+                  </div>
+                  <button type="submit" class="btn btn-primary" (click)="onGpaySubmit()">Submit</button>
+            </form>
+            <form *ngIf="selectedOption == 'Bank Transfer'">
+                <p class="form-title">Enter Details</p>
+                <div class="form-group col-sm-8">
+                    <input type="text" class="form-control" placeholder="Account No">
+                    <input type="text" class="form-control" placeholder="IFSC Code">
+                    <input type="text" class="form-control" placeholder="Branch">
+                  </div>
+            </form>
+
+        </div>
+    </div>
+</div>
+<app-footer></app-footer>
