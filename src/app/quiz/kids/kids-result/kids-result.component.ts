@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { KidsQuizService } from 'src/app/services/kids-quiz.service';
 import { UserService } from 'src/app/services/user.service';
@@ -19,16 +20,21 @@ export class KidsResultComponent implements OnInit {
 
   types:any = [];
 
-  bodysuitAns:any = ['','',''];
-  tshirtAns:any = ['','',''];
-  dressAns:any = ['','',''];
-  clothingsetAns:any = ['','',''];
-  shirtAns:any = ['','',''];
-  shortsAns:any = ['','',''];
-  kurthisAns:any = ['','',''];
+  bodysuitAns:any = ['','','',''];
+  tshirtAns:any = ['','','',''];
+  dressAns:any = ['','','',''];
+  clothingsetAns:any = ['','','',''];
+  shirtAns:any = ['','','',''];
+  shortsAns:any = ['','','',''];
+  kurthisAns:any = ['','','',''];
 
-  constructor(private activeRoute: ActivatedRoute, private route: Router, private kidsQuizService: KidsQuizService
-    ,private userService:UserService) { }
+  constructor(
+    private activeRoute: ActivatedRoute,
+    private route: Router,
+    private kidsQuizService: KidsQuizService,
+    private userService:UserService,
+    private fb: FormBuilder
+  ) { }
 
   ngOnInit(): void {
     this.selection = this.kidsQuizService.selectedQuiz;
@@ -64,11 +70,23 @@ export class KidsResultComponent implements OnInit {
   }
 
   onSubmit() {
+    // console.log(this.bodysuitAns);
+    // console.log(this.tshirtAns);
     this.kidsQuizService.setAnswers(this.bodysuitAns, this.tshirtAns, this.dressAns, this.clothingsetAns, this.shirtAns, this.shortsAns, this.kurthisAns);
-    // this.kidsQuizService.viewAnswerAlert();
 
     this.kidsQuizService.saveKidsData().subscribe();
     this.checkNavigate();
+  }
+
+  setAllData() {
+    this.bodysuitAns = this.dataConversion(this.bodysuitForm.value);
+    this.tshirtAns = this.dataConversion(this.tshirtForm.value);
+    this.dressAns = this.dataConversion(this.dressForm.value);
+    this.clothingsetAns = this.dataConversion(this.clothingsetForm.value);
+    this.shirtAns = this.dataConversion(this.shirtForm.value);
+    this.shortsAns = this.dataConversion(this.shortsForm.value);
+    this.kurthisAns = this.dataConversion(this.kurthisForm.value);
+    this.onSubmit();
   }
 
   checkNavigate(){
@@ -79,59 +97,168 @@ export class KidsResultComponent implements OnInit {
         this.route.navigate(['not-subscribed']);
       }
     })
-}
-
-  saveAnswers(ind:any, option:any) {
-    if(this.types[this.arrIndex] == "BodySuit") {
-      this.bodysuitAns.forEach( (items:any, index:any) => {
-        if(index == ind) {
-          this.bodysuitAns[index] = option;
-        }
-      });
-    }
-    else if(this.types[this.arrIndex] == "TShirt") {
-      this.tshirtAns.forEach( (items:any, index:any) => {
-        if(index == ind) {
-          this.tshirtAns[index] = option;
-        }
-      });
-    }
-    else if(this.types[this.arrIndex] == "Dress") {
-      this.dressAns.forEach( (items:any, index:any) => {
-        if(index == ind) {
-          this.dressAns[index] = option;
-        }
-      });
-    }
-    else if(this.types[this.arrIndex] == "ClothingSet") {
-      this.clothingsetAns.forEach( (items:any, index:any) => {
-        if(index == ind) {
-          this.clothingsetAns[index] = option;
-        }
-      });
-    }
-    else if(this.types[this.arrIndex] == "Shirt") {
-      this.shirtAns.forEach( (items:any, index:any) => {
-        if(index == ind) {
-          this.shirtAns[index] = option;
-        }
-      });
-    }
-    else if(this.types[this.arrIndex] == "Shorts") {
-      this.shortsAns.forEach( (items:any, index:any) => {
-        if(index == ind) {
-          this.shortsAns[index] = option;
-        }
-      });
-    }
-    else if(this.types[this.arrIndex] == "Kurthis") {
-      this.kurthisAns.forEach( (items:any, index:any) => {
-        if(index == ind) {
-          this.kurthisAns[index] = option;
-        }
-      });
-    }
   }
 
 
+  BodySuit: any = this.kidsQuizService.BodySuit;
+  TShirt: any = this.kidsQuizService.TShirt;
+  Dress: any = this.kidsQuizService.Dress;
+  ClothingSet: any = this.kidsQuizService.ClothingSet;
+  Shirt: any = this.kidsQuizService.Shirt;
+  Shorts: any = this.kidsQuizService.Shorts;
+  Kurthis: any = this.kidsQuizService.Kurthis;
+
+  bodysuitForm = this.fb.group({
+    size: [''],
+    price: [''],
+    pattern: this.fb.group({
+      solid: [''],
+      printed: [''],
+      checked: [''],
+      stripes: [''],
+      notSpecific: ['']
+    }),
+    color: this.fb.group({
+      red: [''],
+      blue: [''],
+      green: [''],
+      black: ['']
+    }),
+  });
+
+  tshirtForm = this.fb.group({
+    size: [''],
+    price: [''],
+    pattern: this.fb.group({
+      solid: [''],
+      printed: [''],
+      checked: [''],
+      stripes: [''],
+      notSpecific: ['']
+    }),
+    color: this.fb.group({
+      red: [''],
+      blue: [''],
+      green: [''],
+      black: ['']
+    }),
+  });
+
+  dressForm = this.fb.group({
+    size: [''],
+    price: [''],
+    pattern: this.fb.group({
+      solid: [''],
+      printed: [''],
+      checked: [''],
+      stripes: [''],
+      notSpecific: ['']
+    }),
+    color: this.fb.group({
+      red: [''],
+      blue: [''],
+      green: [''],
+      black: ['']
+    }),
+  });
+
+  clothingsetForm = this.fb.group({
+    size: [''],
+    price: [''],
+    pattern: this.fb.group({
+      solid: [''],
+      printed: [''],
+      checked: [''],
+      stripes: [''],
+      notSpecific: ['']
+    }),
+    color: this.fb.group({
+      red: [''],
+      blue: [''],
+      green: [''],
+      black: ['']
+    }),
+  });
+
+  shirtForm = this.fb.group({
+    size: [''],
+    price: [''],
+    pattern: this.fb.group({
+      solid: [''],
+      printed: [''],
+      checked: [''],
+      stripes: [''],
+      notSpecific: ['']
+    }),
+    color: this.fb.group({
+      red: [''],
+      blue: [''],
+      green: [''],
+      black: ['']
+    }),
+  });
+
+  shortsForm = this.fb.group({
+    size: [''],
+    price: [''],
+    pattern: this.fb.group({
+      solid: [''],
+      printed: [''],
+      checked: [''],
+      stripes: [''],
+      notSpecific: ['']
+    }),
+    color: this.fb.group({
+      red: [''],
+      blue: [''],
+      green: [''],
+      black: ['']
+    }),
+  });
+
+  kurthisForm = this.fb.group({
+    size: [''],
+    price: [''],
+    pattern: this.fb.group({
+      solid: [''],
+      printed: [''],
+      checked: [''],
+      stripes: [''],
+      notSpecific: ['']
+    }),
+    color: this.fb.group({
+      red: [''],
+      blue: [''],
+      green: [''],
+      black: ['']
+    }),
+  });
+
+
+
+  // For Converting object into our structure
+  dataConversion(data: any) {
+    let dt = Object.entries(data);
+    dt.forEach((innerdata, i) => {
+      if(typeof(innerdata[1]) == 'object') {
+        innerdata[1] = this.innerObjConversion(innerdata[1]);
+      }
+    });
+    let resultData:any = [];
+    dt.forEach(item => {
+      resultData.push(item[1]);
+    });
+    return resultData;
+  }
+
+  innerObjConversion(data: any)  {
+    let result:any = [];
+    let dt = Object.entries(data);
+    dt.forEach((item, i) => {
+      if(item[1] == true) {
+        result.push(item[0]);
+      }
+    });
+    return result;
+  }
 }

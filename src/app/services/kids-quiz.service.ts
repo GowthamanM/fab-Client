@@ -15,13 +15,13 @@ export class KidsQuizService {
   apiUrl:string;
   kidsData:any = {};
 
-  bodysuitAns:any = ['','',''];
-  tshirtAns:any = ['','',''];
-  dressAns:any = ['','',''];
-  clothingsetAns:any = ['','',''];
-  shirtAns:any = ['','',''];
-  shortsAns:any = ['','',''];
-  kurthisAns:any = ['','',''];
+  bodysuitAns:any = ['','','',''];
+  tshirtAns:any = ['','','',''];
+  dressAns:any = ['','','',''];
+  clothingsetAns:any = ['','','',''];
+  shirtAns:any = ['','','',''];
+  shortsAns:any = ['','','',''];
+  kurthisAns:any = ['','','',''];
 
   constructor(private credentials:CredentialService,
     private authService:AuthService,
@@ -41,7 +41,10 @@ export class KidsQuizService {
       'BodySuit','Price', ['Below 500','1000 - 2000','2000 - 3000','3000 - 4000','4000 - 5000', 'More than 5000','Not specified']
     ],
     [
-      'BodySuit','Pattern', ['Solid','Printed','Checked','Stripes','Not Specific']
+      'BodySuit','Pattern', [['Solid','solid'],['Printed','printed'],['Checked','checked'],['Stripes','stripes'],['Not Specific','notSpecific']]
+    ],
+    [
+      'BodySuit','Color', [['Red','red'],['Blue','blue'],['Green','green'],['Black','black']]
     ]
   ];
 
@@ -53,7 +56,10 @@ export class KidsQuizService {
       'TShirt','Price', ['Below 500','1000 - 2000','2000 - 3000','3000 - 4000','4000 - 5000', 'More than 5000','Not specified']
     ],
     [
-      'TShirt','Pattern', ['Solid','Printed','Checked','Stripes','Not Specific']
+      'TShirt','Pattern', [['Solid','solid'],['Printed','printed'],['Checked','checked'],['Stripes','stripes'],['Not Specific','notSpecific']]
+    ],
+    [
+      'TShirt','Color', [['Red','red'],['Blue','blue'],['Green','green'],['Black','black']]
     ]
   ];
 
@@ -65,7 +71,10 @@ export class KidsQuizService {
       'Dress','Price', ['Below 500','1000 - 2000','2000 - 3000','3000 - 4000','4000 - 5000', 'More than 5000','Not specified']
     ],
     [
-      'Dress','Pattern', ['Solid','Printed','Checked','Stripes','Not Specific']
+      'Dress','Pattern', [['Solid','solid'],['Printed','printed'],['Checked','checked'],['Stripes','stripes'],['Not Specific','notSpecific']]
+    ],
+    [
+      'Dress','Color', [['Red','red'],['Blue','blue'],['Green','green'],['Black','black']]
     ]
   ];
 
@@ -77,7 +86,10 @@ export class KidsQuizService {
       'ClothingSet','Price', ['Below 500','1000 - 2000','2000 - 3000','3000 - 4000','4000 - 5000', 'More than 5000','Not specified']
     ],
     [
-      'ClothingSet','Pattern', ['Solid','Printed','Checked','Stripes','Not Specific']
+      'ClothingSet','Pattern', [['Solid','solid'],['Printed','printed'],['Checked','checked'],['Stripes','stripes'],['Not Specific','notSpecific']]
+    ],
+    [
+      'ClothingSet','Color', [['Red','red'],['Blue','blue'],['Green','green'],['Black','black']]
     ]
   ];
 
@@ -89,7 +101,10 @@ export class KidsQuizService {
       'Shirt','Price', ['Below 500','1000 - 2000','2000 - 3000','3000 - 4000','4000 - 5000', 'More than 5000','Not specified']
     ],
     [
-      'Shirt','Pattern', ['Solid','Printed','Checked','Stripes','Not Specific']
+      'Shirt','Pattern', [['Solid','solid'],['Printed','printed'],['Checked','checked'],['Stripes','stripes'],['Not Specific','notSpecific']]
+    ],
+    [
+      'Shirt','Color', [['Red','red'],['Blue','blue'],['Green','green'],['Black','black']]
     ]
   ];
 
@@ -101,7 +116,10 @@ export class KidsQuizService {
       'Shorts','Price', ['Below 500','1000 - 2000','2000 - 3000','3000 - 4000','4000 - 5000', 'More than 5000','Not specified']
     ],
     [
-      'Shorts','Pattern', ['Solid','Printed','Checked','Stripes','Not Specific']
+      'Shorts','Pattern', [['Solid','solid'],['Printed','printed'],['Checked','checked'],['Stripes','stripes'],['Not Specific','notSpecific']]
+    ],
+    [
+      'Shorts','Color', [['Red','red'],['Blue','blue'],['Green','green'],['Black','black']]
     ]
   ];
 
@@ -113,7 +131,10 @@ export class KidsQuizService {
       'Kurthis','Price', ['Below 500','1000 - 2000','2000 - 3000','3000 - 4000','4000 - 5000', 'More than 5000','Not specified']
     ],
     [
-      'Kurthis','Pattern', ['Solid','Printed','Checked','Stripes','Not Specific']
+      'Kurthis','Pattern', [['Solid','solid'],['Printed','printed'],['Checked','checked'],['Stripes','stripes'],['Not Specific','notSpecific']]
+    ],
+    [
+      'Kurthis','Color', [['Red','red'],['Blue','blue'],['Green','green'],['Black','black']]
     ]
   ];
 
@@ -170,41 +191,47 @@ export class KidsQuizService {
     this.kidsData.bodySuit.size = this.bodysuitAns[0] === ''?'null':this.bodysuitAns[0];
     this.kidsData.bodySuit.price = this.bodysuitAns[1] === ''?'null':this.bodysuitAns[1];
     this.kidsData.bodySuit.pattern = this.bodysuitAns[2] === ''?'null':this.bodysuitAns[2];
+    this.kidsData.bodySuit.color = this.bodysuitAns[3] === ''?'null':this.bodysuitAns[3];
 
     this.kidsData.tshirts = {};
     this.kidsData.tshirts.size = this.tshirtAns[0] === ''?'null':this.tshirtAns[0];
     this.kidsData.tshirts.price = this.tshirtAns[1] === ''?'null':this.tshirtAns[1];
     this.kidsData.tshirts.pattern = this.tshirtAns[2] === ''?'null':this.tshirtAns[2];
+    this.kidsData.tshirts.color = this.tshirtAns[3] === ''?'null':this.tshirtAns[3];
 
     this.kidsData.dress = {};
     this.kidsData.dress.size = this.dressAns[0] === ''?'null':this.dressAns[0];
     this.kidsData.dress.price = this.dressAns[1] === ''?'null':this.dressAns[1];
     this.kidsData.dress.pattern = this.dressAns[2] === ''?'null':this.dressAns[2];
+    this.kidsData.dress.color = this.dressAns[3] === ''?'null':this.dressAns[3];
 
     this.kidsData.clothingSet = {};
     this.kidsData.clothingSet.size = this.clothingsetAns[0] === ''?'null':this.clothingsetAns[0];
     this.kidsData.clothingSet.price = this.clothingsetAns[1] === ''?'null':this.clothingsetAns[1];
     this.kidsData.clothingSet.pattern = this.clothingsetAns[2] === ''?'null':this.clothingsetAns[2];
+    this.kidsData.clothingSet.color = this.clothingsetAns[3] === ''?'null':this.clothingsetAns[3];
 
     this.kidsData.shirts = {};
     this.kidsData.shirts.size = this.shirtAns === ''?'null':this.shirtAns[0];
     this.kidsData.shirts.price = this.shirtAns[1] === ''?'null':this.shirtAns[1];
     this.kidsData.shirts.pattern = this.shirtAns[2] === ''?'null':this.shirtAns[2];
+    this.kidsData.shirts.color = this.shirtAns[3] === ''?'null':this.shirtAns[3];
 
     this.kidsData.shorts = {};
     this.kidsData.shorts.size = this.shortsAns[0] === ''?'null':this.shortsAns[0];
     this.kidsData.shorts.price = this.shortsAns[1] === ''?'null':this.shortsAns[1];
     this.kidsData.shorts.pattern = this.shortsAns[2] === ''?'null':this.shortsAns[2];
+    this.kidsData.shorts.color = this.shortsAns[3] === ''?'null':this.shortsAns[3];
 
     this.kidsData.kurthis = {};
     this.kidsData.kurthis.size = this.kurthisAns[0] === ''?'null':this.kurthisAns[0];
     this.kidsData.kurthis.price = this.kurthisAns[1] === ''?'null':this.kurthisAns[1];
     this.kidsData.kurthis.pattern = this.kurthisAns[2] === ''?'null':this.kurthisAns[2];
-
+    this.kidsData.kurthis.color = this.kurthisAns[3] === ''?'null':this.kurthisAns[3];
   }
 
   setKidsCommonQuestions(data:any){
-    this.kidsData.commonQuestions = data; 
+    this.kidsData.commonQuestions = data;
 
   }
 
