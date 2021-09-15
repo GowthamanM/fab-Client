@@ -233,7 +233,7 @@ export class FemaleQuizService {
       'Skirts','Fabric', [['Cotton Blend','cottonBlend'],['Linen','linen'],['Liva','liva'],['Modal','modal'],['Nylon','nylon'], ['Poly silk','polySilk'],['Polyester','polyester'],['Pure silk','pureSilk'],['Pure Cotton','pureCotton'],['Silk Blend','silkBlend'],['Viscouse Rayon','viscoseRayon']]
     ],
     [
-      'Skirts','Fabric Type', [['chiffon','chiffon'],['crepe','crepe'],	['georgette','georgette'],	['jacquard','jacquard'],	['linen','linen'],	['liva','liva'],	['net','net'], ['satin','satin'],	['velvet','velvet']]
+      'Skirts','Fabric Type', [['Chiffon','chiffon'],['Crepe','crepe'],	['Georgette','georgette'],	['Jacquard','jacquard'],	['Linen','linen'],	['Liva','liva'],	['Net','net'], ['Satin','satin'],	['Velvet','velvet']]
     ],
     [
       'Skirts','Skirt Type', [['Knitted','knitted'],['woven','woven'],	['Not Specific','notSpecific']]
@@ -257,10 +257,10 @@ export class FemaleQuizService {
       'Trousers','Fit', [['Flared','flared'],	['Loose fit','looseFit'],	['Mom fit','momFit'],	['Regular fit','regularFit'],	['Skinny fit','skinnyFit'],	['Slim fit','slimFit'],	['Straight fit','straightFit'],	['Tapered fit','taperedFit'],	['Not specific','notSpecific']]
     ],
     [
-      'Trousers','Fabric', [['cotton','cotton'],	['denim','denim'],	['linen','linen'],	['liva','liva'],	['livaeco','livaeco'],	['modal','modal'],	['nylon','nylon'],	['organic','organic'], ['cotton','cotton'],	['polysilk','polysilk'],	['polyester','polyester'],	['silk','silk'],	['viscose','viscose'], ['rayon','rayon'],	['wool','wool']]
+      'Trousers','Fabric', [['cotton','cotton'],	['denim','denim'],	['linen','linen'],	['liva','liva'],	['livaeco','livaeco'],	['modal','modal'],	['nylon','nylon'],	['organic','organic'],	['polysilk','polysilk'],	['polyester','polyester'],	['silk','silk'],	['viscose','viscose'], ['rayon','rayon'],	['wool','wool']]
     ],
     [
-      'Trousers','Trouser Type', [['Anti fit','antiFit'],	['bootcut','bootcut'],	['cargos','cargos'],	['chinos','chinos'],	['cigerrete trousers','cigerreteTrousers'],	['culottes','culottes'],	['drop crotch trousers','dropCrotchTrousers'],	['formal trousers','formalTrousers'],	['jodpuris','jodpuris'],	['joggers','joggers'],	['parallel trousers','parallelTrousers'],	['peg trousers','pegTrousers'],	['regular trousers','reularTrousers'], ['not specific','notSpecific']]
+      'Trousers','Trouser Type', [['Anti fit','antiFit'],	['bootcut','bootcut'],	['cargos','cargos'],	['chinos','chinos'],	['cigerrete trousers','cigerreteTrousers'],	['culottes','culottes'],	['drop crotch trousers','dropCrotchTrousers'],	['formal trousers','formalTrousers'],	['jodpuris','jodpuris'],	['joggers','joggers'],	['parallel trousers','parallelTrousers'],	['peg trousers','pegTrousers'],	['regular trousers','regularTrousers'], ['not specific','notSpecific']]
     ],
     [
       'Trousers','Type of Pleat', [['Flat Front','flatFront'],['Pleated','pleated']]
@@ -323,7 +323,7 @@ export class FemaleQuizService {
       'CasualFoot','Pattern', [['Colour blocked','colourBlocked'],	['Embellished','embellished'],	['Printed','printed'],	['Solid','solid'],	['Striped','striped'],	['Textured','textured'],	['Woven design','wovenDesign'],	['Not specific','notSpecific']]
     ],
     [
-      'CasualFoot','Shoe Width', ['Euro 15','UK-9.5']
+      'CasualFoot','Size', ['Euro 15','UK-9.5']
     ],
     [
       'CasualFoot','Toe shape', [['Open Toe','openToe'],	['Peep Toe','peepToe'],	['Pointed Toe','pointedToe'],	['Round Toe','roundToe'],	['Square Toe','squareToe'],	['Not specific','notSpecific']]

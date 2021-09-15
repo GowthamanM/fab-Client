@@ -31,7 +31,7 @@ export class FemaleResultComponent implements OnInit {
   leggingsAns:any = ['','','','',''];
   jeansAns:any = ['','','','',''];
   jeggingsAns:any = ['','','','',''];
-  skirtAns:any = ['','','','','','',''];
+  skirtsAns:any = ['','','','','','',''];
   trousersAns:any = ['','','','','','','','',''];
   flatsFootAns: any = ['','','','','','','','','','',''];
   casualFootAns:any = ['','','','','','','',''];
@@ -81,31 +81,31 @@ export class FemaleResultComponent implements OnInit {
   }
 
   onSubmit() {
-    // this.femaleQuizService.setAnswers(this.topsAns, this.kurthisAns, this.sareeAns, this.jacketsAns, this.blazzersAns, this.lehangaAns, this.sweatshirtsAns, this.sweatersAns, this.leggingsAns, this.jeansAns, this.jeggingsAns, this.skirtAns, this.trousersAns, this.flatsFootAns, this.casualFootAns, this.heelsFootAns, this.sportswearAns, this.innerwearAns);
+    // this.femaleQuizService.setAnswers(this.topsAns, this.kurthisAns, this.sareeAns, this.jacketsAns, this.blazzersAns, this.lehangaAns, this.sweatshirtsAns, this.sweatersAns, this.leggingsAns, this.jeansAns, this.jeggingsAns, this.skirtsAns, this.trousersAns, this.flatsFootAns, this.casualFootAns, this.heelsFootAns, this.sportswearAns, this.innerwearAns);
     // this.femaleQuizService.setFemaleData();
     // this.femaleQuizService.saveFemaleData().subscribe();
     // this.checkNavigate();
   }
 
   setAllData() {
-    this.topsAns = this.dataConversion(this.shirtForm.value);
-    this.kurthisAns = this.dataConversion(this.shirtForm.value);
-    this.sareeAns = this.dataConversion(this.shirtForm.value);
-    this.jacketsAns = this.dataConversion(this.shirtForm.value);
-    this.blazzersAns = this.dataConversion(this.shirtForm.value);
-    this.lehangaAns = this.dataConversion(this.shirtForm.value);
-    this.sweatshirtsAns = this.dataConversion(this.shirtForm.value);
-    this.sweatersAns = this.dataConversion(this.shirtForm.value);
-    this.leggingsAns = this.dataConversion(this.shirtForm.value);
-    this.jeansAns = this.dataConversion(this.shirtForm.value);
-    this.jeggingsAns = this.dataConversion(this.shirtForm.value);
-    this.skirtAns = this.dataConversion(this.shirtForm.value);
-    this.trousersAns = this.dataConversion(this.shirtForm.value);
-    this.flatsFootAns = this.dataConversion(this.shirtForm.value);
-    this.casualFootAns = this.dataConversion(this.shirtForm.value);
-    this.heelsFootAns = this.dataConversion(this.shirtForm.value);
-    this.sportswearAns = this.dataConversion(this.shirtForm.value);
-    this.innerwearAns = this.dataConversion(this.shirtForm.value);
+    this.topsAns = this.dataConversion(this.topsForm.value);
+    this.kurthisAns = this.dataConversion(this.kurthisForm.value);
+    this.sareeAns = this.dataConversion(this.sareeForm.value);
+    this.jacketsAns = this.dataConversion(this.jacketsForm.value);
+    this.blazzersAns = this.dataConversion(this.blazzersForm.value);
+    this.lehangaAns = this.dataConversion(this.lehangaForm.value);
+    this.sweatshirtsAns = this.dataConversion(this.sweatshirtsForm.value);
+    this.sweatersAns = this.dataConversion(this.sweatersForm.value);
+    this.leggingsAns = this.dataConversion(this.leggingsForm.value);
+    this.jeansAns = this.dataConversion(this.jeansForm.value);
+    this.jeggingsAns = this.dataConversion(this.jeggingsForm.value);
+    this.skirtsAns = this.dataConversion(this.skirtsForm.value);
+    this.trousersAns = this.dataConversion(this.trousersForm.value);
+    this.flatsFootAns = this.dataConversion(this.flatsFootForm.value);
+    this.casualFootAns = this.dataConversion(this.casualFootForm.value);
+    this.heelsFootAns = this.dataConversion(this.heelsFootForm.value);
+    this.sportswearAns = this.dataConversion(this.sportswearForm.value);
+    this.innerwearAns = this.dataConversion(this.innerwearForm.value);
     this.onSubmit();
   }
 
@@ -118,6 +118,690 @@ export class FemaleResultComponent implements OnInit {
       }
     })
   }
+
+
+  Tops: any = this.femaleQuizService.Tops;
+  Kurthis: any = this.femaleQuizService.Kurthis;
+  Saree:any = this.femaleQuizService.Saree;
+  Jackets:any = this.femaleQuizService.Jackets;
+  Blazers:any = this.femaleQuizService.Blazers;
+  Lehanga:any = this.femaleQuizService.Lehanga;
+  Sweatshirts:any = this.femaleQuizService.Sweatshirts;
+  Sweaters:any = this.femaleQuizService.Sweaters;
+  Leggings:any = this.femaleQuizService.Leggings;
+  Jeans:any = this.femaleQuizService.Jeans;
+  Jeggings:any = this.femaleQuizService.Jeggings;
+  Skirts:any = this.femaleQuizService.Skirts;
+  Trousers:any = this.femaleQuizService.Trousers;
+  FlatsFoot:any = this.femaleQuizService.FlatsFoot;
+  CasualFoot:any = this.femaleQuizService.CasualFoot;
+  HeelsFoot:any = this.femaleQuizService.HeelsFoot;
+  Sportswear:any = this.femaleQuizService.Sportswear;
+  InnerWear:any = this.femaleQuizService.InnerWear;
+
+  topsForm = this.fb.group({
+    size: [''],
+    price: [''],
+    pattern: this.fb.group({
+      solid: [''],
+      printed: [''],
+      checked: [''],
+      stripes: ['']
+    }),
+    color: this.fb.group({
+      red: [''],
+      blue: [''],
+      green: [''],
+      black: ['']
+    }),
+  });
+
+  kurthisForm = this.fb.group({
+    size: [''],
+    price: [''],
+    pattern: this.fb.group({
+      solid: [''],
+      printed: [''],
+      checked: [''],
+      stripes: ['']
+    }),
+    color: this.fb.group({
+      red: [''],
+      blue: [''],
+      green: [''],
+      black: ['']
+    }),
+  });
+
+  sareeForm = this.fb.group({
+    price: [''],
+    pattern: this.fb.group({
+      solid: [''],
+      printed: [''],
+      checked: [''],
+      stripes: ['']
+    }),
+    color: this.fb.group({
+      red: [''],
+      blue: [''],
+      green: [''],
+      black: ['']
+    }),
+  });
+
+  jacketsForm = this.fb.group({
+    size: [''],
+    price: [''],
+    pattern: this.fb.group({
+      solid: [''],
+      printed: [''],
+      checked: [''],
+      stripes: ['']
+    }),
+    color: this.fb.group({
+      red: [''],
+      blue: [''],
+      green: [''],
+      black: ['']
+    }),
+  });
+
+  blazzersForm = this.fb.group({
+    size: [''],
+    price: [''],
+    pattern: this.fb.group({
+      solid: [''],
+      printed: [''],
+      checked: [''],
+      stripes: ['']
+    }),
+    color: this.fb.group({
+      red: [''],
+      blue: [''],
+      green: [''],
+      black: ['']
+    }),
+  });
+
+  lehangaForm = this.fb.group({
+    type: this.fb.group({
+      stitched: [''],
+      unstitched: [''],
+      semiStitched: ['']
+    }),
+    size: [''],
+    price: [''],
+    pattern: this.fb.group({
+      solid: [''],
+      printed: [''],
+      checked: [''],
+      stripes: ['']
+    }),
+    color: this.fb.group({
+      red: [''],
+      blue: [''],
+      green: [''],
+      black: ['']
+    }),
+  });
+
+  sweatshirtsForm = this.fb.group({
+    size: [''],
+    price: [''],
+    pattern: this.fb.group({
+      solid: [''],
+      printed: [''],
+      checked: [''],
+      stripes: ['']
+    }),
+    color: this.fb.group({
+      red: [''],
+      blue: [''],
+      green: [''],
+      black: ['']
+    }),
+  });
+
+  sweatersForm = this.fb.group({
+    size: [''],
+    price: [''],
+    pattern: this.fb.group({
+      solid: [''],
+      printed: [''],
+      checked: [''],
+      stripes: ['']
+    }),
+    color: this.fb.group({
+      red: [''],
+      blue: [''],
+      green: [''],
+      black: ['']
+    }),
+  });
+
+  leggingsForm = this.fb.group({
+    size: [''],
+    price: [''],
+    pattern: this.fb.group({
+      solid: [''],
+      printed: [''],
+      checked: [''],
+      stripes: ['']
+    }),
+    fabricType: this.fb.group({
+      acrylic: [''],
+      model: [''],
+      cotton: [''],
+      elastane: [''],
+      nylon: [''],
+      organicCotton: [''],
+      synthetic: [''],
+      viscoseRayon: ['']
+    }),
+    color: this.fb.group({
+      red: [''],
+      blue: [''],
+      green: [''],
+      black: ['']
+    }),
+  });
+
+  jeansForm = this.fb.group({
+    size: [''],
+    price: [''],
+    pattern: this.fb.group({
+      solid: [''],
+      printed: [''],
+      checked: [''],
+      stripes: ['']
+    }),
+    waistRise: this.fb.group({
+      highRaise: [''],
+      midRaise: [''],
+      lowRaise: ['']
+    }),
+    color: this.fb.group({
+      red: [''],
+      blue: [''],
+      green: [''],
+      black: ['']
+    }),
+  });
+
+  jeggingsForm = this.fb.group({
+    size: [''],
+    price: [''],
+    pattern: this.fb.group({
+      solid: [''],
+      printed: [''],
+      checked: [''],
+      stripes: ['']
+    }),
+    fabricType: this.fb.group({
+      acrylic: [''],
+      model: [''],
+      cotton: [''],
+      elastane: [''],
+      nylon: [''],
+      organicCotton: [''],
+      synthetic: [''],
+      viscoseRayon: ['']
+    }),
+    color: this.fb.group({
+      red: [''],
+      blue: [''],
+      green: [''],
+      black: ['']
+    }),
+  });
+
+  skirtsForm = this.fb.group({
+    size: [''],
+    price: [''],
+    pattern: this.fb.group({
+      solid: [''],
+      printed: [''],
+      checked: [''],
+      stripes: ['']
+    }),
+    fabric: this.fb.group({
+      cottonBlend: [''],
+      linen: [''],
+      liva: [''],
+      modal: [''],
+      nylon: [''],
+      polySilk: [''],
+      polyester: [''],
+      pureSilk: [''],
+      pureCotton: [''],
+      silkBlend: [''],
+      viscoseRayon: ['']
+    }),
+    fabricType: this.fb.group({
+      chiffon: [''],
+      crepe: [''],
+      georgette: [''],
+      jacquard: [''],
+      linen: [''],
+      liva: [''],
+      net: [''],
+      satin: [''],
+      velvet: ['']
+    }),
+    skirtType: this.fb.group({
+      knitted: [''],
+      woven: [''],
+      notSpecific: [''],
+    }),
+    color: this.fb.group({
+      red: [''],
+      blue: [''],
+      green: [''],
+      black: ['']
+    }),
+  });
+
+  trousersForm = this.fb.group({
+    size: [''],
+    price: [''],
+    pattern: this.fb.group({
+      solid: [''],
+      printed: [''],
+      checked: [''],
+      stripes: ['']
+    }),
+    fit: this.fb.group({
+      flared: [''],
+      looseFit: [''],
+      momFit: [''],
+      regularFit: [''],
+      skinnyFit: [''],
+      slimFit: [''],
+      straightFit: [''],
+      taperedFit: [''],
+      notSpecific: ['']
+    }),
+    fabric: this.fb.group({
+      cotton: [''],
+      denim: [''],
+      linen: [''],
+      liva: [''],
+      livaeco: [''],
+      modal: [''],
+      nylon: [''],
+      organic: [''],
+      polysilk: [''],
+      polyester: [''],
+      silk: [''],
+      viscose: [''],
+      rayon: [''],
+      wool: ['']
+    }),
+    trouserType: this.fb.group({
+      antiFit: [''],
+      bootcut: [''],
+      cargos: [''],
+      chinos: [''],
+      cigerreteTrousers: [''],
+      culottes: [''],
+      dropCrotchTrousers: [''],
+      formalTrousers: [''],
+      jodpuris: [''],
+      joggers: [''],
+      parallelTrousers: [''],
+      pegTrousers: [''],
+      regularTrousers: [''],
+      notSpecific: ['']
+    }),
+    typeOfPleat: this.fb.group({
+      flatFront: [''],
+      pleated: [''],
+    }),
+    waistRise: this.fb.group({
+      highRaise: [''],
+      midRaise: [''],
+      lowRaise: ['']
+    }),
+    color: this.fb.group({
+      red: [''],
+      blue: [''],
+      green: [''],
+      black: ['']
+    }),
+  });
+
+  flatsFootForm = this.fb.group({
+    ankleHeight: this.fb.group({
+      highTop: [''],
+      midTop: [''],
+      regular: [''],
+      notSpecific: ['']
+    }),
+    fastening: this.fb.group({
+      ankleLoop: [''],
+      backstrap: [''],
+      buckle: [''],
+      laceUps: [''],
+      noBackStrap: [''],
+      slipOn: [''],
+      velcro: [''],
+      zip: [''],
+      notSpecific: [''],
+    }),
+    material: this.fb.group({
+      canvas: [''],
+      fabric: [''],
+      fauxFur: [''],
+      lace: [''],
+      leather: [''],
+      mesh: [''],
+      pu: [''],
+      plastic: [''],
+      rubber: [''],
+      suede: [''],
+      synthetic: [''],
+      syntheticPatent: [''],
+      syntheticSuede: [''],
+      velvet: [''],
+      notSpecific: ['']
+    }),
+    occasion: this.fb.group({
+      casual: [''],
+      ethnic: [''],
+      party: [''],
+      work: [''],
+      notSpecific: ['']
+    }),
+    ornamentation: this.fb.group({
+      bows: [''],
+      buckles: [''],
+      embroidered: [''],
+      ethinicEmbellished: [''],
+      laserCuts: [''],
+      other: [''],
+      tassels: [''],
+      westernEmbellished: [''],
+      notSpecific: ['']
+    }),
+    pattern: this.fb.group({
+      colourBlocked: [''],
+      embellished: [''],
+      printed: [''],
+      solid: [''],
+      striped: [''],
+      textured: [''],
+      wovenDesign: [''],
+      notSpecific: ['']
+    }),
+    size: [''],
+    soleMaterial: this.fb.group({
+      croslite: [''],
+      eva: [''],
+      leather: [''],
+      neolite: [''],
+      pu: [''],
+      pvc: [''],
+      phylon: [''],
+      resin: [''],
+      rubber: [''],
+      synthetic: [''],
+      tpr: [''],
+      tpu: [''],
+      tunit: [''],
+      notSpecific: ['']
+    }),
+    toeShape: this.fb.group({
+      openToe: [''],
+      peepToe: [''],
+      pointedToe: [''],
+      roundToe: [''],
+      squareToe: [''],
+      notSpecific: ['']
+    }),
+    type: this.fb.group({
+      ballerinas: [''],
+      gladiators: [''],
+      mojaris: [''],
+      mules: [''],
+      oneToeFlats: [''],
+      openToeFlats: [''],
+      tStrapFlats: [''],
+      notSpecific: ['']
+    }),
+    color: this.fb.group({
+      red: [''],
+      blue: [''],
+      green: [''],
+      black: ['']
+    }),
+  });
+
+  casualFootForm = this.fb.group({
+    ankleHeight: this.fb.group({
+      highTop: [''],
+      midTop: [''],
+      regular: [''],
+      notSpecific: ['']
+    }),
+    fastening: this.fb.group({
+      ankleLoop: [''],
+      backstrap: [''],
+      buckle: [''],
+      laceUps: [''],
+      noBackStrap: [''],
+      slipOn: [''],
+      velcro: [''],
+      zip: [''],
+      notSpecific: [''],
+    }),
+    material: this.fb.group({
+      canvas: [''],
+      fabric: [''],
+      fauxFur: [''],
+      lace: [''],
+      leather: [''],
+      mesh: [''],
+      pu: [''],
+      plastic: [''],
+      rubber: [''],
+      suede: [''],
+      synthetic: [''],
+      syntheticPatent: [''],
+      syntheticSuede: [''],
+      velvet: [''],
+      notSpecific: ['']
+    }),
+    pattern: this.fb.group({
+      colourBlocked: [''],
+      embellished: [''],
+      printed: [''],
+      solid: [''],
+      striped: [''],
+      textured: [''],
+      wovenDesign: [''],
+      notSpecific: ['']
+    }),
+    size: [''],
+    toeShape: this.fb.group({
+      openToe: [''],
+      peepToe: [''],
+      pointedToe: [''],
+      roundToe: [''],
+      squareToe: [''],
+      notSpecific: ['']
+    }),
+    type: this.fb.group({
+      boatShoes: [''],
+      brogues: [''],
+      clogs: [''],
+      derbys: [''],
+      drivingShoes: [''],
+      espadrilles: [''],
+      flatBoots: [''],
+      flatForms: [''],
+      loafers: [''],
+      mojaris: [''],
+      monks: [''],
+      muleSneakers: [''],
+      mules: [''],
+      oxfords: [''],
+      skateShoes: [''],
+      slipOnSneakers: [''],
+      sneakers: [''],
+      treckingShoes: [''],
+      notSpecific: ['']
+    }),
+    color: this.fb.group({
+      red: [''],
+      blue: [''],
+      green: [''],
+      black: ['']
+    }),
+  });
+
+  heelsFootForm = this.fb.group({
+    ankleHeight: this.fb.group({
+      highTop: [''],
+      midTop: [''],
+      regular: [''],
+      notSpecific: ['']
+    }),
+    fastening: this.fb.group({
+      ankleLoop: [''],
+      backstrap: [''],
+      buckle: [''],
+      laceUps: [''],
+      openBackStrap: [''],
+      notSpecific: [''],
+    }),
+    heelHight: [''],
+    material: this.fb.group({
+      canvas: [''],
+      fabric: [''],
+      fauxFur: [''],
+      lace: [''],
+      leather: [''],
+      mesh: [''],
+      pu: [''],
+      plastic: [''],
+      rubber: [''],
+      suede: [''],
+      synthetic: [''],
+      syntheticPatent: [''],
+      syntheticSuede: [''],
+      velvet: [''],
+      notSpecific: ['']
+    }),
+    occasion: this.fb.group({
+      casual: [''],
+      ethnic: [''],
+      party: [''],
+      work: [''],
+      notSpecific: ['']
+    }),
+    ornamentation: this.fb.group({
+      bows: [''],
+      buckles: [''],
+      embroidered: [''],
+      ethinicEmbellished: [''],
+      laserCuts: [''],
+      other: [''],
+      tassels: [''],
+      westernEmbellished: [''],
+      notSpecific: ['']
+    }),
+    pattern: this.fb.group({
+      colourBlocked: [''],
+      embellished: [''],
+      printed: [''],
+      solid: [''],
+      striped: [''],
+      textured: [''],
+      wovenDesign: [''],
+      notSpecific: ['']
+    }),
+    size: [''],
+    soleMaterial: this.fb.group({
+      croslite: [''],
+      eva: [''],
+      leather: [''],
+      neolite: [''],
+      pu: [''],
+      pvc: [''],
+      phylon: [''],
+      resin: [''],
+      rubber: [''],
+      synthetic: [''],
+      tpr: [''],
+      tpu: [''],
+      tunit: [''],
+      notSpecific: ['']
+    }),
+    toeShape: this.fb.group({
+      openToe: [''],
+      peepToe: [''],
+      pointedToe: [''],
+      roundToe: [''],
+      squareToe: [''],
+      notSpecific: ['']
+    }),
+    type: this.fb.group({
+      sandals: [''],
+      pumps: [''],
+      heeledBoots: [''],
+      gladiators: [''],
+      mules: [''],
+      peepToes: [''],
+      notSpecific: ['']
+    }),
+    color: this.fb.group({
+      red: [''],
+      blue: [''],
+      green: [''],
+      black: ['']
+    }),
+  });
+
+  sportswearForm = this.fb.group({
+    type: this.fb.group({
+      tops: [''],
+      capris: [''],
+      shorts: [''],
+      sweatShirts: [''],
+      tShirts: [''],
+      tracksuits: ['']
+    }),
+    color: this.fb.group({
+      red: [''],
+      blue: [''],
+      green: [''],
+      black: ['']
+    }),
+  });
+
+  innerwearForm = this.fb.group({
+    type: this.fb.group({
+      brassuire: [''],
+      panties: [''],
+      lingereSet: [''],
+      camisoles: [''],
+      shapeWear: [''],
+      thermalTops: [''],
+      thermalBottoms: [''],
+      slips: [''],
+      babyDoll: ['']
+    }),
+    size: [''],
+    color: this.fb.group({
+      red: [''],
+      blue: [''],
+      green: [''],
+      black: ['']
+    }),
+  });
+
+
+
 
   // For Converting object into our structure
   dataConversion(data: any) {
