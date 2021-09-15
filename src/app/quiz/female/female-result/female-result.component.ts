@@ -81,10 +81,10 @@ export class FemaleResultComponent implements OnInit {
   }
 
   onSubmit() {
-    // this.femaleQuizService.setAnswers(this.topsAns, this.kurthisAns, this.sareeAns, this.jacketsAns, this.blazzersAns, this.lehangaAns, this.sweatshirtsAns, this.sweatersAns, this.leggingsAns, this.jeansAns, this.jeggingsAns, this.skirtsAns, this.trousersAns, this.flatsFootAns, this.casualFootAns, this.heelsFootAns, this.sportswearAns, this.innerwearAns);
-    // this.femaleQuizService.setFemaleData();
-    // this.femaleQuizService.saveFemaleData().subscribe();
-    // this.checkNavigate();
+    this.femaleQuizService.setAnswers(this.topsAns, this.kurthisAns, this.sareeAns, this.jacketsAns, this.blazzersAns, this.lehangaAns, this.sweatshirtsAns, this.sweatersAns, this.leggingsAns, this.jeansAns, this.jeggingsAns, this.skirtsAns, this.trousersAns, this.flatsFootAns, this.casualFootAns, this.heelsFootAns, this.sportswearAns, this.innerwearAns);
+    this.femaleQuizService.setFemaleData();
+    this.femaleQuizService.saveFemaleData().subscribe();
+    this.checkNavigate();
   }
 
   setAllData() {
@@ -547,7 +547,7 @@ export class FemaleResultComponent implements OnInit {
       synthetic: [''],
       tpr: [''],
       tpu: [''],
-      tunit: [''],
+      tUnit: [''],
       notSpecific: ['']
     }),
     toeShape: this.fb.group({
@@ -669,12 +669,23 @@ export class FemaleResultComponent implements OnInit {
     fastening: this.fb.group({
       ankleLoop: [''],
       backstrap: [''],
-      buckle: [''],
+      closedBack: [''],
       laceUps: [''],
       openBackStrap: [''],
       notSpecific: [''],
     }),
     heelHight: [''],
+    heelType: this.fb.group({
+      block: [''],
+      comfort: [''],
+      flatForm: [''],
+      kitten: [''],
+      platform: [''],
+      slim: [''],
+      stiletoo: [''],
+      wedge: [''],
+      notSpecific: ['']
+    }),
     material: this.fb.group({
       canvas: [''],
       fabric: [''],
@@ -734,7 +745,7 @@ export class FemaleResultComponent implements OnInit {
       synthetic: [''],
       tpr: [''],
       tpu: [''],
-      tunit: [''],
+      tUnit: [''],
       notSpecific: ['']
     }),
     toeShape: this.fb.group({
@@ -811,7 +822,6 @@ export class FemaleResultComponent implements OnInit {
         innerdata[1] = this.innerObjConversion(innerdata[1]);
       }
     });
-    console.log(dt);
     let resultData:any = [];
     dt.forEach(item => {
       resultData.push(item[1]);

@@ -296,7 +296,7 @@ export class FemaleQuizService {
       'FlatsFoot','Size', ['Euro 15','UK-9.5']
     ],
     [
-      'FlatsFoot','Sole Material', [['croslite','croslite'],	['Eva','eva'],	['Leather','leather'],	['Neolite','neolite'],	['PU','pu'],	['PVC','pvc'],	['Phylon','phylon'],	['Resin','resin'],	['Rubber','rubber'],	['Synthetic','synthetic'],	['TPR','tpr'],	['TPU','tpu'],	['Tunit','tunit'],	['Not specific','notSpecific']]
+      'FlatsFoot','Sole Material', [['croslite','croslite'],	['Eva','eva'],	['Leather','leather'],	['Neolite','neolite'],	['PU','pu'],	['PVC','pvc'],	['Phylon','phylon'],	['Resin','resin'],	['Rubber','rubber'],	['Synthetic','synthetic'],	['TPR','tpr'],	['TPU','tpu'],	['Tunit','tUnit'],	['Not specific','notSpecific']]
     ],
     [
       'FlatsFoot','Toe shape', [['Open Toe','openToe'],	['Peep Toe','peepToe'],	['Pointed Toe','pointedToe'],	['Round Toe','roundToe'],	['Square Toe','squareToe'],	['Not specific','notSpecific']]
