@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AuthGuard } from './auth/auth.guard';
+import { ChangePasswordComponent } from './change-password/change-password.component';
 import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
 import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
@@ -37,7 +38,8 @@ const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'sign-up', component: SignupComponent },
   {path:'sign-up-quiz',component:SignUpQuizComponent,canActivate:[AuthGuard]},
-  { path: 'change-password', component: ForgotPasswordComponent},
+  { path: 'forget-password', component: ForgotPasswordComponent},
+  {path:'resetpassword',component:ChangePasswordComponent},
   { path: 'profile', component: ProfileComponent },
   { path: 'quiz', component: QuizComponent, children: [
     { path: '', component: ChoiceComponent},

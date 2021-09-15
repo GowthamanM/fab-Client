@@ -68,6 +68,8 @@ export class NavbarComponent implements OnInit {
 
   checkLogin() {
     this.isLoggedIn = this.authService.getAuthStatus();
+    console.log('Login :: '+this.isLoggedIn);
+    
   }
 
   successUser() {
