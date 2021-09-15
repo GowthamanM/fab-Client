@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { FemaleQuizService } from 'src/app/services/female-quiz.service';
 import { UserService } from 'src/app/services/user.service';
@@ -19,27 +20,32 @@ export class FemaleResultComponent implements OnInit {
 
   types:any = [];
 
-  topsAns:any = ['','',''];
-  kurthisAns:any = ['','',''];
-  sareeAns:any = ['',''];
-  jacketsAns:any = ['','',''];
-  blazzersAns:any = ['','',''];
-  lehangaAns:any = ['','','',''];
-  sweatshirtsAns:any = ['','',''];
-  sweatersAns:any = ['','',''];
-  leggingsAns:any = ['','','',''];
-  jeansAns:any = ['','','',''];
-  jeggingsAns:any = ['','','',''];
-  skirtAns:any = ['','','','','',''];
-  trousersAns:any = ['','','','','','','',''];
-  flatsFootAns: any = ['','','','','','','','','',''];
-  casualFootAns:any = ['','','','','','',''];
-  heelsFootAns:any = ['','','','','','','','','','','',''];
-  sportswearAns:any = [''];
-  innerwearAns:any = ['',''];
+  topsAns:any = ['','','',''];
+  kurthisAns:any = ['','','',''];
+  sareeAns:any = ['','',''];
+  jacketsAns:any = ['','','',''];
+  blazzersAns:any = ['','','',''];
+  lehangaAns:any = ['','','','',''];
+  sweatshirtsAns:any = ['','','',''];
+  sweatersAns:any = ['','','',''];
+  leggingsAns:any = ['','','','',''];
+  jeansAns:any = ['','','','',''];
+  jeggingsAns:any = ['','','','',''];
+  skirtAns:any = ['','','','','','',''];
+  trousersAns:any = ['','','','','','','','',''];
+  flatsFootAns: any = ['','','','','','','','','','',''];
+  casualFootAns:any = ['','','','','','','',''];
+  heelsFootAns:any = ['','','','','','','','','','','','',''];
+  sportswearAns:any = ['',''];
+  innerwearAns:any = ['','',''];
 
-  constructor(private activeRoute: ActivatedRoute, private route: Router, private femaleQuizService: FemaleQuizService,
-    private userService:UserService) { }
+  constructor(
+    private activeRoute: ActivatedRoute,
+    private route: Router,
+    private femaleQuizService: FemaleQuizService,
+    private fb: FormBuilder,
+    private userService:UserService
+  ) { }
 
   ngOnInit(): void {
     this.selection = this.femaleQuizService.selectedQuiz;
@@ -75,10 +81,32 @@ export class FemaleResultComponent implements OnInit {
   }
 
   onSubmit() {
-    this.femaleQuizService.setAnswers(this.topsAns, this.kurthisAns, this.sareeAns, this.jacketsAns, this.blazzersAns, this.lehangaAns, this.sweatshirtsAns, this.sweatersAns, this.leggingsAns, this.jeansAns, this.jeggingsAns, this.skirtAns, this.trousersAns, this.flatsFootAns, this.casualFootAns, this.heelsFootAns, this.sportswearAns, this.innerwearAns);
-    this.femaleQuizService.setFemaleData();
-    this.femaleQuizService.saveFemaleData().subscribe();
-    this.checkNavigate();
+    // this.femaleQuizService.setAnswers(this.topsAns, this.kurthisAns, this.sareeAns, this.jacketsAns, this.blazzersAns, this.lehangaAns, this.sweatshirtsAns, this.sweatersAns, this.leggingsAns, this.jeansAns, this.jeggingsAns, this.skirtAns, this.trousersAns, this.flatsFootAns, this.casualFootAns, this.heelsFootAns, this.sportswearAns, this.innerwearAns);
+    // this.femaleQuizService.setFemaleData();
+    // this.femaleQuizService.saveFemaleData().subscribe();
+    // this.checkNavigate();
+  }
+
+  setAllData() {
+    this.topsAns = this.dataConversion(this.shirtForm.value);
+    this.kurthisAns = this.dataConversion(this.shirtForm.value);
+    this.sareeAns = this.dataConversion(this.shirtForm.value);
+    this.jacketsAns = this.dataConversion(this.shirtForm.value);
+    this.blazzersAns = this.dataConversion(this.shirtForm.value);
+    this.lehangaAns = this.dataConversion(this.shirtForm.value);
+    this.sweatshirtsAns = this.dataConversion(this.shirtForm.value);
+    this.sweatersAns = this.dataConversion(this.shirtForm.value);
+    this.leggingsAns = this.dataConversion(this.shirtForm.value);
+    this.jeansAns = this.dataConversion(this.shirtForm.value);
+    this.jeggingsAns = this.dataConversion(this.shirtForm.value);
+    this.skirtAns = this.dataConversion(this.shirtForm.value);
+    this.trousersAns = this.dataConversion(this.shirtForm.value);
+    this.flatsFootAns = this.dataConversion(this.shirtForm.value);
+    this.casualFootAns = this.dataConversion(this.shirtForm.value);
+    this.heelsFootAns = this.dataConversion(this.shirtForm.value);
+    this.sportswearAns = this.dataConversion(this.shirtForm.value);
+    this.innerwearAns = this.dataConversion(this.shirtForm.value);
+    this.onSubmit();
   }
 
   checkNavigate(){
@@ -89,136 +117,32 @@ export class FemaleResultComponent implements OnInit {
         this.route.navigate(['not-subscribed']);
       }
     })
-}
-
-  saveAnswers(ind:any, option:any) {
-    if(this.types[this.arrIndex] == "Tops") {
-      this.topsAns.forEach( (items:any, index:any) => {
-        if(index == ind) {
-          this.topsAns[index] = option;
-        }
-      });
-    }
-    else if(this.types[this.arrIndex] == "Kurthis") {
-      this.kurthisAns.forEach( (items:any, index:any) => {
-        if(index == ind) {
-          this.kurthisAns[index] = option;
-        }
-      });
-    }
-    else if(this.types[this.arrIndex] == "Saree") {
-      this.sareeAns.forEach( (items:any, index:any) => {
-        if(index == ind) {
-          this.sareeAns[index] = option;
-        }
-      });
-    }
-    else if(this.types[this.arrIndex] == "Jackets") {
-      this.jacketsAns.forEach( (items:any, index:any) => {
-        if(index == ind) {
-          this.jacketsAns[index] = option;
-        }
-      });
-    }
-    else if(this.types[this.arrIndex] == "Blazers") {
-      this.blazzersAns.forEach( (items:any, index:any) => {
-        if(index == ind) {
-          this.blazzersAns[index] = option;
-        }
-      });
-    }
-    else if(this.types[this.arrIndex] == "Lehanga") {
-      this.lehangaAns.forEach( (items:any, index:any) => {
-        if(index == ind) {
-          this.lehangaAns[index] = option;
-        }
-      });
-    }
-    else if(this.types[this.arrIndex] == "Sweatshirts") {
-      this.sweatshirtsAns.forEach( (items:any, index:any) => {
-        if(index == ind) {
-          this.sweatshirtsAns[index] = option;
-        }
-      });
-    }
-    else if(this.types[this.arrIndex] == "Sweaters") {
-      this.sweatersAns.forEach( (items:any, index:any) => {
-        if(index == ind) {
-          this.sweatersAns[index] = option;
-        }
-      });
-    }
-    else if(this.types[this.arrIndex] == "Leggings") {
-      this.leggingsAns.forEach( (items:any, index:any) => {
-        if(index == ind) {
-          this.leggingsAns[index] = option;
-        }
-      });
-    }
-    else if(this.types[this.arrIndex] == "Jeans") {
-      this.jeansAns.forEach( (items:any, index:any) => {
-        if(index == ind) {
-          this.jeansAns[index] = option;
-        }
-      });
-    }
-    else if(this.types[this.arrIndex] == "Jeggings") {
-      this.jeggingsAns.forEach( (items:any, index:any) => {
-        if(index == ind) {
-          this.jeggingsAns[index] = option;
-        }
-      });
-    }
-    else if(this.types[this.arrIndex] == "Skirts") {
-      this.skirtAns.forEach( (items:any, index:any) => {
-        if(index == ind) {
-          this.skirtAns[index] = option;
-        }
-      });
-    }
-    else if(this.types[this.arrIndex] == "Trousers") {
-      this.trousersAns.forEach( (items:any, index:any) => {
-        if(index == ind) {
-          this.trousersAns[index] = option;
-        }
-      });
-    }
-    else if(this.types[this.arrIndex] == "FlatsFoot") {
-      this.flatsFootAns.forEach( (items:any, index:any) => {
-        if(index == ind) {
-          this.flatsFootAns[index] = option;
-        }
-      });
-    }
-    else if(this.types[this.arrIndex] == "CasualFoot") {
-      this.casualFootAns.forEach( (items:any, index:any) => {
-        if(index == ind) {
-          this.casualFootAns[index] = option;
-        }
-      });
-    }
-    else if(this.types[this.arrIndex] == "HeelsFoot") {
-      this.heelsFootAns.forEach( (items:any, index:any) => {
-        if(index == ind) {
-          this.heelsFootAns[index] = option;
-        }
-      });
-    }
-    else if(this.types[this.arrIndex] == "Sportswear") {
-      this.sportswearAns.forEach( (items:any, index:any) => {
-        if(index == ind) {
-          this.sportswearAns[index] = option;
-        }
-      });
-    }
-    else if(this.types[this.arrIndex] == "InnerWear") {
-      this.innerwearAns.forEach( (items:any, index:any) => {
-        if(index == ind) {
-          this.innerwearAns[index] = option;
-        }
-      });
-    }
   }
 
+  // For Converting object into our structure
+  dataConversion(data: any) {
+    let dt = Object.entries(data);
+    dt.forEach((innerdata, i) => {
+      if(typeof(innerdata[1]) == 'object') {
+        innerdata[1] = this.innerObjConversion(innerdata[1]);
+      }
+    });
+    console.log(dt);
+    let resultData:any = [];
+    dt.forEach(item => {
+      resultData.push(item[1]);
+    });
+    return resultData;
+  }
 
+  innerObjConversion(data: any)  {
+    let result:any = [];
+    let dt = Object.entries(data);
+    dt.forEach((item, i) => {
+      if(item[1] == true) {
+        result.push(item[0]);
+      }
+    });
+    return result;
+  }
 }
