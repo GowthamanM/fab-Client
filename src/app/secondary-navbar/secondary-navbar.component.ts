@@ -101,4 +101,8 @@ export class SecondaryNavbarComponent implements OnInit {
       }
     })
   }
+
+  goToWallet(){
+    this.router.navigateByUrl('/wallet');
+  }
 }

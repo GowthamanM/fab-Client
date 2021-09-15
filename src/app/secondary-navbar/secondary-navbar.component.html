@@ -6,7 +6,7 @@
     
     <div class="fab-client-action">
       <p class="wallet" (click)=goToWardrobe()>Wardrobe</p>
-      <p class="wallet">wallet <i class="zmdi zmdi-balance-wallet"> : {{walletAmount}}</i></p>
+      <p class="wallet" (click)='goToWallet()'>wallet <i class="zmdi zmdi-balance-wallet"> : {{walletAmount}}</i></p>
       <!-- <a class="profile-batch fab-ml-10" [title]="userName">{{userNameInitial}}</a> -->
       <div class="profile">
         <a class="profile-batch fab-ml-10" (click)="profilePopup()">{{userNameInitial}}</a>
