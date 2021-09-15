@@ -20,10 +20,29 @@ export class AuthService {
   }
 
   getAuthStatus():boolean{
-    if(localStorage.getItem('authStatus') === "true")
+    if(localStorage.getItem('authStatus') == 'true'){
       return true;
-    return false;
+    }else{
+      return false;
+    }
   }
+
+  authCheck():boolean{ 
+    var statusValue;
+    this.http.get(this.apiUrl+'auth/checkauth/').subscribe(data=>{
+      let temp = JSON.parse(JSON.stringify(data));
+      console.log(temp);
+      statusValue = temp.status;
+      console.log('statusValue::'+statusValue);
+      
+    });
+    if(statusValue){
+      return true;
+    }else{
+      return false;
+    }
+  }
+  
 
   getUid():any{
     return localStorage.getItem('uid');

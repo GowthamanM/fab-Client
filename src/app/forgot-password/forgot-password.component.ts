@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, Validators } from '@angular/forms';
+import { PasswordService } from '../services/password.service';
 
 @Component({
   selector: 'app-forgot-password',
@@ -7,9 +9,37 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ForgotPasswordComponent implements OnInit {
 
-  constructor() { }
+  errorMessage='';
+  successMessage='';
+  constructor(
+    private fb: FormBuilder,
+    private passwordService:PasswordService
+    ) { }
+  
+  loginForm = this.fb.group({
+    email: ['', [
+      Validators.required,
+      Validators.email
+    ]]
+  });
 
   ngOnInit(): void {
+  }
+
+  get fab() {
+    return this.loginForm.controls;
+  }
+
+  onSubmit(){
+    this.passwordService.sendResetLink(this.loginForm.value.email).subscribe(data=>{
+      var temp = JSON.parse(JSON.stringify(data));
+      if(temp.message === "Mail Sent Successfully"){
+        this.errorMessage = '';
+        this.successMessage = temp.message;
+      }else{
+        this.errorMessage = temp.message;
+      }
+    })
   }
 
 }

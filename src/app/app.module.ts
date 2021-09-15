@@ -48,6 +48,7 @@ import { NgxSpinnerModule } from "ngx-spinner";
 import { CommonQuizComponent } from './quiz/common-quiz/common-quiz.component';
 import { NotSubscribedComponent } from './subscription/not-subscribed/not-subscribed.component';
 import { WalletComponent } from './wallet/wallet.component';
+import { ChangePasswordComponent } from './change-password/change-password.component';
 
 @NgModule({
   declarations: [
@@ -87,7 +88,8 @@ import { WalletComponent } from './wallet/wallet.component';
     WarChoiceComponent,
     CommonQuizComponent,
     NotSubscribedComponent,
-    WalletComponent
+    WalletComponent,
+    ChangePasswordComponent
   ],
   imports: [
     
