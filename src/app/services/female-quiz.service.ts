@@ -56,7 +56,8 @@ export class FemaleQuizService {
       'Tops','Pattern', [['Solid','solid'],['Printed','printed'],['Checked','checked'],['Stripes','stripes']]
     ],
     [
-      'Tops','Color', [['Red','red'],['Blue','blue'],['Green','green'],['Black','black']]
+      'Tops','Color', [['Black','black'],['Blue','blue'],['Brown','brown'],['Green','green'],['Grey','grey'],['Khaki','khaki'],
+      ['Light Blue','light blue'],['Navy','navy'],['Olive','olive'],['Pink','pink'],['Purple','purple'],['Red','red'],['Salmon','salmon'],['White','white'],['Yellow','yellow']]
     ],
   ];
 
@@ -71,7 +72,8 @@ export class FemaleQuizService {
       'Kurthis','Pattern', [['Solid','solid'],['Printed','printed'],['Checked','checked'],['Stripes','stripes']]
     ],
     [
-      'Kurthis','Color', [['Red','red'],['Blue','blue'],['Green','green'],['Black','black']]
+      'Kurthis','Color', [['Black','black'],['Blue','blue'],['Brown','brown'],['Green','green'],['Grey','grey'],['Khaki','khaki'],
+      ['Light Blue','light blue'],['Navy','navy'],['Olive','olive'],['Pink','pink'],['Purple','purple'],['Red','red'],['Salmon','salmon'],['White','white'],['Yellow','yellow']]
     ],
   ];
 
@@ -83,7 +85,8 @@ export class FemaleQuizService {
       'Saree','Pattern', [['Solid','solid'],['Printed','printed'],['Checked','checked'],['Stripes','stripes']]
     ],
     [
-      'Saree','Color', [['Red','red'],['Blue','blue'],['Green','green'],['Black','black']]
+      'Saree','Color',[['Black','black'],['Blue','blue'],['Brown','brown'],['Green','green'],['Grey','grey'],['Khaki','khaki'],
+      ['Light Blue','light blue'],['Navy','navy'],['Olive','olive'],['Pink','pink'],['Purple','purple'],['Red','red'],['Salmon','salmon'],['White','white'],['Yellow','yellow']]
     ],
   ];
 
@@ -98,7 +101,8 @@ export class FemaleQuizService {
       'Jackets','Pattern', [['Solid','solid'],['Printed','printed'],['Checked','checked'],['Stripes','stripes']]
     ],
     [
-      'Jackets','Color', [['Red','red'],['Blue','blue'],['Green','green'],['Black','black']]
+      'Jackets','Color', [['Black','black'],['Blue','blue'],['Brown','brown'],['Green','green'],['Grey','grey'],['Khaki','khaki'],
+      ['Light Blue','light blue'],['Navy','navy'],['Olive','olive'],['Pink','pink'],['Purple','purple'],['Red','red'],['Salmon','salmon'],['White','white'],['Yellow','yellow']]
     ],
   ];
 
@@ -113,7 +117,8 @@ export class FemaleQuizService {
       'Blazers','Pattern', [['Solid','solid'],['Printed','printed'],['Checked','checked'],['Stripes','stripes']]
     ],
     [
-      'Blazers','Color', [['Red','red'],['Blue','blue'],['Green','green'],['Black','black']]
+      'Blazers','Color', [['Black','black'],['Blue','blue'],['Brown','brown'],['Green','green'],['Grey','grey'],['Khaki','khaki'],
+      ['Light Blue','light blue'],['Navy','navy'],['Olive','olive'],['Pink','pink'],['Purple','purple'],['Red','red'],['Salmon','salmon'],['White','white'],['Yellow','yellow']]
     ],
   ];
 
@@ -131,7 +136,8 @@ export class FemaleQuizService {
       'Lehanga','Pattern', [['Solid','solid'],['Printed','printed'],['Checked','checked'],['Stripes','stripes']]
     ],
     [
-      'Lehanga','Color', [['Red','red'],['Blue','blue'],['Green','green'],['Black','black']]
+      'Lehanga','Color', [['Black','black'],['Blue','blue'],['Brown','brown'],['Green','green'],['Grey','grey'],['Khaki','khaki'],
+      ['Light Blue','light blue'],['Navy','navy'],['Olive','olive'],['Pink','pink'],['Purple','purple'],['Red','red'],['Salmon','salmon'],['White','white'],['Yellow','yellow']]
     ],
   ];
 
@@ -146,7 +152,8 @@ export class FemaleQuizService {
       'Sweatshirts','Pattern', [['Solid','solid'],['Printed','printed'],['Checked','checked'],['Stripes','stripes']]
     ],
     [
-      'Sweatshirts','Color', [['Red','red'],['Blue','blue'],['Green','green'],['Black','black']]
+      'Sweatshirts','Color', [['Black','black'],['Blue','blue'],['Brown','brown'],['Green','green'],['Grey','grey'],['Khaki','khaki'],
+      ['Light Blue','light blue'],['Navy','navy'],['Olive','olive'],['Pink','pink'],['Purple','purple'],['Red','red'],['Salmon','salmon'],['White','white'],['Yellow','yellow']]
     ],
   ];
 
@@ -161,7 +168,8 @@ export class FemaleQuizService {
       'Sweaters','Pattern', [['Solid','solid'],['Printed','printed'],['Checked','checked'],['Stripes','stripes']]
     ],
     [
-      'Sweaters','Color', [['Red','red'],['Blue','blue'],['Green','green'],['Black','black']]
+      'Sweaters','Color', [['Black','black'],['Blue','blue'],['Brown','brown'],['Green','green'],['Grey','grey'],['Khaki','khaki'],
+      ['Light Blue','light blue'],['Navy','navy'],['Olive','olive'],['Pink','pink'],['Purple','purple'],['Red','red'],['Salmon','salmon'],['White','white'],['Yellow','yellow']]
     ],
   ];
 
@@ -179,7 +187,8 @@ export class FemaleQuizService {
       'Leggings','Fabric Type', [['Acrylic','acrylic'],['Model','model'],['Cotton','cotton'],['Elastane','elastane'],['Nylon','nylon'],['Organic Cotton','organicCotton'],['Synthetic','synthetic'],['Viscose Rayon','viscoseRayon']]
     ],
     [
-      'Leggings','Color', [['Red','red'],['Blue','blue'],['Green','green'],['Black','black']]
+      'Leggings','Color', [['Black','black'],['Blue','blue'],['Brown','brown'],['Green','green'],['Grey','grey'],['Khaki','khaki'],
+      ['Light Blue','light blue'],['Navy','navy'],['Olive','olive'],['Pink','pink'],['Purple','purple'],['Red','red'],['Salmon','salmon'],['White','white'],['Yellow','yellow']]
     ],
   ];
 
@@ -197,7 +206,8 @@ export class FemaleQuizService {
       'Jeans','Waist Rise', [['High Raise','highRaise'],['Mid Raise','midRaise'],['Low Raise','lowRaise']]
     ],
     [
-      'Jeans','Color', [['Red','red'],['Blue','blue'],['Green','green'],['Black','black']]
+      'Jeans','Color', [['Black','black'],['Blue','blue'],['Brown','brown'],['Green','green'],['Grey','grey'],['Khaki','khaki'],
+      ['Light Blue','light blue'],['Navy','navy'],['Olive','olive'],['Pink','pink'],['Purple','purple'],['Red','red'],['Salmon','salmon'],['White','white'],['Yellow','yellow']]
     ],
   ];
 
@@ -215,7 +225,8 @@ export class FemaleQuizService {
       'Jeggings','Fabric Type', [['Acrylic','acrylic'],['Model','model'],['Cotton','cotton'],['Elastane','elastane'],['Nylon','nylon'],['Organic Cotton','organicCotton'],['Synthetic','synthetic'],['Viscose Rayon','viscoseRayon']]
     ],
     [
-      'Jeggings','Color', [['Red','red'],['Blue','blue'],['Green','green'],['Black','black']]
+      'Jeggings','Color', [['Black','black'],['Blue','blue'],['Brown','brown'],['Green','green'],['Grey','grey'],['Khaki','khaki'],
+      ['Light Blue','light blue'],['Navy','navy'],['Olive','olive'],['Pink','pink'],['Purple','purple'],['Red','red'],['Salmon','salmon'],['White','white'],['Yellow','yellow']]
     ],
   ];
 
@@ -239,7 +250,8 @@ export class FemaleQuizService {
       'Skirts','Skirt Type', [['Knitted','knitted'],['woven','woven'],	['Not Specific','notSpecific']]
     ],
     [
-      'Skirts','Color', [['Red','red'],['Blue','blue'],['Green','green'],['Black','black']]
+      'Skirts','Color', [['Black','black'],['Blue','blue'],['Brown','brown'],['Green','green'],['Grey','grey'],['Khaki','khaki'],
+      ['Light Blue','light blue'],['Navy','navy'],['Olive','olive'],['Pink','pink'],['Purple','purple'],['Red','red'],['Salmon','salmon'],['White','white'],['Yellow','yellow']]
     ],
   ];
 
@@ -269,7 +281,8 @@ export class FemaleQuizService {
       'Trousers','Waist Rise', [['High Raise','highRaise'],['Mid Raise','midRaise'],['Low Raise','lowRaise']]
     ],
     [
-      'Trousers','Color', [['Red','red'],['Blue','blue'],['Green','green'],['Black','black']]
+      'Trousers','Color', [['Black','black'],['Blue','blue'],['Brown','brown'],['Green','green'],['Grey','grey'],['Khaki','khaki'],
+      ['Light Blue','light blue'],['Navy','navy'],['Olive','olive'],['Pink','pink'],['Purple','purple'],['Red','red'],['Salmon','salmon'],['White','white'],['Yellow','yellow']]
     ],
   ];
 
@@ -305,7 +318,8 @@ export class FemaleQuizService {
       'FlatsFoot','Type', [['Ballerinas','ballerinas'],	['Gladiators','gladiators'],	['Mojaris','mojaris'],	['Mules','mules'],	['One toe Flats','oneToeFlats'],	['Open toe flats','openToeFlats'],	['T-strap flats','tStrapFlats'],	['Not specific','notSpecific']]
     ],
     [
-      'FlatsFoot','Color', [['Red','red'],['Blue','blue'],['Green','green'],['Black','black']]
+      'FlatsFoot','Color', [['Black','black'],['Blue','blue'],['Brown','brown'],['Green','green'],['Grey','grey'],['Khaki','khaki'],
+      ['Light Blue','light blue'],['Navy','navy'],['Olive','olive'],['Pink','pink'],['Purple','purple'],['Red','red'],['Salmon','salmon'],['White','white'],['Yellow','yellow']]
     ],
   ];
 
@@ -332,7 +346,8 @@ export class FemaleQuizService {
       'CasualFoot','Type', [['Boat Shoes','boatShoes'],	['Brogues','brogues'],	['Clogs','clogs'],	['Derbys','derbys'],	['Driving shoes','drivingShoes'],	['Espadrilles','espadrilles'],	['Flat boots','flatBoots'],	['Flat forms','flatForms'],	['Loafers','loafers'],	['Mojaris','mojaris'],	['Monks','monks'],	 ['Mule sneakers','muleSneakers'],	['Mules','mules'], 	['Oxfords','oxfords'],	['Skate Shoes','skateShoes'],	['slip-on sneakers','slipOnSneakers'],	['sneakers','sneakers'],	['Trecking Shoes','treckingShoes'],	['Not specific','notSpecific']]
     ],
     [
-      'CasualFoot','Color', [['Red','red'],['Blue','blue'],['Green','green'],['Black','black']]
+      'CasualFoot','Color', [['Black','black'],['Blue','blue'],['Brown','brown'],['Green','green'],['Grey','grey'],['Khaki','khaki'],
+      ['Light Blue','light blue'],['Navy','navy'],['Olive','olive'],['Pink','pink'],['Purple','purple'],['Red','red'],['Salmon','salmon'],['White','white'],['Yellow','yellow']]
     ],
   ];
 
@@ -374,7 +389,8 @@ export class FemaleQuizService {
       'HeelsFoot','Type', [['Sandals','sandals'],	['Pumps','pumps'],	['Heeled boots','heeledBoots'],	['Gladiators','gladiators'],	['Mules','mules'],	['Peep toes','peepToes'],	['Not specific','notSpecific']]
     ],
     [
-      'HeelsFoot','Color', [['Red','red'],['Blue','blue'],['Green','green'],['Black','black']]
+      'HeelsFoot','Color', [['Black','black'],['Blue','blue'],['Brown','brown'],['Green','green'],['Grey','grey'],['Khaki','khaki'],
+      ['Light Blue','light blue'],['Navy','navy'],['Olive','olive'],['Pink','pink'],['Purple','purple'],['Red','red'],['Salmon','salmon'],['White','white'],['Yellow','yellow']]
     ],
   ];
 
@@ -383,7 +399,8 @@ export class FemaleQuizService {
       'Sportswear','Type', [['Tops','tops'],	['Capris','capris'],	['Shorts','shorts'],	['Sweatshirts','sweatShirts'],	['T-shirts','tShirts'],	['Tracksuits','tracksuits']]
     ],
     [
-      'Sportswear','Color', [['Red','red'],['Blue','blue'],['Green','green'],['Black','black']]
+      'Sportswear','Color', [['Black','black'],['Blue','blue'],['Brown','brown'],['Green','green'],['Grey','grey'],['Khaki','khaki'],
+      ['Light Blue','light blue'],['Navy','navy'],['Olive','olive'],['Pink','pink'],['Purple','purple'],['Red','red'],['Salmon','salmon'],['White','white'],['Yellow','yellow']]
     ],
   ];
 
@@ -395,7 +412,8 @@ export class FemaleQuizService {
       'InnerWear','Size', ['32B to 40C',	's to XXL',	'S to L',	's to XXL',	's to XXL',	'XS to XXL',	'S to XL',	'S to L']
     ],
     [
-      'InnerWear','Color', [['Red','red'],['Blue','blue'],['Green','green'],['Black','black']]
+      'InnerWear','Color', [['Black','black'],['Blue','blue'],['Brown','brown'],['Green','green'],['Grey','grey'],['Khaki','khaki'],
+      ['Light Blue','light blue'],['Navy','navy'],['Olive','olive'],['Pink','pink'],['Purple','purple'],['Red','red'],['Salmon','salmon'],['White','white'],['Yellow','yellow']]
     ],
   ];
 
@@ -488,7 +506,7 @@ export class FemaleQuizService {
     this.femaleData.blazersAndWhiteCoats.color = this.blazzersAns[3] === ''?'null':this.blazzersAns[3];
 
     this.femaleData.lehanga = {};
-    this.femaleData.lehanga.type = this.lehangaAns[0] === ''?'null':this.lehangaAns[0];
+    this.femaleData.lehanga.itype = this.lehangaAns[0] === ''?'null':this.lehangaAns[0];
     this.femaleData.lehanga.size = this.lehangaAns[1] === ''?'null':this.lehangaAns[1];
     this.femaleData.lehanga.price = this.lehangaAns[2] === ''?'null':this.lehangaAns[2];
     this.femaleData.lehanga.pattern = this.lehangaAns[3] === ''?'null':this.lehangaAns[3];
@@ -555,6 +573,47 @@ export class FemaleQuizService {
     this.femaleData.innerwear.type = this.innerwearAns[0] === ''?'null':this.innerwearAns[0];
     this.femaleData.innerwear.size = this.innerwearAns[1] === ''?'null':this.innerwearAns[1];
     this.femaleData.innerwear.color = this.innerwearAns[2] === ''?'null':this.innerwearAns[2];
+
+    this.femaleData.footwear={};
+    this.femaleData.footwear.types={};
+    this.femaleData.footwear.types.flats={};
+    this.femaleData.footwear.types.flats.ankleHeight = this.flatsFootAns[0] === ''?'null':this.flatsFootAns[0];
+    this.femaleData.footwear.types.flats.fasteningAndBackDetail = this.flatsFootAns[1] === ''?'null':this.flatsFootAns[1];
+    this.femaleData.footwear.types.flats.material = this.flatsFootAns[2] === ''?'null':this.flatsFootAns[2];
+    this.femaleData.footwear.types.flats.occasion = this.flatsFootAns[3] === ''?'null':this.flatsFootAns[3];
+    this.femaleData.footwear.types.flats.ornamentation = this.flatsFootAns[4] === ''?'null':this.flatsFootAns[4];
+    this.femaleData.footwear.types.flats.pattern = this.flatsFootAns[5] === ''?'null':this.flatsFootAns[5];
+    this.femaleData.footwear.types.flats.size = this.flatsFootAns[6] === ''?'null':this.flatsFootAns[6];
+    this.femaleData.footwear.types.flats.soleMaterial = this.flatsFootAns[7] === ''?'null':this.flatsFootAns[7];
+    this.femaleData.footwear.types.flats.toeShape = this.flatsFootAns[8] === ''?'null':this.flatsFootAns[8];
+    this.femaleData.footwear.types.flats.itype = this.flatsFootAns[9] === ''?'null':this.flatsFootAns[9];
+    this.femaleData.footwear.types.flats.color = this.flatsFootAns[10] === ''?'null':this.flatsFootAns[10];    
+
+    this.femaleData.footwear.types.casualShoes={};
+    this.femaleData.footwear.types.casualShoes.ankleHeight = this.casualFootAns[0] === ''?'null':this.casualFootAns[0];
+    this.femaleData.footwear.types.casualShoes.fasteningAndBackDetail = this.casualFootAns[1] === ''?'null':this.casualFootAns[1];
+    this.femaleData.footwear.types.casualShoes.material = this.casualFootAns[2] === ''?'null':this.casualFootAns[2];
+    this.femaleData.footwear.types.casualShoes.pattern = this.casualFootAns[3] === ''?'null':this.casualFootAns[3];
+    this.femaleData.footwear.types.casualShoes.shoeWidth = this.casualFootAns[4] === ''?'null':this.casualFootAns[4];
+    this.femaleData.footwear.types.casualShoes.toeShape = this.casualFootAns[5] === ''?'null':this.casualFootAns[5];
+    this.femaleData.footwear.types.casualShoes.itype = this.casualFootAns[6] === ''?'null':this.casualFootAns[6];
+    this.femaleData.footwear.types.casualShoes.color = this.casualFootAns[7] === ''?'null':this.casualFootAns[7];
+
+    this.femaleData.footwear.types.heels={};
+    this.femaleData.footwear.types.heels.ankleHeight = this.heelsFootAns[0] === ''?'null':this.heelsFootAns[0];
+    this.femaleData.footwear.types.heels.fasteningAndBackDetail = this.heelsFootAns[1] === ''?'null':this.heelsFootAns[1];
+    this.femaleData.footwear.types.heels.heelHeight = this.heelsFootAns[2] === ''?'null':this.heelsFootAns[2];
+    this.femaleData.footwear.types.heels.heelType = this.heelsFootAns[3] === ''?'null':this.heelsFootAns[3];
+    this.femaleData.footwear.types.heels.material = this.heelsFootAns[4] === ''?'null':this.heelsFootAns[4];
+    this.femaleData.footwear.types.heels.occasion = this.heelsFootAns[5] === ''?'null':this.heelsFootAns[5];
+    this.femaleData.footwear.types.heels.ornamentation = this.heelsFootAns[6] === ''?'null':this.heelsFootAns[6];
+    this.femaleData.footwear.types.heels.pattern = this.heelsFootAns[7] === ''?'null':this.heelsFootAns[7];
+    this.femaleData.footwear.types.heels.size = this.heelsFootAns[8] === ''?'null':this.heelsFootAns[8];
+    this.femaleData.footwear.types.heels.soleMaterial = this.heelsFootAns[9] === ''?'null':this.heelsFootAns[9];
+    this.femaleData.footwear.types.heels.toeShape = this.heelsFootAns[10] === ''?'null':this.heelsFootAns[10];
+    this.femaleData.footwear.types.heels.itype = this.heelsFootAns[11] === ''?'null':this.heelsFootAns[11];
+    this.femaleData.footwear.types.heels.color = this.heelsFootAns[12] === ''?'null':this.heelsFootAns[12];
+
 
   }
 

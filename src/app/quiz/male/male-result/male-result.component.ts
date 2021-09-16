@@ -134,10 +134,21 @@ export class MaleResultComponent implements OnInit {
       regular: ['']
     }),
     color: this.fb.group({
-      red: [''],
+      black: [''],
       blue: [''],
+      brown:[''],
       green: [''],
-      black: ['']
+      grey:[''],
+      khaki:[''],
+      lightBlue:[''],
+      navy:[''],
+      olive:[''],
+      pink:[''],
+      purple:[''],
+      red: [''],
+      salmon:[''],
+      white:[''],
+      yellow:['']
     }),
   });
 
@@ -170,10 +181,21 @@ export class MaleResultComponent implements OnInit {
     }),
     price: [''],
     color: this.fb.group({
-      red: [''],
+      black: [''],
       blue: [''],
+      brown:[''],
       green: [''],
-      black: ['']
+      grey:[''],
+      khaki:[''],
+      lightBlue:[''],
+      navy:[''],
+      olive:[''],
+      pink:[''],
+      purple:[''],
+      red: [''],
+      salmon:[''],
+      white:[''],
+      yellow:['']
     })
   });
 
@@ -206,10 +228,21 @@ export class MaleResultComponent implements OnInit {
     }),
     price: [''],
     color: this.fb.group({
-      red: [''],
+      black: [''],
       blue: [''],
+      brown:[''],
       green: [''],
-      black: ['']
+      grey:[''],
+      khaki:[''],
+      lightBlue:[''],
+      navy:[''],
+      olive:[''],
+      pink:[''],
+      purple:[''],
+      red: [''],
+      salmon:[''],
+      white:[''],
+      yellow:['']
     })
   });
 
@@ -237,10 +270,21 @@ export class MaleResultComponent implements OnInit {
       stripes: ['']
     }),
     color: this.fb.group({
-      red: [''],
+      black: [''],
       blue: [''],
+      brown:[''],
       green: [''],
-      black: ['']
+      grey:[''],
+      khaki:[''],
+      lightBlue:[''],
+      navy:[''],
+      olive:[''],
+      pink:[''],
+      purple:[''],
+      red: [''],
+      salmon:[''],
+      white:[''],
+      yellow:['']
     }),
   });
 
@@ -267,10 +311,21 @@ export class MaleResultComponent implements OnInit {
   footwearForm = this.fb.group({
     size: [''],
     color: this.fb.group({
-      red: [''],
+      black: [''],
       blue: [''],
+      brown:[''],
       green: [''],
-      black: ['']
+      grey:[''],
+      khaki:[''],
+      lightBlue:[''],
+      navy:[''],
+      olive:[''],
+      pink:[''],
+      purple:[''],
+      red: [''],
+      salmon:[''],
+      white:[''],
+      yellow:['']
     }),
   });
 

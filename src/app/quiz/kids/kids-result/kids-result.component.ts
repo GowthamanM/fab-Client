@@ -117,10 +117,21 @@ export class KidsResultComponent implements OnInit {
       notSpecific: ['']
     }),
     color: this.fb.group({
-      red: [''],
+      black: [''],
       blue: [''],
+      brown:[''],
       green: [''],
-      black: ['']
+      grey:[''],
+      khaki:[''],
+      lightBlue:[''],
+      navy:[''],
+      olive:[''],
+      pink:[''],
+      purple:[''],
+      red: [''],
+      salmon:[''],
+      white:[''],
+      yellow:['']
     }),
   });
 
@@ -135,10 +146,21 @@ export class KidsResultComponent implements OnInit {
       notSpecific: ['']
     }),
     color: this.fb.group({
-      red: [''],
+      black: [''],
       blue: [''],
+      brown:[''],
       green: [''],
-      black: ['']
+      grey:[''],
+      khaki:[''],
+      lightBlue:[''],
+      navy:[''],
+      olive:[''],
+      pink:[''],
+      purple:[''],
+      red: [''],
+      salmon:[''],
+      white:[''],
+      yellow:['']
     }),
   });
 
@@ -153,10 +175,21 @@ export class KidsResultComponent implements OnInit {
       notSpecific: ['']
     }),
     color: this.fb.group({
-      red: [''],
+      black: [''],
       blue: [''],
+      brown:[''],
       green: [''],
-      black: ['']
+      grey:[''],
+      khaki:[''],
+      lightBlue:[''],
+      navy:[''],
+      olive:[''],
+      pink:[''],
+      purple:[''],
+      red: [''],
+      salmon:[''],
+      white:[''],
+      yellow:['']
     }),
   });
 
@@ -171,10 +204,21 @@ export class KidsResultComponent implements OnInit {
       notSpecific: ['']
     }),
     color: this.fb.group({
-      red: [''],
+      black: [''],
       blue: [''],
+      brown:[''],
       green: [''],
-      black: ['']
+      grey:[''],
+      khaki:[''],
+      lightBlue:[''],
+      navy:[''],
+      olive:[''],
+      pink:[''],
+      purple:[''],
+      red: [''],
+      salmon:[''],
+      white:[''],
+      yellow:['']
     }),
   });
 
@@ -189,10 +233,21 @@ export class KidsResultComponent implements OnInit {
       notSpecific: ['']
     }),
     color: this.fb.group({
-      red: [''],
+      black: [''],
       blue: [''],
+      brown:[''],
       green: [''],
-      black: ['']
+      grey:[''],
+      khaki:[''],
+      lightBlue:[''],
+      navy:[''],
+      olive:[''],
+      pink:[''],
+      purple:[''],
+      red: [''],
+      salmon:[''],
+      white:[''],
+      yellow:['']
     }),
   });
 
@@ -207,10 +262,21 @@ export class KidsResultComponent implements OnInit {
       notSpecific: ['']
     }),
     color: this.fb.group({
-      red: [''],
+      black: [''],
       blue: [''],
+      brown:[''],
       green: [''],
-      black: ['']
+      grey:[''],
+      khaki:[''],
+      lightBlue:[''],
+      navy:[''],
+      olive:[''],
+      pink:[''],
+      purple:[''],
+      red: [''],
+      salmon:[''],
+      white:[''],
+      yellow:['']
     }),
   });
 
@@ -225,10 +291,21 @@ export class KidsResultComponent implements OnInit {
       notSpecific: ['']
     }),
     color: this.fb.group({
-      red: [''],
+      black: [''],
       blue: [''],
+      brown:[''],
       green: [''],
-      black: ['']
+      grey:[''],
+      khaki:[''],
+      lightBlue:[''],
+      navy:[''],
+      olive:[''],
+      pink:[''],
+      purple:[''],
+      red: [''],
+      salmon:[''],
+      white:[''],
+      yellow:['']
     }),
   });
 

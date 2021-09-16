@@ -51,7 +51,8 @@ export class MaleQuizService {
       'Shirt','Your Preference', [['Slim','slim'],['Regular','regular']]
     ],
     [
-      'Shirt','Color', [['Red','red'],['Blue','blue'],['Green','green'],['Black','black']]
+      'Shirt','Color', [['Black','black'],['Blue','blue'],['Brown','brown'],['Green','green'],['Grey','grey'],['Khaki','khaki'],
+      ['Light Blue','lightBlue'],['Navy','navy'],['Olive','olive'],['Pink','pink'],['Purple','purple'],['Red','red'],['Salmon','salmon'],['White','white'],['Yellow','yellow']]
     ],
   ];
 
@@ -72,7 +73,8 @@ export class MaleQuizService {
       'Shirt','Price', ['Below 500','1000 - 2000','2000 - 3000','3000 - 4000','4000 - 5000', 'More than 5000']
     ],
     [
-      'Shirt','Color', [['Red','red'],['Blue','blue'],['Green','green'],['Black','black']]
+      'Shirt','Color', [['Black','black'],['Blue','blue'],['Brown','brown'],['Green','green'],['Grey','grey'],['Khaki','khaki'],
+      ['Light Blue','lightBlue'],['Navy','navy'],['Olive','olive'],['Pink','pink'],['Purple','purple'],['Red','red'],['Salmon','salmon'],['White','white'],['Yellow','yellow']]
     ],
   ];
 
@@ -84,7 +86,8 @@ export class MaleQuizService {
       'Innerwear','Vest', [['Sleeve less','sleeveLess'],['Sleeved vests','sleevedVests'],['Gym Vests','gymVests']]
     ],
     [
-      'Innerwear','Color', [['Red','red'],['Blue','blue'],['Green','green'],['Black','black']]
+      'Innerwear','Color', [['Black','black'],['Blue','blue'],['Brown','brown'],['Green','green'],['Grey','grey'],['Khaki','khaki'],
+      ['Light Blue','lightBlue'],['Navy','navy'],['Olive','olive'],['Pink','pink'],['Purple','purple'],['Red','red'],['Salmon','salmon'],['White','white'],['Yellow','yellow']]
     ],
   ];
 
@@ -93,7 +96,8 @@ export class MaleQuizService {
       'Footwear','Size', ['6','7','8','9','10','11']
     ],
     [
-      'Footwear','Color', [['Red','red'],['Blue','blue'],['Green','green'],['Black','black']]
+      'Footwear','Color', [['Black','black'],['Blue','blue'],['Brown','brown'],['Green','green'],['Grey','grey'],['Khaki','khaki'],
+      ['Light Blue','lightBlue'],['Navy','navy'],['Olive','olive'],['Pink','pink'],['Purple','purple'],['Red','red'],['Salmon','salmon'],['White','white'],['Yellow','yellow']]
     ],
   ];
 
@@ -114,7 +118,8 @@ export class MaleQuizService {
       'Shorts','Price', ['Below 500','1000 - 2000','2000 - 3000','3000 - 4000','4000 - 5000', 'More than 5000']
     ],
     [
-      'Shorts','Color', [['Red','red'],['Blue','blue'],['Green','green'],['Black','black']]
+      'Shorts','Color', [['Black','black'],['Blue','blue'],['Brown','brown'],['Green','green'],['Grey','grey'],['Khaki','khaki'],
+      ['Light Blue','lightBlue'],['Navy','navy'],['Olive','olive'],['Pink','pink'],['Purple','purple'],['Red','red'],['Salmon','salmon'],['White','white'],['Yellow','yellow']]
     ],
   ];
 
@@ -136,7 +141,8 @@ export class MaleQuizService {
       'Blazer','Pattern', [['Solid','solid'],['Printed','printed'],['Checked','checked'],['Stripes','stripes']]
     ],
     [
-      'Blazer','Color', [['Red','red'],['Blue','blue'],['Green','green'],['Black','black']]
+      'Blazer','Color', [['Black','black'],['Blue','blue'],['Brown','brown'],['Green','green'],['Grey','grey'],['Khaki','khaki'],
+      ['Light Blue','lightBlue'],['Navy','navy'],['Olive','olive'],['Pink','pink'],['Purple','purple'],['Red','red'],['Salmon','salmon'],['White','white'],['Yellow','yellow']]
     ],
   ];
 

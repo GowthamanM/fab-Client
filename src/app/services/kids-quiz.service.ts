@@ -44,7 +44,8 @@ export class KidsQuizService {
       'BodySuit','Pattern', [['Solid','solid'],['Printed','printed'],['Checked','checked'],['Stripes','stripes'],['Not Specific','notSpecific']]
     ],
     [
-      'BodySuit','Color', [['Red','red'],['Blue','blue'],['Green','green'],['Black','black']]
+      'BodySuit','Color',[['Black','black'],['Blue','blue'],['Brown','brown'],['Green','green'],['Grey','grey'],['Khaki','khaki'],
+      ['Light Blue','light blue'],['Navy','navy'],['Olive','olive'],['Pink','pink'],['Purple','purple'],['Red','red'],['Salmon','salmon'],['White','white'],['Yellow','yellow']]
     ]
   ];
 
@@ -59,7 +60,8 @@ export class KidsQuizService {
       'TShirt','Pattern', [['Solid','solid'],['Printed','printed'],['Checked','checked'],['Stripes','stripes'],['Not Specific','notSpecific']]
     ],
     [
-      'TShirt','Color', [['Red','red'],['Blue','blue'],['Green','green'],['Black','black']]
+      'TShirt','Color', [['Black','black'],['Blue','blue'],['Brown','brown'],['Green','green'],['Grey','grey'],['Khaki','khaki'],
+      ['Light Blue','light blue'],['Navy','navy'],['Olive','olive'],['Pink','pink'],['Purple','purple'],['Red','red'],['Salmon','salmon'],['White','white'],['Yellow','yellow']]
     ]
   ];
 
@@ -74,7 +76,8 @@ export class KidsQuizService {
       'Dress','Pattern', [['Solid','solid'],['Printed','printed'],['Checked','checked'],['Stripes','stripes'],['Not Specific','notSpecific']]
     ],
     [
-      'Dress','Color', [['Red','red'],['Blue','blue'],['Green','green'],['Black','black']]
+      'Dress','Color', [['Black','black'],['Blue','blue'],['Brown','brown'],['Green','green'],['Grey','grey'],['Khaki','khaki'],
+      ['Light Blue','light blue'],['Navy','navy'],['Olive','olive'],['Pink','pink'],['Purple','purple'],['Red','red'],['Salmon','salmon'],['White','white'],['Yellow','yellow']]
     ]
   ];
 
@@ -89,7 +92,8 @@ export class KidsQuizService {
       'ClothingSet','Pattern', [['Solid','solid'],['Printed','printed'],['Checked','checked'],['Stripes','stripes'],['Not Specific','notSpecific']]
     ],
     [
-      'ClothingSet','Color', [['Red','red'],['Blue','blue'],['Green','green'],['Black','black']]
+      'ClothingSet','Color', [['Black','black'],['Blue','blue'],['Brown','brown'],['Green','green'],['Grey','grey'],['Khaki','khaki'],
+      ['Light Blue','light blue'],['Navy','navy'],['Olive','olive'],['Pink','pink'],['Purple','purple'],['Red','red'],['Salmon','salmon'],['White','white'],['Yellow','yellow']]
     ]
   ];
 
@@ -104,7 +108,8 @@ export class KidsQuizService {
       'Shirt','Pattern', [['Solid','solid'],['Printed','printed'],['Checked','checked'],['Stripes','stripes'],['Not Specific','notSpecific']]
     ],
     [
-      'Shirt','Color', [['Red','red'],['Blue','blue'],['Green','green'],['Black','black']]
+      'Shirt','Color', [['Black','black'],['Blue','blue'],['Brown','brown'],['Green','green'],['Grey','grey'],['Khaki','khaki'],
+      ['Light Blue','light blue'],['Navy','navy'],['Olive','olive'],['Pink','pink'],['Purple','purple'],['Red','red'],['Salmon','salmon'],['White','white'],['Yellow','yellow']]
     ]
   ];
 
@@ -119,7 +124,8 @@ export class KidsQuizService {
       'Shorts','Pattern', [['Solid','solid'],['Printed','printed'],['Checked','checked'],['Stripes','stripes'],['Not Specific','notSpecific']]
     ],
     [
-      'Shorts','Color', [['Red','red'],['Blue','blue'],['Green','green'],['Black','black']]
+      'Shorts','Color', [['Black','black'],['Blue','blue'],['Brown','brown'],['Green','green'],['Grey','grey'],['Khaki','khaki'],
+      ['Light Blue','light blue'],['Navy','navy'],['Olive','olive'],['Pink','pink'],['Purple','purple'],['Red','red'],['Salmon','salmon'],['White','white'],['Yellow','yellow']]
     ]
   ];
 
@@ -134,7 +140,8 @@ export class KidsQuizService {
       'Kurthis','Pattern', [['Solid','solid'],['Printed','printed'],['Checked','checked'],['Stripes','stripes'],['Not Specific','notSpecific']]
     ],
     [
-      'Kurthis','Color', [['Red','red'],['Blue','blue'],['Green','green'],['Black','black']]
+      'Kurthis','Color', [['Black','black'],['Blue','blue'],['Brown','brown'],['Green','green'],['Grey','grey'],['Khaki','khaki'],
+      ['Light Blue','light blue'],['Navy','navy'],['Olive','olive'],['Pink','pink'],['Purple','purple'],['Red','red'],['Salmon','salmon'],['White','white'],['Yellow','yellow']]
     ]
   ];
 
