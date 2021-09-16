@@ -100,7 +100,7 @@ export class MaleResultComponent implements OnInit {
       if(data.User.isSubscribed === true){
         this.route.navigate(['wardrobe']);
       }else{
-        this.route.navigate(['subscription']);
+        this.route.navigate(['not-subscribed']);
       }
     })
   }
