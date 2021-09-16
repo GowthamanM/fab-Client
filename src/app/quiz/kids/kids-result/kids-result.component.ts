@@ -70,8 +70,6 @@ export class KidsResultComponent implements OnInit {
   }
 
   onSubmit() {
-    // console.log(this.bodysuitAns);
-    // console.log(this.tshirtAns);
     this.kidsQuizService.setAnswers(this.bodysuitAns, this.tshirtAns, this.dressAns, this.clothingsetAns, this.shirtAns, this.shortsAns, this.kurthisAns);
 
     this.kidsQuizService.saveKidsData().subscribe();

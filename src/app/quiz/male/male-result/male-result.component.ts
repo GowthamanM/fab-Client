@@ -71,12 +71,6 @@ export class MaleResultComponent implements OnInit {
   }
 
   onSubmit() {
-    // console.log(this.shirtAns);
-    // console.log(this.pantAns);
-    // console.log(this.shortsAns);
-    // console.log(this.blazerAns);
-    // console.log(this.innerwearAns);
-    // console.log(this.footwearAns);
     this.maleQuizService.setAnswers(this.shirtAns, this.pantAns, this.innerwearAns ,this.shortsAns,this.blazerAns,this.footwearAns);
     this.maleQuizService.viewAnswerAlert();
     this.maleQuizService.saveMaleData().subscribe(data=>{
@@ -292,7 +286,6 @@ export class MaleResultComponent implements OnInit {
         innerdata[1] = this.innerObjConversion(innerdata[1]);
       }
     });
-    console.log(dt);
     let resultData:any = [];
     dt.forEach(item => {
       resultData.push(item[1]);
