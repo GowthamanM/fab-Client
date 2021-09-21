@@ -264,4 +264,16 @@ export class MaleQuizService {
     console.log(JSON.parse(JSON.stringify(this.maleData)));
     return this.http.post(this.apiUrl+"mq",JSON.parse(JSON.stringify(this.maleData)));
   }
+
+
+  public checkMaleQuizExist() {
+    return this.http.get(this.apiUrl+'mq/'+this.authService.getUid());
+  }
+
+  public updateMaleQuiz(){
+    this.maleData.userId = this.authService.getUid();
+    this.maleData.status = "200";
+    return this.http.put(this.apiUrl+'mq/'+this.authService.getUid(),JSON.parse(JSON.stringify(this.maleData)));
+  }
+
 }

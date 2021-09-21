@@ -261,4 +261,14 @@ export class KidsQuizService {
     return this.http.post(this.apiUrl+"kq",JSON.parse(JSON.stringify(this.kidsData)));
   }
 
+  public checkKidsQuizExist() {
+    return this.http.get(this.apiUrl+'kq/'+this.authService.getUid());
+  }
+
+  public updateKidsQuiz(){
+    this.kidsData.userId = this.authService.getUid();
+    this.kidsData.status = "200";
+    return this.http.put(this.apiUrl+'kq/'+this.authService.getUid(),JSON.parse(JSON.stringify(this.kidsData)));
+  }
+
 }

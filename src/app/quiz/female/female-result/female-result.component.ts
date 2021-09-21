@@ -83,7 +83,24 @@ export class FemaleResultComponent implements OnInit {
   onSubmit() {
     this.femaleQuizService.setAnswers(this.topsAns, this.kurthisAns, this.sareeAns, this.jacketsAns, this.blazzersAns, this.lehangaAns, this.sweatshirtsAns, this.sweatersAns, this.leggingsAns, this.jeansAns, this.jeggingsAns, this.skirtsAns, this.trousersAns, this.flatsFootAns, this.casualFootAns, this.heelsFootAns, this.sportswearAns, this.innerwearAns);
     this.femaleQuizService.setFemaleData();
-    this.femaleQuizService.saveFemaleData().subscribe();
+    
+    this.femaleQuizService.checkFemaleQuizExist().subscribe(data=>{
+      let respData = JSON.parse(JSON.stringify(data));
+      if(respData.hasOwnProperty('message') && respData.message == 'No such data exists'){
+        this.femaleQuizService.saveFemaleData().subscribe(data=>{
+          console.log(data);
+          
+        });
+        
+      }else{
+        this.femaleQuizService.updateFemaleQuiz().subscribe(data=>{
+          console.log(data);
+        });
+        
+      }
+    });
+
+    
     this.checkNavigate();
   }
 

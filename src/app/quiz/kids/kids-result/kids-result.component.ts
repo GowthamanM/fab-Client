@@ -72,7 +72,20 @@ export class KidsResultComponent implements OnInit {
   onSubmit() {
     this.kidsQuizService.setAnswers(this.bodysuitAns, this.tshirtAns, this.dressAns, this.clothingsetAns, this.shirtAns, this.shortsAns, this.kurthisAns);
 
-    this.kidsQuizService.saveKidsData().subscribe();
+    this.kidsQuizService.checkKidsQuizExist().subscribe(data=>{
+      let respData = JSON.parse(JSON.stringify(data));
+      if(respData.hasOwnProperty('message') && respData.message == 'No such data exists'){
+        this.kidsQuizService.saveKidsData().subscribe(data=>{
+          console.log(data);
+        });
+        
+      }else{
+        this.kidsQuizService.updateKidsQuiz().subscribe(data=>{
+          console.log(data);
+        });
+        
+      }
+    });
     this.checkNavigate();
   }
 

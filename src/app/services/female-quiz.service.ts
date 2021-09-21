@@ -489,9 +489,9 @@ export class FemaleQuizService {
     this.femaleData.kurthis.color = this.kurthisAns[3] === ''?'null':this.kurthisAns[3];
 
     this.femaleData.saree = {};
-    this.femaleData.saree.price = this.topsAns[0] === ''?'null':this.topsAns[0];
-    this.femaleData.saree.pattern = this.topsAns[1] === ''?'null':this.topsAns[1];
-    this.femaleData.saree.color = this.topsAns[2] === ''?'null':this.topsAns[2];
+    this.femaleData.saree.price = this.sareeAns[0] === ''?'null':this.sareeAns[0];
+    this.femaleData.saree.pattern = this.sareeAns[1] === ''?'null':this.sareeAns[1];
+    this.femaleData.saree.color = this.sareeAns[2] === ''?'null':this.sareeAns[2];
 
     this.femaleData.jackets = {};
     this.femaleData.jackets.size = this.jacketsAns[0] === ''?'null':this.jacketsAns[0];
@@ -632,6 +632,16 @@ export class FemaleQuizService {
     this.femaleData.userId = this.uid;
     console.log(JSON.parse(JSON.stringify(this.femaleData)));
     return this.http.post(this.apiUrl+"fq",JSON.parse(JSON.stringify(this.femaleData)),header);
+  }
+
+  public checkFemaleQuizExist() {
+    return this.http.get(this.apiUrl+'fq/'+this.authService.getUid());
+  }
+
+  public updateFemaleQuiz(){
+    this.femaleData.userId = this.authService.getUid();
+    this.femaleData.status = "200";
+    return this.http.put(this.apiUrl+'fq/'+this.authService.getUid(),JSON.parse(JSON.stringify(this.femaleData)));
   }
 
 }

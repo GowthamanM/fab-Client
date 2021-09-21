@@ -73,9 +73,22 @@ export class MaleResultComponent implements OnInit {
   onSubmit() {
     this.maleQuizService.setAnswers(this.shirtAns, this.pantAns, this.innerwearAns ,this.shortsAns,this.blazerAns,this.footwearAns);
     this.maleQuizService.viewAnswerAlert();
-    this.maleQuizService.saveMaleData().subscribe(data=>{
-      console.log(data);
-    })
+
+    this.maleQuizService.checkMaleQuizExist().subscribe(data=>{
+      let respData = JSON.parse(JSON.stringify(data));
+      if(respData.hasOwnProperty('message') && respData.message == 'No such data exists'){
+        this.maleQuizService.saveMaleData().subscribe(data=>{
+          console.log(data);
+          
+        });
+        
+      }else{
+        this.maleQuizService.updateMaleQuiz().subscribe(data=>{
+          console.log(data);
+        });
+        
+      }
+    });
     this.checkNavigate();
   }
 
