@@ -20,7 +20,7 @@ export class SubscriptionComponent implements OnInit {
 
 
   monthPlanData :any = {
-    "amount" : "449",
+    "amount" : "199",
     "currency" : "INR",
     "notes" : {
         "subscriptionType" : "monthly"
@@ -28,7 +28,7 @@ export class SubscriptionComponent implements OnInit {
 }
 
   basicPlanData :any = {
-    "amount" : "1347",
+    "amount" : "595",
     "currency" : "INR",
     "notes" : {
         "subscriptionType" : "three-months"
@@ -36,7 +36,7 @@ export class SubscriptionComponent implements OnInit {
 }
 
 starterPlanData :any = {
-  "amount" : "1999",
+  "amount" : "1149",
   "currency" : "INR",
   "notes" : {
       "subscriptionType" : "half-yearly"
@@ -44,7 +44,7 @@ starterPlanData :any = {
 }
 
 premiumPlanData :any = {
-  "amount" : "2999",
+  "amount" : "2299",
   "currency" : "INR",
   "notes" : {
       "subscriptionType" : "yearly"
