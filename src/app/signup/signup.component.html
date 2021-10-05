@@ -195,7 +195,7 @@
           </div>
 
         <input type="submit" name="login" value="Sign Up" class="btn" [disabled]="!signupForm.valid">
-        <button class="btn" (click)="loginWithGoogle()">Sign Up With Google</button>
+        <!-- <button class="btn" (click)="loginWithGoogle()">Sign Up With Google</button> -->
         <a routerLink="/login" style="text-align: center;">Already a user?</a>
         <div class="error-msg" style="margin-top: 10px;">{{googleErrorResponse}}</div>
         <div class="error-msg" style="margin-top: 10px;">{{signUpErrorResponse}}</div>
