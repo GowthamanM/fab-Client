@@ -7,33 +7,32 @@ import { UserService } from 'src/app/services/user.service';
 @Component({
   selector: 'app-male-result',
   templateUrl: './male-result.component.html',
-  styleUrls: ['./male-result.component.scss']
+  styleUrls: ['./male-result.component.scss'],
 })
 export class MaleResultComponent implements OnInit {
-
   id: number = 1;
   nextBtnActive: boolean = true;
   arrIndex: number = 0;
 
-  selection:any = [];
+  selection: any = [];
   count: number = 0;
 
-  types:any = [];
+  types: any = [];
 
-  shirtAns:any = ['','','','','','','','','','',''];
-  pantAns:any = ['','','','',''];
-  innerwearAns:any = ['','','',''];
-  shortsAns:any = ['','','','',''];
-  blazerAns:any = ['','','','',''];
-  footwearAns:any = [''];
+  shirtAns: any = ['', '', '', '', '', '', '', '', '', '', ''];
+  pantAns: any = ['', '', '', '', ''];
+  innerwearAns: any = ['', '', '', ''];
+  shortsAns: any = ['', '', '', '', ''];
+  blazerAns: any = ['', '', '', '', ''];
+  footwearAns: any = [''];
 
   constructor(
     private activeRoute: ActivatedRoute,
     private route: Router,
     private maleQuizService: MaleQuizService,
     private fb: FormBuilder,
-    private userService:UserService
-  ) { }
+    private userService: UserService
+  ) {}
 
   ngOnInit(): void {
     this.selection = this.maleQuizService.selectedQuiz;
@@ -42,7 +41,7 @@ export class MaleResultComponent implements OnInit {
     this.types = this.maleQuizService.selectionArray;
     console.log(this.types);
 
-    this.activeRoute.params.subscribe(routeParams => {
+    this.activeRoute.params.subscribe((routeParams) => {
       this.id = +routeParams.id;
       this.checkRouteChanges();
     });
@@ -52,13 +51,11 @@ export class MaleResultComponent implements OnInit {
   checkRouteChanges() {
     this.arrIndex = this.id - 1;
 
-    if(this.id == this.count) {
+    if (this.id == this.count) {
       this.nextBtnActive = false;
-    }
-    else if(this.id > this.count) {
+    } else if (this.id > this.count) {
       this.route.navigate(['page-not-found']);
-    }
-    else {
+    } else {
       this.nextBtnActive = true;
     }
   }
@@ -72,23 +69,30 @@ export class MaleResultComponent implements OnInit {
 
   onSubmit() {
     console.log(this.shirtForm.value);
-    
-    this.maleQuizService.setAnswers(this.shirtAns, this.pantAns, this.innerwearAns ,this.shortsAns,this.blazerAns,this.footwearAns);
+
+    this.maleQuizService.setAnswers(
+      this.shirtAns,
+      this.pantAns,
+      this.innerwearAns,
+      this.shortsAns,
+      this.blazerAns,
+      this.footwearAns
+    );
     this.maleQuizService.viewAnswerAlert();
 
-    this.maleQuizService.checkMaleQuizExist().subscribe(data=>{
+    this.maleQuizService.checkMaleQuizExist().subscribe((data) => {
       let respData = JSON.parse(JSON.stringify(data));
-      if(respData.hasOwnProperty('message') && respData.message == 'No such data exists'){
-        this.maleQuizService.saveMaleData().subscribe(data=>{
-          console.log(data);
-          
-        });
-        
-      }else{
-        this.maleQuizService.updateMaleQuiz().subscribe(data=>{
+      if (
+        respData.hasOwnProperty('message') &&
+        respData.message == 'No such data exists'
+      ) {
+        this.maleQuizService.saveMaleData().subscribe((data) => {
           console.log(data);
         });
-        
+      } else {
+        this.maleQuizService.updateMaleQuiz().subscribe((data) => {
+          console.log(data);
+        });
       }
     });
     this.checkNavigate();
@@ -104,23 +108,22 @@ export class MaleResultComponent implements OnInit {
     this.onSubmit();
   }
 
-  checkNavigate(){
-    this.userService.getUserData().subscribe(data=>{
-      if(data.User.isSubscribed === true){
+  checkNavigate() {
+    this.userService.getUserData().subscribe((data) => {
+      if (data.User.isSubscribed === true) {
         this.route.navigate(['wardrobe']);
-      }else{
+      } else {
         this.route.navigate(['not-subscribed']);
       }
-    })
+    });
   }
 
-
-  Shirt:any = this.maleQuizService.Shirt;
-  Pant:any = this.maleQuizService.Pant;
-  Shorts:any = this.maleQuizService.Shorts;
-  Blazer:any = this.maleQuizService.Blazer;
-  Innerwear:any = this.maleQuizService.Innerwear;
-  Footwear:any = this.maleQuizService.Footwear;
+  Shirt: any = this.maleQuizService.Shirt;
+  Pant: any = this.maleQuizService.Pant;
+  Shorts: any = this.maleQuizService.Shorts;
+  Blazer: any = this.maleQuizService.Blazer;
+  Innerwear: any = this.maleQuizService.Innerwear;
+  Footwear: any = this.maleQuizService.Footwear;
 
   shirtForm = this.fb.group({
     chestSize: [''],
@@ -135,86 +138,85 @@ export class MaleResultComponent implements OnInit {
       relaxedFit: [''],
       straight: [''],
       superSkinnyFit: [''],
-      tapperedFit: ['']
+      tapperedFit: [''],
     }),
     price: [''],
     pattern: this.fb.group({
       solid: [''],
       printed: [''],
       checked: [''],
-      stripes: ['']
+      stripes: [''],
     }),
     preference: this.fb.group({
       slim: [''],
-      regular: ['']
+      regular: [''],
     }),
     color: this.fb.group({
       black: [''],
       blue: [''],
-      brown:[''],
+      brown: [''],
       green: [''],
-      grey:[''],
-      khaki:[''],
-      lightBlue:[''],
-      navy:[''],
-      olive:[''],
-      pink:[''],
-      purple:[''],
+      grey: [''],
+      khaki: [''],
+      lightBlue: [''],
+      navy: [''],
+      olive: [''],
+      pink: [''],
+      purple: [''],
       red: [''],
-      salmon:[''],
-      white:[''],
-      yellow:['']
+      salmon: [''],
+      white: [''],
+      yellow: [''],
     }),
     collar: this.fb.group({
       bandCollar: [''],
       buildUpCollar: [''],
-      buttonDownCollar:[''],
+      buttonDownCollar: [''],
       clubCollar: [''],
-      collarLess:[''],
-      cubanCollar:[''],
-      cutawayCollar:[''],
-      hood:[''],
-      mandarinCollar:[''],
-      peterPanCollar:[''],
-      slimCollar:[''],
+      collarLess: [''],
+      cubanCollar: [''],
+      cutawayCollar: [''],
+      hood: [''],
+      mandarinCollar: [''],
+      peterPanCollar: [''],
+      slimCollar: [''],
       spreadCollar: [''],
-      wingtipCollar:[''],
-      notSpecific:['']
+      wingtipCollar: [''],
+      notSpecific: [''],
     }),
     fabric: this.fb.group({
       cotton: [''],
       cottonLinen: [''],
-      crepe:[''],
+      crepe: [''],
       hemp: [''],
-      linen:[''],
-      liva:[''],
-      lyocell:[''],
-      model:[''],
-      nylon:[''],
-      organicCotton:[''],
-      polySilk:[''],
+      linen: [''],
+      liva: [''],
+      lyocell: [''],
+      model: [''],
+      nylon: [''],
+      organicCotton: [''],
+      polySilk: [''],
       polyCotton: [''],
-      polyster:[''],
-      satin:[''],
-      silk:[''],
-      viscoseRayon:[''],
-      notSpecific:['']
+      polyster: [''],
+      satin: [''],
+      silk: [''],
+      viscoseRayon: [''],
+      notSpecific: [''],
     }),
     sleevelength: this.fb.group({
       longSleeve: [''],
       shotSleeve: [''],
-      sleeveless:[''],
+      sleeveless: [''],
       threeQuaterSleeve: [''],
-      notSpecific:['']
+      notSpecific: [''],
     }),
   });
-
 
   pantForm = this.fb.group({
     size: [''],
     pattern: this.fb.group({
       torn: [''],
-      regular: ['']
+      regular: [''],
     }),
     fit: this.fb.group({
       skinny: [''],
@@ -226,7 +228,7 @@ export class MaleResultComponent implements OnInit {
       relaxedFit: [''],
       straight: [''],
       superSkinnyFit: [''],
-      tapperedFit: ['']
+      tapperedFit: [''],
     }),
     cotton: this.fb.group({
       regular: [''],
@@ -234,34 +236,33 @@ export class MaleResultComponent implements OnInit {
       tappered: [''],
       relaxedFit: [''],
       straight: [''],
-      superSkinnyFit: ['']
+      superSkinnyFit: [''],
     }),
     price: [''],
     color: this.fb.group({
       black: [''],
       blue: [''],
-      brown:[''],
+      brown: [''],
       green: [''],
-      grey:[''],
-      khaki:[''],
-      lightBlue:[''],
-      navy:[''],
-      olive:[''],
-      pink:[''],
-      purple:[''],
+      grey: [''],
+      khaki: [''],
+      lightBlue: [''],
+      navy: [''],
+      olive: [''],
+      pink: [''],
+      purple: [''],
       red: [''],
-      salmon:[''],
-      white:[''],
-      yellow:['']
-    })
+      salmon: [''],
+      white: [''],
+      yellow: [''],
+    }),
   });
-
 
   shortsForm = this.fb.group({
     size: [''],
     pattern: this.fb.group({
       torn: [''],
-      regular: ['']
+      regular: [''],
     }),
     fit: this.fb.group({
       skinny: [''],
@@ -273,36 +274,58 @@ export class MaleResultComponent implements OnInit {
       relaxedFit: [''],
       straight: [''],
       superSkinnyFit: [''],
-      tapperedFit: ['']
-    }),
-    cotton: this.fb.group({
-      regular: [''],
-      slim: [''],
-      tappered: [''],
-      relaxedFit: [''],
-      straight: [''],
-      superSkinnyFit: ['']
+      tapperedFit: [''],
     }),
     price: [''],
     color: this.fb.group({
       black: [''],
       blue: [''],
-      brown:[''],
+      brown: [''],
       green: [''],
-      grey:[''],
-      khaki:[''],
-      lightBlue:[''],
-      navy:[''],
-      olive:[''],
-      pink:[''],
-      purple:[''],
+      grey: [''],
+      khaki: [''],
+      lightBlue: [''],
+      navy: [''],
+      olive: [''],
+      pink: [''],
+      purple: [''],
       red: [''],
-      salmon:[''],
-      white:[''],
-      yellow:['']
-    })
+      salmon: [''],
+      white: [''],
+      yellow: [''],
+    }),
+    // Fabric	Cotton	Denim	Hemp	Linen	Nylon	Organic Cotton	Polyster	Tencel	Viscose Rayon	Not Specific
+    fabric: this.fb.group({
+      cotton: [''],
+      denim: [''],
+      hemp: [''],
+      linen: [''],
+      Nylon: [''],
+      orgaincCotton: [''],
+      polyster: [''],
+      tencel: [''],
+      viscoseRayon: [''],
+      notspecific: [''],
+    }),
+    // Above Knee	Knee Length	Below Knee	Not Specific
+    length: this.fb.group({
+      aboveKnee: [''],
+      kneeLength: [''],
+      belowKnee: [''],
+      notSpecific: [''],
+    }),
+    printed: this.fb.group({
+      ombre: [''],
+      floral: [''],
+      noPrint: [''],
+      notspecific: [''],
+    }),
+    knittedOrWoven: {
+      knitted: [''],
+      woven: [''],
+      notSpecific: [''],
+    },
   });
-
 
   blazerForm = this.fb.group({
     chestSize: [''],
@@ -317,31 +340,31 @@ export class MaleResultComponent implements OnInit {
       relaxedFit: [''],
       straight: [''],
       superSkinnyFit: [''],
-      tapperedFit: ['']
+      tapperedFit: [''],
     }),
     price: [''],
     pattern: this.fb.group({
       solid: [''],
       printed: [''],
       checked: [''],
-      stripes: ['']
+      stripes: [''],
     }),
     color: this.fb.group({
       black: [''],
       blue: [''],
-      brown:[''],
+      brown: [''],
       green: [''],
-      grey:[''],
-      khaki:[''],
-      lightBlue:[''],
-      navy:[''],
-      olive:[''],
-      pink:[''],
-      purple:[''],
+      grey: [''],
+      khaki: [''],
+      lightBlue: [''],
+      navy: [''],
+      olive: [''],
+      pink: [''],
+      purple: [''],
       red: [''],
-      salmon:[''],
-      white:[''],
-      yellow:['']
+      salmon: [''],
+      white: [''],
+      yellow: [''],
     }),
   });
 
@@ -350,18 +373,18 @@ export class MaleResultComponent implements OnInit {
       briefs: [''],
       trunks: [''],
       boxerBriefs: [''],
-      innerBoxers: ['']
+      innerBoxers: [''],
     }),
     vest: this.fb.group({
       sleeveLess: [''],
       sleevedVests: [''],
-      gymVests: ['']
+      gymVests: [''],
     }),
     color: this.fb.group({
       red: [''],
       blue: [''],
       green: [''],
-      black: ['']
+      black: [''],
     }),
   });
 
@@ -370,46 +393,42 @@ export class MaleResultComponent implements OnInit {
     color: this.fb.group({
       black: [''],
       blue: [''],
-      brown:[''],
+      brown: [''],
       green: [''],
-      grey:[''],
-      khaki:[''],
-      lightBlue:[''],
-      navy:[''],
-      olive:[''],
-      pink:[''],
-      purple:[''],
+      grey: [''],
+      khaki: [''],
+      lightBlue: [''],
+      navy: [''],
+      olive: [''],
+      pink: [''],
+      purple: [''],
       red: [''],
-      salmon:[''],
-      white:[''],
-      yellow:['']
+      salmon: [''],
+      white: [''],
+      yellow: [''],
     }),
   });
-
-
-
-
 
   // For Converting object into our structure
   dataConversion(data: any) {
     let dt = Object.entries(data);
     dt.forEach((innerdata, i) => {
-      if(typeof(innerdata[1]) == 'object') {
+      if (typeof innerdata[1] == 'object') {
         innerdata[1] = this.innerObjConversion(innerdata[1]);
       }
     });
-    let resultData:any = [];
-    dt.forEach(item => {
+    let resultData: any = [];
+    dt.forEach((item) => {
       resultData.push(item[1]);
     });
     return resultData;
   }
 
-  innerObjConversion(data: any)  {
-    let result:any = [];
+  innerObjConversion(data: any) {
+    let result: any = [];
     let dt = Object.entries(data);
     dt.forEach((item, i) => {
-      if(item[1] == true) {
+      if (item[1] == true) {
         result.push(item[0]);
       }
     });
