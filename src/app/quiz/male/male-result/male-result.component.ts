@@ -260,10 +260,7 @@ export class MaleResultComponent implements OnInit {
 
   shortsForm = this.fb.group({
     size: [''],
-    pattern: this.fb.group({
-      torn: [''],
-      regular: [''],
-    }),
+
     fit: this.fb.group({
       skinny: [''],
       slim: [''],
