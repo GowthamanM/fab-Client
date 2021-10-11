@@ -281,7 +281,7 @@
         <p class="quiz-ques">
           {{Shorts[1][1]}}
         </p>
-        <div class="quiz-options" formGroupName="pattern">
+        <div class="quiz-options" formGroupName="fit">
           <div class="options" *ngFor="let options of Shorts[1][2]">
             <div class="form-check">
               <div class="radio-custom">
@@ -292,13 +292,31 @@
           </div>
         </div>
       </div>
+      
+
       <div class="form-group">
         <p class="quiz-ques">
           {{Shorts[2][1]}}
         </p>
         <div class="quiz-options">
-          <div class="quiz-options" formGroupName="fit">
-            <div class="options" *ngFor="let options of Shorts[2][2]">
+          <div class="options" *ngFor="let options of Shorts[2][2]">
+            <div class="form-check">
+              <div class="radio-custom">
+                <input class="form-check-input fab-radio-btn" type="radio" formControlName="price" [id]="options" [value]="options" style="cursor: pointer;">
+                <label class="fab-rad-btn" [for]="options">{{options}} </label>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <p class="quiz-ques">
+          {{Shorts[3][1]}}
+        </p>
+        <div class="quiz-options">
+          <div class="quiz-options" formGroupName="color">
+            <div class="options" *ngFor="let options of Shorts[3][2]">
               <div class="form-check">
                 <div class="radio-custom">
                   <input class="form-check-input fab-radio-btn" type="checkbox" [formControlName]="options[1]" [id]="options[0]" [value]="options[0]" style="cursor: pointer;">
@@ -309,12 +327,13 @@
           </div>
         </div>
       </div>
+
       <div class="form-group">
         <p class="quiz-ques">
-          {{Shorts[3][1]}}
+          {{Shorts[4][1]}}
         </p>
-        <div class="quiz-options" formGroupName="cotton">
-          <div class="options" *ngFor="let options of Shorts[3][2]">
+        <div class="quiz-options" formGroupName="fabric">
+          <div class="options" *ngFor="let options of Shorts[4][2]">
             <div class="form-check">
               <div class="radio-custom">
                 <input class="form-check-input fab-radio-btn" type="checkbox" [formControlName]="options[1]" [id]="options[0]" [value]="options[0]" style="cursor: pointer;">
@@ -324,26 +343,12 @@
           </div>
         </div>
       </div>
-      <div class="form-group">
-        <p class="quiz-ques">
-          {{Shorts[4][1]}}
-        </p>
-        <div class="quiz-options">
-          <div class="options" *ngFor="let options of Shorts[4][2]">
-            <div class="form-check">
-              <div class="radio-custom">
-                <input class="form-check-input fab-radio-btn" type="radio" formControlName="price" [id]="options" [value]="options" style="cursor: pointer;">
-                <label class="fab-rad-btn" [for]="options">{{options}} </label>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+
       <div class="form-group">
         <p class="quiz-ques">
           {{Shorts[5][1]}}
         </p>
-        <div class="quiz-options" formGroupName="color">
+        <div class="quiz-options" formGroupName="length">
           <div class="options" *ngFor="let options of Shorts[5][2]">
             <div class="form-check">
               <div class="radio-custom">
@@ -354,6 +359,39 @@
           </div>
         </div>
       </div>
+
+      <div class="form-group">
+        <p class="quiz-ques">
+          {{Shorts[6][1]}}
+        </p>
+        <div class="quiz-options" formGroupName="printed">
+          <div class="options" *ngFor="let options of Shorts[6][2]">
+            <div class="form-check">
+              <div class="radio-custom">
+                <input class="form-check-input fab-radio-btn" type="checkbox" [formControlName]="options[1]" [id]="options[0]" [value]="options[0]" style="cursor: pointer;">
+                <label class="fab-rad-btn" [for]="options[0]">{{options[0]}} </label>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <p class="quiz-ques">
+          {{Shorts[7][1]}}
+        </p>
+        <div class="quiz-options" formGroupName="knittedOrWoven">
+          <div class="options" *ngFor="let options of Shorts[7][2]">
+            <div class="form-check">
+              <div class="radio-custom">
+                <input class="form-check-input fab-radio-btn" type="checkbox" [formControlName]="options[1]" [id]="options[0]" [value]="options[0]" style="cursor: pointer;">
+                <label class="fab-rad-btn" [for]="options[0]">{{options[0]}} </label>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
     </form>
 
     <!-- Blazer Quiz -->

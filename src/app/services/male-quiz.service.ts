@@ -13,7 +13,7 @@ export class MaleQuizService {
   shirtAns: any = ['', '', '', '', '', '', ''];
   pantAns: any = ['', '', '', '', '', ''];
   innerwearAns: any = ['', '', ''];
-  shortsAns: any = ['', '', '', '', '', ''];
+  shortsAns: any = ['', '', '', '', '', '','',''];
   blazerAns: any = ['', '', '', '', '', ''];
   footwearAns: any = ['', ''];
   uid: any;
@@ -391,7 +391,7 @@ export class MaleQuizService {
       'Shorts',
       'KnittedOrWoven',
       [
-        ['Knitted', 'Knitted'],
+        ['Knitted', 'knitted'],
         ['Woven', 'woven'],
         ['Not Specific', 'notSpecific'],
       ],
@@ -638,16 +638,20 @@ export class MaleQuizService {
     this.maleData.shorts = {};
     this.maleData.shorts.size =
       this.shortsAns[0] === '' ? 'null' : this.shortsAns[0];
-    this.maleData.shorts.pattern =
-      this.shortsAns[1] === '' ? 'null' : this.shortsAns[1];
     this.maleData.shorts.fit =
-      this.shortsAns[2] === '' ? 'null' : this.shortsAns[2];
-    this.maleData.shorts.cotton =
-      this.shortsAns[3] === '' ? 'null' : this.shortsAns[3];
+      this.shortsAns[1] === '' ? 'null' : this.shortsAns[1];
     this.maleData.shorts.price =
-      this.shortsAns[4] === '' ? 'null' : this.shortsAns[4];
+      this.shortsAns[2] === '' ? 'null' : this.shortsAns[2];
     this.maleData.shorts.color =
+      this.shortsAns[3] === '' ? 'null' : this.shortsAns[3];
+    this.maleData.shorts.fabric =
+      this.shortsAns[4] === '' ? 'null' : this.shortsAns[4];
+    this.maleData.shorts.length =
       this.shortsAns[5] === '' ? 'null' : this.shortsAns[5];
+    this.maleData.shorts.printed =
+      this.shortsAns[6] === '' ? 'null' : this.shortsAns[6];
+    this.maleData.shorts.KnittedOrWoven =
+      this.shortsAns[7] === '' ? 'null' : this.shortsAns[7];
 
     this.maleData.blazers = {};
     this.maleData.blazers.chestSize =

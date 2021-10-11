@@ -22,7 +22,7 @@ export class MaleResultComponent implements OnInit {
   shirtAns: any = ['', '', '', '', '', '', '', '', '', '', ''];
   pantAns: any = ['', '', '', '', ''];
   innerwearAns: any = ['', '', '', ''];
-  shortsAns: any = ['', '', '', '', ''];
+  shortsAns: any = ['', '', '', '','','','',''];
   blazerAns: any = ['', '', '', '', ''];
   footwearAns: any = [''];
 
@@ -68,7 +68,7 @@ export class MaleResultComponent implements OnInit {
   }
 
   onSubmit() {
-    console.log(this.shirtForm.value);
+    console.log(this.shortsForm.value);
 
     this.maleQuizService.setAnswers(
       this.shirtAns,
@@ -317,11 +317,11 @@ export class MaleResultComponent implements OnInit {
       noPrint: [''],
       notspecific: [''],
     }),
-    knittedOrWoven: {
+    knittedOrWoven: this.fb.group({
       knitted: [''],
       woven: [''],
-      notSpecific: [''],
-    },
+      notSpecific: ['']
+    })
   });
 
   blazerForm = this.fb.group({
