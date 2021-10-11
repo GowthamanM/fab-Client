@@ -20,7 +20,7 @@ export class MaleResultComponent implements OnInit {
 
   types:any = [];
 
-  shirtAns:any = ['','','','','','','',''];
+  shirtAns:any = ['','','','','','','','','','',''];
   pantAns:any = ['','','','',''];
   innerwearAns:any = ['','','',''];
   shortsAns:any = ['','','','',''];
@@ -71,6 +71,8 @@ export class MaleResultComponent implements OnInit {
   }
 
   onSubmit() {
+    console.log(this.shirtForm.value);
+    
     this.maleQuizService.setAnswers(this.shirtAns, this.pantAns, this.innerwearAns ,this.shortsAns,this.blazerAns,this.footwearAns);
     this.maleQuizService.viewAnswerAlert();
 
@@ -162,6 +164,48 @@ export class MaleResultComponent implements OnInit {
       salmon:[''],
       white:[''],
       yellow:['']
+    }),
+    collar: this.fb.group({
+      bandCollar: [''],
+      buildUpCollar: [''],
+      buttonDownCollar:[''],
+      clubCollar: [''],
+      collarLess:[''],
+      cubanCollar:[''],
+      cutawayCollar:[''],
+      hood:[''],
+      mandarinCollar:[''],
+      peterPanCollar:[''],
+      slimCollar:[''],
+      spreadCollar: [''],
+      wingtipCollar:[''],
+      notSpecific:['']
+    }),
+    fabric: this.fb.group({
+      cotton: [''],
+      cottonLinen: [''],
+      crepe:[''],
+      hemp: [''],
+      linen:[''],
+      liva:[''],
+      lyocell:[''],
+      model:[''],
+      nylon:[''],
+      organicCotton:[''],
+      polySilk:[''],
+      polyCotton: [''],
+      polyster:[''],
+      satin:[''],
+      silk:[''],
+      viscoseRayon:[''],
+      notSpecific:['']
+    }),
+    sleevelength: this.fb.group({
+      longSleeve: [''],
+      shotSleeve: [''],
+      sleeveless:[''],
+      threeQuaterSleeve: [''],
+      notSpecific:['']
     }),
   });
 

@@ -54,6 +54,15 @@ export class MaleQuizService {
       'Shirt','Color', [['Black','black'],['Blue','blue'],['Brown','brown'],['Green','green'],['Grey','grey'],['Khaki','khaki'],
       ['Light Blue','lightBlue'],['Navy','navy'],['Olive','olive'],['Pink','pink'],['Purple','purple'],['Red','red'],['Salmon','salmon'],['White','white'],['Yellow','yellow']]
     ],
+    [
+      'Shirt','Collar',[['Band Collar','bandCollar'],['Built-up Collar','buildUpCollar'],['Button-Down Collar','buttonDownCollar'],['Club Collar','clubCollar'],['Collar Less','collarLess'],['Cuban Collar','cubanCollar'],['Cutaway Collar','cutawayCollar'],['Hood','hood'],['Mandarin Collar','mandarinCollar'],['Peter Pan Collar','peterPanCollar'],['Slim Collar','slimCollar'],['Spread Collar','spreadCollar'],['Wingtip Collar','wingtipCollar'],['Not Specific','notSpecific']]
+    ],
+    [
+      'Shirt','Fabric',[['Cotton','cotton'],['Cotton Linen','cottonLinen'],['Crepe','crepe'],['Hemp','hemp'],['Linen','linen'],['Liva','liva'],['Lyocell','lyocell'],['Modal','modal'],['Nylon','nylon'],['Organic Cotton','organicCotton'],['Poly Silk','polySilk'],['Poly Cotton','polyCotton'],['Polyster','polyster'],['Satin','satin'],['Silk','silk'],['Viscose Rayon','viscoseRayon'],['Not Specific','notSpecific']]
+    ],
+    [
+      'Shirt','Sleeve Length',[['Long Sleeve','longSleeve'],['Short Sleeve','shortSleeve'],['Sleveless','sleveless'],['Three-Quarter Sleeve','threeQuarterSleeve'],['Not Specific','notSpecific']]
+    ]
   ];
 
   Pant:any = [
@@ -205,6 +214,9 @@ export class MaleQuizService {
     // this.maleData.shirts.bodyType = this.shirtAns[5] === ''?'null':this.shirtAns[5];
     this.maleData.shirts.yourShirtPreference = this.shirtAns[5] === ''?'null':this.shirtAns[5];
     this.maleData.shirts.color = this.shirtAns[6] === ''?'null':this.shirtAns[6];
+    this.maleData.shirts.collar = this.shirtAns[7] === ''?'null':this.shirtAns[7]; 
+    this.maleData.shirts.fabric = this.shirtAns[8] === ''? 'null':this.shirtAns[8];
+    this.maleData.shirts.sleeveLength = this.shirtAns[9] === ''? 'null':this.shirtAns[9];
 
     this.maleData.innerwear={};
     this.maleData.innerwear.itype = this.innerwearAns[0] === ''?'null':this.innerwearAns[0];

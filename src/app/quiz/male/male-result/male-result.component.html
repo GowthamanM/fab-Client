@@ -113,6 +113,55 @@
           </div>
         </div>
       </div>
+
+      <div class="form-group">
+        <p class="quiz-ques">
+          {{Shirt[7][1]}}
+        </p>
+        <div class="quiz-options" formGroupName="collar">
+          <div class="options" *ngFor="let options of Shirt[7][2]">
+            <div class="form-check">
+              <div class="radio-custom">
+                <input class="form-check-input fab-radio-btn" type="checkbox" [formControlName]="options[1]" [id]="options[0]" [value]="options[0]" style="cursor: pointer;">
+                <label class="fab-rad-btn" [for]="options[0]">{{options[0]}} </label>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <p class="quiz-ques">
+          {{Shirt[8][1]}}
+        </p>
+        <div class="quiz-options" formGroupName="fabric">
+          <div class="options" *ngFor="let options of Shirt[8][2]">
+            <div class="form-check">
+              <div class="radio-custom">
+                <input class="form-check-input fab-radio-btn" type="checkbox" [formControlName]="options[1]" [id]="options[0]" [value]="options[0]" style="cursor: pointer;">
+                <label class="fab-rad-btn" [for]="options[0]">{{options[0]}} </label>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <p class="quiz-ques">
+          {{Shirt[9][1]}}
+        </p>
+        <div class="quiz-options" formGroupName="sleevelength">
+          <div class="options" *ngFor="let options of Shirt[9][2]">
+            <div class="form-check">
+              <div class="radio-custom">
+                <input class="form-check-input fab-radio-btn" type="checkbox" [formControlName]="options[1]" [id]="options[0]" [value]="options[0]" style="cursor: pointer;">
+                <label class="fab-rad-btn" [for]="options[0]">{{options[0]}} </label>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
     </form>
 
     <!-- Pant Quiz -->
