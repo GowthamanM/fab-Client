@@ -462,27 +462,75 @@ export class MaleQuizService {
     ],
   ];
 
+  // Fabric	Bamboo	Blended	Cashmere	Cotton	Elastane	Linen	Linen Blend	Modal	Nylon	Organic Cotton 	Polyster	Polyster PU Coated	Synthetic	Viscose Rayon	Wool	Not Specific
   Tshirt: any = [
-    ['Blazer', 'Size (Chest)', ['39', '40', '41', '42', '43']],
-    ['Blazer', 'Size', ['S', 'M', 'L', 'XL', 'XXL']],
+    ['TShirt', 'Size (Chest)', ['39', '40', '41', '42', '43']],
+    ['Tshirt', 'Size', ['S', 'M', 'L', 'XL', 'XXL']],
     [
-      'Blazer',
+      'Tshirt',
+      'Fabric',
+      [
+        ['Bamboo', 'bamboo'],
+        ['Blended', 'blended'],
+        ['Cashmere', 'cashmere'],
+        ['Cotton', 'cotton'],
+        ['Elastane', 'Elastane'],
+        ['Linen', 'linen'],
+        ['Linen Blend', 'linenBlend'],
+        ['Modal', 'modal'],
+        ['Nylon', 'nylon'],
+        ['Orgainc Cotton', 'organicCottin'],
+        ['Polyster', 'polyster'],
+        ['Polyster PU Coated', 'polysterPUCoated'],
+        ['Synthetic', 'synthetic'],
+        ['Viscose Rayon Wool', 'viscoseRayonWool'],
+        ['Not Specific', 'notspecific'],
+      ],
+    ],
+    // Fit	Boxy	Compression	Loose	Regular Fit	Relaxed Fit	Slim Fit	Not Specific
+    [
+      'Tshirt',
       'Fit',
       [
-        ['Skinny', 'skinny'],
-        ['Slim', 'slim'],
-        ['Regular', 'regular'],
-        ['Boot cut', 'bootCut'],
-        ['Flared', 'flared'],
-        ['Jogger', 'jogger'],
+        ['Boxy', 'boxy'],
+        ['Compression', 'compression'],
+        ['Loose', 'loose'],
+        ['Regular Fit', 'regularFit'],
         ['Relaxed fit', 'relaxedFit'],
-        ['Straight', 'straight'],
-        ['Super skinny fit', 'superSkinnyFit'],
-        ['Tappered fit', 'tapperedFit'],
+        ['Slim Fit', 'slimFit'],
+        ['Relaxed fit', 'relaxedFit'],
+        ['Not specific', 'notSpecifc'],
+      ],
+    ],
+    // Pattern	Checked	Colour Blocked	Dyed	Printed	Self Design	Solid	Striped	Not Specific
+    [
+      'Tshirt',
+      'Pattern',
+      [
+        ['Checked', 'Checked'],
+        ['Color Blocked', 'colorBlocked'],
+        ['Dyed', 'dyed'],
+        ['Printed', 'printed'],
+        ['Self Design', 'selfDesign'],
+        ['Solid', 'solid'],
+        ['Striped', 'striped'],
+        ['Not specific', 'notSpecifc'],
+      ],
+    ],
+    // Sleeve Length	Long Sleeve	Short Sleeve	Sleeveless	Three-Quarter Sleeve		Not Specific
+    [
+      'Tshirt',
+      'Sleeve Length',
+      [
+        ['Long Sleeve', 'longSleeve'],
+        ['Short Sleeve', 'shortSleeve'],
+        ['Three-Quarter Sleeve', 'threeQuarterSleeve'],
+        ['Sleeveless', 'sleeveless'],
+        ['Not specific', 'notSpecifc'],
       ],
     ],
     [
-      'Blazer',
+      'TShirt',
       'Price',
       [
         'Below 500',
@@ -494,7 +542,7 @@ export class MaleQuizService {
       ],
     ],
     [
-      'Blazer',
+      'Tshirt',
       'Pattern',
       [
         ['Solid', 'solid'],
@@ -504,7 +552,7 @@ export class MaleQuizService {
       ],
     ],
     [
-      'Blazer',
+      'Tshirt',
       'Color',
       [
         ['Black', 'black'],
@@ -525,7 +573,6 @@ export class MaleQuizService {
       ],
     ],
   ];
-
 
   allQuiz: any = [
     this.Shirt,
