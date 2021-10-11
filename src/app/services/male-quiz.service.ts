@@ -462,6 +462,71 @@ export class MaleQuizService {
     ],
   ];
 
+  Tshirt: any = [
+    ['Blazer', 'Size (Chest)', ['39', '40', '41', '42', '43']],
+    ['Blazer', 'Size', ['S', 'M', 'L', 'XL', 'XXL']],
+    [
+      'Blazer',
+      'Fit',
+      [
+        ['Skinny', 'skinny'],
+        ['Slim', 'slim'],
+        ['Regular', 'regular'],
+        ['Boot cut', 'bootCut'],
+        ['Flared', 'flared'],
+        ['Jogger', 'jogger'],
+        ['Relaxed fit', 'relaxedFit'],
+        ['Straight', 'straight'],
+        ['Super skinny fit', 'superSkinnyFit'],
+        ['Tappered fit', 'tapperedFit'],
+      ],
+    ],
+    [
+      'Blazer',
+      'Price',
+      [
+        'Below 500',
+        '1000 - 2000',
+        '2000 - 3000',
+        '3000 - 4000',
+        '4000 - 5000',
+        'More than 5000',
+      ],
+    ],
+    [
+      'Blazer',
+      'Pattern',
+      [
+        ['Solid', 'solid'],
+        ['Printed', 'printed'],
+        ['Checked', 'checked'],
+        ['Stripes', 'stripes'],
+      ],
+    ],
+    [
+      'Blazer',
+      'Color',
+      [
+        ['Black', 'black'],
+        ['Blue', 'blue'],
+        ['Brown', 'brown'],
+        ['Green', 'green'],
+        ['Grey', 'grey'],
+        ['Khaki', 'khaki'],
+        ['Light Blue', 'lightBlue'],
+        ['Navy', 'navy'],
+        ['Olive', 'olive'],
+        ['Pink', 'pink'],
+        ['Purple', 'purple'],
+        ['Red', 'red'],
+        ['Salmon', 'salmon'],
+        ['White', 'white'],
+        ['Yellow', 'yellow'],
+      ],
+    ],
+  ];
+
+
   allQuiz: any = [
     this.Shirt,
     this.Pant,
