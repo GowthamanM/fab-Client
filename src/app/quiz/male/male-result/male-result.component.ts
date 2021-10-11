@@ -24,6 +24,7 @@ export class MaleResultComponent implements OnInit {
   innerwearAns: any = ['', '', '', ''];
   shortsAns: any = ['', '', '', '','','','',''];
   blazerAns: any = ['', '', '', '', ''];
+  tshirtAns:any = ['','','','','','','',''];
   footwearAns: any = [''];
 
   constructor(
@@ -36,7 +37,9 @@ export class MaleResultComponent implements OnInit {
 
   ngOnInit(): void {
     this.selection = this.maleQuizService.selectedQuiz;
+    console.log('Selected Quiz');
     console.log(this.selection);
+    
     this.count = this.selection.length;
     this.types = this.maleQuizService.selectionArray;
     console.log(this.types);
@@ -68,7 +71,7 @@ export class MaleResultComponent implements OnInit {
   }
 
   onSubmit() {
-    console.log(this.shortsForm.value);
+    console.log(this.tShirtForm.value);
 
     this.maleQuizService.setAnswers(
       this.shirtAns,
@@ -76,7 +79,8 @@ export class MaleResultComponent implements OnInit {
       this.innerwearAns,
       this.shortsAns,
       this.blazerAns,
-      this.footwearAns
+      this.footwearAns,
+      this.tshirtAns
     );
     this.maleQuizService.viewAnswerAlert();
 
@@ -105,6 +109,7 @@ export class MaleResultComponent implements OnInit {
     this.blazerAns = this.dataConversion(this.blazerForm.value);
     this.innerwearAns = this.dataConversion(this.innerwearForm.value);
     this.footwearAns = this.dataConversion(this.footwearForm.value);
+    this.tshirtAns = this.dataConversion(this.tShirtForm.value);
     this.onSubmit();
   }
 
@@ -124,6 +129,7 @@ export class MaleResultComponent implements OnInit {
   Blazer: any = this.maleQuizService.Blazer;
   Innerwear: any = this.maleQuizService.Innerwear;
   Footwear: any = this.maleQuizService.Footwear;
+  Tshirt:any = this.maleQuizService.Tshirt;
 
   shirtForm = this.fb.group({
     chestSize: [''],

@@ -13,6 +13,7 @@ export class MaleQuizService {
   shirtAns: any = ['', '', '', '', '', '', ''];
   pantAns: any = ['', '', '', '', '', ''];
   innerwearAns: any = ['', '', ''];
+  tshrtAns:any = ['','','','','','','',''];
   shortsAns: any = ['', '', '', '', '', '','',''];
   blazerAns: any = ['', '', '', '', '', ''];
   footwearAns: any = ['', ''];
@@ -464,8 +465,20 @@ export class MaleQuizService {
 
   // Fabric	Bamboo	Blended	Cashmere	Cotton	Elastane	Linen	Linen Blend	Modal	Nylon	Organic Cotton 	Polyster	Polyster PU Coated	Synthetic	Viscose Rayon	Wool	Not Specific
   Tshirt: any = [
-    ['TShirt', 'Size (Chest)', ['39', '40', '41', '42', '43']],
+    ['Tshirt', 'Size (Chest)', ['39', '40', '41', '42', '43']],
     ['Tshirt', 'Size', ['S', 'M', 'L', 'XL', 'XXL']],
+    [
+      'Tshirt',
+      'Price',
+      [
+        'Below 500',
+        '1000 - 2000',
+        '2000 - 3000',
+        '3000 - 4000',
+        '4000 - 5000',
+        'More than 5000',
+      ],
+    ],
     [
       'Tshirt',
       'Fabric',
@@ -530,28 +543,6 @@ export class MaleQuizService {
       ],
     ],
     [
-      'TShirt',
-      'Price',
-      [
-        'Below 500',
-        '1000 - 2000',
-        '2000 - 3000',
-        '3000 - 4000',
-        '4000 - 5000',
-        'More than 5000',
-      ],
-    ],
-    [
-      'Tshirt',
-      'Pattern',
-      [
-        ['Solid', 'solid'],
-        ['Printed', 'printed'],
-        ['Checked', 'checked'],
-        ['Stripes', 'stripes'],
-      ],
-    ],
-    [
       'Tshirt',
       'Color',
       [
@@ -581,12 +572,14 @@ export class MaleQuizService {
     this.Shorts,
     this.Blazer,
     this.Footwear,
+    this.Tshirt
   ];
 
   setSelectionArray(data: any) {
     this.selectionArray = [];
     this.selectedQuiz = [];
-
+    
+    
     this.selectionArray = data;
     // console.log(this.selectionArray);
     this.setQuiz(this.selectionArray);
@@ -594,6 +587,8 @@ export class MaleQuizService {
 
   setQuiz(selectionData: any) {
     selectionData.forEach((quiz: any) => {
+      console.log('quiz log : '+quiz);
+      
       this.allQuiz.forEach((item: any) => {
         if (item[0][0] == quiz) {
           this.selectedQuiz.push(item);
@@ -613,7 +608,8 @@ export class MaleQuizService {
     innerwearData: any,
     shorts: any,
     blazer: any,
-    footwear: any
+    footwear: any,
+    tshrt:any
   ) {
     this.shirtAns = shirtData;
     this.pantAns = pantData;
@@ -621,6 +617,7 @@ export class MaleQuizService {
     this.shortsAns = shorts;
     this.blazerAns = blazer;
     this.footwearAns = footwear;
+    this.tshrtAns = tshrt;
   }
 
   viewAllAnswers() {
@@ -719,6 +716,24 @@ export class MaleQuizService {
       this.footwearAns[0] === '' ? 'null' : this.footwearAns[0];
     this.maleData.footwear.color =
       this.footwearAns[1] === '' ? 'null' : this.footwearAns[1];
+
+    this.maleData.tShirt = {};
+    this.maleData.tShirt.chestSize = 
+      this.tshrtAns[0] ===  '' ? 'null' : this.tshrtAns[0];
+    this.maleData.tShirt.size = 
+      this.tshrtAns[1] ===  '' ? 'null' : this.tshrtAns[1];
+    this.maleData.tShirt.price = 
+      this.tshrtAns[2] ===  '' ? 'null' : this.tshrtAns[2];
+    this.maleData.tShirt.fabric = 
+      this.tshrtAns[3] ===  '' ? 'null' : this.tshrtAns[3];
+    this.maleData.tShirt.fit = 
+      this.tshrtAns[4] ===  '' ? 'null' : this.tshrtAns[4];
+    this.maleData.tShirt.pattern = 
+      this.tshrtAns[5] ===  '' ? 'null' : this.tshrtAns[5];
+    this.maleData.tShirt.sleeveLength = 
+      this.tshrtAns[6] ===  '' ? 'null' : this.tshrtAns[6];
+    this.maleData.tShirt.color = 
+      this.tshrtAns[7] ===  '' ? 'null' : this.tshrtAns[7];
   }
 
   setMaleCommonQuestions(data: any) {
