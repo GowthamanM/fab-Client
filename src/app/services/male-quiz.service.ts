@@ -690,13 +690,15 @@ export class MaleQuizService {
       this.pantAns[0] === '' ? 'null' : this.pantAns[0];
     this.maleData.pants.pattern =
       this.pantAns[1] === '' ? 'null' : this.pantAns[1];
-    this.maleData.pants.fit = this.pantAns[2] === '' ? 'null' : this.pantAns[2];
-    this.maleData.pants.cotton =
+    this.maleData.pants.fitJeans = this.pantAns[2] === '' ? 'null' : this.pantAns[2];
+    this.maleData.pants.fitTornJeans =
       this.pantAns[3] === '' ? 'null' : this.pantAns[3];
-    this.maleData.pants.price =
+    this.maleData.pants.fitCotton =
       this.pantAns[4] === '' ? 'null' : this.pantAns[4];
-    this.maleData.pants.color =
+    this.maleData.pants.price =
       this.pantAns[5] === '' ? 'null' : this.pantAns[5];
+    this.maleData.pants.color =
+      this.pantAns[6] === '' ? 'null' : this.pantAns[6];
 
     this.maleData.shorts = {};
     this.maleData.shorts.size =

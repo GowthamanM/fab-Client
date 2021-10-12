@@ -20,7 +20,7 @@ export class MaleResultComponent implements OnInit {
   types: any = [];
 
   shirtAns: any = ['', '', '', '', '', '', '', '', '', '', ''];
-  pantAns: any = ['', '', '', '', ''];
+  pantAns: any = ['', '', '', '', '','',''];
   innerwearAns: any = ['', '', '', ''];
   shortsAns: any = ['', '', '', '', '', '', '', ''];
   blazerAns: any = ['', '', '', '', ''];
@@ -71,7 +71,7 @@ export class MaleResultComponent implements OnInit {
   }
 
   onSubmit() {
-    console.log(this.tShirtForm.value);
+    console.log(this.pantForm.value);
 
     this.maleQuizService.setAnswers(
       this.shirtAns,

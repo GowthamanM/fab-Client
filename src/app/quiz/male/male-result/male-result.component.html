@@ -201,7 +201,7 @@
           {{Pant[2][1]}}
         </p>
         <div class="quiz-options">
-          <div class="quiz-options" formGroupName="fit">
+          <div class="quiz-options" formGroupName="fitJeans">
             <div class="options" *ngFor="let options of Pant[2][2]">
               <div class="form-check">
                 <div class="radio-custom">
@@ -217,7 +217,7 @@
         <p class="quiz-ques">
           {{Pant[3][1]}}
         </p>
-        <div class="quiz-options" formGroupName="cotton">
+        <div class="quiz-options" formGroupName="fitTornJeans">
           <div class="options" *ngFor="let options of Pant[3][2]">
             <div class="form-check">
               <div class="radio-custom">
@@ -232,8 +232,23 @@
         <p class="quiz-ques">
           {{Pant[4][1]}}
         </p>
-        <div class="quiz-options">
+        <div class="quiz-options" formGroupName="fitCotton">
           <div class="options" *ngFor="let options of Pant[4][2]">
+            <div class="form-check">
+              <div class="radio-custom">
+                <input class="form-check-input fab-radio-btn" type="checkbox" [formControlName]="options[1]" [id]="options[0]" [value]="options[0]" style="cursor: pointer;">
+                <label class="fab-rad-btn" [for]="options[0]">{{options[0]}} </label>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="form-group">
+        <p class="quiz-ques">
+          {{Pant[5][1]}}
+        </p>
+        <div class="quiz-options">
+          <div class="options" *ngFor="let options of Pant[5][2]">
             <div class="form-check">
               <div class="radio-custom">
                 <input class="form-check-input fab-radio-btn" type="radio" formControlName="price" [id]="options" [value]="options" style="cursor: pointer;">
@@ -245,10 +260,10 @@
       </div>
       <div class="form-group">
         <p class="quiz-ques">
-          {{Pant[5][1]}}
+          {{Pant[6][1]}}
         </p>
         <div class="quiz-options" formGroupName="color">
-          <div class="options" *ngFor="let options of Pant[5][2]">
+          <div class="options" *ngFor="let options of Pant[6][2]">
             <div class="form-check">
               <div class="radio-custom">
                 <input class="form-check-input fab-radio-btn" type="checkbox" [formControlName]="options[1]" [id]="options[0]" [value]="options[0]" style="cursor: pointer;">
