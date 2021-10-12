@@ -13,7 +13,7 @@ export class MaleQuizService {
   shirtAns: any = ['', '', '', '', '', '', ''];
   pantAns: any = ['', '', '', '', '', ''];
   innerwearAns: any = ['', '', ''];
-  shortsAns: any = ['', '', '', '', '', '','',''];
+  shortsAns: any = ['', '', '', '', '', '', '', ''];
   blazerAns: any = ['', '', '', '', '', ''];
   footwearAns: any = ['', ''];
   uid: any;
@@ -167,9 +167,10 @@ export class MaleQuizService {
         ['Regular', 'regular'],
       ],
     ],
+    // Fit(Jeans)	Skinny	Slim	Regular	Boot cut	Flared	Jogger	Relaxed fit	Straight 	Super skinny fit	Tappered fit	Not Specific
     [
       'Pant',
-      'Fit',
+      'Fit (Jeans)',
       [
         ['Skinny', 'skinny'],
         ['Slim', 'slim'],
@@ -181,18 +182,37 @@ export class MaleQuizService {
         ['Straight', 'straight'],
         ['Super skinny fit', 'superSkinnyFit'],
         ['Tappered fit', 'tapperedFit'],
+        ['Not specific', 'notSpecific'],
+      ],
+    ],
+    // Fit(Torn jeans)	Skinny	Slim	Regular	Boot cut	Flared	Jogger	Relaxed fit	Straight 	Super skinny fit	Tappered fit	Not Specific
+    [
+      'Pant',
+      'Fit (Torn Jeans)',
+      [
+        ['Skinny', 'skinny'],
+        ['Slim', 'slim'],
+        ['Regular', 'regular'],
+        ['Boot cut', 'bootCut'],
+        ['Flared', 'flared'],
+        ['Jogger', 'jogger'],
+        ['Relaxed fit', 'relaxedFit'],
+        ['Straight', 'straight'],
+        ['Super skinny fit', 'superSkinnyFit'],
+        ['Tappered fit', 'tapperedFit'],
+        ['Not specific', 'notSpecific'],
       ],
     ],
     [
       'Pant',
-      'Cotton',
+      'Fit (Cotton)',
       [
-        ['Regular', 'regular'],
+        ['Skinny', 'skinny'],
         ['Slim', 'slim'],
         ['Tappered', 'tappered'],
-        ['Relaxed fit', 'relaxedFit'],
-        ['Straight', 'straight'],
-        ['Super skinny fit', 'superSkinnyFit'],
+        ['Loose Fit', 'looseFit'],
+        ['Skinny Fit', 'skinnyFit'],
+        ['Straight Fit', 'straightFit'],
       ],
     ],
     [

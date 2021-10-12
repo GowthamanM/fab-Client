@@ -22,7 +22,7 @@ export class MaleResultComponent implements OnInit {
   shirtAns: any = ['', '', '', '', '', '', '', '', '', '', ''];
   pantAns: any = ['', '', '', '', ''];
   innerwearAns: any = ['', '', '', ''];
-  shortsAns: any = ['', '', '', '','','','',''];
+  shortsAns: any = ['', '', '', '', '', '', '', ''];
   blazerAns: any = ['', '', '', '', ''];
   footwearAns: any = [''];
 
@@ -218,7 +218,7 @@ export class MaleResultComponent implements OnInit {
       torn: [''],
       regular: [''],
     }),
-    fit: this.fb.group({
+    fitJeans: this.fb.group({
       skinny: [''],
       slim: [''],
       regular: [''],
@@ -229,14 +229,28 @@ export class MaleResultComponent implements OnInit {
       straight: [''],
       superSkinnyFit: [''],
       tapperedFit: [''],
+      notSpecific: [''],
     }),
-    cotton: this.fb.group({
-      regular: [''],
+    fitTornJeans: this.fb.group({
+      skinny: [''],
       slim: [''],
-      tappered: [''],
+      regular: [''],
+      bootCut: [''],
+      flared: [''],
+      jogger: [''],
       relaxedFit: [''],
       straight: [''],
       superSkinnyFit: [''],
+      tapperedFit: [''],
+      notSpecific: [''],
+    }),
+    fitCotton: this.fb.group({
+      regular: [''],
+      slim: [''],
+      tappered: [''],
+      looseFit: [''],
+      skinnyFit: [''],
+      straightFit: [''],
     }),
     price: [''],
     color: this.fb.group({
@@ -320,8 +334,8 @@ export class MaleResultComponent implements OnInit {
     knittedOrWoven: this.fb.group({
       knitted: [''],
       woven: [''],
-      notSpecific: ['']
-    })
+      notSpecific: [''],
+    }),
   });
 
   blazerForm = this.fb.group({
