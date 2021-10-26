@@ -33,8 +33,8 @@ export class MaleQuizService {
   }
 
   Shirt: any = [
-    ['Shirt', 'Size (Chest)', ['39', '40', '41', '42', '43']],
-    ['Shirt', 'Size', ['S', 'M', 'L', 'XL', 'XXL']],
+    ['Shirt', 'Size (Chest)', ['39', '40', '41', '42', '43','Not Specific']],
+    ['Shirt', 'Size', ['S', 'M', 'L', 'XL', 'XXL','Not Specific']],
     [
       'Shirt',
       'Fit',
@@ -49,6 +49,7 @@ export class MaleQuizService {
         ['Straight', 'straight'],
         ['Super skinny fit', 'superSkinnyFit'],
         ['Tappered fit', 'tapperedFit'],
+        ['Not Specific','notSpecific']
       ],
     ],
     [
@@ -61,6 +62,7 @@ export class MaleQuizService {
         '3000 - 4000',
         '4000 - 5000',
         'More than 5000',
+        'Not Specific'
       ],
     ],
     [
@@ -71,6 +73,7 @@ export class MaleQuizService {
         ['Printed', 'printed'],
         ['Checked', 'checked'],
         ['Stripes', 'stripes'],
+        ['Not Specific','notSpecific']
       ],
     ],
     [
@@ -79,6 +82,7 @@ export class MaleQuizService {
       [
         ['Slim', 'slim'],
         ['Regular', 'regular'],
+        ['Not Specific','notSpecific']
       ],
     ],
     [
@@ -100,6 +104,7 @@ export class MaleQuizService {
         ['Salmon', 'salmon'],
         ['White', 'white'],
         ['Yellow', 'yellow'],
+        ['Not Specific','notSpecific']
       ],
     ],
     [
@@ -119,7 +124,7 @@ export class MaleQuizService {
         ['Slim Collar', 'slimCollar'],
         ['Spread Collar', 'spreadCollar'],
         ['Wingtip Collar', 'wingtipCollar'],
-        ['Not Specific', 'notSpecific'],
+        ['Not Specific', 'notSpecific']
       ],
     ],
     [
@@ -159,13 +164,14 @@ export class MaleQuizService {
   ];
 
   Pant: any = [
-    ['Pant', 'Size', ['28 - 30', '30 - 32', '32 - 34', '34 - 36', '36 - 38']],
+    ['Pant', 'Size', ['28 - 30', '30 - 32', '32 - 34', '34 - 36', '36 - 38','Not Specific']],
     [
       'Pant',
       'Pattern',
       [
         ['Torn', 'torn'],
         ['Regular', 'regular'],
+        ['Not Specific', 'notSpecific'],
       ],
     ],
     // Fit(Jeans)	Skinny	Slim	Regular	Boot cut	Flared	Jogger	Relaxed fit	Straight 	Super skinny fit	Tappered fit	Not Specific
@@ -214,6 +220,7 @@ export class MaleQuizService {
         ['Loose Fit', 'looseFit'],
         ['Skinny Fit', 'skinnyFit'],
         ['Straight Fit', 'straightFit'],
+        ['Not Specific', 'notSpecific'],
       ],
     ],
     [
@@ -226,6 +233,7 @@ export class MaleQuizService {
         '3000 - 4000',
         '4000 - 5000',
         'More than 5000',
+        'Not Specific'
       ],
     ],
     [
@@ -247,6 +255,7 @@ export class MaleQuizService {
         ['Salmon', 'salmon'],
         ['White', 'white'],
         ['Yellow', 'yellow'],
+        ['Not Specific', 'notSpecific'],
       ],
     ],
   ];
@@ -260,6 +269,7 @@ export class MaleQuizService {
         ['Trunks', 'trunks'],
         ['Boxer briefs', 'boxerBriefs'],
         ['Inner boxers', 'innerBoxers'],
+        ['Not Specific', 'notSpecific'],
       ],
     ],
     [
@@ -269,6 +279,7 @@ export class MaleQuizService {
         ['Sleeve less', 'sleeveLess'],
         ['Sleeved vests', 'sleevedVests'],
         ['Gym Vests', 'gymVests'],
+        ['Not Specific', 'notSpecific'],
       ],
     ],
     [
@@ -290,12 +301,13 @@ export class MaleQuizService {
         ['Salmon', 'salmon'],
         ['White', 'white'],
         ['Yellow', 'yellow'],
+        ['Not Specific', 'notSpecific'],
       ],
     ],
   ];
 
   Footwear: any = [
-    ['Footwear', 'Size', ['6', '7', '8', '9', '10', '11']],
+    ['Footwear', 'Size', ['6', '7', '8', '9', '10', '11','Not Specific']],
     [
       'Footwear',
       'Color',
@@ -315,13 +327,14 @@ export class MaleQuizService {
         ['Salmon', 'salmon'],
         ['White', 'white'],
         ['Yellow', 'yellow'],
+        ['Not Specific', 'notSpecific'],
       ],
     ],
   ];
 
   // Fabric	Cotton	Denim	Hemp	Linen	Nylon	Organic Cotton	Polyster	Tencel	Viscose Rayon	Not Specific
   Shorts: any = [
-    ['Shorts', 'Size', ['28 - 30', '30 - 32', '32 - 34', '34 - 36', '36 - 38']],
+    ['Shorts', 'Size', ['28 - 30', '30 - 32', '32 - 34', '34 - 36', '36 - 38','Not Specific']],
 
     [
       'Shorts',
@@ -337,6 +350,7 @@ export class MaleQuizService {
         ['Straight', 'straight'],
         ['Super skinny fit', 'superSkinnyFit'],
         ['Tappered fit', 'tapperedFit'],
+        ['Not Specific', 'notSpecific'],
       ],
     ],
     [
@@ -349,6 +363,7 @@ export class MaleQuizService {
         '3000 - 4000',
         '4000 - 5000',
         'More than 5000',
+        'Not Specific'
       ],
     ],
     [
@@ -370,6 +385,7 @@ export class MaleQuizService {
         ['Salmon', 'salmon'],
         ['White', 'white'],
         ['Yellow', 'yellow'],
+        ['Not Specific', 'notSpecific'],
       ],
     ],
     [
@@ -420,8 +436,8 @@ export class MaleQuizService {
   ];
 
   Blazer: any = [
-    ['Blazer', 'Size (Chest)', ['39', '40', '41', '42', '43']],
-    ['Blazer', 'Size', ['S', 'M', 'L', 'XL', 'XXL']],
+    ['Blazer', 'Size (Chest)', ['39', '40', '41', '42', '43','Not Specific']],
+    ['Blazer', 'Size', ['S', 'M', 'L', 'XL', 'XXL','Not Specific']],
     [
       'Blazer',
       'Fit',
@@ -436,6 +452,7 @@ export class MaleQuizService {
         ['Straight', 'straight'],
         ['Super skinny fit', 'superSkinnyFit'],
         ['Tappered fit', 'tapperedFit'],
+        ['Not Specific', 'notSpecific'],
       ],
     ],
     [
@@ -448,6 +465,7 @@ export class MaleQuizService {
         '3000 - 4000',
         '4000 - 5000',
         'More than 5000',
+        'Not Specific'
       ],
     ],
     [
@@ -458,6 +476,7 @@ export class MaleQuizService {
         ['Printed', 'printed'],
         ['Checked', 'checked'],
         ['Stripes', 'stripes'],
+        ['Not Specific', 'notSpecific'],
       ],
     ],
     [
@@ -479,14 +498,15 @@ export class MaleQuizService {
         ['Salmon', 'salmon'],
         ['White', 'white'],
         ['Yellow', 'yellow'],
+        ['Not Specific', 'notSpecific'],
       ],
     ],
   ];
 
   // Fabric	Bamboo	Blended	Cashmere	Cotton	Elastane	Linen	Linen Blend	Modal	Nylon	Organic Cotton 	Polyster	Polyster PU Coated	Synthetic	Viscose Rayon	Wool	Not Specific
   Tshirt: any = [
-    ['Tshirt', 'Size (Chest)', ['39', '40', '41', '42', '43']],
-    ['Tshirt', 'Size', ['S', 'M', 'L', 'XL', 'XXL']],
+    ['Tshirt', 'Size (Chest)', ['39', '40', '41', '42', '43','Not Specific']],
+    ['Tshirt', 'Size', ['S', 'M', 'L', 'XL', 'XXL','Not Specific']],
     [
       'Tshirt',
       'Price',
@@ -497,6 +517,7 @@ export class MaleQuizService {
         '3000 - 4000',
         '4000 - 5000',
         'More than 5000',
+        'Not Specific'
       ],
     ],
     [
@@ -581,6 +602,7 @@ export class MaleQuizService {
         ['Salmon', 'salmon'],
         ['White', 'white'],
         ['Yellow', 'yellow'],
+        ['Not Specific', 'notSpecific'],
       ],
     ],
   ];

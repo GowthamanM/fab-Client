@@ -145,6 +145,7 @@ export class MaleResultComponent implements OnInit {
       straight: [''],
       superSkinnyFit: [''],
       tapperedFit: [''],
+      notSpecific:['']
     }),
     price: [''],
     pattern: this.fb.group({
@@ -152,10 +153,12 @@ export class MaleResultComponent implements OnInit {
       printed: [''],
       checked: [''],
       stripes: [''],
+      notSpecific:['']
     }),
     preference: this.fb.group({
       slim: [''],
       regular: [''],
+      notSpecific:['']
     }),
     color: this.fb.group({
       black: [''],
@@ -173,6 +176,7 @@ export class MaleResultComponent implements OnInit {
       salmon: [''],
       white: [''],
       yellow: [''],
+      notSpecific:['']
     }),
     collar: this.fb.group({
       bandCollar: [''],
@@ -223,6 +227,7 @@ export class MaleResultComponent implements OnInit {
     pattern: this.fb.group({
       torn: [''],
       regular: [''],
+      notSpecific:['']
     }),
     fitJeans: this.fb.group({
       skinny: [''],
@@ -257,6 +262,7 @@ export class MaleResultComponent implements OnInit {
       looseFit: [''],
       skinnyFit: [''],
       straightFit: [''],
+      notSpecific:[''],
     }),
     price: [''],
     color: this.fb.group({
@@ -275,6 +281,7 @@ export class MaleResultComponent implements OnInit {
       salmon: [''],
       white: [''],
       yellow: [''],
+      notSpecific:[''],
     }),
   });
 
@@ -292,6 +299,7 @@ export class MaleResultComponent implements OnInit {
       straight: [''],
       superSkinnyFit: [''],
       tapperedFit: [''],
+      notSpecific:[''],
     }),
     price: [''],
     color: this.fb.group({
@@ -310,6 +318,7 @@ export class MaleResultComponent implements OnInit {
       salmon: [''],
       white: [''],
       yellow: [''],
+      notSpecific:[''],
     }),
     // Fabric	Cotton	Denim	Hemp	Linen	Nylon	Organic Cotton	Polyster	Tencel	Viscose Rayon	Not Specific
     fabric: this.fb.group({
@@ -358,6 +367,7 @@ export class MaleResultComponent implements OnInit {
       straight: [''],
       superSkinnyFit: [''],
       tapperedFit: [''],
+      notSpecific:[''],
     }),
     price: [''],
     pattern: this.fb.group({
@@ -365,6 +375,7 @@ export class MaleResultComponent implements OnInit {
       printed: [''],
       checked: [''],
       stripes: [''],
+      notSpecific:[''],
     }),
     color: this.fb.group({
       black: [''],
@@ -382,6 +393,7 @@ export class MaleResultComponent implements OnInit {
       salmon: [''],
       white: [''],
       yellow: [''],
+      notSpecific:[''],
     }),
   });
 
@@ -448,6 +460,7 @@ export class MaleResultComponent implements OnInit {
       salmon: [''],
       white: [''],
       yellow: [''],
+      notSpecific:[''],
     }),
   });
 
@@ -457,17 +470,20 @@ export class MaleResultComponent implements OnInit {
       trunks: [''],
       boxerBriefs: [''],
       innerBoxers: [''],
+      notSpecific:[''],
     }),
     vest: this.fb.group({
       sleeveLess: [''],
       sleevedVests: [''],
       gymVests: [''],
+      notSpecific:[''],
     }),
     color: this.fb.group({
       red: [''],
       blue: [''],
       green: [''],
       black: [''],
+      notSpecific:[''],
     }),
   });
 
@@ -489,6 +505,7 @@ export class MaleResultComponent implements OnInit {
       salmon: [''],
       white: [''],
       yellow: [''],
+      notSpecific:[''],
     }),
   });
 

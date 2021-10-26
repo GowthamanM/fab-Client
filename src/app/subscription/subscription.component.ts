@@ -5,6 +5,7 @@ import {UserService} from '../services/user.service';
 import { analyzeAndValidateNgModules } from '@angular/compiler';
 import { NgxSpinnerService } from 'ngx-spinner';
 import { Router } from '@angular/router';
+import { AuthService } from '../auth/auth.service';
 
 @Component({
   selector: 'app-subscription',
@@ -81,7 +82,8 @@ options = {
     private windowService:WindowService,
     private userService:UserService,
     private spinner: NgxSpinnerService,
-    private router:Router
+    private router:Router,
+    private authService:AuthService
   ) { }
 
   ngOnInit(): void {
@@ -92,24 +94,78 @@ options = {
 
 
   monthPlan(){
-    this.razorpayService.basicPlanOrder(this.monthPlanData).subscribe(data=>{
-      // console.log(data);
-      
-      let temp = data;
-      if(temp.message === "payment order created"){
-        this.options.order_id = temp.result.orderId;
-        this.options.prefill.name = temp.result.prefill.name;
-        this.options.prefill.email = temp.result.prefill.email;
-        this.options.prefill.contact = temp.result.prefill.contact;
-        this.options.notes.subscriptionType = this.monthPlanData.notes.subscriptionType;
-      }
-      this.checkout();
-      
-    });
+    this.loginCheck();
+    if(this.loginCheck()){
+      this.razorpayService.basicPlanOrder(this.monthPlanData).subscribe(data=>{
+        // console.log(data);
+       
+        
+        let temp = data;
+        if(temp.message === "payment order created"){
+          this.options.order_id = temp.result.orderId;
+          this.options.prefill.name = temp.result.prefill.name;
+          this.options.prefill.email = temp.result.prefill.email;
+          this.options.prefill.contact = temp.result.prefill.contact;
+          this.options.notes.subscriptionType = this.monthPlanData.notes.subscriptionType;
+        }
+        this.checkout();
+        
+      });
+    }else{
+      this.router.navigateByUrl('/login');
+    }
+    
   }
 
   basicPlan(){
-     this.razorpayService.basicPlanOrder(this.basicPlanData).subscribe(data=>{
+      
+      if(this.loginCheck()){
+        this.razorpayService.basicPlanOrder(this.basicPlanData).subscribe(data=>{
+          console.log(data);
+          
+          let temp = data;
+          if(temp.message === "payment order created"){
+            this.options.order_id = temp.result.orderId;
+            this.options.prefill.name = temp.result.prefill.name;
+            this.options.prefill.email = temp.result.prefill.email;
+            this.options.prefill.contact = temp.result.prefill.contact;
+            this.options.notes.subscriptionType = this.basicPlanData.notes.subscriptionType;
+          }
+          this.checkout();
+          
+        });
+      }else{
+        this.router.navigateByUrl('/login');
+      }
+     
+  }
+
+  starterPlan(){
+    if(this.loginCheck()){
+      this.razorpayService.basicPlanOrder(this.starterPlanData).subscribe(data=>{
+        console.log(data);
+        
+        let temp = data;
+        if(temp.message === "payment order created"){
+          this.options.order_id = temp.result.orderId;
+          this.options.prefill.name = temp.result.prefill.name;
+          this.options.prefill.email = temp.result.prefill.email;
+          this.options.prefill.contact = temp.result.prefill.contact;
+          this.options.description = '6 Months Plan';
+          this.options.notes.subscriptionType = this.starterPlanData.notes.subscriptionType;
+        }
+        this.checkout();
+        
+      });
+    }else{
+      this.router.navigateByUrl('/login');
+    }
+    
+ }
+
+ premiumPlan(){
+   if(this.loginCheck()){
+    this.razorpayService.basicPlanOrder(this.premiumPlanData).subscribe(data=>{
       console.log(data);
       
       let temp = data;
@@ -117,48 +173,17 @@ options = {
         this.options.order_id = temp.result.orderId;
         this.options.prefill.name = temp.result.prefill.name;
         this.options.prefill.email = temp.result.prefill.email;
+        this.options.description = 'One Year Plan';
         this.options.prefill.contact = temp.result.prefill.contact;
-        this.options.notes.subscriptionType = this.basicPlanData.notes.subscriptionType;
+        this.options.notes.subscriptionType = this.premiumPlanData.notes.subscriptionType;
       }
       this.checkout();
       
     });
-  }
-
-  starterPlan(){
-    this.razorpayService.basicPlanOrder(this.starterPlanData).subscribe(data=>{
-     console.log(data);
-     
-     let temp = data;
-     if(temp.message === "payment order created"){
-       this.options.order_id = temp.result.orderId;
-       this.options.prefill.name = temp.result.prefill.name;
-       this.options.prefill.email = temp.result.prefill.email;
-       this.options.prefill.contact = temp.result.prefill.contact;
-       this.options.description = '6 Months Plan';
-       this.options.notes.subscriptionType = this.starterPlanData.notes.subscriptionType;
-     }
-     this.checkout();
-     
-   });
- }
-
- premiumPlan(){
-  this.razorpayService.basicPlanOrder(this.premiumPlanData).subscribe(data=>{
-   console.log(data);
-   
-   let temp = data;
-   if(temp.message === "payment order created"){
-     this.options.order_id = temp.result.orderId;
-     this.options.prefill.name = temp.result.prefill.name;
-     this.options.prefill.email = temp.result.prefill.email;
-     this.options.description = 'One Year Plan';
-     this.options.prefill.contact = temp.result.prefill.contact;
-     this.options.notes.subscriptionType = this.premiumPlanData.notes.subscriptionType;
+   }else{
+    this.router.navigateByUrl('/login');
    }
-   this.checkout();
-   
- });
+  
 }
 
 
@@ -196,6 +221,14 @@ options = {
 
   getUserDetails(){
     
+  }
+
+  loginCheck(){
+    if(this.authService.getAuthStatus()){
+        return true;
+    }else{
+      return false;
+    }
   }
 
 }
