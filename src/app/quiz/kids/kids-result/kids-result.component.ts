@@ -144,7 +144,8 @@ export class KidsResultComponent implements OnInit {
       red: [''],
       salmon:[''],
       white:[''],
-      yellow:['']
+      yellow:[''],
+      notSpecific: ['']
     }),
   });
 
@@ -173,7 +174,8 @@ export class KidsResultComponent implements OnInit {
       red: [''],
       salmon:[''],
       white:[''],
-      yellow:['']
+      yellow:[''],
+      notSpecific: ['']
     }),
   });
 
@@ -202,7 +204,8 @@ export class KidsResultComponent implements OnInit {
       red: [''],
       salmon:[''],
       white:[''],
-      yellow:['']
+      yellow:[''],
+      notSpecific: ['']
     }),
   });
 
@@ -231,7 +234,8 @@ export class KidsResultComponent implements OnInit {
       red: [''],
       salmon:[''],
       white:[''],
-      yellow:['']
+      yellow:[''],
+      notSpecific: ['']
     }),
   });
 
@@ -260,7 +264,8 @@ export class KidsResultComponent implements OnInit {
       red: [''],
       salmon:[''],
       white:[''],
-      yellow:['']
+      yellow:[''],
+      notSpecific: ['']
     }),
   });
 
@@ -289,7 +294,8 @@ export class KidsResultComponent implements OnInit {
       red: [''],
       salmon:[''],
       white:[''],
-      yellow:['']
+      yellow:[''],
+      notSpecific: ['']
     }),
   });
 
@@ -318,7 +324,8 @@ export class KidsResultComponent implements OnInit {
       red: [''],
       salmon:[''],
       white:[''],
-      yellow:['']
+      yellow:[''],
+      notSpecific: ['']
     }),
   });
 

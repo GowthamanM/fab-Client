@@ -163,7 +163,8 @@ export class FemaleResultComponent implements OnInit {
       solid: [''],
       printed: [''],
       checked: [''],
-      stripes: ['']
+      stripes: [''],
+      notSpecific:[''],
     }),
     color: this.fb.group({
       black: [''],
@@ -180,7 +181,8 @@ export class FemaleResultComponent implements OnInit {
       red: [''],
       salmon:[''],
       white:[''],
-      yellow:['']
+      yellow:[''],
+      notSpecific:[''],
     }),
   });
 
@@ -191,7 +193,8 @@ export class FemaleResultComponent implements OnInit {
       solid: [''],
       printed: [''],
       checked: [''],
-      stripes: ['']
+      stripes: [''],
+      notSpecific:[''],
     }),
     color: this.fb.group({
       black: [''],
@@ -208,7 +211,8 @@ export class FemaleResultComponent implements OnInit {
       red: [''],
       salmon:[''],
       white:[''],
-      yellow:['']
+      yellow:[''],
+      notSpecific:[''],
     }),
   });
 
@@ -218,7 +222,8 @@ export class FemaleResultComponent implements OnInit {
       solid: [''],
       printed: [''],
       checked: [''],
-      stripes: ['']
+      stripes: [''],
+      notSpecific:[''],
     }),
     color: this.fb.group({
       black: [''],
@@ -235,7 +240,8 @@ export class FemaleResultComponent implements OnInit {
       red: [''],
       salmon:[''],
       white:[''],
-      yellow:['']
+      yellow:[''],
+      notSpecific:[''],
     }),
   });
 
@@ -246,7 +252,8 @@ export class FemaleResultComponent implements OnInit {
       solid: [''],
       printed: [''],
       checked: [''],
-      stripes: ['']
+      stripes: [''],
+      notSpecific:[''],
     }),
     color: this.fb.group({
       black: [''],
@@ -263,7 +270,8 @@ export class FemaleResultComponent implements OnInit {
       red: [''],
       salmon:[''],
       white:[''],
-      yellow:['']
+      yellow:[''],
+      notSpecific:[''],
     }),
   });
 
@@ -274,7 +282,8 @@ export class FemaleResultComponent implements OnInit {
       solid: [''],
       printed: [''],
       checked: [''],
-      stripes: ['']
+      stripes: [''],
+      notSpecific:[''],
     }),
     color: this.fb.group({
       black: [''],
@@ -291,7 +300,8 @@ export class FemaleResultComponent implements OnInit {
       red: [''],
       salmon:[''],
       white:[''],
-      yellow:['']
+      yellow:[''],
+      notSpecific:[''],
     }),
   });
 
@@ -299,7 +309,8 @@ export class FemaleResultComponent implements OnInit {
     type: this.fb.group({
       stitched: [''],
       unstitched: [''],
-      semiStitched: ['']
+      semiStitched: [''],
+      notSpecific:[''],
     }),
     size: [''],
     price: [''],
@@ -307,7 +318,8 @@ export class FemaleResultComponent implements OnInit {
       solid: [''],
       printed: [''],
       checked: [''],
-      stripes: ['']
+      stripes: [''],
+      notSpecific:[''],
     }),
     color: this.fb.group({
       black: [''],
@@ -324,7 +336,8 @@ export class FemaleResultComponent implements OnInit {
       red: [''],
       salmon:[''],
       white:[''],
-      yellow:['']
+      yellow:[''],
+      notSpecific:[''],
     }),
   });
 
@@ -335,7 +348,8 @@ export class FemaleResultComponent implements OnInit {
       solid: [''],
       printed: [''],
       checked: [''],
-      stripes: ['']
+      stripes: [''],
+      notSpecific:[''],
     }),
     color: this.fb.group({
       black: [''],
@@ -352,7 +366,8 @@ export class FemaleResultComponent implements OnInit {
       red: [''],
       salmon:[''],
       white:[''],
-      yellow:['']
+      yellow:[''],
+      notSpecific:[''],
     }),
   });
 
@@ -363,7 +378,8 @@ export class FemaleResultComponent implements OnInit {
       solid: [''],
       printed: [''],
       checked: [''],
-      stripes: ['']
+      stripes: [''],
+      notSpecific:[''],
     }),
     color: this.fb.group({
       black: [''],
@@ -380,7 +396,8 @@ export class FemaleResultComponent implements OnInit {
       red: [''],
       salmon:[''],
       white:[''],
-      yellow:['']
+      yellow:[''],
+      notSpecific:[''],
     }),
   });
 
@@ -391,7 +408,8 @@ export class FemaleResultComponent implements OnInit {
       solid: [''],
       printed: [''],
       checked: [''],
-      stripes: ['']
+      stripes: [''],
+      notSpecific:[''],
     }),
     fabricType: this.fb.group({
       acrylic: [''],
@@ -401,7 +419,8 @@ export class FemaleResultComponent implements OnInit {
       nylon: [''],
       organicCotton: [''],
       synthetic: [''],
-      viscoseRayon: ['']
+      viscoseRayon: [''],
+      notSpecific:[''],
     }),
     color: this.fb.group({
       black: [''],
@@ -418,7 +437,7 @@ export class FemaleResultComponent implements OnInit {
       red: [''],
       salmon:[''],
       white:[''],
-      yellow:['']
+      yellow:[''],notSpecific:[''],
     }),
   });
 
@@ -429,12 +448,12 @@ export class FemaleResultComponent implements OnInit {
       solid: [''],
       printed: [''],
       checked: [''],
-      stripes: ['']
+      stripes: [''],notSpecific:[''],
     }),
     waistRise: this.fb.group({
       highRaise: [''],
       midRaise: [''],
-      lowRaise: ['']
+      lowRaise: [''],notSpecific:[''],
     }),
     color: this.fb.group({
       black: [''],
@@ -451,7 +470,7 @@ export class FemaleResultComponent implements OnInit {
       red: [''],
       salmon:[''],
       white:[''],
-      yellow:['']
+      yellow:[''],notSpecific:[''],
     }),
   });
 
@@ -462,7 +481,7 @@ export class FemaleResultComponent implements OnInit {
       solid: [''],
       printed: [''],
       checked: [''],
-      stripes: ['']
+      stripes: [''],notSpecific:['']
     }),
     fabricType: this.fb.group({
       acrylic: [''],
@@ -472,7 +491,7 @@ export class FemaleResultComponent implements OnInit {
       nylon: [''],
       organicCotton: [''],
       synthetic: [''],
-      viscoseRayon: ['']
+      viscoseRayon: [''],notSpecific:['']
     }),
     color: this.fb.group({
       black: [''],
@@ -489,7 +508,7 @@ export class FemaleResultComponent implements OnInit {
       red: [''],
       salmon:[''],
       white:[''],
-      yellow:['']
+      yellow:[''],notSpecific:['']
     }),
   });
 
@@ -500,7 +519,7 @@ export class FemaleResultComponent implements OnInit {
       solid: [''],
       printed: [''],
       checked: [''],
-      stripes: ['']
+      stripes: [''],notSpecific:['']
     }),
     fabric: this.fb.group({
       cottonBlend: [''],
@@ -513,7 +532,7 @@ export class FemaleResultComponent implements OnInit {
       pureSilk: [''],
       pureCotton: [''],
       silkBlend: [''],
-      viscoseRayon: ['']
+      viscoseRayon: [''],notSpecific:['']
     }),
     fabricType: this.fb.group({
       chiffon: [''],
@@ -524,7 +543,7 @@ export class FemaleResultComponent implements OnInit {
       liva: [''],
       net: [''],
       satin: [''],
-      velvet: ['']
+      velvet: [''],notSpecific:['']
     }),
     skirtType: this.fb.group({
       knitted: [''],
@@ -546,7 +565,7 @@ export class FemaleResultComponent implements OnInit {
       red: [''],
       salmon:[''],
       white:[''],
-      yellow:['']
+      yellow:[''],notSpecific:['']
     }),
   });
 
@@ -557,7 +576,7 @@ export class FemaleResultComponent implements OnInit {
       solid: [''],
       printed: [''],
       checked: [''],
-      stripes: ['']
+      stripes: [''],notSpecific:['']
     }),
     fit: this.fb.group({
       flared: [''],
@@ -584,7 +603,7 @@ export class FemaleResultComponent implements OnInit {
       silk: [''],
       viscose: [''],
       rayon: [''],
-      wool: ['']
+      wool: [''],notSpecific:['']
     }),
     trouserType: this.fb.group({
       antiFit: [''],
@@ -604,12 +623,12 @@ export class FemaleResultComponent implements OnInit {
     }),
     typeOfPleat: this.fb.group({
       flatFront: [''],
-      pleated: [''],
+      pleated: [''],notSpecific:['']
     }),
     waistRise: this.fb.group({
       highRaise: [''],
       midRaise: [''],
-      lowRaise: ['']
+      lowRaise: [''],notSpecific:['']
     }),
     color: this.fb.group({
       black: [''],
@@ -626,7 +645,7 @@ export class FemaleResultComponent implements OnInit {
       red: [''],
       salmon:[''],
       white:[''],
-      yellow:['']
+      yellow:[''],notSpecific:['']
     }),
   });
 
@@ -743,7 +762,7 @@ export class FemaleResultComponent implements OnInit {
       red: [''],
       salmon:[''],
       white:[''],
-      yellow:['']
+      yellow:[''],notSpecific:['']
     }),
   });
 
@@ -837,7 +856,7 @@ export class FemaleResultComponent implements OnInit {
       red: [''],
       salmon:[''],
       white:[''],
-      yellow:['']
+      yellow:[''],notSpecific:['']
     }),
   });
 
@@ -962,7 +981,7 @@ export class FemaleResultComponent implements OnInit {
       red: [''],
       salmon:[''],
       white:[''],
-      yellow:['']
+      yellow:[''],notSpecific:['']
     }),
   });
 
@@ -973,7 +992,7 @@ export class FemaleResultComponent implements OnInit {
       shorts: [''],
       sweatShirts: [''],
       tShirts: [''],
-      tracksuits: ['']
+      tracksuits: [''],notSpecific:['']
     }),
     color: this.fb.group({
       black: [''],
@@ -990,7 +1009,7 @@ export class FemaleResultComponent implements OnInit {
       red: [''],
       salmon:[''],
       white:[''],
-      yellow:['']
+      yellow:[''],notSpecific:['']
     }),
   });
 
@@ -1004,7 +1023,7 @@ export class FemaleResultComponent implements OnInit {
       thermalTops: [''],
       thermalBottoms: [''],
       slips: [''],
-      babyDoll: ['']
+      babyDoll: [''],notSpecific:['']
     }),
     size: [''],
     color: this.fb.group({
@@ -1022,7 +1041,7 @@ export class FemaleResultComponent implements OnInit {
       red: [''],
       salmon:[''],
       white:[''],
-      yellow:['']
+      yellow:[''],notSpecific:['']
     }),
   });
 

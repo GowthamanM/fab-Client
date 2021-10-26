@@ -38,14 +38,14 @@ export class KidsQuizService {
       'BodySuit','Size', ['New Born', '9-12 months']
     ],
     [
-      'BodySuit','Price', ['Below 500','1000 - 2000','2000 - 3000','3000 - 4000','4000 - 5000', 'More than 5000','Not specified']
+      'BodySuit','Price', ['Below 500','1000 - 2000','2000 - 3000','3000 - 4000','4000 - 5000', 'More than 5000','Not Specific']
     ],
     [
       'BodySuit','Pattern', [['Solid','solid'],['Printed','printed'],['Checked','checked'],['Stripes','stripes'],['Not Specific','notSpecific']]
     ],
     [
       'BodySuit','Color',[['Black','black'],['Blue','blue'],['Brown','brown'],['Green','green'],['Grey','grey'],['Khaki','khaki'],
-      ['Light Blue','light blue'],['Navy','navy'],['Olive','olive'],['Pink','pink'],['Purple','purple'],['Red','red'],['Salmon','salmon'],['White','white'],['Yellow','yellow']]
+      ['Light Blue','light blue'],['Navy','navy'],['Olive','olive'],['Pink','pink'],['Purple','purple'],['Red','red'],['Salmon','salmon'],['White','white'],['Yellow','yellow'],['Not Specific','notSpecific']]
     ]
   ];
 
@@ -54,14 +54,14 @@ export class KidsQuizService {
       'TShirt','Size', ['6-12 months', '6-7 years']
     ],
     [
-      'TShirt','Price', ['Below 500','1000 - 2000','2000 - 3000','3000 - 4000','4000 - 5000', 'More than 5000','Not specified']
+      'TShirt','Price', ['Below 500','1000 - 2000','2000 - 3000','3000 - 4000','4000 - 5000', 'More than 5000','Not Specific']
     ],
     [
       'TShirt','Pattern', [['Solid','solid'],['Printed','printed'],['Checked','checked'],['Stripes','stripes'],['Not Specific','notSpecific']]
     ],
     [
       'TShirt','Color', [['Black','black'],['Blue','blue'],['Brown','brown'],['Green','green'],['Grey','grey'],['Khaki','khaki'],
-      ['Light Blue','light blue'],['Navy','navy'],['Olive','olive'],['Pink','pink'],['Purple','purple'],['Red','red'],['Salmon','salmon'],['White','white'],['Yellow','yellow']]
+      ['Light Blue','light blue'],['Navy','navy'],['Olive','olive'],['Pink','pink'],['Purple','purple'],['Red','red'],['Salmon','salmon'],['White','white'],['Yellow','yellow'],['Not Specific','notSpecific']]
     ]
   ];
 
@@ -70,14 +70,14 @@ export class KidsQuizService {
       'Dress','Size', ['6-12 months', '24-36 months']
     ],
     [
-      'Dress','Price', ['Below 500','1000 - 2000','2000 - 3000','3000 - 4000','4000 - 5000', 'More than 5000','Not specified']
+      'Dress','Price', ['Below 500','1000 - 2000','2000 - 3000','3000 - 4000','4000 - 5000', 'More than 5000','Not Specific']
     ],
     [
       'Dress','Pattern', [['Solid','solid'],['Printed','printed'],['Checked','checked'],['Stripes','stripes'],['Not Specific','notSpecific']]
     ],
     [
       'Dress','Color', [['Black','black'],['Blue','blue'],['Brown','brown'],['Green','green'],['Grey','grey'],['Khaki','khaki'],
-      ['Light Blue','light blue'],['Navy','navy'],['Olive','olive'],['Pink','pink'],['Purple','purple'],['Red','red'],['Salmon','salmon'],['White','white'],['Yellow','yellow']]
+      ['Light Blue','light blue'],['Navy','navy'],['Olive','olive'],['Pink','pink'],['Purple','purple'],['Red','red'],['Salmon','salmon'],['White','white'],['Yellow','yellow'],['Not Specific','notSpecific']]
     ]
   ];
 
@@ -86,14 +86,14 @@ export class KidsQuizService {
       'ClothingSet','Size', ['New Born', '3-4 years']
     ],
     [
-      'ClothingSet','Price', ['Below 500','1000 - 2000','2000 - 3000','3000 - 4000','4000 - 5000', 'More than 5000','Not specified']
+      'ClothingSet','Price', ['Below 500','1000 - 2000','2000 - 3000','3000 - 4000','4000 - 5000', 'More than 5000','Not Specific']
     ],
     [
       'ClothingSet','Pattern', [['Solid','solid'],['Printed','printed'],['Checked','checked'],['Stripes','stripes'],['Not Specific','notSpecific']]
     ],
     [
       'ClothingSet','Color', [['Black','black'],['Blue','blue'],['Brown','brown'],['Green','green'],['Grey','grey'],['Khaki','khaki'],
-      ['Light Blue','light blue'],['Navy','navy'],['Olive','olive'],['Pink','pink'],['Purple','purple'],['Red','red'],['Salmon','salmon'],['White','white'],['Yellow','yellow']]
+      ['Light Blue','light blue'],['Navy','navy'],['Olive','olive'],['Pink','pink'],['Purple','purple'],['Red','red'],['Salmon','salmon'],['White','white'],['Yellow','yellow'],['Not Specific','notSpecific']]
     ]
   ];
 
@@ -102,14 +102,14 @@ export class KidsQuizService {
       'Shirt','Size', ['0-6 months', '3-4 years']
     ],
     [
-      'Shirt','Price', ['Below 500','1000 - 2000','2000 - 3000','3000 - 4000','4000 - 5000', 'More than 5000','Not specified']
+      'Shirt','Price', ['Below 500','1000 - 2000','2000 - 3000','3000 - 4000','4000 - 5000', 'More than 5000','Not Specific']
     ],
     [
       'Shirt','Pattern', [['Solid','solid'],['Printed','printed'],['Checked','checked'],['Stripes','stripes'],['Not Specific','notSpecific']]
     ],
     [
       'Shirt','Color', [['Black','black'],['Blue','blue'],['Brown','brown'],['Green','green'],['Grey','grey'],['Khaki','khaki'],
-      ['Light Blue','light blue'],['Navy','navy'],['Olive','olive'],['Pink','pink'],['Purple','purple'],['Red','red'],['Salmon','salmon'],['White','white'],['Yellow','yellow']]
+      ['Light Blue','light blue'],['Navy','navy'],['Olive','olive'],['Pink','pink'],['Purple','purple'],['Red','red'],['Salmon','salmon'],['White','white'],['Yellow','yellow'],['Not Specific','notSpecific']]
     ]
   ];
 
@@ -118,14 +118,14 @@ export class KidsQuizService {
       'Shorts','Size', ['0-6 months', '3-4 years']
     ],
     [
-      'Shorts','Price', ['Below 500','1000 - 2000','2000 - 3000','3000 - 4000','4000 - 5000', 'More than 5000','Not specified']
+      'Shorts','Price', ['Below 500','1000 - 2000','2000 - 3000','3000 - 4000','4000 - 5000', 'More than 5000','Not Specific']
     ],
     [
       'Shorts','Pattern', [['Solid','solid'],['Printed','printed'],['Checked','checked'],['Stripes','stripes'],['Not Specific','notSpecific']]
     ],
     [
       'Shorts','Color', [['Black','black'],['Blue','blue'],['Brown','brown'],['Green','green'],['Grey','grey'],['Khaki','khaki'],
-      ['Light Blue','light blue'],['Navy','navy'],['Olive','olive'],['Pink','pink'],['Purple','purple'],['Red','red'],['Salmon','salmon'],['White','white'],['Yellow','yellow']]
+      ['Light Blue','light blue'],['Navy','navy'],['Olive','olive'],['Pink','pink'],['Purple','purple'],['Red','red'],['Salmon','salmon'],['White','white'],['Yellow','yellow'],['Not Specific','notSpecific']]
     ]
   ];
 
@@ -134,14 +134,14 @@ export class KidsQuizService {
       'Kurthis','Size', ['3-6 months', '13-14 years']
     ],
     [
-      'Kurthis','Price', ['Below 500','1000 - 2000','2000 - 3000','3000 - 4000','4000 - 5000', 'More than 5000','Not specified']
+      'Kurthis','Price', ['Below 500','1000 - 2000','2000 - 3000','3000 - 4000','4000 - 5000', 'More than 5000','Not Specific']
     ],
     [
       'Kurthis','Pattern', [['Solid','solid'],['Printed','printed'],['Checked','checked'],['Stripes','stripes'],['Not Specific','notSpecific']]
     ],
     [
       'Kurthis','Color', [['Black','black'],['Blue','blue'],['Brown','brown'],['Green','green'],['Grey','grey'],['Khaki','khaki'],
-      ['Light Blue','light blue'],['Navy','navy'],['Olive','olive'],['Pink','pink'],['Purple','purple'],['Red','red'],['Salmon','salmon'],['White','white'],['Yellow','yellow']]
+      ['Light Blue','light blue'],['Navy','navy'],['Olive','olive'],['Pink','pink'],['Purple','purple'],['Red','red'],['Salmon','salmon'],['White','white'],['Yellow','yellow'],['Not Specific','notSpecific']]
     ]
   ];
 

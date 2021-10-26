@@ -47,17 +47,17 @@ export class FemaleQuizService {
 
   Tops:any = [
     [
-      'Tops','Size', ['XS','S','M','L','XL','XXL','XXXL','XXXXL']
+      'Tops','Size', ['XS','S','M','L','XL','XXL','XXXL','XXXXL','Not Specific']
     ],
     [
-      'Tops','Price', ['Below 500','1000 - 2000','2000 - 3000','3000 - 4000','4000 - 5000', 'More than 5000','Not specified']
+      'Tops','Price', ['Below 500','1000 - 2000','2000 - 3000','3000 - 4000','4000 - 5000', 'More than 5000','Not specific']
     ],
     [
-      'Tops','Pattern', [['Solid','solid'],['Printed','printed'],['Checked','checked'],['Stripes','stripes']]
+      'Tops','Pattern', [['Solid','solid'],['Printed','printed'],['Checked','checked'],['Stripes','stripes'],['Not Specific','notSpecific']]
     ],
     [
       'Tops','Color', [['Black','black'],['Blue','blue'],['Brown','brown'],['Green','green'],['Grey','grey'],['Khaki','khaki'],
-      ['Light Blue','light blue'],['Navy','navy'],['Olive','olive'],['Pink','pink'],['Purple','purple'],['Red','red'],['Salmon','salmon'],['White','white'],['Yellow','yellow']]
+      ['Light Blue','light blue'],['Navy','navy'],['Olive','olive'],['Pink','pink'],['Purple','purple'],['Red','red'],['Salmon','salmon'],['White','white'],['Yellow','yellow'],['Not Specific','notSpecific']]
     ],
   ];
 
@@ -66,27 +66,27 @@ export class FemaleQuizService {
       'Kurthis','Size', ['XS','S','M','L','XL','XXL','XXXL','XXXXL']
     ],
     [
-      'Kurthis','Price', ['Below 500','1000 - 2000','2000 - 3000','3000 - 4000','4000 - 5000', 'More than 5000','Not specified']
+      'Kurthis','Price', ['Below 500','1000 - 2000','2000 - 3000','3000 - 4000','4000 - 5000', 'More than 5000','Not Specific']
     ],
     [
-      'Kurthis','Pattern', [['Solid','solid'],['Printed','printed'],['Checked','checked'],['Stripes','stripes']]
+      'Kurthis','Pattern', [['Solid','solid'],['Printed','printed'],['Checked','checked'],['Stripes','stripes'],['Not Specific','notSpecific']]
     ],
     [
       'Kurthis','Color', [['Black','black'],['Blue','blue'],['Brown','brown'],['Green','green'],['Grey','grey'],['Khaki','khaki'],
-      ['Light Blue','light blue'],['Navy','navy'],['Olive','olive'],['Pink','pink'],['Purple','purple'],['Red','red'],['Salmon','salmon'],['White','white'],['Yellow','yellow']]
+      ['Light Blue','light blue'],['Navy','navy'],['Olive','olive'],['Pink','pink'],['Purple','purple'],['Red','red'],['Salmon','salmon'],['White','white'],['Yellow','yellow'],['Not Specific','notSpecific']]
     ],
   ];
 
   Saree:any = [
     [
-      'Saree','Price', ['Below 500','1000 - 2000','2000 - 3000','3000 - 4000','4000 - 5000', 'More than 5000','Not specified']
+      'Saree','Price', ['Below 500','1000 - 2000','2000 - 3000','3000 - 4000','4000 - 5000', 'More than 5000','Not Specific']
     ],
     [
-      'Saree','Pattern', [['Solid','solid'],['Printed','printed'],['Checked','checked'],['Stripes','stripes']]
+      'Saree','Pattern', [['Solid','solid'],['Printed','printed'],['Checked','checked'],['Stripes','stripes'],['Not Specific','notSpecific']]
     ],
     [
       'Saree','Color',[['Black','black'],['Blue','blue'],['Brown','brown'],['Green','green'],['Grey','grey'],['Khaki','khaki'],
-      ['Light Blue','light blue'],['Navy','navy'],['Olive','olive'],['Pink','pink'],['Purple','purple'],['Red','red'],['Salmon','salmon'],['White','white'],['Yellow','yellow']]
+      ['Light Blue','light blue'],['Navy','navy'],['Olive','olive'],['Pink','pink'],['Purple','purple'],['Red','red'],['Salmon','salmon'],['White','white'],['Yellow','yellow'],['Not Specific','notSpecific']]
     ],
   ];
 
@@ -95,14 +95,14 @@ export class FemaleQuizService {
       'Jackets','Size', ['XS','S','M','L','XL','XXL']
     ],
     [
-      'Jackets','Price', ['Below 500','1000 - 2000','2000 - 3000','3000 - 4000','4000 - 5000', 'More than 5000','Not specified']
+      'Jackets','Price', ['Below 500','1000 - 2000','2000 - 3000','3000 - 4000','4000 - 5000', 'More than 5000','Not Specific']
     ],
     [
-      'Jackets','Pattern', [['Solid','solid'],['Printed','printed'],['Checked','checked'],['Stripes','stripes']]
+      'Jackets','Pattern', [['Solid','solid'],['Printed','printed'],['Checked','checked'],['Stripes','stripes'],['Not Specific','notSpecific']]
     ],
     [
       'Jackets','Color', [['Black','black'],['Blue','blue'],['Brown','brown'],['Green','green'],['Grey','grey'],['Khaki','khaki'],
-      ['Light Blue','light blue'],['Navy','navy'],['Olive','olive'],['Pink','pink'],['Purple','purple'],['Red','red'],['Salmon','salmon'],['White','white'],['Yellow','yellow']]
+      ['Light Blue','light blue'],['Navy','navy'],['Olive','olive'],['Pink','pink'],['Purple','purple'],['Red','red'],['Salmon','salmon'],['White','white'],['Yellow','yellow'],['Not Specific','notSpecific']]
     ],
   ];
 
@@ -111,33 +111,33 @@ export class FemaleQuizService {
       'Blazers','Size', ['XS','S','M','L','XL','XXL']
     ],
     [
-      'Blazers','Price', ['Below 500','1000 - 2000','2000 - 3000','3000 - 4000','4000 - 5000', 'More than 5000','Not specified']
+      'Blazers','Price', ['Below 500','1000 - 2000','2000 - 3000','3000 - 4000','4000 - 5000', 'More than 5000','Not Specific']
     ],
     [
-      'Blazers','Pattern', [['Solid','solid'],['Printed','printed'],['Checked','checked'],['Stripes','stripes']]
+      'Blazers','Pattern', [['Solid','solid'],['Printed','printed'],['Checked','checked'],['Stripes','stripes'],['Not Specific','notSpecific']]
     ],
     [
       'Blazers','Color', [['Black','black'],['Blue','blue'],['Brown','brown'],['Green','green'],['Grey','grey'],['Khaki','khaki'],
-      ['Light Blue','light blue'],['Navy','navy'],['Olive','olive'],['Pink','pink'],['Purple','purple'],['Red','red'],['Salmon','salmon'],['White','white'],['Yellow','yellow']]
+      ['Light Blue','light blue'],['Navy','navy'],['Olive','olive'],['Pink','pink'],['Purple','purple'],['Red','red'],['Salmon','salmon'],['White','white'],['Yellow','yellow'],['Not Specific','notSpecific']]
     ],
   ];
 
   Lehanga:any = [
     [
-      'Lehanga','Type', [['Stitched','stitched'],['Unstitched','unstitched'],['Semi Stitched','semiStitched']]
+      'Lehanga','Type', [['Stitched','stitched'],['Unstitched','unstitched'],['Semi Stitched','semiStitched'],['Not Specific','notSpecific']]
     ],
     [
       'Lehanga','Size', ['XS','S','M','L','XL','XXL']
     ],
     [
-      'Lehanga','Price', ['Below 500','1000 - 2000','2000 - 3000','3000 - 4000','4000 - 5000', 'More than 5000','Not specified']
+      'Lehanga','Price', ['Below 500','1000 - 2000','2000 - 3000','3000 - 4000','4000 - 5000', 'More than 5000','Not Specific']
     ],
     [
-      'Lehanga','Pattern', [['Solid','solid'],['Printed','printed'],['Checked','checked'],['Stripes','stripes']]
+      'Lehanga','Pattern', [['Solid','solid'],['Printed','printed'],['Checked','checked'],['Stripes','stripes'],['Not Specific','notSpecific']]
     ],
     [
       'Lehanga','Color', [['Black','black'],['Blue','blue'],['Brown','brown'],['Green','green'],['Grey','grey'],['Khaki','khaki'],
-      ['Light Blue','light blue'],['Navy','navy'],['Olive','olive'],['Pink','pink'],['Purple','purple'],['Red','red'],['Salmon','salmon'],['White','white'],['Yellow','yellow']]
+      ['Light Blue','light blue'],['Navy','navy'],['Olive','olive'],['Pink','pink'],['Purple','purple'],['Red','red'],['Salmon','salmon'],['White','white'],['Yellow','yellow'],['Not Specific','notSpecific']]
     ],
   ];
 
@@ -146,14 +146,14 @@ export class FemaleQuizService {
       'Sweatshirts','Size', ['XS','S','M','L','XL','XXL']
     ],
     [
-      'Sweatshirts','Price', ['Below 500','1000 - 2000','2000 - 3000','3000 - 4000','4000 - 5000', 'More than 5000','Not specified']
+      'Sweatshirts','Price', ['Below 500','1000 - 2000','2000 - 3000','3000 - 4000','4000 - 5000', 'More than 5000','Not Specific']
     ],
     [
-      'Sweatshirts','Pattern', [['Solid','solid'],['Printed','printed'],['Checked','checked'],['Stripes','stripes']]
+      'Sweatshirts','Pattern', [['Solid','solid'],['Printed','printed'],['Checked','checked'],['Stripes','stripes'],['Not Specific','notSpecific']]
     ],
     [
       'Sweatshirts','Color', [['Black','black'],['Blue','blue'],['Brown','brown'],['Green','green'],['Grey','grey'],['Khaki','khaki'],
-      ['Light Blue','light blue'],['Navy','navy'],['Olive','olive'],['Pink','pink'],['Purple','purple'],['Red','red'],['Salmon','salmon'],['White','white'],['Yellow','yellow']]
+      ['Light Blue','light blue'],['Navy','navy'],['Olive','olive'],['Pink','pink'],['Purple','purple'],['Red','red'],['Salmon','salmon'],['White','white'],['Yellow','yellow'],['Not Specific','notSpecific']]
     ],
   ];
 
@@ -162,14 +162,14 @@ export class FemaleQuizService {
       'Sweaters','Size', ['XS','S','M','L','XL','XXL']
     ],
     [
-      'Sweaters','Price', ['Below 500','1000 - 2000','2000 - 3000','3000 - 4000','4000 - 5000', 'More than 5000','Not specified']
+      'Sweaters','Price', ['Below 500','1000 - 2000','2000 - 3000','3000 - 4000','4000 - 5000', 'More than 5000','Not Specific']
     ],
     [
-      'Sweaters','Pattern', [['Solid','solid'],['Printed','printed'],['Checked','checked'],['Stripes','stripes']]
+      'Sweaters','Pattern', [['Solid','solid'],['Printed','printed'],['Checked','checked'],['Stripes','stripes'],['Not Specific','notSpecific']]
     ],
     [
       'Sweaters','Color', [['Black','black'],['Blue','blue'],['Brown','brown'],['Green','green'],['Grey','grey'],['Khaki','khaki'],
-      ['Light Blue','light blue'],['Navy','navy'],['Olive','olive'],['Pink','pink'],['Purple','purple'],['Red','red'],['Salmon','salmon'],['White','white'],['Yellow','yellow']]
+      ['Light Blue','light blue'],['Navy','navy'],['Olive','olive'],['Pink','pink'],['Purple','purple'],['Red','red'],['Salmon','salmon'],['White','white'],['Yellow','yellow'],['Not Specific','notSpecific']]
     ],
   ];
 
@@ -178,17 +178,17 @@ export class FemaleQuizService {
       'Leggings','Size', ['S','M','L','XL','XXL','XXXL']
     ],
     [
-      'Leggings','Price', ['Below 500','1000 - 2000','2000 - 3000','3000 - 4000','4000 - 5000', 'More than 5000','Not specified']
+      'Leggings','Price', ['Below 500','1000 - 2000','2000 - 3000','3000 - 4000','4000 - 5000', 'More than 5000','Not Specific']
     ],
     [
-      'Leggings','Pattern', [['Solid','solid'],['Printed','printed'],['Checked','checked'],['Stripes','stripes']]
+      'Leggings','Pattern', [['Solid','solid'],['Printed','printed'],['Checked','checked'],['Stripes','stripes'],['Not Specific','notSpecific']]
     ],
     [
-      'Leggings','Fabric Type', [['Acrylic','acrylic'],['Model','model'],['Cotton','cotton'],['Elastane','elastane'],['Nylon','nylon'],['Organic Cotton','organicCotton'],['Synthetic','synthetic'],['Viscose Rayon','viscoseRayon']]
+      'Leggings','Fabric Type', [['Acrylic','acrylic'],['Model','model'],['Cotton','cotton'],['Elastane','elastane'],['Nylon','nylon'],['Organic Cotton','organicCotton'],['Synthetic','synthetic'],['Viscose Rayon','viscoseRayon'],['Not Specific','notSpecific']]
     ],
     [
       'Leggings','Color', [['Black','black'],['Blue','blue'],['Brown','brown'],['Green','green'],['Grey','grey'],['Khaki','khaki'],
-      ['Light Blue','light blue'],['Navy','navy'],['Olive','olive'],['Pink','pink'],['Purple','purple'],['Red','red'],['Salmon','salmon'],['White','white'],['Yellow','yellow']]
+      ['Light Blue','light blue'],['Navy','navy'],['Olive','olive'],['Pink','pink'],['Purple','purple'],['Red','red'],['Salmon','salmon'],['White','white'],['Yellow','yellow'],['Not Specific','notSpecific']]
     ],
   ];
 
@@ -197,17 +197,17 @@ export class FemaleQuizService {
       'Jeans','Size', ['S','M','L','XL','XXL','XXXL']
     ],
     [
-      'Jeans','Price', ['Below 500','1000 - 2000','2000 - 3000','3000 - 4000','4000 - 5000', 'More than 5000','Not specified']
+      'Jeans','Price', ['Below 500','1000 - 2000','2000 - 3000','3000 - 4000','4000 - 5000', 'More than 5000','Not Specific']
     ],
     [
-      'Jeans','Pattern', [['Solid','solid'],['Printed','printed'],['Checked','checked'],['Stripes','stripes']]
+      'Jeans','Pattern', [['Solid','solid'],['Printed','printed'],['Checked','checked'],['Stripes','stripes'],['Not Specific','notSpecific']]
     ],
     [
-      'Jeans','Waist Rise', [['High Raise','highRaise'],['Mid Raise','midRaise'],['Low Raise','lowRaise']]
+      'Jeans','Waist Rise', [['High Raise','highRaise'],['Mid Raise','midRaise'],['Low Raise','lowRaise'],['Not Specific','notSpecific']]
     ],
     [
       'Jeans','Color', [['Black','black'],['Blue','blue'],['Brown','brown'],['Green','green'],['Grey','grey'],['Khaki','khaki'],
-      ['Light Blue','light blue'],['Navy','navy'],['Olive','olive'],['Pink','pink'],['Purple','purple'],['Red','red'],['Salmon','salmon'],['White','white'],['Yellow','yellow']]
+      ['Light Blue','light blue'],['Navy','navy'],['Olive','olive'],['Pink','pink'],['Purple','purple'],['Red','red'],['Salmon','salmon'],['White','white'],['Yellow','yellow'],['Not Specific','notSpecific']]
     ],
   ];
 
@@ -216,17 +216,17 @@ export class FemaleQuizService {
       'Jeggings','Size', ['S','M','L','XL','XXL','XXXL']
     ],
     [
-      'Jeggings','Price', ['Below 500','1000 - 2000','2000 - 3000','3000 - 4000','4000 - 5000', 'More than 5000','Not specified']
+      'Jeggings','Price', ['Below 500','1000 - 2000','2000 - 3000','3000 - 4000','4000 - 5000', 'More than 5000','Not Specific']
     ],
     [
-      'Jeggings','Pattern', [['Solid','solid'],['Printed','printed'],['Checked','checked'],['Stripes','stripes']]
+      'Jeggings','Pattern', [['Solid','solid'],['Printed','printed'],['Checked','checked'],['Stripes','stripes'],['Not Specific','notSpecific']]
     ],
     [
-      'Jeggings','Fabric Type', [['Acrylic','acrylic'],['Model','model'],['Cotton','cotton'],['Elastane','elastane'],['Nylon','nylon'],['Organic Cotton','organicCotton'],['Synthetic','synthetic'],['Viscose Rayon','viscoseRayon']]
+      'Jeggings','Fabric Type', [['Acrylic','acrylic'],['Model','model'],['Cotton','cotton'],['Elastane','elastane'],['Nylon','nylon'],['Organic Cotton','organicCotton'],['Synthetic','synthetic'],['Viscose Rayon','viscoseRayon'],['Not Specific','notSpecific']]
     ],
     [
       'Jeggings','Color', [['Black','black'],['Blue','blue'],['Brown','brown'],['Green','green'],['Grey','grey'],['Khaki','khaki'],
-      ['Light Blue','light blue'],['Navy','navy'],['Olive','olive'],['Pink','pink'],['Purple','purple'],['Red','red'],['Salmon','salmon'],['White','white'],['Yellow','yellow']]
+      ['Light Blue','light blue'],['Navy','navy'],['Olive','olive'],['Pink','pink'],['Purple','purple'],['Red','red'],['Salmon','salmon'],['White','white'],['Yellow','yellow'],['Not Specific','notSpecific']]
     ],
   ];
 
@@ -235,23 +235,23 @@ export class FemaleQuizService {
       'Skirts','Size', ['26-28','28-30','30-32','32-34','34-36','36-38']
     ],
     [
-      'Skirts','Price', ['Below 500','1000 - 2000','2000 - 3000','3000 - 4000','4000 - 5000', 'More than 5000','Not specified']
+      'Skirts','Price', ['Below 500','1000 - 2000','2000 - 3000','3000 - 4000','4000 - 5000', 'More than 5000','Not Specific']
     ],
     [
-      'Skirts','Pattern', [['Solid','solid'],['Printed','printed'],['Checked','checked'],['Stripes','stripes']]
+      'Skirts','Pattern', [['Solid','solid'],['Printed','printed'],['Checked','checked'],['Stripes','stripes'],['Not Specific','notSpecific']]
     ],
     [
-      'Skirts','Fabric', [['Cotton Blend','cottonBlend'],['Linen','linen'],['Liva','liva'],['Modal','modal'],['Nylon','nylon'], ['Poly silk','polySilk'],['Polyester','polyester'],['Pure silk','pureSilk'],['Pure Cotton','pureCotton'],['Silk Blend','silkBlend'],['Viscouse Rayon','viscoseRayon']]
+      'Skirts','Fabric', [['Cotton Blend','cottonBlend'],['Linen','linen'],['Liva','liva'],['Modal','modal'],['Nylon','nylon'], ['Poly silk','polySilk'],['Polyester','polyester'],['Pure silk','pureSilk'],['Pure Cotton','pureCotton'],['Silk Blend','silkBlend'],['Viscouse Rayon','viscoseRayon'],['Not Specific','notSpecific']]
     ],
     [
-      'Skirts','Fabric Type', [['Chiffon','chiffon'],['Crepe','crepe'],	['Georgette','georgette'],	['Jacquard','jacquard'],	['Linen','linen'],	['Liva','liva'],	['Net','net'], ['Satin','satin'],	['Velvet','velvet']]
+      'Skirts','Fabric Type', [['Chiffon','chiffon'],['Crepe','crepe'],	['Georgette','georgette'],	['Jacquard','jacquard'],	['Linen','linen'],	['Liva','liva'],	['Net','net'], ['Satin','satin'],	['Velvet','velvet'],['Not Specific','notSpecific']]
     ],
     [
       'Skirts','Skirt Type', [['Knitted','knitted'],['woven','woven'],	['Not Specific','notSpecific']]
     ],
     [
       'Skirts','Color', [['Black','black'],['Blue','blue'],['Brown','brown'],['Green','green'],['Grey','grey'],['Khaki','khaki'],
-      ['Light Blue','light blue'],['Navy','navy'],['Olive','olive'],['Pink','pink'],['Purple','purple'],['Red','red'],['Salmon','salmon'],['White','white'],['Yellow','yellow']]
+      ['Light Blue','light blue'],['Navy','navy'],['Olive','olive'],['Pink','pink'],['Purple','purple'],['Red','red'],['Salmon','salmon'],['White','white'],['Yellow','yellow'],['Not Specific','notSpecific']]
     ],
   ];
 
@@ -260,29 +260,29 @@ export class FemaleQuizService {
       'Trousers','Size', ['26-28','28-30','30-32','32-34','34-36','36-38']
     ],
     [
-      'Trousers','Price', ['Below 500','1000 - 2000','2000 - 3000','3000 - 4000','4000 - 5000', 'More than 5000','Not specified']
+      'Trousers','Price', ['Below 500','1000 - 2000','2000 - 3000','3000 - 4000','4000 - 5000', 'More than 5000','Not Specific']
     ],
     [
-      'Trousers','Pattern', [['Solid','solid'],['Printed','printed'],['Checked','checked'],['Stripes','stripes']]
+      'Trousers','Pattern', [['Solid','solid'],['Printed','printed'],['Checked','checked'],['Stripes','stripes'],['Not Specific','notSpecific']]
     ],
     [
       'Trousers','Fit', [['Flared','flared'],	['Loose fit','looseFit'],	['Mom fit','momFit'],	['Regular fit','regularFit'],	['Skinny fit','skinnyFit'],	['Slim fit','slimFit'],	['Straight fit','straightFit'],	['Tapered fit','taperedFit'],	['Not specific','notSpecific']]
     ],
     [
-      'Trousers','Fabric', [['cotton','cotton'],	['denim','denim'],	['linen','linen'],	['liva','liva'],	['livaeco','livaeco'],	['modal','modal'],	['nylon','nylon'],	['organic','organic'],	['polysilk','polysilk'],	['polyester','polyester'],	['silk','silk'],	['viscose','viscose'], ['rayon','rayon'],	['wool','wool']]
+      'Trousers','Fabric', [['cotton','cotton'],	['denim','denim'],	['linen','linen'],	['liva','liva'],	['livaeco','livaeco'],	['modal','modal'],	['nylon','nylon'],	['organic','organic'],	['polysilk','polysilk'],	['polyester','polyester'],	['silk','silk'],	['viscose','viscose'], ['rayon','rayon'],	['wool','wool'],['Not Specific','notSpecific']]
     ],
     [
       'Trousers','Trouser Type', [['Anti fit','antiFit'],	['bootcut','bootcut'],	['cargos','cargos'],	['chinos','chinos'],	['cigerrete trousers','cigerreteTrousers'],	['culottes','culottes'],	['drop crotch trousers','dropCrotchTrousers'],	['formal trousers','formalTrousers'],	['jodpuris','jodpuris'],	['joggers','joggers'],	['parallel trousers','parallelTrousers'],	['peg trousers','pegTrousers'],	['regular trousers','regularTrousers'], ['not specific','notSpecific']]
     ],
     [
-      'Trousers','Type of Pleat', [['Flat Front','flatFront'],['Pleated','pleated']]
+      'Trousers','Type of Pleat', [['Flat Front','flatFront'],['Pleated','pleated'],['Not Specific','notSpecific']]
     ],
     [
-      'Trousers','Waist Rise', [['High Raise','highRaise'],['Mid Raise','midRaise'],['Low Raise','lowRaise']]
+      'Trousers','Waist Rise', [['High Raise','highRaise'],['Mid Raise','midRaise'],['Low Raise','lowRaise'],['Not Specific','notSpecific']]
     ],
     [
       'Trousers','Color', [['Black','black'],['Blue','blue'],['Brown','brown'],['Green','green'],['Grey','grey'],['Khaki','khaki'],
-      ['Light Blue','light blue'],['Navy','navy'],['Olive','olive'],['Pink','pink'],['Purple','purple'],['Red','red'],['Salmon','salmon'],['White','white'],['Yellow','yellow']]
+      ['Light Blue','light blue'],['Navy','navy'],['Olive','olive'],['Pink','pink'],['Purple','purple'],['Red','red'],['Salmon','salmon'],['White','white'],['Yellow','yellow'],['Not Specific','notSpecific']]
     ],
   ];
 
@@ -319,7 +319,7 @@ export class FemaleQuizService {
     ],
     [
       'FlatsFoot','Color', [['Black','black'],['Blue','blue'],['Brown','brown'],['Green','green'],['Grey','grey'],['Khaki','khaki'],
-      ['Light Blue','light blue'],['Navy','navy'],['Olive','olive'],['Pink','pink'],['Purple','purple'],['Red','red'],['Salmon','salmon'],['White','white'],['Yellow','yellow']]
+      ['Light Blue','light blue'],['Navy','navy'],['Olive','olive'],['Pink','pink'],['Purple','purple'],['Red','red'],['Salmon','salmon'],['White','white'],['Yellow','yellow'],['Not Specific','notSpecific']]
     ],
   ];
 
@@ -347,7 +347,7 @@ export class FemaleQuizService {
     ],
     [
       'CasualFoot','Color', [['Black','black'],['Blue','blue'],['Brown','brown'],['Green','green'],['Grey','grey'],['Khaki','khaki'],
-      ['Light Blue','light blue'],['Navy','navy'],['Olive','olive'],['Pink','pink'],['Purple','purple'],['Red','red'],['Salmon','salmon'],['White','white'],['Yellow','yellow']]
+      ['Light Blue','light blue'],['Navy','navy'],['Olive','olive'],['Pink','pink'],['Purple','purple'],['Red','red'],['Salmon','salmon'],['White','white'],['Yellow','yellow'],['Not Specific','notSpecific']]
     ],
   ];
 
@@ -390,30 +390,30 @@ export class FemaleQuizService {
     ],
     [
       'HeelsFoot','Color', [['Black','black'],['Blue','blue'],['Brown','brown'],['Green','green'],['Grey','grey'],['Khaki','khaki'],
-      ['Light Blue','light blue'],['Navy','navy'],['Olive','olive'],['Pink','pink'],['Purple','purple'],['Red','red'],['Salmon','salmon'],['White','white'],['Yellow','yellow']]
+      ['Light Blue','light blue'],['Navy','navy'],['Olive','olive'],['Pink','pink'],['Purple','purple'],['Red','red'],['Salmon','salmon'],['White','white'],['Yellow','yellow'],['Not Specific','notSpecific']]
     ],
   ];
 
   Sportswear:any = [
     [
-      'Sportswear','Type', [['Tops','tops'],	['Capris','capris'],	['Shorts','shorts'],	['Sweatshirts','sweatShirts'],	['T-shirts','tShirts'],	['Tracksuits','tracksuits']]
+      'Sportswear','Type', [['Tops','tops'],	['Capris','capris'],	['Shorts','shorts'],	['Sweatshirts','sweatShirts'],	['T-shirts','tShirts'],	['Tracksuits','tracksuits'],['Not Specific','notSpecific']]
     ],
     [
       'Sportswear','Color', [['Black','black'],['Blue','blue'],['Brown','brown'],['Green','green'],['Grey','grey'],['Khaki','khaki'],
-      ['Light Blue','light blue'],['Navy','navy'],['Olive','olive'],['Pink','pink'],['Purple','purple'],['Red','red'],['Salmon','salmon'],['White','white'],['Yellow','yellow']]
+      ['Light Blue','light blue'],['Navy','navy'],['Olive','olive'],['Pink','pink'],['Purple','purple'],['Red','red'],['Salmon','salmon'],['White','white'],['Yellow','yellow'],['Not Specific','notSpecific']]
     ],
   ];
 
   InnerWear:any = [
     [
-      'InnerWear','Type', [['Brassuire','brassuire'],	['Panties','panties'],	['Lingere set','lingereSet'],	['Camisoles','camisoles'],	['shape wear','shapeWear'],	['thermal tops','thermalTops'],	['thermal bottoms','thermalBottoms'],	['Slips','slips'],	['Baby doll','babyDoll']]
+      'InnerWear','Type', [['Brassuire','brassuire'],	['Panties','panties'],	['Lingere set','lingereSet'],	['Camisoles','camisoles'],	['shape wear','shapeWear'],	['thermal tops','thermalTops'],	['thermal bottoms','thermalBottoms'],	['Slips','slips'],	['Baby doll','babyDoll'],['Not Specific','notSpecific']]
     ],
     [
       'InnerWear','Size', ['32B to 40C',	's to XXL',	'S to L',	's to XXL',	's to XXL',	'XS to XXL',	'S to XL',	'S to L']
     ],
     [
       'InnerWear','Color', [['Black','black'],['Blue','blue'],['Brown','brown'],['Green','green'],['Grey','grey'],['Khaki','khaki'],
-      ['Light Blue','light blue'],['Navy','navy'],['Olive','olive'],['Pink','pink'],['Purple','purple'],['Red','red'],['Salmon','salmon'],['White','white'],['Yellow','yellow']]
+      ['Light Blue','light blue'],['Navy','navy'],['Olive','olive'],['Pink','pink'],['Purple','purple'],['Red','red'],['Salmon','salmon'],['White','white'],['Yellow','yellow'],['Not Specific','notSpecific']]
     ],
   ];
 
