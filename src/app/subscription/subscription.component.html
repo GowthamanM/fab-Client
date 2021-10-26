@@ -2,88 +2,115 @@
 <!-- <app-navbar></app-navbar> -->
 
 <main>
-  <div class="subscription-title text-center"> <p>Our Plans</p> </div>
+  <div class="subscription-title text-center"><p>Our Plans</p></div>
 
-  <div class="subs-content container fab-mt-50 fab-mb-10" *ngIf="!afterSubscription">
+  <div
+    class="subs-content container fab-mt-50 fab-mb-10"
+    *ngIf="!afterSubscription"
+  >
     <div class="card fab-mt-30">
       <div class="card-body text-center">
         <h5 class="card-title fab-mt-20">1 Month Plan</h5>
-        <p class="fab-card-price fab-mt-30">	&#8377;199</p>
+        <p class="fab-card-price fab-mt-30">&#8377;249</p>
         <ul class="fab-mt-20 fab-content-cont">
           <li class="fab-card-item">1 Month</li>
-          <li class="fab-card-item fab-mt-10" style="text-decoration: line-through;">&#8377;499</li>
+          <li
+            class="fab-card-item fab-mt-10"
+            style="text-decoration: line-through"
+          >
+            &#8377;499
+          </li>
           <li class="fab-card-item fab-mt-10">30 Days</li>
           <li class="fab-card-item fab-mt-10">Live Chat</li>
           <li class="fab-card-item fab-mt-10">Unlimited Selections</li>
           <li class="fab-card-item fab-mt-10">Saves Time</li>
         </ul>
-        <a class="fab-btn fab-btn-filled fab-mt-20" (click)="monthPlan()" >Subscribe</a>
+        <a class="fab-btn fab-btn-filled fab-mt-20" (click)="monthPlan()"
+          >Subscribe</a
+        >
       </div>
     </div>
 
     <div class="card fab-mt-30">
       <div class="card-body text-center">
         <h5 class="card-title fab-mt-20">3 Month Plan</h5>
-        <p class="fab-card-price fab-mt-30">	&#8377;595</p>
+        <p class="fab-card-price fab-mt-30">&#8377;595</p>
         <ul class="fab-mt-20 fab-content-cont">
           <li class="fab-card-item">3 Months</li>
-          <li class="fab-card-item fab-mt-10" style="text-decoration: line-through;">&#8377;1347</li>
+          <li
+            class="fab-card-item fab-mt-10"
+            style="text-decoration: line-through"
+          >
+            &#8377;1347
+          </li>
           <li class="fab-card-item fab-mt-10">90 Days</li>
           <li class="fab-card-item fab-mt-10">Live Chat</li>
           <li class="fab-card-item fab-mt-10">Unlimited Selections</li>
           <li class="fab-card-item fab-mt-10">Saves Time</li>
         </ul>
-        <a class="fab-btn fab-btn-filled fab-mt-20" (click)="basicPlan()">Subscribe</a>
+        <a class="fab-btn fab-btn-filled fab-mt-20" (click)="basicPlan()"
+          >Subscribe</a
+        >
       </div>
     </div>
   </div>
 
-  <div class="subs-content container fab-mt-10 fab-mb-50" *ngIf="!afterSubscription">
-
-
-
-
-
-
-   
-
+  <div
+    class="subs-content container fab-mt-10 fab-mb-50"
+    *ngIf="!afterSubscription"
+  >
     <div class="card fab-mt-10">
       <div class="card-body text-center">
         <h5 class="card-title fab-mt-20">6 Month Plan</h5>
-        <p class="fab-card-price fab-mt-30">	&#8377;1149</p>
+        <p class="fab-card-price fab-mt-30">&#8377;1149</p>
         <ul class="fab-mt-20 fab-content-cont">
           <li class="fab-card-item">6 Months</li>
-          <li class="fab-card-item fab-mt-10" style="text-decoration: line-through;">&#8377;1999</li>
+          <li
+            class="fab-card-item fab-mt-10"
+            style="text-decoration: line-through"
+          >
+            &#8377;1999
+          </li>
           <li class="fab-card-item fab-mt-10">180 Days</li>
           <li class="fab-card-item fab-mt-10">Live Chat</li>
           <li class="fab-card-item fab-mt-10">Unlimited Selections</li>
           <li class="fab-card-item fab-mt-10">Saves Time</li>
         </ul>
-        <a class="fab-btn fab-btn-filled fab-mt-20" (click)="starterPlan()" >Subscribe</a>
+        <a class="fab-btn fab-btn-filled fab-mt-20" (click)="starterPlan()"
+          >Subscribe</a
+        >
       </div>
     </div>
 
     <div class="card fab-mt-10">
       <div class="card-body text-center">
-        <h5 class="card-title fab-mt-20"> Yearly Plan</h5>
-        <p class="fab-card-price fab-mt-30">	&#8377;2299</p>
+        <h5 class="card-title fab-mt-20">Yearly Plan</h5>
+        <p class="fab-card-price fab-mt-30">&#8377;2299</p>
         <ul class="fab-mt-20 fab-content-cont">
           <li class="fab-card-item">1 Year</li>
-          <li class="fab-card-item fab-mt-10" style="text-decoration: line-through;">&#8377;2999</li>
+          <li
+            class="fab-card-item fab-mt-10"
+            style="text-decoration: line-through"
+          >
+            &#8377;2999
+          </li>
           <li class="fab-card-item fab-mt-10">364 Days</li>
           <li class="fab-card-item fab-mt-10">Live Chat</li>
           <li class="fab-card-item fab-mt-10">Unlimited Selections</li>
           <li class="fab-card-item fab-mt-10">Saves Time</li>
         </ul>
-        <a class="fab-btn fab-btn-filled fab-mt-20" (click)="premiumPlan()">Subscribe</a>
+        <a class="fab-btn fab-btn-filled fab-mt-20" (click)="premiumPlan()"
+          >Subscribe</a
+        >
       </div>
     </div>
-
-
   </div>
 
   <div class="loading-message" *ngIf="afterSubscription">
-    <p><i class="zmdi zmdi-spinner"></i> Please wait while the bank service provider finish processing your payment request</p>
+    <p>
+      <i class="zmdi zmdi-spinner"></i> Please wait while the bank service
+      provider finish processing your payment request
+    </p>
   </div>
 </main>
 
