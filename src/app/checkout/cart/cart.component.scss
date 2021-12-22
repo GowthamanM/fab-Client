@@ -1,0 +1,138 @@
+@import
+  '/src/assets/Scss/abstracts/variables',
+  '/src/assets/Scss/abstracts/mixins';
+
+.main-content {
+  padding-top: 60px;
+}
+
+.cart-content-container {
+  padding: 30px;
+  padding-left: 50px;
+
+  @include media-upto(md) {
+    padding-right: 30px;
+    padding-left: 30px;
+  }
+}
+
+.cart-prd-des {
+  padding-left: 20px;
+  display: none;
+
+  @include media-upto(md) {
+    margin-top: 10px;
+    padding-left: 10px;
+    display: block;
+  }
+}
+
+.cart-prd-des-lg {
+  padding-left: 20px;
+
+  @include media-upto(md) {
+    margin-top: 10px;
+    padding-left: 10px;
+    display: none;
+  }
+}
+
+.prd-quantity-container {
+  @include media-upto(md) {
+    padding-left: 20px;
+  }
+}
+
+.cart-prd-price {
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.cart-prd-delete {
+  border: none;
+  padding: 5px;
+  font-size: 14px;
+  border-radius: 5px;
+  background-color: red;
+  color: white;
+}
+
+.card-quant-input {
+  width: 50px;
+  text-align: center;
+  border-radius: 5px;
+  border: none;
+  padding: 2px;
+  margin-right: 5px;
+  margin-left: 5px;
+  background-color: #0F5860;
+  color: white;
+}
+
+.prd-quantity {
+  display: flex;
+  align-items: center;
+}
+
+.cart-total-card-container {
+  padding: 10px;
+  padding-right: 20px;
+
+  @include media-upto(md) {
+    padding-right: 25px;
+    padding-left: 25px;
+  }
+}
+
+.cart-heading {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.card-cont {
+  display: flex;
+  justify-content: space-between;
+  border-radius: 2px;
+  // box-shadow: 0px 0px 5px rgb(0 0 0 / 20%);
+}
+
+.cart-prd-img {
+  width: 70px;
+  height:70px;
+  object-fit: contain;
+}
+
+.table-tr {
+  border: 1px solid red;
+}
+
+.cart-total-card {
+  border-radius: 10px;
+  padding: 15px;
+  // border: 1px solid #0F5860;
+  background-color: #0F5860;
+  color: white;
+
+  @include media-upto(md) {
+    padding: 20px;
+  }
+
+  h3 {
+    font-size: 20px;
+  }
+}
+
+.place-order-btn {
+  // background-color: #0F5860;
+  background: linear-gradient(92.32deg, #0F5860 4.11%, #15B793 80.06%);
+  width: 200px;
+  border-radius: 5px;
+  border: none;
+  padding: 10px;
+  font-size: 15px;
+  color: white;
+  margin: auto;
+  display: block;
+  margin-top: 30px;
+  margin-bottom: 5px;
+}

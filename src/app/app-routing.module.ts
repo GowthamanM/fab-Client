@@ -2,6 +2,9 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AuthGuard } from './auth/auth.guard';
 import { ChangePasswordComponent } from './change-password/change-password.component';
+import { BuyComponent } from './checkout/buy/buy.component';
+import { CartComponent } from './checkout/cart/cart.component';
+import { CheckoutComponent } from './checkout/checkout.component';
 import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
 import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
@@ -69,7 +72,13 @@ const routes: Routes = [
   { path: 'privacy-policy', component: PrivacyPolicyComponent },
   { path: 'terms-and-conditions', component: TermsOfServiceComponent },
   { path: 'refund-policy', component: RefundPolicyComponent },
-  { path: 'wallet', component: WalletComponent}
+  { path: 'wallet', component: WalletComponent},
+  //TODO: Add Authguard
+  { path: 'checkout', component: CheckoutComponent, children: [
+    { path: 'cart/:id', component: CartComponent },
+    { path: 'buy/:id', component: BuyComponent }
+  ]},
+
   // { path: '**', component: PageNotFoundComponent }
 ];
 

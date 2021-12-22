@@ -49,6 +49,9 @@ import { CommonQuizComponent } from './quiz/common-quiz/common-quiz.component';
 import { NotSubscribedComponent } from './subscription/not-subscribed/not-subscribed.component';
 import { WalletComponent } from './wallet/wallet.component';
 import { ChangePasswordComponent } from './change-password/change-password.component';
+import { CheckoutComponent } from './checkout/checkout.component';
+import { CartComponent } from './checkout/cart/cart.component';
+import { BuyComponent } from './checkout/buy/buy.component';
 
 @NgModule({
   declarations: [
@@ -89,7 +92,10 @@ import { ChangePasswordComponent } from './change-password/change-password.compo
     CommonQuizComponent,
     NotSubscribedComponent,
     WalletComponent,
-    ChangePasswordComponent
+    ChangePasswordComponent,
+    CheckoutComponent,
+    CartComponent,
+    BuyComponent
   ],
   imports: [
     
