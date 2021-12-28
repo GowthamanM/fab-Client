@@ -75,7 +75,7 @@ const routes: Routes = [
   { path: 'wallet', component: WalletComponent},
   //TODO: Add Authguard
   { path: 'checkout', component: CheckoutComponent, children: [
-    { path: 'cart/:id', component: CartComponent },
+    { path: 'cart', component: CartComponent },
     { path: 'buy/:id', component: BuyComponent }
   ]},
 

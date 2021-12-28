@@ -60,13 +60,22 @@
 }
 
 .buy-now {
-  width: 200px;
-  padding: 5px 20px;
-  background-color: green;
+  width: 150px;
+  padding: 5px 15px;
+  background-color: #276970;
   border: none;
   height: 40px;
   border-radius: 5px;
-  color: white;
+  color: white!important;
+  margin-right: 10px;
   // display: block;
   // margin: 60px auto 0px;
+}
+
+.add-to-cart {
+  background-color: #FFCA03;
+}
+
+.row {
+  display: flex;
 }

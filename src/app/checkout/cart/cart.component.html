@@ -26,220 +26,74 @@
       </div>
 
       <!-- content 1 -->
-      <div style="border-bottom: 1px solid grey; padding-bottom: 20px;">
-        <div class="card-cont" style="margin-top: 20px;">
-          <div class="cart-prd-img-container" style="">
-            <img src="https://i.ibb.co/0ZRQLwd/down.webp" alt="what is this raa" class="cart-prd-img">
-          </div>
-          <div style="width: 100%;" class="cart-prd-des-lg" >
-            <p style="font-size: 18px; font-weight: bold;">Harpa</p>
-            <p style="font-size: 14px; color: grey; margin-top: 5px;">
-              Women Navy Blue Polka Dots Printed Top
-            </p>
-            <p style="margin-top: 10px;">Size : <span style="font-weight: bold;">S</span></p>
-          </div>
-          <div style="width: 300px;" class="prd-quantity-container">
-            <p style="padding-left: 30px;padding-top: 3px;">
-              $200
-            </p>
-            <div class="prd-quantity" style="margin-top:15px">
-              <i class="fas fa-minus-circle" style="font-size: 20px; color: #0F5860;" (click)="subtractQuantity(prdQuantity)"></i>
-              <input type="text" name="" id="" [(ngModel)]="prdQuantity" class="card-quant-input">
-              <i class="fas fa-plus-circle" style="font-size: 20px; color: #0F5860;" (click)="addQuantity(prdQuantity)"></i>
+
+
+
+      <div *ngFor="let a of data">
+        <div style="border-bottom: 1px solid grey; padding-bottom: 20px;">
+          <div class="card-cont" style="margin-top: 20px;">
+            <div class="cart-prd-img-container">
+              <img src={{a.photoLink}} alt="what is this raa" class="cart-prd-img">
+            </div>
+            <div style="width: 100%;" class="cart-prd-des-lg" >
+              <p style="font-size: 18px; font-weight: bold;">{{a.brand}}</p>
+              <p style="font-size: 14px; color: grey; margin-top: 5px;">
+                {{a.productName}}
+              </p>
+              <p style="margin-top: 10px;">Size : <span style="font-weight: bold;">{{a.size}}</span></p>
+            </div>
+            <div style="width: 300px;" class="prd-quantity-container">
+              <p style="padding-left: 30px;padding-top: 3px;">
+                ₹ {{a.price}}
+              </p>
+              <div class="prd-quantity" style="margin-top:15px">
+                <i class="fas fa-minus-circle" style="font-size: 20px; color: #0F5860;" (click)="subtractQuantity(prdQuantity)"></i>
+                <input type="text" name="" id="" [(ngModel)]="prdQuantity" class="card-quant-input">
+                <i class="fas fa-plus-circle" style="font-size: 20px; color: #0F5860;" (click)="addQuantity(prdQuantity)"></i>
+              </div>
+            </div>
+            <div style="width: 100px;">
+              <p class="cart-prd-price" style="padding-top: 3px;">₹ {{a.price}}</p>
+            </div>
+            <div style="width: 50px;">
+              <i class="fas fa-trash" style="font-size: 20px; color: #EE4B2B; margin-left: 20px;" (click)="removeProduct(prdQuantity)"></i>
             </div>
           </div>
-          <div style="width: 100px;">
-            <p class="cart-prd-price" style="padding-top: 3px;">$200</p>
-          </div>
-          <div style="width: 50px;">
-            <i class="fas fa-trash" style="font-size: 20px; color: #EE4B2B; margin-left: 20px;" (click)="removeProduct(prdQuantity)"></i>
-          </div>
-        </div>
-        <div style="width: 100%;" class="cart-prd-des" >
-          <p style="font-size: 18px; font-weight: bold;">Harpa</p>
-          <p style="font-size: 14px; color: grey; margin-top: 5px;">
-            Women Navy Blue Polka Dots Printed Top
-          </p>
-          <p style="margin-top: 10px;">Size : <span style="font-weight: bold;">S</span></p>
-        </div>
-
-      </div>
-
-      <div style="border-bottom: 1px solid grey; padding-bottom: 20px;">
-        <div class="card-cont" style="margin-top: 20px;">
-          <div class="cart-prd-img-container" style="">
-            <img src="https://i.ibb.co/0sHh8GL/down4.webp" alt="what is this raa" class="cart-prd-img">
-          </div>
-          <div style="width: 100%;" class="cart-prd-des-lg" >
-            <p style="font-size: 18px; font-weight: bold;">Harpa</p>
+          <div style="width: 100%;" class="cart-prd-des" >
+            <p style="font-size: 18px; font-weight: bold;">{{a.brand}}</p>
             <p style="font-size: 14px; color: grey; margin-top: 5px;">
-              Women Navy Blue Polka Dots Printed Top
+              {{a.productName}}
             </p>
-            <p style="margin-top: 10px;">Size : <span style="font-weight: bold;">S</span></p>
+            <p style="margin-top: 10px;">Size : <span style="font-weight: bold;">{{a.size}}</span></p>
           </div>
-          <div style="width: 300px;" class="prd-quantity-container">
-            <p style="padding-left: 30px;padding-top: 3px;">
-              $200
-            </p>
-            <div class="prd-quantity" style="margin-top:15px">
-              <i class="fas fa-minus-circle" style="font-size: 20px; color: #0F5860;" (click)="subtractQuantity(prdQuantity)"></i>
-              <input type="text" name="" id="" [(ngModel)]="prdQuantity" class="card-quant-input">
-              <i class="fas fa-plus-circle" style="font-size: 20px; color: #0F5860;" (click)="addQuantity(prdQuantity)"></i>
-            </div>
-          </div>
-          <div style="width: 100px;">
-            <p class="cart-prd-price" style="padding-top: 3px;">$200</p>
-          </div>
-          <div style="width: 50px;">
-            <i class="fas fa-trash" style="font-size: 20px; color: #EE4B2B; margin-left: 20px;" (click)="removeProduct(prdQuantity)"></i>
-          </div>
-        </div>
-        <div style="width: 100%;" class="cart-prd-des" >
-          <p style="font-size: 18px; font-weight: bold;">Harpa</p>
-          <p style="font-size: 14px; color: grey; margin-top: 5px;">
-            Women Navy Blue Polka Dots Printed Top
-          </p>
-          <p style="margin-top: 10px;">Size : <span style="font-weight: bold;">S</span></p>
+  
         </div>
       </div>
 
-      <div style="border-bottom: 1px solid grey; padding-bottom: 20px;">
-        <div class="card-cont" style="margin-top: 20px;">
-          <div class="cart-prd-img-container" style="">
-            <img src="https://i.ibb.co/rtWt7LX/down3.webp" alt="what is this raa" class="cart-prd-img">
-          </div>
-          <div style="width: 100%;" class="cart-prd-des-lg" >
-            <p style="font-size: 18px; font-weight: bold;">Harpa</p>
-            <p style="font-size: 14px; color: grey; margin-top: 5px;">
-              Women Navy Blue Polka Dots Printed Top
-            </p>
-            <p style="margin-top: 10px;">Size : <span style="font-weight: bold;">S</span></p>
-          </div>
-          <div style="width: 300px;" class="prd-quantity-container">
-            <p style="padding-left: 30px;padding-top: 3px;">
-              $200
-            </p>
-            <div class="prd-quantity" style="margin-top:15px">
-              <i class="fas fa-minus-circle" style="font-size: 20px; color: #0F5860;" (click)="subtractQuantity(prdQuantity)"></i>
-              <input type="text" name="" id="" [(ngModel)]="prdQuantity" class="card-quant-input">
-              <i class="fas fa-plus-circle" style="font-size: 20px; color: #0F5860;" (click)="addQuantity(prdQuantity)"></i>
-            </div>
-          </div>
-          <div style="width: 100px;">
-            <p class="cart-prd-price" style="padding-top: 3px;">$200</p>
-          </div>
-          <div style="width: 50px;">
-            <i class="fas fa-trash" style="font-size: 20px; color: #EE4B2B; margin-left: 20px;" (click)="removeProduct(prdQuantity)"></i>
-          </div>
-        </div>
-        <div style="width: 100%;" class="cart-prd-des" >
-          <p style="font-size: 18px; font-weight: bold;">Harpa</p>
-          <p style="font-size: 14px; color: grey; margin-top: 5px;">
-            Women Navy Blue Polka Dots Printed Top
-          </p>
-          <p style="margin-top: 10px;">Size : <span style="font-weight: bold;">S</span></p>
-        </div>
-      </div>
-
-      <div style="border-bottom: 1px solid grey; padding-bottom: 20px;">
-        <div class="card-cont" style="margin-top: 20px;">
-          <div class="cart-prd-img-container" style="">
-            <img src="https://i.ibb.co/KxVwmVw/donw1.webp" alt="what is this raa" class="cart-prd-img">
-          </div>
-          <div style="width: 100%;" class="cart-prd-des-lg" >
-            <p style="font-size: 18px; font-weight: bold;">Harpa</p>
-            <p style="font-size: 14px; color: grey; margin-top: 5px;">
-              Women Navy Blue Polka Dots Printed Top
-            </p>
-            <p style="margin-top: 10px;">Size : <span style="font-weight: bold;">S</span></p>
-          </div>
-          <div style="width: 300px;" class="prd-quantity-container">
-            <p style="padding-left: 30px;padding-top: 3px;">
-              $200
-            </p>
-            <div class="prd-quantity" style="margin-top:15px">
-              <i class="fas fa-minus-circle" style="font-size: 20px; color: #0F5860;" (click)="subtractQuantity(prdQuantity)"></i>
-              <input type="text" name="" id="" [(ngModel)]="prdQuantity" class="card-quant-input">
-              <i class="fas fa-plus-circle" style="font-size: 20px; color: #0F5860;" (click)="addQuantity(prdQuantity)"></i>
-            </div>
-          </div>
-          <div style="width: 100px;">
-            <p class="cart-prd-price" style="padding-top: 3px;">$200</p>
-          </div>
-          <div style="width: 50px;">
-            <i class="fas fa-trash" style="font-size: 20px; color: #EE4B2B; margin-left: 20px;" (click)="removeProduct(prdQuantity)"></i>
-          </div>
-        </div>
-        <div style="width: 100%;" class="cart-prd-des" >
-          <p style="font-size: 18px; font-weight: bold;">Harpa</p>
-          <p style="font-size: 14px; color: grey; margin-top: 5px;">
-            Women Navy Blue Polka Dots Printed Top
-          </p>
-          <p style="margin-top: 10px;">Size : <span style="font-weight: bold;">S</span></p>
-        </div>
-      </div>
-
-      <div style="border-bottom: 1px solid grey; padding-bottom: 20px;">
-        <div class="card-cont" style="margin-top: 20px;">
-          <div class="cart-prd-img-container" style="">
-            <img src="https://i.ibb.co/0ZRQLwd/down.webp" alt="what is this raa" class="cart-prd-img">
-          </div>
-          <div style="width: 100%;" class="cart-prd-des-lg" >
-            <p style="font-size: 18px; font-weight: bold;">Harpa</p>
-            <p style="font-size: 14px; color: grey; margin-top: 5px;">
-              Women Navy Blue Polka Dots Printed Top
-            </p>
-            <p style="margin-top: 10px;">Size : <span style="font-weight: bold;">S</span></p>
-          </div>
-          <div style="width: 300px;" class="prd-quantity-container">
-            <p style="padding-left: 30px;padding-top: 3px;">
-              $200
-            </p>
-            <div class="prd-quantity" style="margin-top:15px">
-              <i class="fas fa-minus-circle" style="font-size: 20px; color: #0F5860;" (click)="subtractQuantity(prdQuantity)"></i>
-              <input type="text" name="" id="" [(ngModel)]="prdQuantity" class="card-quant-input">
-              <i class="fas fa-plus-circle" style="font-size: 20px; color: #0F5860;" (click)="addQuantity(prdQuantity)"></i>
-            </div>
-          </div>
-          <div style="width: 100px;">
-            <p class="cart-prd-price" style="padding-top: 3px;">$200</p>
-          </div>
-          <div style="width: 50px;">
-            <i class="fas fa-trash" style="font-size: 20px; color: #EE4B2B; margin-left: 20px;" (click)="removeProduct(prdQuantity)"></i>
-          </div>
-        </div>
-        <div style="width: 100%;" class="cart-prd-des" >
-          <p style="font-size: 18px; font-weight: bold;">Harpa</p>
-          <p style="font-size: 14px; color: grey; margin-top: 5px;">
-            Women Navy Blue Polka Dots Printed Top
-          </p>
-          <p style="margin-top: 10px;">Size : <span style="font-weight: bold;">S</span></p>
-        </div>
-      </div>
     </div>
     <div class="col-md-3 cart-total-card-container" style="padding-top: 30px;">
       <div class="cart-total-card">
         <h3 style="margin-top: 10px;" class="text-center">Cart Summary</h3>
         <table style="width: 100%;margin-top: 20px;">
           <tbody>
-            <tr style="">
+            <tr>
               <td style="padding-top: 5px;padding-left:15px;width: 70%;">
-                subtotal
+                Subtotal
               </td>
               <td>
-                $2000
-              </td>
-            </tr>
-            <tr style="">
-              <td style="padding-top: 15px;padding-bottom: 30px;padding-left:15px;">
-                shipping
-              </td>
-              <td>
-                $200
+                ₹ {{subTotal}}
               </td>
             </tr>
             <tr>
-              <td colspan="2" style="">
+              <td style="padding-top: 15px;padding-bottom: 30px;padding-left:15px;">
+                Shipping
+              </td>
+              <td>
+                ₹ 50
+              </td>
+            </tr>
+            <tr>
+              <td colspan="2">
                 <hr style="width: 150px; margin:auto">
               </td>
             </tr>
@@ -248,7 +102,7 @@
                 Total
               </td>
               <td style="font-weight: bold;">
-                $2200
+                ₹ {{total}}
               </td>
             </tr>
           </tbody>
