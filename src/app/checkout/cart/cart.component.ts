@@ -34,7 +34,7 @@ export class CartComponent implements OnInit {
       "_id": "616f89f7703a5a0012aa7f74",
       "productLink": "https://www.myntra.com/tops/roadster/roadster-women-black--pink-abstract-printed-knitted-pleated-top/10962596/buy",
       "brand": "Roadster",
-      "productName": "Women Black & Pink Abstract Printed Knitted Pleated Top",
+      "productName": "Women Black & Pink Abstract Printed Knitted Pleated Top TOp & Pink Abstract Printed Knitted Pleated T",
       "price": "979",
       "photoLink": "https://assets.myntassets.com/v1/assets/images/10962596/2020/11/4/c929a47e-4ac2-458e-82b9-30a9fc66a3121604492549351-Roadster-Women-Tops-9661604492547084-1.jpg",
       "description": "description",
@@ -50,14 +50,6 @@ export class CartComponent implements OnInit {
   }
 
   ngOnInit(): void {
-  }
-
-  subtractQuantity(quantity: any) {
-
-  }
-
-  addQuantity(quantity: any) {
-
   }
 
   removeProduct(product: any) {

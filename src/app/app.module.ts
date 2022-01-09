@@ -52,6 +52,7 @@ import { ChangePasswordComponent } from './change-password/change-password.compo
 import { CheckoutComponent } from './checkout/checkout.component';
 import { CartComponent } from './checkout/cart/cart.component';
 import { BuyComponent } from './checkout/buy/buy.component';
+import { ImgFallbackDirective } from './extensions/img-fallback.directive';
 
 @NgModule({
   declarations: [
@@ -95,7 +96,8 @@ import { BuyComponent } from './checkout/buy/buy.component';
     ChangePasswordComponent,
     CheckoutComponent,
     CartComponent,
-    BuyComponent
+    BuyComponent,
+    ImgFallbackDirective
   ],
   imports: [
     
