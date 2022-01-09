@@ -2,6 +2,7 @@ import { Component, Input, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { CredentialService } from 'src/app/services/credential.service';
 import { WardrobeService } from 'src/app/services/wardrobe.service';
+import { UserService } from 'src/app/services/user.service';
 
 @Component({
   selector: 'app-product-list',
@@ -15,15 +16,24 @@ export class ProductListComponent implements OnInit {
 
   product:any = [];
   productData:any={};
+  isOwnProduct:boolean = false;
+  userData:any = {};
 
-  constructor(private wardrobeService: WardrobeService, private route: Router, private activeRoute: ActivatedRoute,
-    private credentials:CredentialService) { }
+  constructor(
+    private wardrobeService: WardrobeService, 
+    private route: Router, 
+    private activeRoute: ActivatedRoute,
+    private credentials:CredentialService,
+    private userService: UserService) { }
 
   ngOnInit(): void {
     this.data = this.wardrobeService.getData();
     console.log(this.data);
 
     this.productData = this.credentials.productData;
+    if(this.productData.relatedTo.ownProduct == 'true'){
+      this.isOwnProduct = true;
+    }
     console.log(this.productData);
     
     window.scrollTo(0, 0);
@@ -36,6 +46,30 @@ export class ProductListComponent implements OnInit {
       }
     });
     console.log(this.product);
+  }
+
+  addToCart(){
+    this.userService.getUserData().subscribe(data=>{
+      console.log(data);
+      this.userData = JSON.parse(JSON.stringify(data));
+      let relatedTo:any = {};
+      relatedTo.cart = [];
+      if(this.userData.User.hasOwnProperty("relatedTo")){
+        relatedTo = this.userData.User.relatedTo;
+        relatedTo.cart.push(this.productData);
+        console.log(relatedTo);
+        this.userService.userUpdate(JSON.parse(JSON.stringify({"relatedTo":relatedTo}))).subscribe(data=>{
+          console.log(data);
+        });
+      }else{
+        
+        relatedTo.cart.push(this.productData);
+        console.log(relatedTo);
+        this.userService.userUpdate(JSON.parse(JSON.stringify({"relatedTo":relatedTo}))).subscribe(data=>{
+          console.log(data);
+        });
+      }
+    });
   }
 
 }

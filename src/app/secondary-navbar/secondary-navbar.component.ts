@@ -105,4 +105,10 @@ export class SecondaryNavbarComponent implements OnInit {
   goToWallet(){
     this.router.navigateByUrl('/wallet');
   }
+
+  goToCart(){
+    this.router.navigateByUrl('/checkout/cart');
+  }
+
 }
+

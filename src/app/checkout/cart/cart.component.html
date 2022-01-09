@@ -31,7 +31,7 @@
           </div>
           <div style="width: 100px;">
             <p class="cart-prd-price" style="padding-top: 3px;">
-              &#8377;{{ products.discountPrice }}
+              &#8377;{{ products.price }}
             </p>
           </div>
           <div style="width: 50px;">
@@ -53,6 +53,7 @@
           </div>
         </div>
       </div>
+
     </div>
     <div class="col-md-3 cart-total-card-container" style="padding-top: 30px;">
       <div class="cart-total-card">
@@ -61,18 +62,18 @@
           <tbody>
             <tr>
               <td style="padding-top: 5px;padding-left:15px;width: 50%;">
-                subtotal
+                Subtotal
               </td>
               <td>
-                $2000
+                ₹ {{subTotal}}
               </td>
             </tr>
-            <tr style="">
+            <tr>
               <td style="padding-top: 15px;padding-bottom: 30px;padding-left:15px;">
-                shipping
+                Shipping
               </td>
               <td>
-                $200
+                ₹ 50
               </td>
             </tr>
             <tr>
@@ -85,7 +86,7 @@
                 Total
               </td>
               <td style="font-weight: bold;">
-                $2200
+                ₹ {{total}}
               </td>
             </tr>
           </tbody>
