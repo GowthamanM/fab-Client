@@ -1,1 +1,219 @@
-<p>buy works!</p>
+<app-secondary-navbar></app-secondary-navbar>
+
+<section class="main-content">
+  <div class="row">
+    <div class="col-md-9 cart-content-container">
+      <div class="faq-content fab-pb-50">
+        <div class="accordion" id="accordionExample">
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="headingOne">
+              <button
+                class="accordion-button fab-accordian-button"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#collapseOne"
+                aria-expanded="true"
+                aria-controls="collapseOne"
+              >
+                Your Orders
+              </button>
+            </h2>
+            <div
+              id="collapseOne"
+              class="accordion-collapse collapse show"
+              aria-labelledby="headingOne"
+              data-bs-parent="#accordionExample"
+            >
+              <div class="accordion-body">
+                <div style="border-bottom: 1px solid grey; padding-bottom: 20px;" *ngFor="let products of data">
+                  <div class="card-cont" style="margin-top: 20px;">
+                    <div class="cart-prd-img-container">
+                      <img [src]="products.photoLink" [alt]="products.productName" class="cart-prd-img" ImgFallback>
+                    </div>
+                    <div style="width: 100%;" class="cart-prd-des-lg" >
+                      <p style="font-size: 18px; font-weight: bold;">
+                        {{ products.brand }}
+                      </p>
+                      <p style="font-size: 14px; color: grey; margin-top: 5px;">
+                        {{ products.productName }}
+                      </p>
+                      <p style="margin-top: 10px;">
+                        Size : <span style="font-weight: bold;">{{ products.size }}</span>
+                      </p>
+                    </div>
+                    <div style="width: 300px;" class="prd-quantity-container">
+                      <div class="prd-quantity" style="margin-top:3px;">
+                        <span>Quantity : {{ prdQuantity }}</span>
+                      </div>
+                    </div>
+                    <div style="width: 100px;">
+                      <p class="cart-prd-price" style="padding-top: 3px;">
+                        &#8377;{{ products.price }}
+                      </p>
+                    </div>
+                    <div style="width: 50px;">
+                      <i class="fas fa-trash" style="font-size: 20px; color: #EE4B2B; margin-left: 20px;" (click)="removeProduct(prdQuantity)"></i>
+                    </div>
+                  </div>
+                  <div style="width: 100%;" class="cart-prd-des" >
+                    <p style="font-size: 18px; font-weight: bold;">
+                      {{ products.brand }}
+                    </p>
+                    <p style="font-size: 14px; color: grey; margin-top: 5px;">
+                      {{ products.productName }}
+                    </p>
+                    <p style="margin-top: 10px;">
+                      Size : <span style="font-weight: bold;">{{ products.size }}</span>
+                    </p>
+                    <div class="prd-quantity" style="margin-top:10px;">
+                      <span>Quantity : {{ prdQuantity }}</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="headingTwo">
+              <button
+                class="accordion-button fab-accordian-button collapsed"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#collapseTwo"
+                aria-expanded="false"
+                aria-controls="collapseTwo"
+              >
+                Delivery Details
+              </button>
+            </h2>
+            <div
+              id="collapseTwo"
+              class="accordion-collapse collapse"
+              aria-labelledby="headingTwo"
+              data-bs-parent="#accordionExample"
+            >
+              <div class="accordion-body">
+                <form [formGroup]="deliveryForm">
+                  <div class="form-row row">
+                    <div class="form-group col-md-6">
+                      <label for="inputName">Name</label>
+                      <input type="text" class="form-control" id="inputName" placeholder="Enter your Name" formControlName="inputName">
+                    </div>
+                    <div class="form-group col-md-6 emailInput">
+                      <label for="inputEmail">Email</label>
+                      <input type="email" class="form-control" id="inputEmail" placeholder="Enter your Email" formControlName="inputEmail">
+                    </div>
+                  </div>
+                  <div class="form-group fab-mt-20">
+                    <label for="inputAddress">Address</label>
+                    <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St" formControlName="inputAddress">
+                  </div>
+                  <div class="form-row row">
+                    <div class="form-group col-md-6 fab-mt-20">
+                      <label for="inputCity">City</label>
+                      <input type="text" class="form-control" id="inputCity" formControlName="inputCity">
+                    </div>
+                    <div class="form-group col-md-4 fab-mt-20">
+                      <label for="inputState">State</label>
+                      <input type="text" class="form-control" id="inputState" formControlName="inputState">
+                    </div>
+                    <div class="form-group col-md-2 fab-mt-20">
+                      <label for="inputZip">Pincode</label>
+                      <input type="text" class="form-control" id="inputZip" formControlName="inputZip">
+                    </div>
+                  </div>
+                  <div class="form-row row">
+                    <div class="form-group col-md-6 fab-mt-20">
+                      <label for="inputPhone">Phone number</label>
+                      <input type="text" class="form-control" id="inputPhone" formControlName="inputPhone">
+                    </div>
+                    <div class="form-group col-md-6 fab-mt-20">
+                      <label for="inputCountry">Country</label>
+                      <input type="text" class="form-control" id="inputCountry" formControlName="inputCountry">
+                    </div>
+                  </div>
+
+                  <div class="fab-mt-20">
+                    <button type="submit" class="btn btn-primary" (click)="showData()">Save Data</button><br>
+                    <small id="submitHelp" class="form-text text-muted">Save the Data for future use.</small>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="headingThree">
+              <button
+                class="accordion-button fab-accordian-button collapsed"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#collapseThree"
+                aria-expanded="false"
+                aria-controls="collapseThree"
+              >
+                Payment
+              </button>
+            </h2>
+            <div
+              id="collapseThree"
+              class="accordion-collapse collapse"
+              aria-labelledby="headingThree"
+              data-bs-parent="#accordionExample"
+            >
+              <div class="accordion-body">
+                <small id="paymentHelp" class="form-text text-muted">Cash on Delivery is not available for now</small><br>
+                <button type="submit" class="btn btn-primary fab-mt-10" (click)="paynow()">Pay Now</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="col-md-3 cart-total-card-container" style="padding-top: 30px;">
+      <div class="cart-total-card">
+        <h3 style="margin-top: 10px;" class="text-center">Order Summary</h3>
+        <table style="width: 100%;margin-top: 20px; text-align: center;">
+          <tbody>
+            <tr>
+              <td style="padding-top: 5px;padding-left:15px;width: 50%;">
+                Subtotal
+              </td>
+              <td>
+                ₹ {{subTotal}}
+              </td>
+            </tr>
+            <tr>
+              <td style="padding-top: 15px;padding-bottom: 30px;padding-left:15px;">
+                Shipping
+              </td>
+              <td>
+                ₹ 50
+              </td>
+            </tr>
+            <tr>
+              <td colspan="2">
+                <hr style="width: 150px; margin:auto">
+              </td>
+            </tr>
+            <tr>
+              <td style="padding-bottom: 5px;font-weight: bold;padding-left: 15px;width: 50%;padding-top: 15px;">
+                Total
+              </td>
+              <td style="font-weight: bold;">
+                ₹ {{total}}
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div>
+        <button class="place-order-btn">
+          Place Order
+        </button>
+      </div>
+    </div>
+  </div>
+</section>
