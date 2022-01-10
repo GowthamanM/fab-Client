@@ -51,9 +51,9 @@
                         &#8377;{{ products.price }}
                       </p>
                     </div>
-                    <div style="width: 50px;">
-                      <i class="fas fa-trash" style="font-size: 20px; color: #EE4B2B; margin-left: 20px;" (click)="removeProduct(prdQuantity)"></i>
-                    </div>
+                    <!-- <div style="width: 50px;cursor: pointer;">
+                      <i class="fas fa-trash" style="font-size: 20px; color: #EE4B2B; margin-left: 20px;" (click)="removeProduct(products.productName)"></i>
+                    </div> -->
                   </div>
                   <div style="width: 100%;" class="cart-prd-des" >
                     <p style="font-size: 18px; font-weight: bold;">
@@ -190,7 +190,7 @@
                 Shipping
               </td>
               <td>
-                ₹ 50
+                ₹ {{shippingCharges}}
               </td>
             </tr>
             <tr>
@@ -210,9 +210,9 @@
         </table>
       </div>
       <div>
-        <button class="place-order-btn">
+        <!-- <button class="place-order-btn">
           Place Order
-        </button>
+        </button> -->
       </div>
     </div>
   </div>

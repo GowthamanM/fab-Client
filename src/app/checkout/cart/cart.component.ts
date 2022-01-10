@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { StorageService } from 'src/app/services/storage.service';
 import { UserService } from 'src/app/services/user.service';
 
 @Component({
@@ -10,12 +12,15 @@ export class CartComponent implements OnInit {
   data:any = [];
   subTotal:any = 0;
   total = 0;
+  shippingCharges:any = 0;
 
 
   public prdQuantity = 1;
 
   constructor(
-    private userService:UserService
+    private userService:UserService,
+    private storageService:StorageService,
+    private router:Router
   ) {
   }
 
@@ -24,18 +29,48 @@ export class CartComponent implements OnInit {
         if(data.User.hasOwnProperty("relatedTo")){
           this.data = data.User.relatedTo.cart;
           for(let i=0;i<this.data.length;i++){
-            console.log(this.data[i]);
-
             this.subTotal += parseInt(this.data[i].price);
           }
-          this.total= this.subTotal+50;
-
+          if(this.data.length > 0) {
+            this.shippingCharges=50;
+          }
+          this.total= this.subTotal+ this.shippingCharges;
         }
       })
   }
 
-  removeProduct(product: any) {
+  calculateAmount() { 
+    this.subTotal = 0;
+    for(let i=0;i<this.data.length;i++){
+      this.subTotal += parseInt(this.data[i].price);
+    }
+    if(this.data.length > 0) {
+      this.shippingCharges = 50;
+    } else {
+      this.shippingCharges = 0;
+    }
+    this.total= this.subTotal+ this.shippingCharges;
+  }
 
+  removeProduct(product: any) {
+    let index = this.data.findIndex(function(item:any,i:any){
+      return item.productName === product
+    });
+    this.data.splice(index,1);
+    let relatedTo:any = {};
+    relatedTo.cart = this.data;
+    console.log(JSON.parse(JSON.stringify({"relatedTo":relatedTo})));
+    this.userService.userUpdate(JSON.parse(JSON.stringify({"relatedTo":relatedTo}))).subscribe();
+    this.calculateAmount();
+  }
+
+  goToBuy(){
+    let encode = encodeURIComponent(JSON.stringify(this.data));
+    this.router.navigateByUrl("/checkout/buy?order="+encode);   
+  }
+
+  goToWardrobe(){
+    this.router.navigateByUrl("/wardrobe")
   }
 
 }

@@ -23,7 +23,8 @@
             <p>Price : <span class="prc">&#x20B9;{{productData.price}} </span><span class="prc" style="text-decoration: line-through;color: grey;"> &#x20B9;{{productData.discountPrice}}</span></p>
           </div>
           <div class="row">
-            <button class="buy-now fab-mt-60"><a href="{{productData.productLink}}" target="blank">Buy Now</a></button>
+            <button class="buy-now fab-mt-60" *ngIf=!isOwnProduct><a href="{{productData.productLink}}" target="blank">Buy Now</a></button>
+            <button class="buy-now fab-mt-60" *ngIf=isOwnProduct (click)="goToBuy()">Buy Now</button>
             <button *ngIf=isOwnProduct class="buy-now add-to-cart fab-mt-60" (click)="addToCart();">Add to Cart</button>
           </div>
         </div>

@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder } from '@angular/forms';
+import { ActivatedRoute, ActivatedRouteSnapshot } from '@angular/router';
+import { StorageService } from 'src/app/services/storage.service';
 import { UserService } from 'src/app/services/user.service';
 
 @Component({
@@ -10,6 +12,7 @@ import { UserService } from 'src/app/services/user.service';
 export class BuyComponent implements OnInit {
   data:any = [];
   subTotal:any = 0;
+  shippingCharges:any = 0;
   total = 0;
 
 
@@ -18,22 +21,35 @@ export class BuyComponent implements OnInit {
   constructor(
     private userService:UserService,
     private fb: FormBuilder,
+    private storageService:StorageService,
+    private route:ActivatedRoute
   ) {
   }
 
   ngOnInit(): void {
-      this.userService.getUserData().subscribe(data=>{
-        if(data.User.hasOwnProperty("relatedTo")){
-          this.data = data.User.relatedTo.cart;
+      this.route.queryParams.subscribe(params => {
+        if(this.isJson(params.order)) {
+          this.data = JSON.parse(params.order);
           for(let i=0;i<this.data.length;i++){
-            console.log(this.data[i]);
 
             this.subTotal += parseInt(this.data[i].price);
           }
-          this.total= this.subTotal+50;
-
+          if(this.data.length > 0){
+            this.shippingCharges = 50;
+          }
+          this.total= this.subTotal + this.shippingCharges;
         }
       })
+      
+  }
+
+  isJson(orderParam:any) : boolean { 
+    try {
+      JSON.parse(orderParam);
+    } catch (e) {
+      return false;
+    }
+    return true;
   }
 
   removeProduct(product: any) {

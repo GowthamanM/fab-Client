@@ -4,7 +4,7 @@
   <div class="row">
     <div class="col-md-9 cart-content-container">
       <h2 class="cart-heading" style="padding-left: 10px;padding-bottom: 20px;">
-        Your Cart (3)
+        Your Cart ({{data?.length}})
       </h2>
 
       <!-- content -->
@@ -35,7 +35,7 @@
             </p>
           </div>
           <div style="width: 50px;">
-            <i class="fas fa-trash" style="font-size: 20px; color: #EE4B2B; margin-left: 20px;" (click)="removeProduct(prdQuantity)"></i>
+            <i class="fas fa-trash" style="font-size: 20px; color: #EE4B2B; margin-left: 20px;" (click)="removeProduct(products.productName)"></i>
           </div>
         </div>
         <div style="width: 100%;" class="cart-prd-des" >
@@ -52,6 +52,12 @@
             <span>Quantity : {{ prdQuantity }}</span>
           </div>
         </div>
+      </div>
+
+      <div class="empty-cart" *ngIf="data?.length === 0">
+        <img src="../../../assets/images/illustrations/empty_cart.svg" style="margin-top:15px;" width="250px" alt="">
+        <p style="margin-top:10px;color:#0F5860">Your cart is empty!</p>
+        <button class="place-order-btn" (click)="goToWardrobe()">Go To Wardrobe</button>
       </div>
 
     </div>
@@ -73,7 +79,7 @@
                 Shipping
               </td>
               <td>
-                ₹ 50
+                ₹ {{shippingCharges}}
               </td>
             </tr>
             <tr>
@@ -93,7 +99,7 @@
         </table>
       </div>
       <div>
-        <button class="place-order-btn">
+        <button class="place-order-btn" *ngIf="data?.length > 0" (click)="goToBuy()">
           Proceed to Buy
         </button>
       </div>

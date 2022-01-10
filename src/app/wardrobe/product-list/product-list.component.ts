@@ -72,4 +72,11 @@ export class ProductListComponent implements OnInit {
     });
   }
 
+  goToBuy(){
+    let orderArray:any = [];
+    orderArray.push(this.productData);
+    let encode = encodeURIComponent(JSON.stringify(orderArray));
+    this.route.navigateByUrl("/checkout/buy?order=" + encode);
+  }
+
 }

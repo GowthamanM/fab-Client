@@ -76,10 +76,10 @@ const routes: Routes = [
   //TODO: Add Authguard
   { path: 'checkout', component: CheckoutComponent, children: [
     { path: 'cart', component: CartComponent },
-    { path: 'buy/:id', component: BuyComponent }
+    { path: 'buy', component: BuyComponent }
   ]},
 
-  // { path: '**', component: PageNotFoundComponent }
+  { path: '**', component: PageNotFoundComponent }
 ];
 
 @NgModule({
