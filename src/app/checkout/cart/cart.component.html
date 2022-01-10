@@ -3,70 +3,54 @@
 <section class="main-content">
   <div class="row">
     <div class="col-md-9 cart-content-container">
-      <h2 class="cart-heading" style="padding-left: 10px;">
+      <h2 class="cart-heading" style="padding-left: 10px;padding-bottom: 20px;">
         Your Cart (3)
       </h2>
 
-      <!-- header -->
-      <div class="card-cont" style="margin-top: 30px;">
-        <div class="cart-prd-img-container" style="height: 10px;">
-          <img src="" alt="" class="cart-prd-img" style="height: 10px; visibility: hidden;">
-        </div>
-        <div style="width: 100%;" class="cart-prd-des-lg">
-        </div>
-        <div style="width: 300px; font-weight: bold; padding-left: 40px;">
-
-        </div>
-        <div style="width: 100px; font-weight: bold; font-size: 18px;">
-          <p>Total</p>
-        </div>
-        <div style="width: 50px;">
-          <i class="fas fa-trash" style="font-size: 20px; color: red; margin-left: 20px; visibility:hidden;" (click)="removeProduct(prdQuantity)"></i>
-        </div>
-      </div>
-
-      <!-- content 1 -->
-
-
-
-      <div *ngFor="let a of data">
-        <div style="border-bottom: 1px solid grey; padding-bottom: 20px;">
-          <div class="card-cont" style="margin-top: 20px;">
-            <div class="cart-prd-img-container">
-              <img src={{a.photoLink}} alt="what is this raa" class="cart-prd-img">
-            </div>
-            <div style="width: 100%;" class="cart-prd-des-lg" >
-              <p style="font-size: 18px; font-weight: bold;">{{a.brand}}</p>
-              <p style="font-size: 14px; color: grey; margin-top: 5px;">
-                {{a.productName}}
-              </p>
-              <p style="margin-top: 10px;">Size : <span style="font-weight: bold;">{{a.size}}</span></p>
-            </div>
-            <div style="width: 300px;" class="prd-quantity-container">
-              <p style="padding-left: 30px;padding-top: 3px;">
-                ₹ {{a.price}}
-              </p>
-              <div class="prd-quantity" style="margin-top:15px">
-                <i class="fas fa-minus-circle" style="font-size: 20px; color: #0F5860;" (click)="subtractQuantity(prdQuantity)"></i>
-                <input type="text" name="" id="" [(ngModel)]="prdQuantity" class="card-quant-input">
-                <i class="fas fa-plus-circle" style="font-size: 20px; color: #0F5860;" (click)="addQuantity(prdQuantity)"></i>
-              </div>
-            </div>
-            <div style="width: 100px;">
-              <p class="cart-prd-price" style="padding-top: 3px;">₹ {{a.price}}</p>
-            </div>
-            <div style="width: 50px;">
-              <i class="fas fa-trash" style="font-size: 20px; color: #EE4B2B; margin-left: 20px;" (click)="removeProduct(prdQuantity)"></i>
-            </div>
+      <!-- content -->
+      <div style="border-bottom: 1px solid grey; padding-bottom: 20px;" *ngFor="let products of data">
+        <div class="card-cont" style="margin-top: 20px;">
+          <div class="cart-prd-img-container">
+            <img [src]="products.photoLink" [alt]="products.productName" class="cart-prd-img" ImgFallback>
           </div>
-          <div style="width: 100%;" class="cart-prd-des" >
-            <p style="font-size: 18px; font-weight: bold;">{{a.brand}}</p>
-            <p style="font-size: 14px; color: grey; margin-top: 5px;">
-              {{a.productName}}
+          <div style="width: 100%;" class="cart-prd-des-lg" >
+            <p style="font-size: 18px; font-weight: bold;">
+              {{ products.brand }}
             </p>
-            <p style="margin-top: 10px;">Size : <span style="font-weight: bold;">{{a.size}}</span></p>
+            <p style="font-size: 14px; color: grey; margin-top: 5px;">
+              {{ products.productName }}
+            </p>
+            <p style="margin-top: 10px;">
+              Size : <span style="font-weight: bold;">{{ products.size }}</span>
+            </p>
           </div>
-  
+          <div style="width: 300px;" class="prd-quantity-container">
+            <div class="prd-quantity" style="margin-top:3px;">
+              <span>Quantity : {{ prdQuantity }}</span>
+            </div>
+          </div>
+          <div style="width: 100px;">
+            <p class="cart-prd-price" style="padding-top: 3px;">
+              &#8377;{{ products.price }}
+            </p>
+          </div>
+          <div style="width: 50px;">
+            <i class="fas fa-trash" style="font-size: 20px; color: #EE4B2B; margin-left: 20px;" (click)="removeProduct(prdQuantity)"></i>
+          </div>
+        </div>
+        <div style="width: 100%;" class="cart-prd-des" >
+          <p style="font-size: 18px; font-weight: bold;">
+            {{ products.brand }}
+          </p>
+          <p style="font-size: 14px; color: grey; margin-top: 5px;">
+            {{ products.productName }}
+          </p>
+          <p style="margin-top: 10px;">
+            Size : <span style="font-weight: bold;">{{ products.size }}</span>
+          </p>
+          <div class="prd-quantity" style="margin-top:10px;">
+            <span>Quantity : {{ prdQuantity }}</span>
+          </div>
         </div>
       </div>
 
@@ -74,10 +58,10 @@
     <div class="col-md-3 cart-total-card-container" style="padding-top: 30px;">
       <div class="cart-total-card">
         <h3 style="margin-top: 10px;" class="text-center">Cart Summary</h3>
-        <table style="width: 100%;margin-top: 20px;">
+        <table style="width: 100%;margin-top: 20px; text-align: center;">
           <tbody>
             <tr>
-              <td style="padding-top: 5px;padding-left:15px;width: 70%;">
+              <td style="padding-top: 5px;padding-left:15px;width: 50%;">
                 Subtotal
               </td>
               <td>
@@ -98,7 +82,7 @@
               </td>
             </tr>
             <tr>
-              <td style="padding-bottom: 5px;font-weight: bold;padding-left: 15px;width: 70%;padding-top: 15px;">
+              <td style="padding-bottom: 5px;font-weight: bold;padding-left: 15px;width: 50%;padding-top: 15px;">
                 Total
               </td>
               <td style="font-weight: bold;">
@@ -110,7 +94,7 @@
       </div>
       <div>
         <button class="place-order-btn">
-          Place Order
+          Proceed to Buy
         </button>
       </div>
     </div>

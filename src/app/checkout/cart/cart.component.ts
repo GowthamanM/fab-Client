@@ -7,8 +7,6 @@ import { UserService } from 'src/app/services/user.service';
   styleUrls: ['./cart.component.scss']
 })
 export class CartComponent implements OnInit {
-
-
   data:any = [];
   subTotal:any = 0;
   total = 0;
@@ -27,21 +25,13 @@ export class CartComponent implements OnInit {
           this.data = data.User.relatedTo.cart;
           for(let i=0;i<this.data.length;i++){
             console.log(this.data[i]);
-            
+
             this.subTotal += parseInt(this.data[i].price);
           }
           this.total= this.subTotal+50;
-          
+
         }
       })
-  }
-
-  subtractQuantity(quantity: any) {
-
-  }
-
-  addQuantity(quantity: any) {
-
   }
 
   removeProduct(product: any) {

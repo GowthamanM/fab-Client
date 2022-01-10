@@ -40,6 +40,7 @@
 .prd-quantity-container {
   @include media-upto(md) {
     padding-left: 20px;
+    visibility: hidden;
   }
 }
 
@@ -54,18 +55,6 @@
   font-size: 14px;
   border-radius: 5px;
   background-color: red;
-  color: white;
-}
-
-.card-quant-input {
-  width: 50px;
-  text-align: center;
-  border-radius: 5px;
-  border: none;
-  padding: 2px;
-  margin-right: 5px;
-  margin-left: 5px;
-  background-color: #0F5860;
   color: white;
 }
 
