@@ -51,7 +51,7 @@ export class SubscriptionComponent implements OnInit {
   };
 
   options = {
-    key: 'rzp_live_S9n4NwIEsUD5Pv',
+    key: 'rzp_live_aBcnQt1siguMyA',
     order_id: '',
     name: 'Fabrae',
     description: 'Monthly Plan',

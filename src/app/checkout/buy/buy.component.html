@@ -97,46 +97,90 @@
                 <form [formGroup]="deliveryForm">
                   <div class="form-row row">
                     <div class="form-group col-md-6">
-                      <label for="inputName">Name</label>
-                      <input type="text" class="form-control" id="inputName" placeholder="Enter your Name" formControlName="inputName">
+                      <label for="name">Name</label>
+                      <input type="text" class="form-control" id="inputName" placeholder="Enter your Name" formControlName="name">
+                      <div class="error-msg" *ngIf="fab.name.invalid && (fab.name.dirty || fab.name.touched)">
+                        <div *ngIf="fab.name.errors?.required">
+                          Name is required.
+                        </div>
+                      </div>
                     </div>
                     <div class="form-group col-md-6 emailInput">
-                      <label for="inputEmail">Email</label>
-                      <input type="email" class="form-control" id="inputEmail" placeholder="Enter your Email" formControlName="inputEmail">
+                      <label for="email">Email</label>
+                      <input type="email" class="form-control" id="inputEmail" placeholder="Enter your Email" formControlName="email">
+                      <div class="error-msg" *ngIf="fab.email.invalid && (fab.email.dirty || fab.email.touched)">
+                        <div *ngIf="fab.email.errors?.required">
+                          Email is required.
+                        </div>
+                        <div *ngIf="fab.email.errors?.email">
+                          Email Should be Valid.
+                        </div>
+                      </div>
                     </div>
                   </div>
                   <div class="form-group fab-mt-20">
-                    <label for="inputAddress">Address</label>
-                    <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St" formControlName="inputAddress">
+                    <label for="address">Address</label>
+                    <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St" formControlName="address">
+                    <div class="error-msg" *ngIf="fab.email.invalid && (fab.email.dirty || fab.email.touched)">
+                      <div *ngIf="fab.email.errors?.required">
+                        Address is required.
+                      </div>
+                    </div>
                   </div>
                   <div class="form-row row">
                     <div class="form-group col-md-6 fab-mt-20">
-                      <label for="inputCity">City</label>
-                      <input type="text" class="form-control" id="inputCity" formControlName="inputCity">
+                      <label for="state">State</label>
+                      <select name="state" class="form-control round" id="inputState" 
+                      formControlName="state"
+                      (change)="getCities()">
+                        <!-- <option value="volvo" disabled selected>Select a state</option> -->
+                        <option *ngFor="let state of states" [value]="state.name">{{state.name}}</option>
+                      </select>
                     </div>
                     <div class="form-group col-md-4 fab-mt-20">
-                      <label for="inputState">State</label>
-                      <input type="text" class="form-control" id="inputState" formControlName="inputState">
+                      <label for="city">City</label>
+                      <select name="city" class="form-control round" id="inputCity" 
+                      formControlName="city">
+                        <!-- <option value="volvo" disabled selected>Select a state</option> -->
+                        <option *ngFor="let city of cities" [value]="city">{{city}}</option>
+                      </select>
                     </div>
                     <div class="form-group col-md-2 fab-mt-20">
-                      <label for="inputZip">Pincode</label>
-                      <input type="text" class="form-control" id="inputZip" formControlName="inputZip">
+                      <label for="pincode">Pincode</label>
+                      <input type="text" class="form-control" id="inputZip" formControlName="pincode">
+                      <div class="error-msg" *ngIf="fab.pincode.invalid && (fab.pincode.dirty || fab.pincode.touched)">
+                        <div *ngIf="fab.pincode.errors?.required">
+                          Pincode is required
+                        </div>
+                        <div *ngIf="!fab.pincode.errors?.required && fab.pincode.errors">
+                          Enter Valid Pincode
+                        </div>
+                      </div>
                     </div>
                   </div>
                   <div class="form-row row">
                     <div class="form-group col-md-6 fab-mt-20">
-                      <label for="inputPhone">Phone number</label>
-                      <input type="text" class="form-control" id="inputPhone" formControlName="inputPhone">
-                    </div>
-                    <div class="form-group col-md-6 fab-mt-20">
-                      <label for="inputCountry">Country</label>
-                      <input type="text" class="form-control" id="inputCountry" formControlName="inputCountry">
+                      <label for="phone">Phone number</label>
+                      <input type="text" class="form-control" id="inputPhone" formControlName="phone">
+                      <div class="error-msg" *ngIf="fab.phone.invalid && (fab.phone.dirty || fab.phone.touched)">
+                        <div *ngIf="fab.phone.errors?.required">
+                          Phone Number is required
+                        </div>
+                        <div *ngIf="!fab.phone.errors?.required && fab.pincode.errors">
+                          Enter Valid Phone Number
+                        </div>
+                      </div>
                     </div>
                   </div>
 
                   <div class="fab-mt-20">
-                    <button type="submit" class="btn btn-primary" (click)="showData()">Save Data</button><br>
-                    <small id="submitHelp" class="form-text text-muted">Save the Data for future use.</small>
+                    <button type="submit" 
+                    class="btn btn-primary" 
+                    (click)="showData()"
+                    [disabled]="!deliveryForm.valid">Save Data</button><br>
+                    <small id="submitHelp" 
+                    class="form-text text-muted"
+                    *ngIf="!deliveryForm.valid">Enter All the Details.</small>
                   </div>
                 </form>
               </div>
@@ -152,6 +196,7 @@
                 data-bs-target="#collapseThree"
                 aria-expanded="false"
                 aria-controls="collapseThree"
+                
               >
                 Payment
               </button>
@@ -164,7 +209,11 @@
             >
               <div class="accordion-body">
                 <small id="paymentHelp" class="form-text text-muted">Cash on Delivery is not available for now</small><br>
-                <button type="submit" class="btn btn-primary fab-mt-10" (click)="paynow()">Pay Now</button>
+                <button type="submit" [disabled]="!deliveryForm.valid" class="btn btn-primary fab-mt-10" (click)="paynow()">Pay Now</button>
+                <br>
+                <small id="submitHelp" 
+                    class="form-text text-muted"
+                    *ngIf="!deliveryForm.valid" style="color: red!important;margin-top: 5px;">Enter Address Details for payment</small>
               </div>
             </div>
           </div>

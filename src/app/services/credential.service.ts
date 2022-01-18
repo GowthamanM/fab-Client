@@ -9,6 +9,7 @@ export class CredentialService {
 
 
   apiUrl:string;
+  countryStateApi:string;
   headerDict:any;
   uid:any;
   productData:any;
@@ -27,7 +28,8 @@ export class CredentialService {
       'Authorization': 'null'
     }
     this.setUserNameInitial();
-    this.apiUrl = "http://localhost:8000/";
+    this.apiUrl = "https://backend.fabrae.com/";
+    this.countryStateApi = "https://countriesnow.space/api/v0.1/";
   }
 
   setUserNameInitial() {
