@@ -2,8 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import { ActivatedRoute, ActivatedRouteSnapshot } from '@angular/router';
 import { CountryStateApiService } from 'src/app/services/country-state-api.service';
+import { OrderService } from 'src/app/services/order.service';
+import { RazorpayService } from 'src/app/services/razorpay.service';
 import { StorageService } from 'src/app/services/storage.service';
 import { UserService } from 'src/app/services/user.service';
+import { WindowService } from 'src/app/services/window.service';
 
 @Component({
   selector: 'app-buy',
@@ -19,6 +22,29 @@ export class BuyComponent implements OnInit {
   states:any=[];
   cities:any = [];
 
+  options = {
+    key: 'rzp_live_aBcnQt1siguMyA',
+    order_id: '',
+    name: 'Fabrae',
+    description: 'Monthly Plan',
+    image: 'https://fabrae.com/assets/images/Fabrae-t3.png',
+    handler: (response: any) => {
+      this.updateOrderStatus(response);
+    },
+    prefill: {
+      name: 'Gaurav Kumar',
+      email: 'gaurav.kumar@example.com',
+      contact: '+919876543210',
+    },
+    notes: {
+      subscriptionType: ''
+    },
+    theme: {
+      color: '#0F5860',
+    },
+  };
+
+  rzp1: any;
 
   public prdQuantity = 1;
 
@@ -27,7 +53,10 @@ export class BuyComponent implements OnInit {
     private fb: FormBuilder,
     private storageService:StorageService,
     private route:ActivatedRoute,
-    private stateApi:CountryStateApiService
+    private stateApi:CountryStateApiService,
+    private razorPayService:RazorpayService,
+    private windowService: WindowService,
+    private orderService:OrderService
   ) {
   }
 
@@ -40,7 +69,7 @@ export class BuyComponent implements OnInit {
             this.subTotal += parseInt(this.data[i].price);
           }
           if(this.data.length > 0){
-            this.shippingCharges = 50;
+            this.shippingCharges = 0;
           }
           this.total= this.subTotal + this.shippingCharges;
         }
@@ -115,14 +144,60 @@ export class BuyComponent implements OnInit {
       this.formState = true;
     }
     if(this.deliveryForm.value.pincode.length == 6) {
-      console.log(true);
-      
+      console.log(true);  
     }
-    console.log(this.deliveryForm.value);
-    
+    console.log(this.deliveryForm.value); 
   }
 
   paynow() {
+    let orderPlanData: any = {
+      amount: this.total + "",
+      currency: 'INR',
+      notes: {
+        subscriptionType: 'monthly'
+      },
+    };
+    this.razorPayService.basicPlanOrder(orderPlanData).subscribe(data=>{
+      console.log(data);
+      let temp = data;
+        if (temp.message === 'payment order created') {
+          this.options.order_id = temp.result.orderId;
+          this.options.prefill.name = temp.result.prefill.name;
+          this.options.prefill.email = temp.result.prefill.email;
+          this.options.description = 'Product Plan';
+          this.options.prefill.contact = temp.result.prefill.contact;
+          this.options.notes.subscriptionType =
+            orderPlanData.notes.subscriptionType;
+        }
+        this.checkout();
+    });
+  }
+
+  checkout() {
+    console.log(this.options);
+    this.rzp1 = new this.windowService.nativeWindow.Razorpay(this.options);
+    this.rzp1.open();
+    this.updateOrderStatus("asf");
+  }
+
+  updateOrderStatus(response:any){
+    let orderData :any= {};
+    orderData.relatedTo = {};
+    this.userService.getUserData().subscribe(data=>{
+      console.log(data);
+      orderData.userId = data.User._id;
+      orderData.relatedTo.mailId = data.User.email;
+      orderData.products = this.data;
+      orderData.amount = this.total;
+      orderData.address = this.deliveryForm.value;
+      orderData.relatedTo.status = 200;
+      console.log(orderData);
+      this.orderService.saveOrder(orderData).subscribe(data => {
+        console.log(data);
+      });
+    });
+    
     
   }
+
 }

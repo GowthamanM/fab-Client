@@ -8,6 +8,7 @@ import { CheckoutComponent } from './checkout/checkout.component';
 import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
 import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
+import { MyOrdersComponent } from './my-orders/my-orders.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { PrivacyPolicyComponent } from './privacy-policy/privacy-policy.component';
 import { ProfileComponent } from './profile/profile.component';
@@ -73,11 +74,14 @@ const routes: Routes = [
   { path: 'terms-and-conditions', component: TermsOfServiceComponent },
   { path: 'refund-policy', component: RefundPolicyComponent },
   { path: 'wallet', component: WalletComponent},
-  //TODO: Add Authguard
+  
   { path: 'checkout', component: CheckoutComponent, children: [
     { path: 'cart', component: CartComponent },
     { path: 'buy', component: BuyComponent }
-  ]},
+  ],canActivate:[AuthGuard]},
+  {
+    path:'my-orders',component:MyOrdersComponent,canActivate:[AuthGuard]
+  },
 
   { path: '**', component: PageNotFoundComponent }
 ];

@@ -53,6 +53,7 @@ import { CheckoutComponent } from './checkout/checkout.component';
 import { CartComponent } from './checkout/cart/cart.component';
 import { BuyComponent } from './checkout/buy/buy.component';
 import { ImgFallbackDirective } from './extensions/img-fallback.directive';
+import { MyOrdersComponent } from './my-orders/my-orders.component';
 
 @NgModule({
   declarations: [
@@ -97,7 +98,8 @@ import { ImgFallbackDirective } from './extensions/img-fallback.directive';
     CheckoutComponent,
     CartComponent,
     BuyComponent,
-    ImgFallbackDirective
+    ImgFallbackDirective,
+    MyOrdersComponent
   ],
   imports: [
     

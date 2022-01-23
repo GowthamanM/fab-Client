@@ -110,5 +110,9 @@ export class SecondaryNavbarComponent implements OnInit {
     this.router.navigateByUrl('/checkout/cart');
   }
 
+  goToMyOrders() {
+    this.router.navigateByUrl('/my-orders');
+  }
+
 }
 
