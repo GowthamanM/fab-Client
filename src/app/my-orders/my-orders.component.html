@@ -1,1 +1,51 @@
 <app-secondary-navbar></app-secondary-navbar>
+
+<section class="main-content">
+  <div class="container">
+    <h2 class="cart-heading">
+      Your Orders ({{data?.length}})
+    </h2>
+    <div class="order-container">
+      <div class="order-sub-container">
+        <div class="order-cards" *ngFor="let item of data">
+          <div class="order-cards-header">
+            <p><span>Order Id : </span>{{ item.orderId }}</p>
+            <p><span>Total : </span>{{ item.total }}</p>
+          </div>
+          <div>
+            <p style="font-weight: bold; margin-top: 15px; font-size: 17px; padding-bottom: 10px;">Items <span style="font-size: 15px;">({{item.items.length}})</span></p>
+            <div class="order-table">
+              <div class="card-cont" *ngFor="let prd of item.items">
+                <div class="cart-prd-img-container">
+                  <img [src]="prd.photoLink" [alt]="prd.productName" class="cart-prd-img" ImgFallback>
+                </div>
+                <div style="width: 100%;" class="cart-prd-des-lg" >
+                  <p style="font-weight: bold;">
+                    {{ prd.brand }}
+                  </p>
+                  <p style="font-size: 14px; color: grey; margin-top: 5px;">
+                    {{ prd.productName }}
+                  </p>
+                  <p style="margin-top: 10px;">
+                    Size : <span style="font-weight: bold;">{{ prd.size }}</span>
+                  </p>
+                </div>
+                <div style="width: 100px;" >
+                  <p class="cart-prd-price" style="padding-top: 3px;">
+                    &#8377;{{ prd.price }}
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="track-order-container">
+            <button class="place-order-btn">
+              Track Order
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<app-footer></app-footer>

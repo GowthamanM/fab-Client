@@ -1,0 +1,137 @@
+@import
+  '/src/assets/Scss/abstracts/variables',
+  '/src/assets/Scss/abstracts/mixins';
+
+.main-content {
+  padding-top: 80px;
+  background-color: #F5F5F7;
+  padding-bottom: 60px;
+}
+
+.cart-heading {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.order-sub-container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  > div {
+    width: calc(100%/2 - 15px);
+    margin-top: 30px;
+
+    @include media-upto(md) {
+      width: 100%;
+    }
+  }
+
+  @include media-upto(md) {
+    flex-direction: column;
+  }
+}
+
+.order-cards {
+  min-height: 200px;
+  background-color: white;
+  box-shadow: 0px 0px 5px rgb(0 0 0 / 20%);
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.order-cards-header {
+  display: flex;
+  justify-content: space-between;
+
+  span {
+    font-weight: bold;
+  }
+}
+
+
+// Card css
+.card-cont {
+  display: flex;
+  justify-content: space-between;
+  border-top: 1px solid grey;
+  // To get a table like structure
+  // border-right: 1px solid grey;
+  // border-left: 1px solid grey;
+  padding-top: 10px;
+  padding-bottom: 15px;
+}
+
+// To get a table like structure
+// .card-cont:last-child {
+//   border-radius: 0 0 5px 5px;
+//   border-bottom: 1px solid grey;
+// }
+
+.card-cont:first-child {
+  // To get a table like structure
+  // border-radius: 5px 5px 0 0;
+  border-top: 0px;
+}
+
+.cart-prd-des-lg {
+  padding-left: 20px;
+  margin-top: 5px;
+
+  @include media-upto(md) {
+    padding-left: 10px;
+  }
+}
+
+.prd-quantity-container {
+  @include media-upto(md) {
+    padding-left: 20px;
+    visibility: hidden;
+  }
+}
+
+.prd-quantity {
+  display: flex;
+  align-items: center;
+}
+
+.cart-prd-price {
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.cart-prd-des {
+  padding-left: 20px;
+  display: none;
+
+  @include media-upto(md) {
+    margin-top: 10px;
+    padding-left: 10px;
+    display: block;
+  }
+}
+
+.cart-prd-img {
+  width: 70px;
+  height:70px;
+  object-fit: contain;
+}
+
+.track-order-container {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.place-order-btn {
+  // background-color: #0F5860;
+  background: linear-gradient(92.32deg, #0F5860 4.11%, #15B793 80.06%);
+  width: 200px;
+  border-radius: 5px;
+  border: none;
+  padding: 10px;
+  font-size: 15px;
+  color: white;
+  display: block;
+  margin-top: 10px;
+  margin-bottom: 5px;
+}
