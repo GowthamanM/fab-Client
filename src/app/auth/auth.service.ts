@@ -31,16 +31,13 @@ export class AuthService {
     var statusValue;
     this.http.get(this.apiUrl+'auth/checkauth/').subscribe(data=>{
       let temp = JSON.parse(JSON.stringify(data));
-      console.log(temp);
       statusValue = temp.status;
       console.log('statusValue::'+statusValue);
-      
+      if(statusValue){
+        return true;
+      } 
     });
-    if(statusValue){
-      return true;
-    }else{
-      return false;
-    }
+    return false;
   }
   
 
@@ -50,6 +47,12 @@ export class AuthService {
 
   decodeToken(){
     return this.http.get(this.apiUrl+"decode");
+  }
+
+  logoutSession(){
+    localStorage.setItem('authStatus','false');
+    localStorage.setItem('userToken','null');
+    localStorage.setItem('uid','null');
   }
 
 }

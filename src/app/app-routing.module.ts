@@ -9,6 +9,7 @@ import { ForgotPasswordComponent } from './forgot-password/forgot-password.compo
 import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
 import { MyOrdersComponent } from './my-orders/my-orders.component';
+import { OrderNotConfirmedComponent } from './my-orders/order-not-confirmed/order-not-confirmed.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { PrivacyPolicyComponent } from './privacy-policy/privacy-policy.component';
 import { ProfileComponent } from './profile/profile.component';
@@ -81,6 +82,9 @@ const routes: Routes = [
   ],canActivate:[AuthGuard]},
   {
     path:'my-orders',component:MyOrdersComponent,canActivate:[AuthGuard]
+  },
+  {
+    path:'order-not-confirmed', component:OrderNotConfirmedComponent,canActivate:[AuthGuard]
   },
 
   { path: '**', component: PageNotFoundComponent }

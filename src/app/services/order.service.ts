@@ -17,10 +17,10 @@ export class OrderService {
   }
 
   public saveOrder(data:any){
-    console.log("inside service :: ");
-    console.log(data);
-    
-    
     return this.http.post(this.apiUrl+"orders",data);
+  }
+
+  public getUserOrders(data:any) {
+    return this.http.get(this.apiUrl+"orders/user?userid="+data);
   }
 }

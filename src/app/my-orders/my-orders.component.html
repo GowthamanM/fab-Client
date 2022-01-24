@@ -9,13 +9,13 @@
       <div class="order-sub-container">
         <div class="order-cards" *ngFor="let item of data">
           <div class="order-cards-header">
-            <p><span>Order Id : </span>{{ item.orderId }}</p>
-            <p><span>Total : </span>{{ item.total }}</p>
+            <p><span>Order Id : </span>{{ item.relatedTo.order_id }}</p>
+            <p><span>Total : </span>{{ item.amount }}</p>
           </div>
           <div>
-            <p style="font-weight: bold; margin-top: 15px; font-size: 17px; padding-bottom: 10px;">Items <span style="font-size: 15px;">({{item.items.length}})</span></p>
+            <p style="font-weight: bold; margin-top: 15px; font-size: 17px; padding-bottom: 10px;">Items <span style="font-size: 15px;">({{item?.products.length}})</span></p>
             <div class="order-table">
-              <div class="card-cont" *ngFor="let prd of item.items">
+              <div class="card-cont" *ngFor="let prd of item.products"  >
                 <div class="cart-prd-img-container">
                   <img [src]="prd.photoLink" [alt]="prd.productName" class="cart-prd-img" ImgFallback>
                 </div>
@@ -39,7 +39,7 @@
             </div>
           </div>
           <div class="track-order-container">
-            <button class="place-order-btn">
+            <button class="place-order-btn" (click)="goToTrackingPage(item.relatedTo)">
               Track Order
             </button>
           </div>

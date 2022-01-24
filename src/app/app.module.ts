@@ -1,7 +1,9 @@
 import { NgModule ,CUSTOM_ELEMENTS_SCHEMA} from '@angular/core';
+import { CommonModule } from '@angular/common';
 import { BrowserModule } from '@angular/platform-browser';
 import {HttpClientModule, HTTP_INTERCEPTORS} from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ToastrModule } from 'ngx-toastr';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -54,6 +56,7 @@ import { CartComponent } from './checkout/cart/cart.component';
 import { BuyComponent } from './checkout/buy/buy.component';
 import { ImgFallbackDirective } from './extensions/img-fallback.directive';
 import { MyOrdersComponent } from './my-orders/my-orders.component';
+import { OrderNotConfirmedComponent } from './my-orders/order-not-confirmed/order-not-confirmed.component';
 
 @NgModule({
   declarations: [
@@ -99,10 +102,11 @@ import { MyOrdersComponent } from './my-orders/my-orders.component';
     CartComponent,
     BuyComponent,
     ImgFallbackDirective,
-    MyOrdersComponent
+    MyOrdersComponent,
+    OrderNotConfirmedComponent
   ],
   imports: [
-    
+    CommonModule,
     BrowserModule.withServerTransition({ appId: 'serverApp' }),
     AppRoutingModule,
     FormsModule,
@@ -111,7 +115,8 @@ import { MyOrdersComponent } from './my-orders/my-orders.component';
     ReactiveFormsModule,
     SocialLoginModule,
     NgxSpinnerModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    ToastrModule.forRoot()
   ],
   providers: [
     {

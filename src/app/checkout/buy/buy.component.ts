@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
-import { ActivatedRoute, ActivatedRouteSnapshot } from '@angular/router';
+import { ActivatedRoute, ActivatedRouteSnapshot, Router } from '@angular/router';
+import { AuthService } from 'src/app/auth/auth.service';
 import { CountryStateApiService } from 'src/app/services/country-state-api.service';
 import { OrderService } from 'src/app/services/order.service';
 import { RazorpayService } from 'src/app/services/razorpay.service';
@@ -56,7 +57,9 @@ export class BuyComponent implements OnInit {
     private stateApi:CountryStateApiService,
     private razorPayService:RazorpayService,
     private windowService: WindowService,
-    private orderService:OrderService
+    private orderService:OrderService,
+    private authService:AuthService,
+    private router:Router
   ) {
   }
 
@@ -69,7 +72,7 @@ export class BuyComponent implements OnInit {
             this.subTotal += parseInt(this.data[i].price);
           }
           if(this.data.length > 0){
-            this.shippingCharges = 0;
+            this.shippingCharges = 50;
           }
           this.total= this.subTotal + this.shippingCharges;
         }
@@ -150,6 +153,10 @@ export class BuyComponent implements OnInit {
   }
 
   paynow() {
+    if(!this.authService.authCheck()){
+      this.authService.logoutSession();
+      this.router.navigateByUrl("/login");
+    }
     let orderPlanData: any = {
       amount: this.total + "",
       currency: 'INR',
@@ -158,7 +165,6 @@ export class BuyComponent implements OnInit {
       },
     };
     this.razorPayService.basicPlanOrder(orderPlanData).subscribe(data=>{
-      console.log(data);
       let temp = data;
         if (temp.message === 'payment order created') {
           this.options.order_id = temp.result.orderId;
@@ -177,7 +183,6 @@ export class BuyComponent implements OnInit {
     console.log(this.options);
     this.rzp1 = new this.windowService.nativeWindow.Razorpay(this.options);
     this.rzp1.open();
-    this.updateOrderStatus("asf");
   }
 
   updateOrderStatus(response:any){
