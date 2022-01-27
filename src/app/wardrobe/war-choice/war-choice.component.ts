@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { AuthService } from 'src/app/auth/auth.service';
 import { UserService } from 'src/app/services/user.service';
 
 @Component({
@@ -10,14 +11,14 @@ import { UserService } from 'src/app/services/user.service';
 export class WarChoiceComponent implements OnInit {
 
   constructor(private route: Router,
-    private userService:UserService) { }
+    private userService:UserService,
+    private authService:AuthService) { }
 
   ngOnInit(): void {
     this.userService.getUserData().subscribe(data=>{
       if(!(data.User.isSubscribed)){
         this.route.navigateByUrl('/not-subscribed');
       }
-
     });
     window.scrollTo(0, 0);
   }

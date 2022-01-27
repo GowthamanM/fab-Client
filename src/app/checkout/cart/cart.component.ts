@@ -65,8 +65,10 @@ export class CartComponent implements OnInit {
   }
 
   goToBuy(){
+    console.log(this.data);
+    
     let encode = encodeURIComponent(JSON.stringify(this.data));
-    this.router.navigateByUrl("/checkout/buy?order="+encode);   
+    this.router.navigateByUrl("/checkout/buy?order="+encode+"&cart=true");   
   }
 
   goToWardrobe(){

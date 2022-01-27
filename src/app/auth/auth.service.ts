@@ -27,17 +27,8 @@ export class AuthService {
     }
   }
 
-  authCheck():boolean{ 
-    var statusValue;
-    this.http.get(this.apiUrl+'auth/checkauth/').subscribe(data=>{
-      let temp = JSON.parse(JSON.stringify(data));
-      statusValue = temp.status;
-      console.log('statusValue::'+statusValue);
-      if(statusValue){
-        return true;
-      } 
-    });
-    return false;
+  authCheck(){ 
+    return this.http.get(this.apiUrl+'auth/checkauth/');
   }
   
 

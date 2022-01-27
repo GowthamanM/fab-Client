@@ -67,12 +67,17 @@ export class BuyComponent implements OnInit {
       this.route.queryParams.subscribe(params => {
         if(this.isJson(params.order)) {
           this.data = JSON.parse(params.order);
+          if(params.cart){
+            console.log(true);
+          }else{
+            console.log(false);
+          }
           for(let i=0;i<this.data.length;i++){
 
             this.subTotal += parseInt(this.data[i].price);
           }
           if(this.data.length > 0){
-            this.shippingCharges = 50;
+            this.shippingCharges = 0;
           }
           this.total= this.subTotal + this.shippingCharges;
         }
@@ -153,30 +158,34 @@ export class BuyComponent implements OnInit {
   }
 
   paynow() {
-    if(!this.authService.authCheck()){
-      this.authService.logoutSession();
-      this.router.navigateByUrl("/login");
-    }
-    let orderPlanData: any = {
-      amount: this.total + "",
-      currency: 'INR',
-      notes: {
-        subscriptionType: 'monthly'
-      },
-    };
-    this.razorPayService.basicPlanOrder(orderPlanData).subscribe(data=>{
-      let temp = data;
-        if (temp.message === 'payment order created') {
-          this.options.order_id = temp.result.orderId;
-          this.options.prefill.name = temp.result.prefill.name;
-          this.options.prefill.email = temp.result.prefill.email;
-          this.options.description = 'Product Plan';
-          this.options.prefill.contact = temp.result.prefill.contact;
-          this.options.notes.subscriptionType =
+    this.authService.authCheck().subscribe(data=>{
+      let response = JSON.parse(JSON.stringify(data));
+      if(response.status){
+        let orderPlanData: any = {
+          amount: this.total + "",
+          currency: 'INR',
+          notes: {
+            subscriptionType: 'monthly'
+          },
+        };
+        this.razorPayService.basicPlanOrder(orderPlanData).subscribe(data=>{
+          let temp = data;
+          if (temp.message === 'payment order created') {
+            this.options.order_id = temp.result.orderId;
+            this.options.prefill.name = temp.result.prefill.name;
+            this.options.prefill.email = temp.result.prefill.email;
+            this.options.description = 'Product Plan';
+            this.options.prefill.contact = temp.result.prefill.contact;
+            this.options.notes.subscriptionType =
             orderPlanData.notes.subscriptionType;
-        }
-        this.checkout();
-    });
+          }
+          this.checkout();
+        });
+      }else{
+        this.authService.logoutSession();
+      this.router.navigateByUrl("/login");
+      }
+    })
   }
 
   checkout() {
@@ -189,16 +198,29 @@ export class BuyComponent implements OnInit {
     let orderData :any= {};
     orderData.relatedTo = {};
     this.userService.getUserData().subscribe(data=>{
+      let userData = JSON.parse(JSON.stringify(data));
       console.log(data);
-      orderData.userId = data.User._id;
-      orderData.relatedTo.mailId = data.User.email;
+      orderData.userId = userData.User._id;
+      orderData.relatedTo.mailId = userData.User.email;
       orderData.products = this.data;
       orderData.amount = this.total;
       orderData.address = this.deliveryForm.value;
       orderData.relatedTo.status = 200;
       console.log(orderData);
       this.orderService.saveOrder(orderData).subscribe(data => {
-        console.log(data);
+      });
+      this.route.queryParams.subscribe(params=>{
+        if(params.cart){
+          console.log("entering");
+          
+          let userEditData:any = {};
+          userEditData.relatedTo = {};
+          userEditData.relatedTo.cart=[];
+          this.userService.userUpdate(userEditData).subscribe(data=>{
+            console.log(data);
+          });
+        }
+        this.router.navigateByUrl("/my-orders");
       });
     });
     

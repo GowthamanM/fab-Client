@@ -1,15 +1,13 @@
 <app-secondary-navbar></app-secondary-navbar>
 
 <main>
-  <section class="wardrobe-products">
-    <div class="msg-container">
-      <p class="default-msg">Specialits is Picking the Dress from your selection!</p>
-      <div class="prev-next fab-mt-50">
-        <a routerLink="/" class="fab-btn fab-btn-filled">Back to Home</a>
-      </div>
+  <div class="message" *ngIf="data?.length === 0">
+    <div class="prev-next fab-mt-50" style="text-align: center;">
+      <p style="margin-top: 70px;">Specialits is Picking the Dress from your selection!</p>
+      <a routerLink="/" class="fab-btn fab-btn-filled" style="margin-top: 25px">Back to Home</a>
     </div>
-  </section>
-  <section class="wardrobe-product-list container fab-mt-50 fab-mb-50">
+  </div>
+  <section class="wardrobe-product-list container fab-mt-50 fab-mb-50" *ngIf="data?.length !== 0">
     <h2 class="war-title fab-mt-100">Curated Selections for You!</h2>
 
     <div class="prod-list">
