@@ -6,6 +6,11 @@ import { Injectable } from '@angular/core';
 export class StorageService {
 
   userCartProducts:any;
+  paymentTrigger:boolean=false;
 
   constructor() { }
+
+  changeTrigger(){
+    this.paymentTrigger = true;
+  }
 }

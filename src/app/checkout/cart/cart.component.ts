@@ -32,7 +32,7 @@ export class CartComponent implements OnInit {
             this.subTotal += parseInt(this.data[i].price);
           }
           if(this.data.length > 0) {
-            this.shippingCharges=50;
+            this.shippingCharges=0;
           }
           this.total= this.subTotal+ this.shippingCharges;
         }

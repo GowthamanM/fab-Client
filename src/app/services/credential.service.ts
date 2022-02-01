@@ -10,6 +10,7 @@ export class CredentialService {
 
   apiUrl:string;
   countryStateApi:string;
+  shipRocketApi:string;
   headerDict:any;
   uid:any;
   productData:any;
@@ -30,6 +31,7 @@ export class CredentialService {
     this.setUserNameInitial();
     this.apiUrl = "https://backend.fabrae.com/";
     this.countryStateApi = "https://countriesnow.space/api/v0.1/";
+    this.shipRocketApi = "https://apiv2.shiprocket.in/v1/external/";
   }
 
   setUserNameInitial() {

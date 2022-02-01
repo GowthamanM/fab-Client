@@ -20,6 +20,8 @@ export class TokenInterceptorService implements HttpInterceptor{
         'Authorization': `Bearer ${authService.getToken()}`
       }
     })
+    
     return next.handle(tokenizedReq);
+
   }
 }
